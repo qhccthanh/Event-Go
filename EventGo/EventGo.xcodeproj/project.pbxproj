@@ -29,6 +29,19 @@
 		D0DBB2361E61261400F980F9 /* EGItemStoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0DBB2351E61261400F980F9 /* EGItemStoreView.xib */; };
 		D0DBB2381E612A8400F980F9 /* EGItemStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DBB2371E612A8400F980F9 /* EGItemStoreView.swift */; };
 		D0DBB23B1E6154C800F980F9 /* EGoButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DBB23A1E6154C800F980F9 /* EGoButtonModel.swift */; };
+		F4E6B3F01E62A78E00CF9EAB /* Chameleon_.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6B3D51E62A78E00CF9EAB /* Chameleon_.m */; };
+		F4E6B3F11E62A78E00CF9EAB /* ChameleonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6B3D71E62A78E00CF9EAB /* ChameleonConstants.m */; };
+		F4E6B3F21E62A78E00CF9EAB /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6B3DB1E62A78E00CF9EAB /* NSArray+Chameleon.m */; };
+		F4E6B3F31E62A78E00CF9EAB /* UIAppearance+Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6B3DD1E62A78E00CF9EAB /* UIAppearance+Swift.m */; };
+		F4E6B3F41E62A78E00CF9EAB /* UIButton+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6B3DF1E62A78E00CF9EAB /* UIButton+Chameleon.m */; };
+		F4E6B3F51E62A78E00CF9EAB /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6B3E11E62A78E00CF9EAB /* UIColor+Chameleon.m */; };
+		F4E6B3F61E62A78E00CF9EAB /* UIColor+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6B3E31E62A78E00CF9EAB /* UIColor+ChameleonPrivate.m */; };
+		F4E6B3F71E62A78E00CF9EAB /* UIImage+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6B3E51E62A78E00CF9EAB /* UIImage+ChameleonPrivate.m */; };
+		F4E6B3F81E62A78E00CF9EAB /* UILabel+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6B3E71E62A78E00CF9EAB /* UILabel+Chameleon.m */; };
+		F4E6B3F91E62A78E00CF9EAB /* UINavigationController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6B3E91E62A78E00CF9EAB /* UINavigationController+Chameleon.m */; };
+		F4E6B3FA1E62A78E00CF9EAB /* UIView+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6B3EB1E62A78E00CF9EAB /* UIView+ChameleonPrivate.m */; };
+		F4E6B3FB1E62A78E00CF9EAB /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E6B3ED1E62A78E00CF9EAB /* UIViewController+Chameleon.m */; };
+		F4E6B3FC1E62A78E00CF9EAB /* ChameleonShorthand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E6B3EF1E62A78E00CF9EAB /* ChameleonShorthand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +71,35 @@
 		D0DBB2351E61261400F980F9 /* EGItemStoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EGItemStoreView.xib; sourceTree = "<group>"; };
 		D0DBB2371E612A8400F980F9 /* EGItemStoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EGItemStoreView.swift; sourceTree = "<group>"; };
 		D0DBB23A1E6154C800F980F9 /* EGoButtonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EGoButtonModel.swift; sourceTree = "<group>"; };
+		F4E6B3D31E62A78E00CF9EAB /* Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chameleon.h; sourceTree = "<group>"; };
+		F4E6B3D41E62A78E00CF9EAB /* Chameleon_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chameleon_.h; sourceTree = "<group>"; };
+		F4E6B3D51E62A78E00CF9EAB /* Chameleon_.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chameleon_.m; sourceTree = "<group>"; };
+		F4E6B3D61E62A78E00CF9EAB /* ChameleonConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChameleonConstants.h; sourceTree = "<group>"; };
+		F4E6B3D71E62A78E00CF9EAB /* ChameleonConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChameleonConstants.m; sourceTree = "<group>"; };
+		F4E6B3D81E62A78E00CF9EAB /* ChameleonEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChameleonEnums.h; sourceTree = "<group>"; };
+		F4E6B3D91E62A78E00CF9EAB /* ChameleonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChameleonMacros.h; sourceTree = "<group>"; };
+		F4E6B3DA1E62A78E00CF9EAB /* NSArray+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Chameleon.h"; sourceTree = "<group>"; };
+		F4E6B3DB1E62A78E00CF9EAB /* NSArray+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Chameleon.m"; sourceTree = "<group>"; };
+		F4E6B3DC1E62A78E00CF9EAB /* UIAppearance+Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAppearance+Swift.h"; sourceTree = "<group>"; };
+		F4E6B3DD1E62A78E00CF9EAB /* UIAppearance+Swift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAppearance+Swift.m"; sourceTree = "<group>"; };
+		F4E6B3DE1E62A78E00CF9EAB /* UIButton+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Chameleon.h"; sourceTree = "<group>"; };
+		F4E6B3DF1E62A78E00CF9EAB /* UIButton+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Chameleon.m"; sourceTree = "<group>"; };
+		F4E6B3E01E62A78E00CF9EAB /* UIColor+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Chameleon.h"; sourceTree = "<group>"; };
+		F4E6B3E11E62A78E00CF9EAB /* UIColor+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Chameleon.m"; sourceTree = "<group>"; };
+		F4E6B3E21E62A78E00CF9EAB /* UIColor+ChameleonPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		F4E6B3E31E62A78E00CF9EAB /* UIColor+ChameleonPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		F4E6B3E41E62A78E00CF9EAB /* UIImage+ChameleonPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		F4E6B3E51E62A78E00CF9EAB /* UIImage+ChameleonPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		F4E6B3E61E62A78E00CF9EAB /* UILabel+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Chameleon.h"; sourceTree = "<group>"; };
+		F4E6B3E71E62A78E00CF9EAB /* UILabel+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Chameleon.m"; sourceTree = "<group>"; };
+		F4E6B3E81E62A78E00CF9EAB /* UINavigationController+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Chameleon.h"; sourceTree = "<group>"; };
+		F4E6B3E91E62A78E00CF9EAB /* UINavigationController+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Chameleon.m"; sourceTree = "<group>"; };
+		F4E6B3EA1E62A78E00CF9EAB /* UIView+ChameleonPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		F4E6B3EB1E62A78E00CF9EAB /* UIView+ChameleonPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		F4E6B3EC1E62A78E00CF9EAB /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Chameleon.h"; sourceTree = "<group>"; };
+		F4E6B3ED1E62A78E00CF9EAB /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Chameleon.m"; sourceTree = "<group>"; };
+		F4E6B3EF1E62A78E00CF9EAB /* ChameleonShorthand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChameleonShorthand.swift; sourceTree = "<group>"; };
+		F4E6B3FE1E62A7D200CF9EAB /* EventGo-BridgeHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventGo-BridgeHeader.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +153,8 @@
 				D0568EC51E62967E00727BD5 /* SCLAlertView.swift */,
 				D0568EC61E62967E00727BD5 /* SCLExtensions.swift */,
 			);
-			path = SCLAlertView;
+			name = SCLAlertView;
+			path = ../SCLAlertView;
 			sourceTree = "<group>";
 		};
 		D0DA8FB31E5E987200B19B5A = {
@@ -137,13 +180,13 @@
 			children = (
 				D0DA8FCB1E5E987200B19B5A /* Info.plist */,
 				D0DA8FBF1E5E987200B19B5A /* AppDelegate.swift */,
-				D0568EC41E62967E00727BD5 /* SCLAlertView */,
 				D0DA8FDF1E5E9A9B00B19B5A /* ModelClass */,
 				D0DA8FD41E5E996600B19B5A /* View */,
 				D0DA8FD11E5E990E00B19B5A /* Controller */,
 				D0DA8FDE1E5E9A4D00B19B5A /* Utility */,
 				D0DBB1EF1E6120DB00F980F9 /* Frameworks */,
 				D0DA8FE21E5E9E1900B19B5A /* MediaSource */,
+				F4E6B3FE1E62A7D200CF9EAB /* EventGo-BridgeHeader.h */,
 			);
 			path = EventGo;
 			sourceTree = "<group>";
@@ -216,6 +259,8 @@
 		D0DBB1EF1E6120DB00F980F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4E6B3FD1E62A79400CF9EAB /* ChameleonFramework */,
+				D0568EC41E62967E00727BD5 /* SCLAlertView */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -227,6 +272,59 @@
 				8E2F30970445EF7AB97DAA17 /* Pods-EventGo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F4E6B3D21E62A78E00CF9EAB /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				F4E6B3D31E62A78E00CF9EAB /* Chameleon.h */,
+				F4E6B3D41E62A78E00CF9EAB /* Chameleon_.h */,
+				F4E6B3D51E62A78E00CF9EAB /* Chameleon_.m */,
+				F4E6B3D61E62A78E00CF9EAB /* ChameleonConstants.h */,
+				F4E6B3D71E62A78E00CF9EAB /* ChameleonConstants.m */,
+				F4E6B3D81E62A78E00CF9EAB /* ChameleonEnums.h */,
+				F4E6B3D91E62A78E00CF9EAB /* ChameleonMacros.h */,
+				F4E6B3DA1E62A78E00CF9EAB /* NSArray+Chameleon.h */,
+				F4E6B3DB1E62A78E00CF9EAB /* NSArray+Chameleon.m */,
+				F4E6B3DC1E62A78E00CF9EAB /* UIAppearance+Swift.h */,
+				F4E6B3DD1E62A78E00CF9EAB /* UIAppearance+Swift.m */,
+				F4E6B3DE1E62A78E00CF9EAB /* UIButton+Chameleon.h */,
+				F4E6B3DF1E62A78E00CF9EAB /* UIButton+Chameleon.m */,
+				F4E6B3E01E62A78E00CF9EAB /* UIColor+Chameleon.h */,
+				F4E6B3E11E62A78E00CF9EAB /* UIColor+Chameleon.m */,
+				F4E6B3E21E62A78E00CF9EAB /* UIColor+ChameleonPrivate.h */,
+				F4E6B3E31E62A78E00CF9EAB /* UIColor+ChameleonPrivate.m */,
+				F4E6B3E41E62A78E00CF9EAB /* UIImage+ChameleonPrivate.h */,
+				F4E6B3E51E62A78E00CF9EAB /* UIImage+ChameleonPrivate.m */,
+				F4E6B3E61E62A78E00CF9EAB /* UILabel+Chameleon.h */,
+				F4E6B3E71E62A78E00CF9EAB /* UILabel+Chameleon.m */,
+				F4E6B3E81E62A78E00CF9EAB /* UINavigationController+Chameleon.h */,
+				F4E6B3E91E62A78E00CF9EAB /* UINavigationController+Chameleon.m */,
+				F4E6B3EA1E62A78E00CF9EAB /* UIView+ChameleonPrivate.h */,
+				F4E6B3EB1E62A78E00CF9EAB /* UIView+ChameleonPrivate.m */,
+				F4E6B3EC1E62A78E00CF9EAB /* UIViewController+Chameleon.h */,
+				F4E6B3ED1E62A78E00CF9EAB /* UIViewController+Chameleon.m */,
+			);
+			name = "Objective-C";
+			path = "EventGo/ChameleonFramework/Pod/Classes/Objective-C";
+			sourceTree = SOURCE_ROOT;
+		};
+		F4E6B3EE1E62A78E00CF9EAB /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				F4E6B3EF1E62A78E00CF9EAB /* ChameleonShorthand.swift */,
+			);
+			name = Swift;
+			path = EventGo/ChameleonFramework/Pod/Classes/Swift;
+			sourceTree = SOURCE_ROOT;
+		};
+		F4E6B3FD1E62A79400CF9EAB /* ChameleonFramework */ = {
+			isa = PBXGroup;
+			children = (
+				F4E6B3D21E62A78E00CF9EAB /* Objective-C */,
+				F4E6B3EE1E62A78E00CF9EAB /* Swift */,
+			);
+			name = ChameleonFramework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,19 +452,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E6B3F61E62A78E00CF9EAB /* UIColor+ChameleonPrivate.m in Sources */,
 				D016A0851E61B34200E66331 /* EGoPopupView.swift in Sources */,
 				D0254BD91E603B0800AC7792 /* InfoStoreViewController.swift in Sources */,
+				F4E6B3F81E62A78E00CF9EAB /* UILabel+Chameleon.m in Sources */,
 				D0DBB23B1E6154C800F980F9 /* EGoButtonModel.swift in Sources */,
+				F4E6B3F91E62A78E00CF9EAB /* UINavigationController+Chameleon.m in Sources */,
 				D0DBB2381E612A8400F980F9 /* EGItemStoreView.swift in Sources */,
 				D0DA8FF21E5EA05300B19B5A /* LoginViewController.swift in Sources */,
+				F4E6B3F21E62A78E00CF9EAB /* NSArray+Chameleon.m in Sources */,
 				D0DA8FF71E5EA0A900B19B5A /* StoreCollectionViewCell.swift in Sources */,
+				F4E6B3F31E62A78E00CF9EAB /* UIAppearance+Swift.m in Sources */,
 				D0DA8FF91E5EA0A900B19B5A /* StoreHeaderView.swift in Sources */,
 				D0DA8FF81E5EA0A900B19B5A /* StoreCollectionViewController.swift in Sources */,
+				F4E6B3F51E62A78E00CF9EAB /* UIColor+Chameleon.m in Sources */,
+				F4E6B3FC1E62A78E00CF9EAB /* ChameleonShorthand.swift in Sources */,
+				F4E6B3F01E62A78E00CF9EAB /* Chameleon_.m in Sources */,
+				F4E6B3FB1E62A78E00CF9EAB /* UIViewController+Chameleon.m in Sources */,
 				D0DA8FC01E5E987200B19B5A /* AppDelegate.swift in Sources */,
 				D0DA8FFB1E5EA12C00B19B5A /* CellModel.swift in Sources */,
 				D0568EC81E62967E00727BD5 /* SCLExtensions.swift in Sources */,
+				F4E6B3F11E62A78E00CF9EAB /* ChameleonConstants.m in Sources */,
+				F4E6B3F71E62A78E00CF9EAB /* UIImage+ChameleonPrivate.m in Sources */,
 				D0568EC71E62967E00727BD5 /* SCLAlertView.swift in Sources */,
+				F4E6B3F41E62A78E00CF9EAB /* UIButton+Chameleon.m in Sources */,
 				D03523F91E5FCDFD0092B3BE /* Extention.swift in Sources */,
+				F4E6B3FA1E62A78E00CF9EAB /* UIView+ChameleonPrivate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +611,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuanthai.EventGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventGo/EventGo-BridgeHeader.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -519,6 +631,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuanthai.EventGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventGo/EventGo-BridgeHeader.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

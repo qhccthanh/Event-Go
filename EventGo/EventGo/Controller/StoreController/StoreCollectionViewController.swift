@@ -87,6 +87,7 @@ class StoreCollectionViewController: UICollectionViewController, UICollectionVie
     // MERK: UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         if let flow = collectionViewLayout as? UICollectionViewFlowLayout {
             flow.minimumInteritemSpacing = 0.3
             let spacePadding = itemsPerRow*flow.minimumInteritemSpacing

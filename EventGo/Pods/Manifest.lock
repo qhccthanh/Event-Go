@@ -1,0 +1,17 @@
+PODS:
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - FDRatingView (0.0.3)
+
+DEPENDENCIES:
+  - ChameleonFramework/Swift
+  - FDRatingView
+
+SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  FDRatingView: eae07e18c1257a7493e4e67f5e175e738714afd9
+
+PODFILE CHECKSUM: c4d997a71db0ac2c4cc5e373777455b5e7011637
+
+COCOAPODS: 1.1.1

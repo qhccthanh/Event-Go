@@ -1,0 +1,35 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '8.0'
+
+def eventgo_pods
+
+pod 'Firebase/Core'
+pod 'Google/Analytics'
+pod 'Firebase/Core'
+pod 'Firebase/AdMob'
+pod 'Firebase/Crash'
+pod 'RealmSwift', '~> 2.4'
+pod 'HTMLReader', '~> 2.0'
+pod 'GooglePlaces'
+pod 'GooglePlacePicker'
+pod 'GoogleMaps'
+pod 'ReactiveCocoa'
+pod 'OAStackView', '~> 1.0'
+pod 'UICollectionViewLeftAlignedLayout'
+pod 'AFNetworking'
+pod 'Google/SignIn'
+pod 'XCGLogger', '~> 4.0.0'
+pod 'FDRatingView', '~> 0.0.3'
+pod 'SCLAlertView', '~> 0.7'
+pod 'ChameleonFramework', '~> 2.1'
+end
+
+target 'EventGo-iOSApp' do
+  use_frameworks!
+
+    eventgo_pods
+
+  target 'EventGo-iOSAppTests' do
+  end
+
+end

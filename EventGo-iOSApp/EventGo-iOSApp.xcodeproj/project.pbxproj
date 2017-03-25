@@ -1,0 +1,1121 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55F2CFC371258F545EE98BBF /* Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0BCB5DE24D9222EF211AD6 /* Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework */; };
+		C9473D78746962E2D90F4191 /* Pods_EventGo_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC63F4ADD9D479D0BBD61CF /* Pods_EventGo_iOSApp.framework */; };
+		F4056A0F1E8240FC00BEC162 /* EVLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4056A0E1E8240FC00BEC162 /* EVLog.swift */; };
+		F4056A151E8245FF00BEC162 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */; };
+		F4056A171E82460600BEC162 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4056A161E82460600BEC162 /* Photos.framework */; };
+		F4056A191E82810500BEC162 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4056A181E82810500BEC162 /* Constants.swift */; };
+		F457EC7D1E84D51C00E2276A /* EVString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457EC7C1E84D51C00E2276A /* EVString.swift */; };
+		F4AD8ADA1E7D3C310081F2F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AD8AD91E7D3C310081F2F3 /* Assets.xcassets */; };
+		F4AD8ADD1E7D3C310081F2F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AD8ADB1E7D3C310081F2F3 /* LaunchScreen.storyboard */; };
+		F4AD8AE81E7D3C310081F2F3 /* EventGo_iOSAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD8AE71E7D3C310081F2F3 /* EventGo_iOSAppTests.swift */; };
+		F4AD8BC61E7D3D1F0081F2F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD8BBF1E7D3D1F0081F2F3 /* AppDelegate.swift */; };
+		F4AD8BC71E7D3D1F0081F2F3 /* EVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD8BC21E7D3D1F0081F2F3 /* EVViewController.swift */; };
+		F4CAA6811E82E6690084FC51 /* libEventGoCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CAA67D1E82E51F0084FC51 /* libEventGoCommon.a */; };
+		F4CAA6931E82E8A50084FC51 /* InfoAwardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6851E82E8A50084FC51 /* InfoAwardViewController.swift */; };
+		F4CAA6941E82E8A50084FC51 /* InfoStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6861E82E8A50084FC51 /* InfoStoreViewController.swift */; };
+		F4CAA6951E82E8A50084FC51 /* EventsCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6881E82E8A50084FC51 /* EventsCalendarViewController.swift */; };
+		F4CAA6961E82E8A50084FC51 /* ListEventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6891E82E8A50084FC51 /* ListEventsCollectionViewCell.swift */; };
+		F4CAA6971E82E8A50084FC51 /* ListEventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA68A1E82E8A50084FC51 /* ListEventsCollectionViewController.swift */; };
+		F4CAA6981E82E8A50084FC51 /* ListEventsUpcomingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA68B1E82E8A50084FC51 /* ListEventsUpcomingCollectionViewController.swift */; };
+		F4CAA69A1E82E8A50084FC51 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA68E1E82E8A50084FC51 /* LoginViewController.swift */; };
+		F4CAA69B1E82E8A50084FC51 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6901E82E8A50084FC51 /* StoreCollectionViewCell.swift */; };
+		F4CAA69C1E82E8A50084FC51 /* StoreCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6911E82E8A50084FC51 /* StoreCollectionViewController.swift */; };
+		F4CAA69D1E82E8A50084FC51 /* StoreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6921E82E8A50084FC51 /* StoreHeaderView.swift */; };
+		F4CAA69F1E82E8BB0084FC51 /* EGoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA69E1E82E8BB0084FC51 /* EGoButton.swift */; };
+		F4CAA6A11E82E8C50084FC51 /* EGoPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6A01E82E8C50084FC51 /* EGoPopupView.swift */; };
+		F4CAA6A31E82E8CA0084FC51 /* EVItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6A21E82E8CA0084FC51 /* EVItemProtocol.swift */; };
+		F4CAA6A81E82E9D20084FC51 /* EGItemStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6A61E82E9D20084FC51 /* EGItemStoreView.swift */; };
+		F4CAA6A91E82E9D20084FC51 /* EGItemStoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4CAA6A71E82E9D20084FC51 /* EGItemStoreView.xib */; };
+		F4E9786A1E7DB67500DF2E89 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E978691E7DB67500DF2E89 /* libxml2.tbd */; };
+		F4E9786D1E7DB86100DF2E89 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E9786B1E7DB86100DF2E89 /* libc++.tbd */; };
+		F4E9786E1E7DB86100DF2E89 /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E9786C1E7DB86100DF2E89 /* libc.tbd */; };
+		F4E978CA1E7E3F3E00DF2E89 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E978C91E7E3F3E00DF2E89 /* GoogleService-Info.plist */; };
+		F4E978E91E7E3F8400DF2E89 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E978E31E7E3F8400DF2E89 /* Bolts.framework */; };
+		F4E978EA1E7E3F8400DF2E89 /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F4E978E41E7E3F8400DF2E89 /* FacebookSDKStrings.bundle */; };
+		F4E978EC1E7E3F8400DF2E89 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E978E61E7E3F8400DF2E89 /* FBSDKCoreKit.framework */; };
+		F4E978ED1E7E3F8400DF2E89 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E978E71E7E3F8400DF2E89 /* FBSDKLoginKit.framework */; };
+		F4E978EE1E7E3F8400DF2E89 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E978E81E7E3F8400DF2E89 /* FBSDKShareKit.framework */; };
+		F4E9793B1E80307C00DF2E89 /* EVAuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E9793A1E80307C00DF2E89 /* EVAuthenticationManager.m */; };
+		F4E979DF1E80414300DF2E89 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979DE1E80414300DF2E89 /* RealmManager.swift */; };
+		F4E979E11E80475500DF2E89 /* Realm+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E01E80475500DF2E89 /* Realm+Extension.swift */; };
+		F4E979E31E804B7000DF2E89 /* Marco.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E21E804B7000DF2E89 /* Marco.swift */; };
+		F4E979E51E80502F00DF2E89 /* EVUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E41E80502F00DF2E89 /* EVUser.swift */; };
+		F4E979E71E80503A00DF2E89 /* EVSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E61E80503A00DF2E89 /* EVSupplier.swift */; };
+		F4E979E91E80504600DF2E89 /* EVEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E81E80504600DF2E89 /* EVEvent.swift */; };
+		F4E979EB1E80505200DF2E89 /* EVTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979EA1E80505200DF2E89 /* EVTask.swift */; };
+		F4E979ED1E80506D00DF2E89 /* EVNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979EC1E80506D00DF2E89 /* EVNotification.swift */; };
+		F4E979EF1E80507900DF2E89 /* EVAward.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979EE1E80507900DF2E89 /* EVAward.swift */; };
+		F4E979F11E80509500DF2E89 /* EVLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979F01E80509500DF2E89 /* EVLocation.swift */; };
+		F4E979F31E80509E00DF2E89 /* EVItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979F21E80509E00DF2E89 /* EVItem.swift */; };
+		F4F0ACA11E82D5C800D663A6 /* EVAppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACA01E82D5C800D663A6 /* EVAppFactory.swift */; };
+		F4F0ACAD1E82D9A200D663A6 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACA81E82D9A200D663A6 /* Toast.swift */; };
+		F4F0ACAE1E82D9A200D663A6 /* ToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACA91E82D9A200D663A6 /* ToastCenter.swift */; };
+		F4F0ACAF1E82D9A200D663A6 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACAB1E82D9A200D663A6 /* ToastView.swift */; };
+		F4F0ACB01E82D9A200D663A6 /* ToastWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACAC1E82D9A200D663A6 /* ToastWindow.swift */; };
+		F4F0ACB21E82D9B500D663A6 /* VersionSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACB11E82D9B500D663A6 /* VersionSupport.swift */; };
+		F4F0ACB41E82D9C400D663A6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACB31E82D9C400D663A6 /* UIColor+Extension.swift */; };
+		F4F0ACB71E82D9DE00D663A6 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACB61E82D9DE00D663A6 /* Popover.swift */; };
+		F4F0ACB91E82D9F300D663A6 /* DashLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACB81E82D9F300D663A6 /* DashLine.swift */; };
+		F4F0ACBB1E82D9F800D663A6 /* CTDateFormart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACBA1E82D9F800D663A6 /* CTDateFormart.swift */; };
+		F4F0ACE01E82DA1B00D663A6 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACDF1E82DA1B00D663A6 /* LineView.swift */; };
+		F4F0ACE31E82DA5700D663A6 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACE21E82DA5700D663A6 /* UIView+Extension.swift */; };
+		F4F0ACE51E82DA5D00D663A6 /* UIViewController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACE41E82DA5D00D663A6 /* UIViewController+Action.swift */; };
+		F4F0ACF01E82E21000D663A6 /* libEventGoNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4AD8BCD1E7D3D710081F2F3 /* libEventGoNetwork.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4AD8AE41E7D3C310081F2F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4AD8AC71E7D3C310081F2F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4AD8ACE1E7D3C310081F2F3;
+			remoteInfo = "EventGo-iOSApp";
+		};
+		F4AD8BCC1E7D3D710081F2F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4AD8BC81E7D3D710081F2F3 /* EventGoNetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F4AD8A781E7D3A480081F2F3;
+			remoteInfo = EventGoNetwork;
+		};
+		F4CAA67C1E82E51F0084FC51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4CAA6771E82E51F0084FC51 /* EventGoCommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F4AD89B81E7D2C5D0081F2F3;
+			remoteInfo = EventGoCommon;
+		};
+		F4CAA67E1E82E5320084FC51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4CAA6771E82E51F0084FC51 /* EventGoCommon.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F4AD89B71E7D2C5D0081F2F3;
+			remoteInfo = EventGoCommon;
+		};
+		F4E978A51E7E3C1900DF2E89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4AD8BC81E7D3D710081F2F3 /* EventGoNetwork.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F4AD8A771E7D3A480081F2F3;
+			remoteInfo = EventGoNetwork;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F4E978A21E7E38DD00DF2E89 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		30D79559D6DA0A5159C6CCD0 /* Pods-EventGo-iOSApp-EventGo-iOSAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp-EventGo-iOSAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp-EventGo-iOSAppTests/Pods-EventGo-iOSApp-EventGo-iOSAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		6CC63F4ADD9D479D0BBD61CF /* Pods_EventGo_iOSApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventGo_iOSApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E25C8B0E62EC80BFED04877 /* Pods-EventGo-iOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp/Pods-EventGo-iOSApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8B0BCB5DE24D9222EF211AD6 /* Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACC9B2288DB560C0D3B72361 /* Pods-EventGo-iOSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp/Pods-EventGo-iOSApp.release.xcconfig"; sourceTree = "<group>"; };
+		D2970CF6CE73C5F35F28774B /* Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp-EventGo-iOSAppTests/Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F4056A0E1E8240FC00BEC162 /* EVLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EVLog.swift; path = ../Managers/EVLog.swift; sourceTree = "<group>"; };
+		F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		F4056A161E82460600BEC162 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		F4056A181E82810500BEC162 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F457EC7C1E84D51C00E2276A /* EVString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVString.swift; sourceTree = "<group>"; };
+		F4AD8ACF1E7D3C310081F2F3 /* EventGo-iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EventGo-iOSApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4AD8AD91E7D3C310081F2F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4AD8ADC1E7D3C310081F2F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F4AD8ADE1E7D3C310081F2F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4AD8AE31E7D3C310081F2F3 /* EventGo-iOSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EventGo-iOSAppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4AD8AE71E7D3C310081F2F3 /* EventGo_iOSAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventGo_iOSAppTests.swift; sourceTree = "<group>"; };
+		F4AD8AE91E7D3C310081F2F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4AD8BBF1E7D3D1F0081F2F3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4AD8BC21E7D3D1F0081F2F3 /* EVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVViewController.swift; sourceTree = "<group>"; };
+		F4AD8BC81E7D3D710081F2F3 /* EventGoNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EventGoNetwork.xcodeproj; path = EventGoNetwork/EventGoNetwork.xcodeproj; sourceTree = "<group>"; };
+		F4CAA6771E82E51F0084FC51 /* EventGoCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EventGoCommon.xcodeproj; path = EventGoCommon/EventGoCommon.xcodeproj; sourceTree = "<group>"; };
+		F4CAA6851E82E8A50084FC51 /* InfoAwardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoAwardViewController.swift; sourceTree = "<group>"; };
+		F4CAA6861E82E8A50084FC51 /* InfoStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoStoreViewController.swift; sourceTree = "<group>"; };
+		F4CAA6881E82E8A50084FC51 /* EventsCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCalendarViewController.swift; sourceTree = "<group>"; };
+		F4CAA6891E82E8A50084FC51 /* ListEventsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEventsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4CAA68A1E82E8A50084FC51 /* ListEventsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEventsCollectionViewController.swift; sourceTree = "<group>"; };
+		F4CAA68B1E82E8A50084FC51 /* ListEventsUpcomingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEventsUpcomingCollectionViewController.swift; sourceTree = "<group>"; };
+		F4CAA68E1E82E8A50084FC51 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F4CAA6901E82E8A50084FC51 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4CAA6911E82E8A50084FC51 /* StoreCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewController.swift; sourceTree = "<group>"; };
+		F4CAA6921E82E8A50084FC51 /* StoreHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreHeaderView.swift; sourceTree = "<group>"; };
+		F4CAA69E1E82E8BB0084FC51 /* EGoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EGoButton.swift; sourceTree = "<group>"; };
+		F4CAA6A01E82E8C50084FC51 /* EGoPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EGoPopupView.swift; sourceTree = "<group>"; };
+		F4CAA6A21E82E8CA0084FC51 /* EVItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVItemProtocol.swift; sourceTree = "<group>"; };
+		F4CAA6A61E82E9D20084FC51 /* EGItemStoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EGItemStoreView.swift; sourceTree = "<group>"; };
+		F4CAA6A71E82E9D20084FC51 /* EGItemStoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EGItemStoreView.xib; sourceTree = "<group>"; };
+		F4E977E11E7DA25000DF2E89 /* EventGo-iOSApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventGo-iOSApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		F4E978611E7DB48C00DF2E89 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AccountKit.framework; path = "../../../Desktop/FacebookSDKs-iOS-4.20.2/AccountKit.framework"; sourceTree = "<group>"; };
+		F4E978621E7DB48C00DF2E89 /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AccountKitStrings.bundle; path = "../../../Desktop/FacebookSDKs-iOS-4.20.2/AccountKitStrings.bundle"; sourceTree = "<group>"; };
+		F4E978631E7DB48C00DF2E89 /* FBNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBNotifications.framework; path = "../../../Desktop/FacebookSDKs-iOS-4.20.2/FBNotifications.framework"; sourceTree = "<group>"; };
+		F4E978691E7DB67500DF2E89 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		F4E9786B1E7DB86100DF2E89 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		F4E9786C1E7DB86100DF2E89 /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
+		F4E978C91E7E3F3E00DF2E89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F4E978E31E7E3F8400DF2E89 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		F4E978E41E7E3F8400DF2E89 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKStrings.bundle; path = FacebookSDK/FacebookSDKStrings.bundle; sourceTree = "<group>"; };
+		F4E978E51E7E3F8400DF2E89 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAudienceNetwork.framework; path = FacebookSDK/FBAudienceNetwork.framework; sourceTree = "<group>"; };
+		F4E978E61E7E3F8400DF2E89 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		F4E978E71E7E3F8400DF2E89 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		F4E978E81E7E3F8400DF2E89 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		F4E979391E80307C00DF2E89 /* EVAuthenticationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVAuthenticationManager.h; sourceTree = "<group>"; };
+		F4E9793A1E80307C00DF2E89 /* EVAuthenticationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVAuthenticationManager.m; sourceTree = "<group>"; };
+		F4E979DE1E80414300DF2E89 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		F4E979E01E80475500DF2E89 /* Realm+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Extension.swift"; sourceTree = "<group>"; };
+		F4E979E21E804B7000DF2E89 /* Marco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marco.swift; sourceTree = "<group>"; };
+		F4E979E41E80502F00DF2E89 /* EVUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVUser.swift; sourceTree = "<group>"; };
+		F4E979E61E80503A00DF2E89 /* EVSupplier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVSupplier.swift; sourceTree = "<group>"; };
+		F4E979E81E80504600DF2E89 /* EVEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVEvent.swift; sourceTree = "<group>"; };
+		F4E979EA1E80505200DF2E89 /* EVTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVTask.swift; sourceTree = "<group>"; };
+		F4E979EC1E80506D00DF2E89 /* EVNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVNotification.swift; sourceTree = "<group>"; };
+		F4E979EE1E80507900DF2E89 /* EVAward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVAward.swift; sourceTree = "<group>"; };
+		F4E979F01E80509500DF2E89 /* EVLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVLocation.swift; sourceTree = "<group>"; };
+		F4E979F21E80509E00DF2E89 /* EVItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVItem.swift; sourceTree = "<group>"; };
+		F4F0ACA01E82D5C800D663A6 /* EVAppFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EVAppFactory.swift; path = Managers/EVAppFactory.swift; sourceTree = "<group>"; };
+		F4F0ACA81E82D9A200D663A6 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		F4F0ACA91E82D9A200D663A6 /* ToastCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastCenter.swift; sourceTree = "<group>"; };
+		F4F0ACAA1E82D9A200D663A6 /* Toaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toaster.h; sourceTree = "<group>"; };
+		F4F0ACAB1E82D9A200D663A6 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		F4F0ACAC1E82D9A200D663A6 /* ToastWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastWindow.swift; sourceTree = "<group>"; };
+		F4F0ACB11E82D9B500D663A6 /* VersionSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VersionSupport.swift; path = Configures/VersionSupport.swift; sourceTree = "<group>"; };
+		F4F0ACB31E82D9C400D663A6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "Configures/UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F4F0ACB61E82D9DE00D663A6 /* Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
+		F4F0ACB81E82D9F300D663A6 /* DashLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashLine.swift; sourceTree = "<group>"; };
+		F4F0ACBA1E82D9F800D663A6 /* CTDateFormart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTDateFormart.swift; sourceTree = "<group>"; };
+		F4F0ACDF1E82DA1B00D663A6 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		F4F0ACE21E82DA5700D663A6 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		F4F0ACE41E82DA5D00D663A6 /* UIViewController+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Action.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4AD8ACC1E7D3C310081F2F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4CAA6811E82E6690084FC51 /* libEventGoCommon.a in Frameworks */,
+				F4F0ACF01E82E21000D663A6 /* libEventGoNetwork.a in Frameworks */,
+				F4056A171E82460600BEC162 /* Photos.framework in Frameworks */,
+				F4056A151E8245FF00BEC162 /* AssetsLibrary.framework in Frameworks */,
+				F4E9786D1E7DB86100DF2E89 /* libc++.tbd in Frameworks */,
+				F4E978EE1E7E3F8400DF2E89 /* FBSDKShareKit.framework in Frameworks */,
+				F4E978ED1E7E3F8400DF2E89 /* FBSDKLoginKit.framework in Frameworks */,
+				F4E9786E1E7DB86100DF2E89 /* libc.tbd in Frameworks */,
+				F4E978E91E7E3F8400DF2E89 /* Bolts.framework in Frameworks */,
+				F4E9786A1E7DB67500DF2E89 /* libxml2.tbd in Frameworks */,
+				F4E978EC1E7E3F8400DF2E89 /* FBSDKCoreKit.framework in Frameworks */,
+				C9473D78746962E2D90F4191 /* Pods_EventGo_iOSApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4AD8AE01E7D3C310081F2F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55F2CFC371258F545EE98BBF /* Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18F6B69FB90C39A700773A62 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E25C8B0E62EC80BFED04877 /* Pods-EventGo-iOSApp.debug.xcconfig */,
+				ACC9B2288DB560C0D3B72361 /* Pods-EventGo-iOSApp.release.xcconfig */,
+				D2970CF6CE73C5F35F28774B /* Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig */,
+				30D79559D6DA0A5159C6CCD0 /* Pods-EventGo-iOSApp-EventGo-iOSAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4C27AF5CB6999B032282C468 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4056A161E82460600BEC162 /* Photos.framework */,
+				F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */,
+				F4E9786B1E7DB86100DF2E89 /* libc++.tbd */,
+				F4E9786C1E7DB86100DF2E89 /* libc.tbd */,
+				F4E978691E7DB67500DF2E89 /* libxml2.tbd */,
+				F4E978611E7DB48C00DF2E89 /* AccountKit.framework */,
+				F4E978621E7DB48C00DF2E89 /* AccountKitStrings.bundle */,
+				F4E978631E7DB48C00DF2E89 /* FBNotifications.framework */,
+				6CC63F4ADD9D479D0BBD61CF /* Pods_EventGo_iOSApp.framework */,
+				8B0BCB5DE24D9222EF211AD6 /* Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4AD8AC61E7D3C310081F2F3 = {
+			isa = PBXGroup;
+			children = (
+				F4AD8AD11E7D3C310081F2F3 /* EventGo-iOSApp */,
+				F4AD8AE61E7D3C310081F2F3 /* EventGo-iOSAppTests */,
+				F4AD8AD01E7D3C310081F2F3 /* Products */,
+				18F6B69FB90C39A700773A62 /* Pods */,
+				4C27AF5CB6999B032282C468 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F4AD8AD01E7D3C310081F2F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4AD8ACF1E7D3C310081F2F3 /* EventGo-iOSApp.app */,
+				F4AD8AE31E7D3C310081F2F3 /* EventGo-iOSAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4AD8AD11E7D3C310081F2F3 /* EventGo-iOSApp */ = {
+			isa = PBXGroup;
+			children = (
+				F4AD8BBE1E7D3D1F0081F2F3 /* AppDelegate */,
+				F4AD8BC01E7D3D1F0081F2F3 /* Configures */,
+				F4F0ACE11E82DA3C00D663A6 /* Helpers */,
+				F4F0ACA61E82D99600D663A6 /* Controls */,
+				F4AD8BC11E7D3D1F0081F2F3 /* Controllers */,
+				F4AD8BC31E7D3D1F0081F2F3 /* Managers */,
+				F4AD8BC41E7D3D1F0081F2F3 /* Models */,
+				F4AD8AF21E7D3C4F0081F2F3 /* Libs */,
+				F4AD8BBD1E7D3C7B0081F2F3 /* SupportingFiles */,
+			);
+			path = "EventGo-iOSApp";
+			sourceTree = "<group>";
+		};
+		F4AD8AE61E7D3C310081F2F3 /* EventGo-iOSAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				F4AD8AE71E7D3C310081F2F3 /* EventGo_iOSAppTests.swift */,
+				F4AD8AE91E7D3C310081F2F3 /* Info.plist */,
+			);
+			path = "EventGo-iOSAppTests";
+			sourceTree = "<group>";
+		};
+		F4AD8AF21E7D3C4F0081F2F3 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				F4CAA6771E82E51F0084FC51 /* EventGoCommon.xcodeproj */,
+				F4AD8BC81E7D3D710081F2F3 /* EventGoNetwork.xcodeproj */,
+				F4E978521E7DA7BC00DF2E89 /* FacebookSDK */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		F4AD8BBD1E7D3C7B0081F2F3 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F4E978C91E7E3F3E00DF2E89 /* GoogleService-Info.plist */,
+				F4AD8AD91E7D3C310081F2F3 /* Assets.xcassets */,
+				F4AD8ADB1E7D3C310081F2F3 /* LaunchScreen.storyboard */,
+				F4AD8ADE1E7D3C310081F2F3 /* Info.plist */,
+				F4E977E11E7DA25000DF2E89 /* EventGo-iOSApp-Bridging-Header.h */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		F4AD8BBE1E7D3D1F0081F2F3 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				F4AD8BBF1E7D3D1F0081F2F3 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		F4AD8BC01E7D3D1F0081F2F3 /* Configures */ = {
+			isa = PBXGroup;
+			children = (
+				F4E979E21E804B7000DF2E89 /* Marco.swift */,
+				F4056A181E82810500BEC162 /* Constants.swift */,
+				F4056A0E1E8240FC00BEC162 /* EVLog.swift */,
+			);
+			path = Configures;
+			sourceTree = "<group>";
+		};
+		F4AD8BC11E7D3D1F0081F2F3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F4CAA6A51E82E9A70084FC51 /* Stores */,
+				F4CAA6A41E82E99C0084FC51 /* Awards */,
+				F4CAA6871E82E8A50084FC51 /* ListEventsCalendar */,
+				F4CAA68C1E82E8A50084FC51 /* LoginViewController */,
+				F4AD8BC21E7D3D1F0081F2F3 /* EVViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F4AD8BC31E7D3D1F0081F2F3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F4E979DD1E80413200DF2E89 /* Realm */,
+				F4E979DC1E80412400DF2E89 /* Authentication */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F4AD8BC41E7D3D1F0081F2F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F4E979E41E80502F00DF2E89 /* EVUser.swift */,
+				F4E979E61E80503A00DF2E89 /* EVSupplier.swift */,
+				F4E979E81E80504600DF2E89 /* EVEvent.swift */,
+				F4E979EA1E80505200DF2E89 /* EVTask.swift */,
+				F4E979EC1E80506D00DF2E89 /* EVNotification.swift */,
+				F4E979EE1E80507900DF2E89 /* EVAward.swift */,
+				F4E979F01E80509500DF2E89 /* EVLocation.swift */,
+				F4E979F21E80509E00DF2E89 /* EVItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F4AD8BC91E7D3D710081F2F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4AD8BCD1E7D3D710081F2F3 /* libEventGoNetwork.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4CAA6781E82E51F0084FC51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4CAA67D1E82E51F0084FC51 /* libEventGoCommon.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4CAA6871E82E8A50084FC51 /* ListEventsCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				F4CAA6881E82E8A50084FC51 /* EventsCalendarViewController.swift */,
+				F4CAA6891E82E8A50084FC51 /* ListEventsCollectionViewCell.swift */,
+				F4CAA68A1E82E8A50084FC51 /* ListEventsCollectionViewController.swift */,
+				F4CAA68B1E82E8A50084FC51 /* ListEventsUpcomingCollectionViewController.swift */,
+			);
+			path = ListEventsCalendar;
+			sourceTree = "<group>";
+		};
+		F4CAA68C1E82E8A50084FC51 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F4CAA68E1E82E8A50084FC51 /* LoginViewController.swift */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		F4CAA68F1E82E8A50084FC51 /* StoreController */ = {
+			isa = PBXGroup;
+			children = (
+				F4CAA6901E82E8A50084FC51 /* StoreCollectionViewCell.swift */,
+				F4CAA6911E82E8A50084FC51 /* StoreCollectionViewController.swift */,
+				F4CAA6921E82E8A50084FC51 /* StoreHeaderView.swift */,
+			);
+			path = StoreController;
+			sourceTree = "<group>";
+		};
+		F4CAA6A41E82E99C0084FC51 /* Awards */ = {
+			isa = PBXGroup;
+			children = (
+				F4CAA6851E82E8A50084FC51 /* InfoAwardViewController.swift */,
+			);
+			name = Awards;
+			sourceTree = "<group>";
+		};
+		F4CAA6A51E82E9A70084FC51 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				F4CAA68F1E82E8A50084FC51 /* StoreController */,
+				F4CAA6861E82E8A50084FC51 /* InfoStoreViewController.swift */,
+			);
+			name = Stores;
+			sourceTree = "<group>";
+		};
+		F4CAA6AA1E82E9D70084FC51 /* EGItemStoreView */ = {
+			isa = PBXGroup;
+			children = (
+				F4CAA6A61E82E9D20084FC51 /* EGItemStoreView.swift */,
+				F4CAA6A71E82E9D20084FC51 /* EGItemStoreView.xib */,
+			);
+			name = EGItemStoreView;
+			sourceTree = "<group>";
+		};
+		F4E978521E7DA7BC00DF2E89 /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				F4E978E31E7E3F8400DF2E89 /* Bolts.framework */,
+				F4E978E41E7E3F8400DF2E89 /* FacebookSDKStrings.bundle */,
+				F4E978E51E7E3F8400DF2E89 /* FBAudienceNetwork.framework */,
+				F4E978E61E7E3F8400DF2E89 /* FBSDKCoreKit.framework */,
+				F4E978E71E7E3F8400DF2E89 /* FBSDKLoginKit.framework */,
+				F4E978E81E7E3F8400DF2E89 /* FBSDKShareKit.framework */,
+			);
+			name = FacebookSDK;
+			sourceTree = "<group>";
+		};
+		F4E979DC1E80412400DF2E89 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				F4E979391E80307C00DF2E89 /* EVAuthenticationManager.h */,
+				F4E9793A1E80307C00DF2E89 /* EVAuthenticationManager.m */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		F4E979DD1E80413200DF2E89 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				F4E979DE1E80414300DF2E89 /* RealmManager.swift */,
+				F4E979E01E80475500DF2E89 /* Realm+Extension.swift */,
+			);
+			name = Realm;
+			sourceTree = "<group>";
+		};
+		F4F0ACA61E82D99600D663A6 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				F4CAA6AA1E82E9D70084FC51 /* EGItemStoreView */,
+				F4CAA6A01E82E8C50084FC51 /* EGoPopupView.swift */,
+				F4CAA69E1E82E8BB0084FC51 /* EGoButton.swift */,
+				F4F0ACB81E82D9F300D663A6 /* DashLine.swift */,
+				F4F0ACDF1E82DA1B00D663A6 /* LineView.swift */,
+				F4F0ACB51E82D9DE00D663A6 /* Popover */,
+				F4F0ACA71E82D9A200D663A6 /* Toaster */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		F4F0ACA71E82D9A200D663A6 /* Toaster */ = {
+			isa = PBXGroup;
+			children = (
+				F4F0ACA81E82D9A200D663A6 /* Toast.swift */,
+				F4F0ACA91E82D9A200D663A6 /* ToastCenter.swift */,
+				F4F0ACAA1E82D9A200D663A6 /* Toaster.h */,
+				F4F0ACAB1E82D9A200D663A6 /* ToastView.swift */,
+				F4F0ACAC1E82D9A200D663A6 /* ToastWindow.swift */,
+			);
+			path = Toaster;
+			sourceTree = "<group>";
+		};
+		F4F0ACB51E82D9DE00D663A6 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				F4F0ACB61E82D9DE00D663A6 /* Popover.swift */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
+		F4F0ACE11E82DA3C00D663A6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F4CAA6A21E82E8CA0084FC51 /* EVItemProtocol.swift */,
+				F4F0ACA01E82D5C800D663A6 /* EVAppFactory.swift */,
+				F4F0ACB11E82D9B500D663A6 /* VersionSupport.swift */,
+				F4F0ACB31E82D9C400D663A6 /* UIColor+Extension.swift */,
+				F4F0ACBA1E82D9F800D663A6 /* CTDateFormart.swift */,
+				F4F0ACE21E82DA5700D663A6 /* UIView+Extension.swift */,
+				F4F0ACE41E82DA5D00D663A6 /* UIViewController+Action.swift */,
+				F457EC7C1E84D51C00E2276A /* EVString.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4AD8ACE1E7D3C310081F2F3 /* EventGo-iOSApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4AD8AEC1E7D3C310081F2F3 /* Build configuration list for PBXNativeTarget "EventGo-iOSApp" */;
+			buildPhases = (
+				A58A88A7DE7B26D5DC7E28FF /* [CP] Check Pods Manifest.lock */,
+				F4AD8ACB1E7D3C310081F2F3 /* Sources */,
+				F4AD8ACC1E7D3C310081F2F3 /* Frameworks */,
+				F4AD8ACD1E7D3C310081F2F3 /* Resources */,
+				8AB9BFE88B8E4513235A2D7D /* [CP] Embed Pods Frameworks */,
+				E0D630BA2DFAD2520F2962E4 /* [CP] Copy Pods Resources */,
+				F4E978A21E7E38DD00DF2E89 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4CAA67F1E82E5320084FC51 /* PBXTargetDependency */,
+				F4E978A61E7E3C1900DF2E89 /* PBXTargetDependency */,
+			);
+			name = "EventGo-iOSApp";
+			productName = "EventGo-iOSApp";
+			productReference = F4AD8ACF1E7D3C310081F2F3 /* EventGo-iOSApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4AD8AE21E7D3C310081F2F3 /* EventGo-iOSAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4AD8AEF1E7D3C310081F2F3 /* Build configuration list for PBXNativeTarget "EventGo-iOSAppTests" */;
+			buildPhases = (
+				940A7D83953510E51E71DB7D /* [CP] Check Pods Manifest.lock */,
+				F4AD8ADF1E7D3C310081F2F3 /* Sources */,
+				F4AD8AE01E7D3C310081F2F3 /* Frameworks */,
+				F4AD8AE11E7D3C310081F2F3 /* Resources */,
+				08A2F2DBB983BC2FAD81B3A3 /* [CP] Embed Pods Frameworks */,
+				A658B9175B92318AC1C48F24 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4AD8AE51E7D3C310081F2F3 /* PBXTargetDependency */,
+			);
+			name = "EventGo-iOSAppTests";
+			productName = "EventGo-iOSAppTests";
+			productReference = F4AD8AE31E7D3C310081F2F3 /* EventGo-iOSAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4AD8AC71E7D3C310081F2F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Quach Ha Chan Thanh";
+				TargetAttributes = {
+					F4AD8ACE1E7D3C310081F2F3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZPV9U8ULVA;
+						ProvisioningStyle = Automatic;
+					};
+					F4AD8AE21E7D3C310081F2F3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZPV9U8ULVA;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F4AD8ACE1E7D3C310081F2F3;
+					};
+				};
+			};
+			buildConfigurationList = F4AD8ACA1E7D3C310081F2F3 /* Build configuration list for PBXProject "EventGo-iOSApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4AD8AC61E7D3C310081F2F3;
+			productRefGroup = F4AD8AD01E7D3C310081F2F3 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F4CAA6781E82E51F0084FC51 /* Products */;
+					ProjectRef = F4CAA6771E82E51F0084FC51 /* EventGoCommon.xcodeproj */;
+				},
+				{
+					ProductGroup = F4AD8BC91E7D3D710081F2F3 /* Products */;
+					ProjectRef = F4AD8BC81E7D3D710081F2F3 /* EventGoNetwork.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				F4AD8ACE1E7D3C310081F2F3 /* EventGo-iOSApp */,
+				F4AD8AE21E7D3C310081F2F3 /* EventGo-iOSAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F4AD8BCD1E7D3D710081F2F3 /* libEventGoNetwork.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEventGoNetwork.a;
+			remoteRef = F4AD8BCC1E7D3D710081F2F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F4CAA67D1E82E51F0084FC51 /* libEventGoCommon.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEventGoCommon.a;
+			remoteRef = F4CAA67C1E82E51F0084FC51 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4AD8ACD1E7D3C310081F2F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4AD8ADD1E7D3C310081F2F3 /* LaunchScreen.storyboard in Resources */,
+				F4E978CA1E7E3F3E00DF2E89 /* GoogleService-Info.plist in Resources */,
+				F4AD8ADA1E7D3C310081F2F3 /* Assets.xcassets in Resources */,
+				F4E978EA1E7E3F8400DF2E89 /* FacebookSDKStrings.bundle in Resources */,
+				F4CAA6A91E82E9D20084FC51 /* EGItemStoreView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4AD8AE11E7D3C310081F2F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08A2F2DBB983BC2FAD81B3A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventGo-iOSApp-EventGo-iOSAppTests/Pods-EventGo-iOSApp-EventGo-iOSAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AB9BFE88B8E4513235A2D7D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventGo-iOSApp/Pods-EventGo-iOSApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		940A7D83953510E51E71DB7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A58A88A7DE7B26D5DC7E28FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A658B9175B92318AC1C48F24 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventGo-iOSApp-EventGo-iOSAppTests/Pods-EventGo-iOSApp-EventGo-iOSAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0D630BA2DFAD2520F2962E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventGo-iOSApp/Pods-EventGo-iOSApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4AD8ACB1E7D3C310081F2F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4E9793B1E80307C00DF2E89 /* EVAuthenticationManager.m in Sources */,
+				F4CAA69C1E82E8A50084FC51 /* StoreCollectionViewController.swift in Sources */,
+				F4CAA6981E82E8A50084FC51 /* ListEventsUpcomingCollectionViewController.swift in Sources */,
+				F457EC7D1E84D51C00E2276A /* EVString.swift in Sources */,
+				F4E979DF1E80414300DF2E89 /* RealmManager.swift in Sources */,
+				F4F0ACB21E82D9B500D663A6 /* VersionSupport.swift in Sources */,
+				F4F0ACB91E82D9F300D663A6 /* DashLine.swift in Sources */,
+				F4E979E71E80503A00DF2E89 /* EVSupplier.swift in Sources */,
+				F4CAA6A81E82E9D20084FC51 /* EGItemStoreView.swift in Sources */,
+				F4F0ACE01E82DA1B00D663A6 /* LineView.swift in Sources */,
+				F4E979E31E804B7000DF2E89 /* Marco.swift in Sources */,
+				F4F0ACAF1E82D9A200D663A6 /* ToastView.swift in Sources */,
+				F4CAA6A31E82E8CA0084FC51 /* EVItemProtocol.swift in Sources */,
+				F4E979F11E80509500DF2E89 /* EVLocation.swift in Sources */,
+				F4056A0F1E8240FC00BEC162 /* EVLog.swift in Sources */,
+				F4AD8BC61E7D3D1F0081F2F3 /* AppDelegate.swift in Sources */,
+				F4CAA6A11E82E8C50084FC51 /* EGoPopupView.swift in Sources */,
+				F4CAA6961E82E8A50084FC51 /* ListEventsCollectionViewCell.swift in Sources */,
+				F4F0ACAD1E82D9A200D663A6 /* Toast.swift in Sources */,
+				F4056A191E82810500BEC162 /* Constants.swift in Sources */,
+				F4CAA69D1E82E8A50084FC51 /* StoreHeaderView.swift in Sources */,
+				F4CAA69F1E82E8BB0084FC51 /* EGoButton.swift in Sources */,
+				F4E979EB1E80505200DF2E89 /* EVTask.swift in Sources */,
+				F4CAA6931E82E8A50084FC51 /* InfoAwardViewController.swift in Sources */,
+				F4CAA6941E82E8A50084FC51 /* InfoStoreViewController.swift in Sources */,
+				F4F0ACB01E82D9A200D663A6 /* ToastWindow.swift in Sources */,
+				F4F0ACBB1E82D9F800D663A6 /* CTDateFormart.swift in Sources */,
+				F4E979F31E80509E00DF2E89 /* EVItem.swift in Sources */,
+				F4CAA69B1E82E8A50084FC51 /* StoreCollectionViewCell.swift in Sources */,
+				F4F0ACAE1E82D9A200D663A6 /* ToastCenter.swift in Sources */,
+				F4E979E51E80502F00DF2E89 /* EVUser.swift in Sources */,
+				F4CAA69A1E82E8A50084FC51 /* LoginViewController.swift in Sources */,
+				F4E979E91E80504600DF2E89 /* EVEvent.swift in Sources */,
+				F4F0ACB41E82D9C400D663A6 /* UIColor+Extension.swift in Sources */,
+				F4CAA6951E82E8A50084FC51 /* EventsCalendarViewController.swift in Sources */,
+				F4E979E11E80475500DF2E89 /* Realm+Extension.swift in Sources */,
+				F4F0ACE31E82DA5700D663A6 /* UIView+Extension.swift in Sources */,
+				F4F0ACB71E82D9DE00D663A6 /* Popover.swift in Sources */,
+				F4E979ED1E80506D00DF2E89 /* EVNotification.swift in Sources */,
+				F4CAA6971E82E8A50084FC51 /* ListEventsCollectionViewController.swift in Sources */,
+				F4E979EF1E80507900DF2E89 /* EVAward.swift in Sources */,
+				F4AD8BC71E7D3D1F0081F2F3 /* EVViewController.swift in Sources */,
+				F4F0ACE51E82DA5D00D663A6 /* UIViewController+Action.swift in Sources */,
+				F4F0ACA11E82D5C800D663A6 /* EVAppFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4AD8ADF1E7D3C310081F2F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4AD8AE81E7D3C310081F2F3 /* EventGo_iOSAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4AD8AE51E7D3C310081F2F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4AD8ACE1E7D3C310081F2F3 /* EventGo-iOSApp */;
+			targetProxy = F4AD8AE41E7D3C310081F2F3 /* PBXContainerItemProxy */;
+		};
+		F4CAA67F1E82E5320084FC51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EventGoCommon;
+			targetProxy = F4CAA67E1E82E5320084FC51 /* PBXContainerItemProxy */;
+		};
+		F4E978A61E7E3C1900DF2E89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EventGoNetwork;
+			targetProxy = F4E978A51E7E3C1900DF2E89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F4AD8ADB1E7D3C310081F2F3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4AD8ADC1E7D3C310081F2F3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4AD8AEA1E7D3C310081F2F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F4AD8AEB1E7D3C310081F2F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4AD8AED1E7D3C310081F2F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E25C8B0E62EC80BFED04877 /* Pods-EventGo-iOSApp.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZPV9U8ULVA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EventGo-iOSApp/Libs/FacebookSDK",
+					"${PODS_ROOT}/Headers/Public/Firebase",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"$(inherited)",
+					"${PODS_ROOT}/Google/Headers",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCrash\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/Google-Mobile-Ads-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAppUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleInterchangeUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleMaps\"",
+					"\"${PODS_ROOT}/Headers/Public/GooglePlacePicker\"",
+					"\"${PODS_ROOT}/Headers/Public/GooglePlaces\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSignIn\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+				);
+				INFOPLIST_FILE = "EventGo-iOSApp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"${PODS_ROOT}/GoogleAnalytics/Libraries",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eventgo.ev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventGo-iOSApp/EventGo-iOSApp-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F4AD8AEE1E7D3C310081F2F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACC9B2288DB560C0D3B72361 /* Pods-EventGo-iOSApp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZPV9U8ULVA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EventGo-iOSApp/Libs/FacebookSDK",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"$(inherited)",
+					"${PODS_ROOT}/Google/Headers",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCrash\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/Google-Mobile-Ads-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAppUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleInterchangeUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleMaps\"",
+					"\"${PODS_ROOT}/Headers/Public/GooglePlacePicker\"",
+					"\"${PODS_ROOT}/Headers/Public/GooglePlaces\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSignIn\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+				);
+				INFOPLIST_FILE = "EventGo-iOSApp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"${PODS_ROOT}/GoogleAnalytics/Libraries",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eventgo.ev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventGo-iOSApp/EventGo-iOSApp-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F4AD8AF01E7D3C310081F2F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2970CF6CE73C5F35F28774B /* Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZPV9U8ULVA;
+				INFOPLIST_FILE = "EventGo-iOSAppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eventgo.ev.EventGo-iOSAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventGo-iOSApp.app/EventGo-iOSApp";
+			};
+			name = Debug;
+		};
+		F4AD8AF11E7D3C310081F2F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30D79559D6DA0A5159C6CCD0 /* Pods-EventGo-iOSApp-EventGo-iOSAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZPV9U8ULVA;
+				INFOPLIST_FILE = "EventGo-iOSAppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eventgo.ev.EventGo-iOSAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventGo-iOSApp.app/EventGo-iOSApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4AD8ACA1E7D3C310081F2F3 /* Build configuration list for PBXProject "EventGo-iOSApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4AD8AEA1E7D3C310081F2F3 /* Debug */,
+				F4AD8AEB1E7D3C310081F2F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4AD8AEC1E7D3C310081F2F3 /* Build configuration list for PBXNativeTarget "EventGo-iOSApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4AD8AED1E7D3C310081F2F3 /* Debug */,
+				F4AD8AEE1E7D3C310081F2F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4AD8AEF1E7D3C310081F2F3 /* Build configuration list for PBXNativeTarget "EventGo-iOSAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4AD8AF01E7D3C310081F2F3 /* Debug */,
+				F4AD8AF11E7D3C310081F2F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4AD8AC71E7D3C310081F2F3 /* Project object */;
+}

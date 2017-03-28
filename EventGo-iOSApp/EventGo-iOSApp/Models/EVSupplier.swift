@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-
+import SwiftyJSON
 
 class EVSupplier: Object {
 
@@ -32,5 +32,30 @@ class EVSupplier: Object {
     
     override public static func primaryKey() -> String? {
         return "supplier_id"
+    }
+    
+    class func fromJson(data: JSON) -> EVSupplier {
+        
+        var supplier = EVSupplier()
+        
+        supplier.supplier_id = data["supplier_id"].stringValue
+        supplier.name = data["name"].stringValue
+        supplier.image_url = data["image_urL"].stringValue
+        supplier.level = data["level"].intValue
+        supplier.company_info = data["company_info"]
+        supplier.status = data["status"].stringValue
+        
+        return supplier
+    }
+    
+    class func toJson(supplier: EVSupplier) ->  Dictionary<String,Any> {
+        
+        var supplierJson = Dictionary<String, Any>()
+        
+        supplierJson["supplier_id"] = supplier.supplier_id
+        supplierJson["name"] = supplier.name
+        supplierJson["image_url"] = supplier.image_url
+        supplierJson["level"] = supplier.level
+        supplierJson["status"] = supplier.status
     }
 }

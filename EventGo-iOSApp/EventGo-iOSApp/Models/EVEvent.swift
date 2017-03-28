@@ -47,4 +47,28 @@ public class EVEvent: Object {
     override public static func primaryKey() -> String? {
         return "event_id"
     }
+    
+    class func fromJson(data: JSON) -> EVEvent {
+        
+        var event = EVEvent()
+        event.event_id = data["event_id"].stringValue
+        event.supplier_id = data["supplier_id"].stringValue
+        event.name = data["name"].stringValue
+        event.sub_name = data["sub_name"].stringValue
+        event.thumbnail_url = data["thumbnail_url"].stringValue
+        event.cover_url = data["cover_url"].stringValue
+        event.policy_url = data["policy_url"].stringValue
+        event.detail_url = data["detail_url"].stringValue
+        event.start_time = data["start_time"].doubleValue
+        event.end_time = data["end_time"].doubleValue
+        event.created_date = data["created_date"].doubleValue
+        event.location_info = data["location_info"]
+        event.priority = data["priority"].doubleValue
+        event.limit_user = data["limit_user"].doubleValue
+        event.rule = data["rule"]
+        event.status = data["status"].stringValue
+        
+        return event
+    }
+    
 }

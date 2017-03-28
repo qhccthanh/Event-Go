@@ -22,6 +22,7 @@ pod 'XCGLogger', '~> 4.0.0'
 pod 'FDRatingView', '~> 0.0.3'
 pod 'SCLAlertView', '~> 0.7'
 pod 'ChameleonFramework', '~> 2.1'
+pod 'SwiftyJSON'
 end
 
 target 'EventGo-iOSApp' do

@@ -15,6 +15,7 @@
 @interface EVAuthenticationManager () <GIDSignInDelegate, GIDSignInUIDelegate>
 
 @property (weak, nonatomic) UIViewController *currentController;
+@property (nonatomic, copy) void(^googleSignHandle)(GIDGoogleUser *user, NSError *error);
 
 @end
 
@@ -36,10 +37,14 @@
     return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
        
         FBSDKLoginManager *manager = [FBSDKLoginManager new];
-        [manager logInWithReadPermissions:@[] fromViewController:controller
+        [manager logInWithReadPermissions:@[@"email", @"public_profile"] fromViewController:controller
                                   handler:^(FBSDKLoginManagerLoginResult *result,
                                             NSError *error) {
-            
+                                      if (result) {
+                                          [subscriber sendNext:result];
+                                          return;
+                                      }
+                                      [subscriber sendError:error];
         }];
         
         return [RACDisposable new];
@@ -50,9 +55,14 @@
     
     _currentController = controller;
     return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-        
+        self.googleSignHandle = ^(GIDGoogleUser *user, NSError *error) {
+            if (user) {
+                [subscriber sendNext:user];
+                return;
+            }
+            [subscriber sendError:error];
+        }
         [[GIDSignIn sharedInstance] signIn];
-        
         return [RACDisposable new];
     }];
 }
@@ -77,15 +87,13 @@
 
 #pragma mark - GIDSignInDelegate
 
-- (void)signIn:(GIDSignIn *)signIn
-didSignInForUser:(GIDGoogleUser *)user
-     withError:(NSError *)error {
-    
+- (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
+    if (self.googleSignHandle) {
+        self.googleSignHandle(user,error);
+    }
 }
 
-- (void)signIn:(GIDSignIn *)signIn
-didDisconnectWithUser:(GIDGoogleUser *)user
-     withError:(NSError *)error {
+- (void)signIn:(GIDSignIn *)signIn didDisconnectWithUser:(GIDGoogleUser *)user withError:(NSError *)error {
     
 }
 

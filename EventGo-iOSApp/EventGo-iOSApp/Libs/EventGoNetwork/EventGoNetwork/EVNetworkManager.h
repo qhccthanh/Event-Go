@@ -44,13 +44,16 @@ extern NSString *kZaloPayClientAppId;
 - (RACSignal *)requestWithPath:(NSString *)path
                     parameters:(NSDictionary *)params;
 
-- (RACSignal *)requestWithPath:(NSString *)path
-                    parameters:(NSDictionary *)params
-                requestEventId:(NSInteger)requestEventId;
 
 - (RACSignal *)postRequestWithPath:(NSString *)path
-                        parameters:(NSDictionary *)params
-                    requestEventId:(NSInteger)requestEventId;
+                        parameters:(NSDictionary *)params;
+
+- (RACSignal *)deleteRequestWithPath:(NSString *)path
+                          parameters:(NSDictionary *)params;
+
+- (RACSignal *)putRequestWithPath:(NSString *)path
+                       parameters:(NSDictionary *)params;
+
 
 - (NSURLSessionDownloadTask* )downloadFileWithUrl:(NSString *)urlString
                                    saveToFilePath:(NSString *)savePath

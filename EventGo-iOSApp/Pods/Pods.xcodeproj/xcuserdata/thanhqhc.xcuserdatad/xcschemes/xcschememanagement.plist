@@ -8,96 +8,139 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>ChameleonFramework.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>FDRatingView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>GTMOAuth2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>HTMLReader.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 		<key>OAStackView-OAStackView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>OAStackView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 		<key>Pods-EventGo-iOSApp-EventGo-iOSAppTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>12</integer>
 		</dict>
 		<key>Pods-EventGo-iOSApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>ReactiveCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 		<key>ReactiveSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>14</integer>
 		</dict>
 		<key>Realm.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>15</integer>
 		</dict>
 		<key>RealmSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>16</integer>
 		</dict>
 		<key>Result.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>17</integer>
 		</dict>
 		<key>SCLAlertView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>21</integer>
 		</dict>
 		<key>UICollectionViewLeftAlignedLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>19</integer>
 		</dict>
 		<key>XCGLogger.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>20</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -112,12 +155,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1B48C6524D1D985388857022E43219BF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>236F24CBA77402D455482B57F7AF6CAE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>29BF98AAE019E068BBF51EF3C9DF62C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2A06EA6E40C9E1609F1AA2B7BBDED738</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32CDFB347DB9F1C28310E2B6277F90D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -138,6 +196,11 @@
 			<true/>
 		</dict>
 		<key>4445EE56252CFC232181B1BAA8AF64AE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>464B2C90498AB7DCCAEB76CDFBC0E22C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,12 +230,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>839E9FEDC94A6406D793E37921F8A2EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8A267660E1AD4832DE75665F2F87AEA3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>A20B7EBE053FD14D283DA0966A3275D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A686189CE7FC1698C1D3F00B48654B17</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -187,12 +260,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>BE99078D7339471568291F349DA46232</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>D18452CD6103039F9FB6D42F21A35EF8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB13FB2ADE7CAE1CB7C78FD80D0CB37A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EB289F7C43C46F6C344A38D43424FC82</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4905708117063B355E04C6EAD40F4E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F55D9847BB564EB5FBD151F3A508CD11</key>
 		<dict>
 			<key>primary</key>
 			<true/>

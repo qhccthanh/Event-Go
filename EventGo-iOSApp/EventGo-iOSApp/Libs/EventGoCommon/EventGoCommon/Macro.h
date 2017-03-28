@@ -92,7 +92,7 @@ dispatch_async(dispatch_get_main_queue(), ^{\
 #define SCREEN_HEIGHT_LANDSCAPE ( [[UIScreen mainScreen ] bounds ].size.width )
 
 /** Float: Landscape Screen Width **/
-#define SCREEN_HEIGHT_LANDSCAPE ( [[UIScreen mainScreen ] bounds ].size.height )
+//#define SCREEN_HEIGHT_LANDSCAPE ( [[UIScreen mainScreen ] bounds ].size.height )
 
 /** CGRect: Portrait Screen Frame **/
 #define SCREEN_FRAME_PORTRAIT ( CGRectMake( 0, 0, SCREEN_WIDTH_PORTRAIT , SCREEN_HEIGHT_PORTRAIT ) )

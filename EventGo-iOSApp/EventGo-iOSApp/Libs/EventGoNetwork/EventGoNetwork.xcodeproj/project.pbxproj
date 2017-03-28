@@ -29,21 +29,123 @@
 		F4E979A91E803CF200DF2E89 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E979971E803CF200DF2E89 /* UIProgressView+AFNetworking.m */; };
 		F4E979AA1E803CF200DF2E89 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E979991E803CF200DF2E89 /* UIRefreshControl+AFNetworking.m */; };
 		F4E979AB1E803CF200DF2E89 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E9799B1E803CF200DF2E89 /* UIWebView+AFNetworking.m */; };
+		F4FAC0351E8A65BB0010BE41 /* EventGoNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC0341E8A65BB0010BE41 /* EventGoNetwork.m */; };
+		F4FAC04E1E8A6C390010BE41 /* AFHTTPSessionManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979781E803CF200DF2E89 /* AFHTTPSessionManager.h */; };
+		F4FAC04F1E8A6C390010BE41 /* AFHTTPSessionManager.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979791E803CF200DF2E89 /* AFHTTPSessionManager.m */; };
+		F4FAC0501E8A6C390010BE41 /* AFNetworking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9797A1E803CF200DF2E89 /* AFNetworking.h */; };
+		F4FAC0511E8A6C390010BE41 /* AFNetworkReachabilityManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9797B1E803CF200DF2E89 /* AFNetworkReachabilityManager.h */; };
+		F4FAC0521E8A6C390010BE41 /* AFNetworkReachabilityManager.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9797C1E803CF200DF2E89 /* AFNetworkReachabilityManager.m */; };
+		F4FAC0531E8A6C390010BE41 /* AFSecurityPolicy.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9797D1E803CF200DF2E89 /* AFSecurityPolicy.h */; };
+		F4FAC0541E8A6C390010BE41 /* AFSecurityPolicy.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9797E1E803CF200DF2E89 /* AFSecurityPolicy.m */; };
+		F4FAC0551E8A6C390010BE41 /* AFURLRequestSerialization.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9797F1E803CF200DF2E89 /* AFURLRequestSerialization.h */; };
+		F4FAC0561E8A6C390010BE41 /* AFURLRequestSerialization.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979801E803CF200DF2E89 /* AFURLRequestSerialization.m */; };
+		F4FAC0571E8A6C390010BE41 /* AFURLResponseSerialization.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979811E803CF200DF2E89 /* AFURLResponseSerialization.h */; };
+		F4FAC0581E8A6C390010BE41 /* AFURLResponseSerialization.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979821E803CF200DF2E89 /* AFURLResponseSerialization.m */; };
+		F4FAC0591E8A6C390010BE41 /* AFURLSessionManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979831E803CF200DF2E89 /* AFURLSessionManager.h */; };
+		F4FAC05A1E8A6C390010BE41 /* AFURLSessionManager.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979841E803CF200DF2E89 /* AFURLSessionManager.m */; };
+		F4FAC05B1E8A6C390010BE41 /* AFAutoPurgingImageCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979881E803CF200DF2E89 /* AFAutoPurgingImageCache.h */; };
+		F4FAC05C1E8A6C390010BE41 /* AFAutoPurgingImageCache.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979891E803CF200DF2E89 /* AFAutoPurgingImageCache.m */; };
+		F4FAC05D1E8A6C390010BE41 /* AFImageDownloader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9798A1E803CF200DF2E89 /* AFImageDownloader.h */; };
+		F4FAC05E1E8A6C390010BE41 /* AFImageDownloader.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9798B1E803CF200DF2E89 /* AFImageDownloader.m */; };
+		F4FAC05F1E8A6C390010BE41 /* AFNetworkActivityIndicatorManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9798C1E803CF200DF2E89 /* AFNetworkActivityIndicatorManager.h */; };
+		F4FAC0601E8A6C390010BE41 /* AFNetworkActivityIndicatorManager.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9798D1E803CF200DF2E89 /* AFNetworkActivityIndicatorManager.m */; };
+		F4FAC0611E8A6C390010BE41 /* UIActivityIndicatorView+AFNetworking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9798E1E803CF200DF2E89 /* UIActivityIndicatorView+AFNetworking.h */; };
+		F4FAC0621E8A6C390010BE41 /* UIActivityIndicatorView+AFNetworking.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9798F1E803CF200DF2E89 /* UIActivityIndicatorView+AFNetworking.m */; };
+		F4FAC0631E8A6C390010BE41 /* UIButton+AFNetworking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979901E803CF200DF2E89 /* UIButton+AFNetworking.h */; };
+		F4FAC0641E8A6C390010BE41 /* UIButton+AFNetworking.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979911E803CF200DF2E89 /* UIButton+AFNetworking.m */; };
+		F4FAC0651E8A6C390010BE41 /* UIImage+AFNetworking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979921E803CF200DF2E89 /* UIImage+AFNetworking.h */; };
+		F4FAC0661E8A6C390010BE41 /* UIImageView+AFNetworking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979931E803CF200DF2E89 /* UIImageView+AFNetworking.h */; };
+		F4FAC0671E8A6C390010BE41 /* UIImageView+AFNetworking.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979941E803CF200DF2E89 /* UIImageView+AFNetworking.m */; };
+		F4FAC0681E8A6C390010BE41 /* UIKit+AFNetworking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979951E803CF200DF2E89 /* UIKit+AFNetworking.h */; };
+		F4FAC0691E8A6C390010BE41 /* UIProgressView+AFNetworking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979961E803CF200DF2E89 /* UIProgressView+AFNetworking.h */; };
+		F4FAC06A1E8A6C390010BE41 /* UIProgressView+AFNetworking.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979971E803CF200DF2E89 /* UIProgressView+AFNetworking.m */; };
+		F4FAC06B1E8A6C390010BE41 /* UIRefreshControl+AFNetworking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979981E803CF200DF2E89 /* UIRefreshControl+AFNetworking.h */; };
+		F4FAC06C1E8A6C390010BE41 /* UIRefreshControl+AFNetworking.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979991E803CF200DF2E89 /* UIRefreshControl+AFNetworking.m */; };
+		F4FAC06D1E8A6C390010BE41 /* UIWebView+AFNetworking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9799A1E803CF200DF2E89 /* UIWebView+AFNetworking.h */; };
+		F4FAC06E1E8A6C390010BE41 /* UIWebView+AFNetworking.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9799B1E803CF200DF2E89 /* UIWebView+AFNetworking.m */; };
+		F4FAC06F1E8A6C390010BE41 /* EventGoNetwork.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A7B1E7D3A480081F2F3 /* EventGoNetwork.h */; };
+		F4FAC0701E8A6C390010BE41 /* EventGoNetwork.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4FAC0341E8A65BB0010BE41 /* EventGoNetwork.m */; };
+		F4FAC0711E8A6C390010BE41 /* MF_Base64Additions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979601E803C5000DF2E89 /* MF_Base64Additions.h */; };
+		F4FAC0721E8A6C390010BE41 /* MF_Base64Additions.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979611E803C5100DF2E89 /* MF_Base64Additions.m */; };
+		F4FAC0731E8A6C390010BE41 /* EVNetworkManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979621E803C5100DF2E89 /* EVNetworkManager.h */; };
+		F4FAC0741E8A6C390010BE41 /* EVNetworkManager.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979631E803C5100DF2E89 /* EVNetworkManager.m */; };
+		F4FAC0751E8A6C390010BE41 /* EVNetworkState.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979641E803C5100DF2E89 /* EVNetworkState.h */; };
+		F4FAC0761E8A6C390010BE41 /* EVNetworkState.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979651E803C5100DF2E89 /* EVNetworkState.m */; };
+		F4FAC0771E8A6C390010BE41 /* NSData+Conversion.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979661E803C5100DF2E89 /* NSData+Conversion.h */; };
+		F4FAC0781E8A6C390010BE41 /* NSData+Conversion.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979671E803C5100DF2E89 /* NSData+Conversion.m */; };
+		F4FAC0791E8A6C390010BE41 /* NSError+EVAPI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979681E803C5100DF2E89 /* NSError+EVAPI.h */; };
+		F4FAC07A1E8A6C390010BE41 /* NSError+EVAPI.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E979691E803C5100DF2E89 /* NSError+EVAPI.m */; };
+		F4FAC07B1E8A6C390010BE41 /* NSString+sha256.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9796A1E803C5100DF2E89 /* NSString+sha256.h */; };
+		F4FAC07C1E8A6C390010BE41 /* NSString+sha256.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9796B1E803C5100DF2E89 /* NSString+sha256.m */; };
+		F4FAC07D1E8A6C390010BE41 /* EventGoErrorCode.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9796C1E803C5100DF2E89 /* EventGoErrorCode.h */; };
+		F4FAC07E1E8A6C390010BE41 /* EVReactNetwork.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9796D1E803C5100DF2E89 /* EVReactNetwork.h */; };
+		F4FAC07F1E8A6C390010BE41 /* EVReactNetwork.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4E9796E1E803C5100DF2E89 /* EVReactNetwork.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F4AD8A761E7D3A480081F2F3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				F4FAC04E1E8A6C390010BE41 /* AFHTTPSessionManager.h in CopyFiles */,
+				F4FAC04F1E8A6C390010BE41 /* AFHTTPSessionManager.m in CopyFiles */,
+				F4FAC0501E8A6C390010BE41 /* AFNetworking.h in CopyFiles */,
+				F4FAC0511E8A6C390010BE41 /* AFNetworkReachabilityManager.h in CopyFiles */,
+				F4FAC0521E8A6C390010BE41 /* AFNetworkReachabilityManager.m in CopyFiles */,
+				F4FAC0531E8A6C390010BE41 /* AFSecurityPolicy.h in CopyFiles */,
+				F4FAC0541E8A6C390010BE41 /* AFSecurityPolicy.m in CopyFiles */,
+				F4FAC0551E8A6C390010BE41 /* AFURLRequestSerialization.h in CopyFiles */,
+				F4FAC0561E8A6C390010BE41 /* AFURLRequestSerialization.m in CopyFiles */,
+				F4FAC0571E8A6C390010BE41 /* AFURLResponseSerialization.h in CopyFiles */,
+				F4FAC0581E8A6C390010BE41 /* AFURLResponseSerialization.m in CopyFiles */,
+				F4FAC0591E8A6C390010BE41 /* AFURLSessionManager.h in CopyFiles */,
+				F4FAC05A1E8A6C390010BE41 /* AFURLSessionManager.m in CopyFiles */,
+				F4FAC05B1E8A6C390010BE41 /* AFAutoPurgingImageCache.h in CopyFiles */,
+				F4FAC05C1E8A6C390010BE41 /* AFAutoPurgingImageCache.m in CopyFiles */,
+				F4FAC05D1E8A6C390010BE41 /* AFImageDownloader.h in CopyFiles */,
+				F4FAC05E1E8A6C390010BE41 /* AFImageDownloader.m in CopyFiles */,
+				F4FAC05F1E8A6C390010BE41 /* AFNetworkActivityIndicatorManager.h in CopyFiles */,
+				F4FAC0601E8A6C390010BE41 /* AFNetworkActivityIndicatorManager.m in CopyFiles */,
+				F4FAC0611E8A6C390010BE41 /* UIActivityIndicatorView+AFNetworking.h in CopyFiles */,
+				F4FAC0621E8A6C390010BE41 /* UIActivityIndicatorView+AFNetworking.m in CopyFiles */,
+				F4FAC0631E8A6C390010BE41 /* UIButton+AFNetworking.h in CopyFiles */,
+				F4FAC0641E8A6C390010BE41 /* UIButton+AFNetworking.m in CopyFiles */,
+				F4FAC0651E8A6C390010BE41 /* UIImage+AFNetworking.h in CopyFiles */,
+				F4FAC0661E8A6C390010BE41 /* UIImageView+AFNetworking.h in CopyFiles */,
+				F4FAC0671E8A6C390010BE41 /* UIImageView+AFNetworking.m in CopyFiles */,
+				F4FAC0681E8A6C390010BE41 /* UIKit+AFNetworking.h in CopyFiles */,
+				F4FAC0691E8A6C390010BE41 /* UIProgressView+AFNetworking.h in CopyFiles */,
+				F4FAC06A1E8A6C390010BE41 /* UIProgressView+AFNetworking.m in CopyFiles */,
+				F4FAC06B1E8A6C390010BE41 /* UIRefreshControl+AFNetworking.h in CopyFiles */,
+				F4FAC06C1E8A6C390010BE41 /* UIRefreshControl+AFNetworking.m in CopyFiles */,
+				F4FAC06D1E8A6C390010BE41 /* UIWebView+AFNetworking.h in CopyFiles */,
+				F4FAC06E1E8A6C390010BE41 /* UIWebView+AFNetworking.m in CopyFiles */,
+				F4FAC06F1E8A6C390010BE41 /* EventGoNetwork.h in CopyFiles */,
+				F4FAC0701E8A6C390010BE41 /* EventGoNetwork.m in CopyFiles */,
+				F4FAC0711E8A6C390010BE41 /* MF_Base64Additions.h in CopyFiles */,
+				F4FAC0721E8A6C390010BE41 /* MF_Base64Additions.m in CopyFiles */,
+				F4FAC0731E8A6C390010BE41 /* EVNetworkManager.h in CopyFiles */,
+				F4FAC0741E8A6C390010BE41 /* EVNetworkManager.m in CopyFiles */,
+				F4FAC0751E8A6C390010BE41 /* EVNetworkState.h in CopyFiles */,
+				F4FAC0761E8A6C390010BE41 /* EVNetworkState.m in CopyFiles */,
+				F4FAC0771E8A6C390010BE41 /* NSData+Conversion.h in CopyFiles */,
+				F4FAC0781E8A6C390010BE41 /* NSData+Conversion.m in CopyFiles */,
+				F4FAC0791E8A6C390010BE41 /* NSError+EVAPI.h in CopyFiles */,
+				F4FAC07A1E8A6C390010BE41 /* NSError+EVAPI.m in CopyFiles */,
+				F4FAC07B1E8A6C390010BE41 /* NSString+sha256.h in CopyFiles */,
+				F4FAC07C1E8A6C390010BE41 /* NSString+sha256.m in CopyFiles */,
+				F4FAC07D1E8A6C390010BE41 /* EventGoErrorCode.h in CopyFiles */,
+				F4FAC07E1E8A6C390010BE41 /* EVReactNetwork.h in CopyFiles */,
+				F4FAC07F1E8A6C390010BE41 /* EVReactNetwork.m in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F4A5A8801E8A1A2C0060867E /* libEventGoCommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEventGoCommon.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/EventGo-iOSApp-gcfqapocrsrrcqgdmejjawofsava/Build/Products/Debug-iphonesimulator/libEventGoCommon.a"; sourceTree = "<group>"; };
 		F4AD8A781E7D3A480081F2F3 /* libEventGoNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEventGoNetwork.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AD8A7B1E7D3A480081F2F3 /* EventGoNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventGoNetwork.h; sourceTree = "<group>"; };
 		F4E979601E803C5000DF2E89 /* MF_Base64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MF_Base64Additions.h; sourceTree = "<group>"; };
@@ -95,6 +197,7 @@
 		F4E9799A1E803CF200DF2E89 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		F4E9799B1E803CF200DF2E89 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		F4F0ACE81E82DF9A00D663A6 /* libEventGoCommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEventGoCommon.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/EventGo-iOSApp-fwabbysxvmawzqctlymlxwquzjlk/Build/Products/Debug-iphonesimulator/libEventGoCommon.a"; sourceTree = "<group>"; };
+		F4FAC0341E8A65BB0010BE41 /* EventGoNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventGoNetwork.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +233,7 @@
 			children = (
 				F4E979761E803CF200DF2E89 /* AFNetworking */,
 				F4AD8A7B1E7D3A480081F2F3 /* EventGoNetwork.h */,
+				F4FAC0341E8A65BB0010BE41 /* EventGoNetwork.m */,
 				F4E979601E803C5000DF2E89 /* MF_Base64Additions.h */,
 				F4E979611E803C5100DF2E89 /* MF_Base64Additions.m */,
 				F4E979621E803C5100DF2E89 /* EVNetworkManager.h */,
@@ -208,6 +312,7 @@
 		F4F0ACE71E82DF9A00D663A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4A5A8801E8A1A2C0060867E /* libEventGoCommon.a */,
 				F4F0ACE81E82DF9A00D663A6 /* libEventGoCommon.a */,
 			);
 			name = Frameworks;
@@ -278,6 +383,7 @@
 				F4E979701E803C5100DF2E89 /* EVNetworkManager.m in Sources */,
 				F4E979711E803C5100DF2E89 /* EVNetworkState.m in Sources */,
 				F4E979A61E803CF200DF2E89 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				F4FAC0351E8A65BB0010BE41 /* EventGoNetwork.m in Sources */,
 				F4E979A91E803CF200DF2E89 /* UIProgressView+AFNetworking.m in Sources */,
 				F4E979731E803C5100DF2E89 /* NSError+EVAPI.m in Sources */,
 				F4E979A51E803CF200DF2E89 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -320,7 +426,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -367,7 +473,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

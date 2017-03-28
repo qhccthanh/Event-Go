@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SwiftyJSON
 
 class EVTask: Object {
 
@@ -46,10 +47,10 @@ class EVTask: Object {
         task.start_time = data["start_time"].doubleValue
         task.end_time = data["end_time"].doubleValue
         task.created_date = data["created_date"].doubleValue
-        task.location_info = data["location_info"]
+        task.location_info = data["location_info"].dictionaryObject as? NSDictionary
         task.priority = data["priority"].doubleValue
         task.limit_user = data["limit_user"].doubleValue
-        task.rule = data["rule"]
+        task.rule = data["rule"].dictionaryObject as? NSDictionary
         task.status = data["status"].stringValue
         
         return task

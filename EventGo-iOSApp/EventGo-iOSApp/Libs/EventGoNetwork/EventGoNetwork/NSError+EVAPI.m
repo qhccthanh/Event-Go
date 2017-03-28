@@ -7,9 +7,8 @@
 //
 
 #import "NSError+EVAPI.h"
-#import <EventGoCommon/NSCollection+JSON.h>
 #import "EventGoErrorCode.h"
-
+#import <EventGoCommon/EventGoCommon.h>
 
 @implementation NSError (EVAPI)
 

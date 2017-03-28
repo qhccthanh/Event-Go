@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SwiftyJSON
 
 class EVNotification: Object {
 
@@ -36,7 +37,7 @@ class EVNotification: Object {
         return "notification_id"
     }
     
-    class func fromJson(data: JSON) -> EVTask {
+    class func fromJson(data: JSON) -> EVNotification {
         
         var notification = EVNotification()
         notification.notification_id = data["notification_id"].stringValue

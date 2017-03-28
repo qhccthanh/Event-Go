@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SwiftyJSON
 
 public class EVEvent: Object {
 
@@ -62,10 +63,10 @@ public class EVEvent: Object {
         event.start_time = data["start_time"].doubleValue
         event.end_time = data["end_time"].doubleValue
         event.created_date = data["created_date"].doubleValue
-        event.location_info = data["location_info"]
+        event.location_info = data["location_info"].dictionaryObject as NSDictionary?
         event.priority = data["priority"].doubleValue
         event.limit_user = data["limit_user"].doubleValue
-        event.rule = data["rule"]
+        event.rule = data["rule"].dictionaryObject as NSDictionary?
         event.status = data["status"].stringValue
         
         return event

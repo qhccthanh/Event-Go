@@ -6,8 +6,6 @@
 //  Copyright © 2017 Quach Ha Chan Thanh. All rights reserved.
 //
 
-#import <EventGoCommon/NSCollection+JSON.h>
-
 #import "EVNetworkManager.h"
 #import "AFNetworking.h"
 #import "NSError+EVAPI.h"

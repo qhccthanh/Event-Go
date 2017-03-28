@@ -10,7 +10,10 @@
 #ifndef EventGo_iOSApp_Bridging_Header_h
 #define EventGo_iOSApp_Bridging_Header_h
 
+#import <EventGoNetwork/EventGoNetwork.h>
 #import <EventGoCommon/EventGoCommon.h>
 #import <EventGoCommon/MBProgressHUD.h>
 #import <EventGoNetwork/EventGoNetwork.h>
+
+
 #endif /* EventGo_iOSApp_Bridging_Header_h */

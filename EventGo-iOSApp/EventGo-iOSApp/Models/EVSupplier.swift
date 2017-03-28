@@ -42,7 +42,7 @@ class EVSupplier: Object {
         supplier.name = data["name"].stringValue
         supplier.image_url = data["image_urL"].stringValue
         supplier.level = data["level"].intValue
-        supplier.company_info = data["company_info"]
+        supplier.company_info = data["company_info"].dictionaryObject as NSDictionary?
         supplier.status = data["status"].stringValue
         
         return supplier
@@ -57,5 +57,7 @@ class EVSupplier: Object {
         supplierJson["image_url"] = supplier.image_url
         supplierJson["level"] = supplier.level
         supplierJson["status"] = supplier.status
+        
+        return supplierJson
     }
 }

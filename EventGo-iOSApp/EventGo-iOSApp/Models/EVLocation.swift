@@ -8,17 +8,18 @@
 
 import UIKit
 import RealmSwift
+import SwiftyJSON
 
 class EVLocation: Object {
 
     dynamic var location_id: String!
     dynamic var supplier_id: String!
     dynamic var name: String?
-    dynamic var detail: String
+    dynamic var detail: String?
     dynamic var address: String?
     dynamic var image_url: String?
     dynamic var created_date: Double = 0
-    dynamic var location_info: Dictionary
+    dynamic var location_info: NSDictionary?
     var tags: List<EVString>?
     dynamic var status: String?
     
@@ -56,7 +57,7 @@ class EVLocation: Object {
         location.address = data["address"].stringValue
         location.image_url = data["image_url"].stringValue
         location.created_date = data["created_date"].doubleValue
-        location.location_info = data["location_info"]
+        location.location_info = data["location_info"].dictionaryObject as? NSDictionary
         location.status = data["status"].stringValue
         
         return location

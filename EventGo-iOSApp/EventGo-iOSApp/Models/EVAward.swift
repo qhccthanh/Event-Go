@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SwiftyJSON
 
 class EVAward: Object {
 
@@ -21,6 +22,7 @@ class EVAward: Object {
     dynamic var item_id: String?
     dynamic var created_date: Double = 0
     dynamic var status: String?
+    dynamic var location_info: NSDictionary?
     
     var tags: List<EVString>?
     
@@ -50,7 +52,7 @@ class EVAward: Object {
         award.contact = data["contact"].stringValue
         award.item_id = data["item_id"].stringValue
         award.created_date = data["created_date"].doubleValue
-        award.location_info = data["location_info"]
+        award.location_info = data["location_info"].dictionaryObject as? NSDictionary
         award.status = data["status"].stringValue
         
         return award

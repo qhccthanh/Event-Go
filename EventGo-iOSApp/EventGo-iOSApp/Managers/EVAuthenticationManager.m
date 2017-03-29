@@ -61,8 +61,8 @@
                 return;
             }
             [subscriber sendError:error];
-        }
-        [[GIDSignIn sharedInstance] signIn];
+        };
+//        [[GIDSignIn sharedInstance] signIn];
         return [RACDisposable new];
     }];
 }

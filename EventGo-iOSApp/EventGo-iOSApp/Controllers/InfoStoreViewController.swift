@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FDRatingView
 
 class InfoStoreViewController: UIViewController {
 
@@ -17,8 +16,6 @@ class InfoStoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let viewratting = FDRatingView(frame: self.ratingView.bounds, style: .star, numberOfElements: 5, fillValue: 2.55, color: .gray, lineWidth: 1.1, spacing: 0.1)
-        ratingView.addSubview(viewratting)
         
     }
 

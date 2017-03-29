@@ -19,6 +19,8 @@ class EVSupplier: Object {
     dynamic var company_info: NSDictionary?
     dynamic var status: String!
     var tags: List<EVString>?
+
+    
     
     var tags_str: [String] {
         get {

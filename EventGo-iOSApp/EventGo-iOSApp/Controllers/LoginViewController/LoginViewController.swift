@@ -28,12 +28,11 @@ class LoginViewController: UIViewController {
         // VD Lang nghe 1 thuoc tinh thay doi
         // dung tam vay 
         // vd cho nay truyen bien thi sao 
-        var value = ""
         // No1 phải thuộc về 1 đối tượng nào đó. Vd view nằm trong self
 //        self.rac_values(forKeyPath: "value", observer: self).subscribeNext { (newValue) in
 //            /...
 //        }
-        var temp = EVUser()
+        let temp = EVUser()
         temp.rac_values(forKeyPath: "user_id", observer: temp).subscribeNext { (newValue) in
             // .. new value o day
         }
@@ -113,20 +112,20 @@ class LoginViewController: UIViewController {
     }
     
     
-    func getResponse() -> RACSignal<AnyObject>{
-        return RACSignal.createSignal({
-            (subscribe) -> RACDisposable? in
-            
-            let networkSingal = EVNetworkManager.sharedInstance().request(withPath: "/abc", parameters: [:], requestEventId: 1)
-            networkSingal?.subscribeNext({ (response) in
-                let data = response
-                subscribe.sendNext(data)
-            }, error: { (error) in
-                subscribe.sendError(error)
-            })
-            return nil
-        })
-    }
+//    func getResponse() -> RACSignal<AnyObject>{
+////        return RACSignal.createSignal({
+////            (subscribe) -> RACDisposable? in
+////            
+////            let networkSingal = EVNetworkManager.sharedInstance().request(withPath: "/abc", parameters: [:], requestEventId: 1)
+////            networkSingal?.subscribeNext({ (response) in
+////                let data = response
+////                subscribe.sendNext(data)
+////            }, error: { (error) in
+////                subscribe.sendError(error)
+////            })
+////            return nil
+////        })
+//    }
     
     @IBAction func loginGoogleAction(_ sender: Any) {
        

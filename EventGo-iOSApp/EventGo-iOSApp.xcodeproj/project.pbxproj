@@ -619,7 +619,12 @@
 				TargetAttributes = {
 					F4AD8ACE1E7D3C310081F2F3 = {
 						CreatedOnToolsVersion = 8.2.1;
+<<<<<<< HEAD
 						DevelopmentTeam = A2NR73B2X5;
+=======
+						DevelopmentTeam = ZPV9U8ULVA;
+						LastSwiftMigration = 0830;
+>>>>>>> c0df6c91d00dd176351aca4a7f2d7bc020872232
 						ProvisioningStyle = Automatic;
 					};
 					F4AD8AE21E7D3C310081F2F3 = {
@@ -992,6 +997,7 @@
 					"${PODS_ROOT}/Headers/Public/Firebase",
 					"$(PROJECT_DIR)",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"${PODS_ROOT}/Firebase/Core/Sources",
@@ -1042,6 +1048,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/EventGo-iOSApp/Libs/FacebookSDK",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"${PODS_ROOT}/Firebase/Core/Sources",

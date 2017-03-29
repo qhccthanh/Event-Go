@@ -80,16 +80,16 @@ PODS:
     - GTMSessionFetcher/Core (= 1.1.8)
   - HTMLReader (2.0.3)
   - OAStackView (1.0.1)
-  - ReactiveCocoa (5.0.1):
-    - ReactiveSwift (~> 1.1)
-  - ReactiveSwift (1.1.0):
+  - ReactiveCocoa (5.0.0):
+    - ReactiveSwift (~> 1.0.0)
+  - ReactiveSwift (1.0.0):
     - Result (~> 3.1)
   - Realm (2.4.2):
     - Realm/Headers (= 2.4.2)
   - Realm/Headers (2.4.2)
   - RealmSwift (2.4.2):
     - Realm (= 2.4.2)
-  - Result (3.2.1)
+  - Result (3.1.0)
   - SCLAlertView (0.7.0)
   - SwiftyJSON (3.1.4)
   - UICollectionViewLeftAlignedLayout (1.0.2)
@@ -139,16 +139,20 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   HTMLReader: 282f41e641eda8938cfcf8c7b7151f70955aee33
   OAStackView: 95e7cb79cbea25c2342f496a44bdbe8bd4c8d510
-  ReactiveCocoa: f577006aa6c7b0b08020109ebaae3b77ada00adc
-  ReactiveSwift: 2f4e4a02e5a5c87ea63f5fe667163ce2a67cbb57
+  ReactiveCocoa: 60ef0da915b4f70c34ebecc3f4fb8f96af0e53d6
+  ReactiveSwift: f391724ee318a2cfd3e37dfb041cd49ecf4e7869
   Realm: d27b758e12d62a3371879a065d4c40aa212c5a54
   RealmSwift: 9556c0fe0f0cfecacfb755ae9e68ff379fc6bead
-  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
+  Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
+<<<<<<< HEAD
 PODFILE CHECKSUM: 0a8714008c40f4650769570d2a6a1b17c616bd83
+=======
+PODFILE CHECKSUM: 40b0ff1a2ca0572738308ca93cbdbe511edbe16d
+>>>>>>> c0df6c91d00dd176351aca4a7f2d7bc020872232
 
 COCOAPODS: 1.2.0

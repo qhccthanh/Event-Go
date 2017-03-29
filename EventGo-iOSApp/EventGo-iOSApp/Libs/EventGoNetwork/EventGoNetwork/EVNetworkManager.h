@@ -41,6 +41,8 @@ extern NSString *kZaloPayClientAppId;
 
 - (void)accessTokenChangeHandle:(AccessTokeUpdateHandle)handle;
 
+- (void)setHeader:(NSDictionary *)headers;
+
 - (RACSignal *)requestWithPath:(NSString *)path
                     parameters:(NSDictionary *)params;
 
@@ -61,8 +63,7 @@ extern NSString *kZaloPayClientAppId;
                                          complete:(DowloadCompleteBlock)complete;
 - (RACSignal *)uploadWithPath:(NSString *)path
                         param:(NSDictionary *)params
-                    formBlock:(void (^)(id <AFMultipartFormData> formData))block
-               requestEventId:(NSInteger)requestEventId;
+                    formBlock:(void (^)(id <AFMultipartFormData> formData))block;
 
 - (RACSignal *)requestWithUrlString:(NSString *)urlString userAgent:(NSString *)userAgent;
 

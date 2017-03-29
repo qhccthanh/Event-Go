@@ -11,7 +11,6 @@
 #import "NSError+EVAPI.h"
 
 NSString *kBaseUrl = @"";
-NSString *kZaloPayClientAppId = @"";
 NSString *kUploadUrl = @"";
 
 #define kRequestTimout      10.0
@@ -33,38 +32,58 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
     static EVNetworkManager *instane;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instane = [[EVNetworkManager alloc] initWithBaseUrl:kBaseUrl];
+        instane = [[EVNetworkManager alloc] initWithBaseUrl:kBaseUrl header: NULL];
     });
     
     return instane;
 }
 
-- (id)initWithBaseUrl:(NSString *)baseUrl {
+- (void)setHeader:(NSDictionary *)headers {
+    
+    self.allDurations = [NSMutableDictionary new];
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    sessionConfiguration.timeoutIntervalForRequest = kRequestTimout;
+    sessionConfiguration.HTTPAdditionalHeaders = headers;
+    
+    NSMutableOrderedSet *mutableClass = [NSMutableOrderedSet orderedSetWithArray:sessionConfiguration.protocolClasses];
+    
+    [mutableClass insertObject:[EVNetworkManagerRecorderProtocol class] atIndex:0];
+    sessionConfiguration.protocolClasses = [mutableClass array];
+    
+    [self setupClientWithConfigure:sessionConfiguration];
+}
+
+- (id)initWithBaseUrl:(NSString *)baseUrl header:(NSDictionary *)headers {
     self = [super init];
     
     if (self) {
         self.allDurations = [NSMutableDictionary new];
         NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
         sessionConfiguration.timeoutIntervalForRequest = kRequestTimout;
+        sessionConfiguration.HTTPAdditionalHeaders = headers;
         
         NSMutableOrderedSet *mutableClass = [NSMutableOrderedSet orderedSetWithArray:sessionConfiguration.protocolClasses];
         
         [mutableClass insertObject:[EVNetworkManagerRecorderProtocol class] atIndex:0];
         sessionConfiguration.protocolClasses = [mutableClass array];
         
-        self.client = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]
-                                               sessionConfiguration:sessionConfiguration];
-        if (self.client) {
-            NSMutableSet *contentType = [[NSMutableSet alloc] initWithSet:self.client.responseSerializer.acceptableContentTypes];
-            [contentType addObject:@"text/plain"];
-            [contentType addObject:@"text/html"];
-//            self.client.requestSerializer = [AFJSONRequestSerializer serializer];
-            self.client.responseSerializer.acceptableContentTypes = contentType;
-            self.client.completionQueue = dispatch_queue_create("zalopay.network.queue", DISPATCH_QUEUE_CONCURRENT);
-        }
+        [self setupClientWithConfigure:sessionConfiguration];
     }
     
     return self;
+}
+
+- (void)setupClientWithConfigure:(NSURLSessionConfiguration *)sessionConfiguration {
+    
+    self.client = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]
+                                           sessionConfiguration:sessionConfiguration];
+    if (self.client) {
+        NSMutableSet *contentType = [[NSMutableSet alloc] initWithSet:self.client.responseSerializer.acceptableContentTypes];
+        [contentType addObject:@"text/plain"];
+        [contentType addObject:@"text/html"];
+        self.client.responseSerializer.acceptableContentTypes = contentType;
+        self.client.completionQueue = dispatch_queue_create("event_go_request_api", DISPATCH_QUEUE_CONCURRENT);
+    }
 }
 
 - (void)prehandleError:(PrehandleServerError)handle {
@@ -94,8 +113,8 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
      NSString *appVersion = [NSString stringWithFormat:@"%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
     
     [requestParams setObjectCheckNil:appVersion forKey:@"appversion"];
-    [requestParams setObjectCheckNil:[EVNetworkManager sharedInstance].accesstoken forKey:@"accesstoken"];
-    [requestParams setObjectCheckNil:[EVNetworkManager sharedInstance].paymentUserId forKey:@"userid"];
+    [requestParams setObjectCheckNil:[EVNetworkManager sharedInstance].accesstoken forKey:@"access_token"];
+    [requestParams setObjectCheckNil:[EVNetworkManager sharedInstance].paymentUserId forKey:@"user_id"];
     
     return requestParams;
 }
@@ -290,8 +309,8 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
         return dataError;
     }
     
-    NSString *accesstoken = [responseData stringForKey:@"accesstoken"];
-    if (accesstoken.length && ![accesstoken isEqualToString:self.accesstoken])
+    NSString *accesstoken = [responseData stringForKey:@"access_token"];
+    if (accesstoken.length && ![accesstoken isEqualToString:self.access_token])
     {
         self.accesstoken = accesstoken;
         if (self.accesstokeUpdateHandle) {
@@ -318,8 +337,7 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
 
 - (RACSignal *)uploadWithPath:(NSString *)path
                        param:(NSDictionary *)params
-                   formBlock:(void (^)(id <AFMultipartFormData> formData))block
-               requestEventId:(NSInteger)requestEventId {
+                   formBlock:(void (^)(id <AFMultipartFormData> formData))block {
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         NSDictionary *requestParam = [self requestParamWithParam:params];
 //        double startTime = requestEventId <= 0 ? 0: [[NSDate date] timeIntervalSince1970] * 1000;

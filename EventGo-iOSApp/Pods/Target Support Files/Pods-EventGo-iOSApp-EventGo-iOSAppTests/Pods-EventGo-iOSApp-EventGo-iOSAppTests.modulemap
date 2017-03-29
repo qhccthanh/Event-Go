@@ -1,6 +1,0 @@
-framework module Pods_EventGo_iOSApp_EventGo_iOSAppTests {
-  umbrella header "Pods-EventGo-iOSApp-EventGo-iOSAppTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -7,6 +7,129 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D01B47411E8AC6BF007D990C /* EventGoCommon.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89BB1E7D2C5D0081F2F3 /* EventGoCommon.h */; };
+		D01B47421E8AC6BF007D990C /* Circle Thin-64.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACBE1E82DA0A00D663A6 /* Circle Thin-64.png */; };
+		D01B47431E8AC6BF007D990C /* mask-circle-avatar-60.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACBF1E82DA0A00D663A6 /* mask-circle-avatar-60.png */; };
+		D01B47441E8AC6BF007D990C /* mask-circle-avatar.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACC01E82DA0A00D663A6 /* mask-circle-avatar.png */; };
+		D01B47451E8AC6BF007D990C /* Ok-52.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACC11E82DA0A00D663A6 /* Ok-52.png */; };
+		D01B47461E8AC6BF007D990C /* User Default.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACC21E82DA0A00D663A6 /* User Default.png */; };
+		D01B47471E8AC6BF007D990C /* user non avatar.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACC31E82DA0A00D663A6 /* user non avatar.png */; };
+		D01B47481E8AC6BF007D990C /* ContactSelectViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACC41E82DA0A00D663A6 /* ContactSelectViewCell.h */; };
+		D01B47491E8AC6BF007D990C /* ContactSelectViewCell.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACC51E82DA0A00D663A6 /* ContactSelectViewCell.m */; };
+		D01B474A1E8AC6BF007D990C /* ContactViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACC61E82DA0A00D663A6 /* ContactViewCell.h */; };
+		D01B474B1E8AC6BF007D990C /* ContactViewCell.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACC71E82DA0A00D663A6 /* ContactViewCell.m */; };
+		D01B474C1E8AC6BF007D990C /* CTAddressBook.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACC81E82DA0A00D663A6 /* CTAddressBook.h */; };
+		D01B474D1E8AC6BF007D990C /* CTAddressBook.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACC91E82DA0A00D663A6 /* CTAddressBook.m */; };
+		D01B474E1E8AC6BF007D990C /* CTCacheImageManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACCA1E82DA0A00D663A6 /* CTCacheImageManager.h */; };
+		D01B474F1E8AC6BF007D990C /* CTCacheImageManager.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACCB1E82DA0A00D663A6 /* CTCacheImageManager.m */; };
+		D01B47501E8AC6BF007D990C /* CTContact.storyboard in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACCC1E82DA0A00D663A6 /* CTContact.storyboard */; };
+		D01B47511E8AC6BF007D990C /* CTContactManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACCD1E82DA0A00D663A6 /* CTContactManager.h */; };
+		D01B47521E8AC6BF007D990C /* CTContactManager.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACCE1E82DA0A00D663A6 /* CTContactManager.m */; };
+		D01B47531E8AC6BF007D990C /* CTContactViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACCF1E82DA0A00D663A6 /* CTContactViewController.h */; };
+		D01B47541E8AC6BF007D990C /* CTContactViewController.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACD01E82DA0A00D663A6 /* CTContactViewController.m */; };
+		D01B47551E8AC6BF007D990C /* CTContactViewControllerDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACD11E82DA0A00D663A6 /* CTContactViewControllerDelegate.h */; };
+		D01B47561E8AC6BF007D990C /* UIImage+Text.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACD31E82DA0A00D663A6 /* UIImage+Text.h */; };
+		D01B47571E8AC6BF007D990C /* UIImage+Text.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACD41E82DA0A00D663A6 /* UIImage+Text.m */; };
+		D01B47581E8AC6BF007D990C /* UIImageView+Mask.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACD51E82DA0A00D663A6 /* UIImageView+Mask.h */; };
+		D01B47591E8AC6BF007D990C /* UIImageView+Mask.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4F0ACD61E82DA0A00D663A6 /* UIImageView+Mask.m */; };
+		D01B475A1E8AC6BF007D990C /* MBProgressHUD.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4CAA66F1E82E28F0084FC51 /* MBProgressHUD.h */; };
+		D01B475B1E8AC6BF007D990C /* MBProgressHUD.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4CAA6701E82E28F0084FC51 /* MBProgressHUD.m */; };
+		D01B475C1E8AC6BF007D990C /* MASCompositeConstraint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A2C1E7D34420081F2F3 /* MASCompositeConstraint.h */; };
+		D01B475D1E8AC6BF007D990C /* MASCompositeConstraint.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A2D1E7D34420081F2F3 /* MASCompositeConstraint.m */; };
+		D01B475E1E8AC6BF007D990C /* MASConstraint+Private.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A2E1E7D34420081F2F3 /* MASConstraint+Private.h */; };
+		D01B475F1E8AC6BF007D990C /* MASConstraint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A2F1E7D34420081F2F3 /* MASConstraint.h */; };
+		D01B47601E8AC6BF007D990C /* MASConstraint.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A301E7D34420081F2F3 /* MASConstraint.m */; };
+		D01B47611E8AC6BF007D990C /* MASConstraintMaker.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A311E7D34420081F2F3 /* MASConstraintMaker.h */; };
+		D01B47621E8AC6BF007D990C /* MASConstraintMaker.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A321E7D34420081F2F3 /* MASConstraintMaker.m */; };
+		D01B47631E8AC6BF007D990C /* MASLayoutConstraint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A331E7D34420081F2F3 /* MASLayoutConstraint.h */; };
+		D01B47641E8AC6BF007D990C /* MASLayoutConstraint.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A341E7D34420081F2F3 /* MASLayoutConstraint.m */; };
+		D01B47651E8AC6BF007D990C /* Masonry.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A351E7D34420081F2F3 /* Masonry.h */; };
+		D01B47661E8AC6BF007D990C /* MASUtilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A361E7D34420081F2F3 /* MASUtilities.h */; };
+		D01B47671E8AC6BF007D990C /* MASViewAttribute.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A371E7D34420081F2F3 /* MASViewAttribute.h */; };
+		D01B47681E8AC6BF007D990C /* MASViewAttribute.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A381E7D34420081F2F3 /* MASViewAttribute.m */; };
+		D01B47691E8AC6BF007D990C /* MASViewConstraint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A391E7D34420081F2F3 /* MASViewConstraint.h */; };
+		D01B476A1E8AC6BF007D990C /* MASViewConstraint.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A3A1E7D34420081F2F3 /* MASViewConstraint.m */; };
+		D01B476B1E8AC6BF007D990C /* NSArray+MASAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A3B1E7D34420081F2F3 /* NSArray+MASAdditions.h */; };
+		D01B476C1E8AC6BF007D990C /* NSArray+MASAdditions.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A3C1E7D34420081F2F3 /* NSArray+MASAdditions.m */; };
+		D01B476D1E8AC6BF007D990C /* NSArray+MASShorthandAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A3D1E7D34420081F2F3 /* NSArray+MASShorthandAdditions.h */; };
+		D01B476E1E8AC6BF007D990C /* NSLayoutConstraint+MASDebugAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A3E1E7D34420081F2F3 /* NSLayoutConstraint+MASDebugAdditions.h */; };
+		D01B476F1E8AC6BF007D990C /* NSLayoutConstraint+MASDebugAdditions.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A3F1E7D34420081F2F3 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		D01B47701E8AC6BF007D990C /* View+MASAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A401E7D34420081F2F3 /* View+MASAdditions.h */; };
+		D01B47711E8AC6BF007D990C /* View+MASAdditions.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A411E7D34420081F2F3 /* View+MASAdditions.m */; };
+		D01B47721E8AC6BF007D990C /* View+MASShorthandAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A421E7D34420081F2F3 /* View+MASShorthandAdditions.h */; };
+		D01B47731E8AC6BF007D990C /* ViewController+MASAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A431E7D34420081F2F3 /* ViewController+MASAdditions.h */; };
+		D01B47741E8AC6BF007D990C /* ViewController+MASAdditions.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A441E7D34420081F2F3 /* ViewController+MASAdditions.m */; };
+		D01B47751E8AC6BF007D990C /* JVFloatLabeledTextField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A211E7D33D10081F2F3 /* JVFloatLabeledTextField.h */; };
+		D01B47761E8AC6BF007D990C /* JVFloatLabeledTextField.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A221E7D33D10081F2F3 /* JVFloatLabeledTextField.m */; };
+		D01B47771E8AC6BF007D990C /* JVFloatLabeledTextView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A231E7D33D10081F2F3 /* JVFloatLabeledTextView.h */; };
+		D01B47781E8AC6BF007D990C /* JVFloatLabeledTextView.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A241E7D33D10081F2F3 /* JVFloatLabeledTextView.m */; };
+		D01B47791E8AC6BF007D990C /* NSString+TextDirectionality.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A251E7D33D10081F2F3 /* NSString+TextDirectionality.h */; };
+		D01B477A1E8AC6BF007D990C /* NSString+TextDirectionality.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A261E7D33D20081F2F3 /* NSString+TextDirectionality.m */; };
+		D01B477B1E8AC6BF007D990C /* NBAsYouTypeFormatter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89D91E7D2E880081F2F3 /* NBAsYouTypeFormatter.h */; };
+		D01B477C1E8AC6BF007D990C /* NBAsYouTypeFormatter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89DA1E7D2E880081F2F3 /* NBAsYouTypeFormatter.m */; };
+		D01B477D1E8AC6BF007D990C /* NBMetadataCore.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89DB1E7D2E880081F2F3 /* NBMetadataCore.h */; };
+		D01B477E1E8AC6BF007D990C /* NBMetadataCore.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89DC1E7D2E880081F2F3 /* NBMetadataCore.m */; };
+		D01B477F1E8AC6BF007D990C /* NBMetadataCoreMapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89DD1E7D2E880081F2F3 /* NBMetadataCoreMapper.h */; };
+		D01B47801E8AC6BF007D990C /* NBMetadataCoreMapper.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89DE1E7D2E880081F2F3 /* NBMetadataCoreMapper.m */; };
+		D01B47811E8AC6BF007D990C /* NBMetadataCoreTest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89DF1E7D2E880081F2F3 /* NBMetadataCoreTest.h */; };
+		D01B47821E8AC6BF007D990C /* NBMetadataCoreTest.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89E01E7D2E880081F2F3 /* NBMetadataCoreTest.m */; };
+		D01B47831E8AC6BF007D990C /* NBMetadataCoreTestMapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89E11E7D2E880081F2F3 /* NBMetadataCoreTestMapper.h */; };
+		D01B47841E8AC6BF007D990C /* NBMetadataCoreTestMapper.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89E21E7D2E880081F2F3 /* NBMetadataCoreTestMapper.m */; };
+		D01B47851E8AC6BF007D990C /* NBMetadataHelper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89E31E7D2E880081F2F3 /* NBMetadataHelper.h */; };
+		D01B47861E8AC6BF007D990C /* NBMetadataHelper.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89E41E7D2E880081F2F3 /* NBMetadataHelper.m */; };
+		D01B47871E8AC6BF007D990C /* NBNumberFormat.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89E51E7D2E880081F2F3 /* NBNumberFormat.h */; };
+		D01B47881E8AC6BF007D990C /* NBNumberFormat.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89E61E7D2E880081F2F3 /* NBNumberFormat.m */; };
+		D01B47891E8AC6BF007D990C /* NBPhoneMetaData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89E71E7D2E880081F2F3 /* NBPhoneMetaData.h */; };
+		D01B478A1E8AC6BF007D990C /* NBPhoneMetaData.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89E81E7D2E880081F2F3 /* NBPhoneMetaData.m */; };
+		D01B478B1E8AC6BF007D990C /* NBPhoneNumber.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89E91E7D2E880081F2F3 /* NBPhoneNumber.h */; };
+		D01B478C1E8AC6BF007D990C /* NBPhoneNumber.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89EA1E7D2E880081F2F3 /* NBPhoneNumber.m */; };
+		D01B478D1E8AC6BF007D990C /* NBPhoneNumberDefines.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89EB1E7D2E880081F2F3 /* NBPhoneNumberDefines.h */; };
+		D01B478E1E8AC6BF007D990C /* NBPhoneNumberDefines.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89EC1E7D2E880081F2F3 /* NBPhoneNumberDefines.m */; };
+		D01B478F1E8AC6BF007D990C /* NBPhoneNumberDesc.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89ED1E7D2E880081F2F3 /* NBPhoneNumberDesc.h */; };
+		D01B47901E8AC6BF007D990C /* NBPhoneNumberDesc.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89EE1E7D2E880081F2F3 /* NBPhoneNumberDesc.m */; };
+		D01B47911E8AC6BF007D990C /* NBPhoneNumberUtil.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89EF1E7D2E880081F2F3 /* NBPhoneNumberUtil.h */; };
+		D01B47921E8AC6BF007D990C /* NBPhoneNumberUtil.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89F01E7D2E880081F2F3 /* NBPhoneNumberUtil.m */; };
+		D01B47931E8AC6BF007D990C /* TMCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89C81E7D2CFD0081F2F3 /* TMCache.h */; };
+		D01B47941E8AC6BF007D990C /* TMCache.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89C91E7D2CFD0081F2F3 /* TMCache.m */; };
+		D01B47951E8AC6BF007D990C /* TMCacheBackgroundTaskManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89CA1E7D2CFD0081F2F3 /* TMCacheBackgroundTaskManager.h */; };
+		D01B47961E8AC6BF007D990C /* TMDiskCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89CB1E7D2CFD0081F2F3 /* TMDiskCache.h */; };
+		D01B47971E8AC6BF007D990C /* TMDiskCache.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89CC1E7D2CFD0081F2F3 /* TMDiskCache.m */; };
+		D01B47981E8AC6BF007D990C /* TMMemoryCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89CD1E7D2CFD0081F2F3 /* TMMemoryCache.h */; };
+		D01B47991E8AC6BF007D990C /* TMMemoryCache.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89CE1E7D2CFD0081F2F3 /* TMMemoryCache.m */; };
+		D01B479A1E8AC6BF007D990C /* UIColor+Ext.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89FE1E7D2F5D0081F2F3 /* UIColor+Ext.h */; };
+		D01B479B1E8AC6BF007D990C /* UIColor+Ext.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89FF1E7D2F5D0081F2F3 /* UIColor+Ext.m */; };
+		D01B479C1E8AC6BF007D990C /* EVCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89D21E7D2D1D0081F2F3 /* EVCache.h */; };
+		D01B479D1E8AC6BF007D990C /* EVCache.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89D31E7D2D1D0081F2F3 /* EVCache.m */; };
+		D01B479E1E8AC6BF007D990C /* NSString+Validation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89D51E7D2E2E0081F2F3 /* NSString+Validation.h */; };
+		D01B479F1E8AC6BF007D990C /* NSString+Validation.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD89D61E7D2E2E0081F2F3 /* NSString+Validation.m */; };
+		D01B47A01E8AC6BF007D990C /* Macro.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A011E7D30910081F2F3 /* Macro.h */; };
+		D01B47A11E8AC6BF007D990C /* UIFont+Extension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A4F1E7D35F00081F2F3 /* UIFont+Extension.h */; };
+		D01B47A21E8AC6BF007D990C /* UIFont+Extension.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A501E7D35F00081F2F3 /* UIFont+Extension.m */; };
+		D01B47A31E8AC6BF007D990C /* UIView+Toast.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A021E7D30BB0081F2F3 /* UIView+Toast.h */; };
+		D01B47A41E8AC6BF007D990C /* UIView+Toast.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A031E7D30BB0081F2F3 /* UIView+Toast.m */; };
+		D01B47A51E8AC6BF007D990C /* NSArray+SafeThread.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A051E7D30F20081F2F3 /* NSArray+SafeThread.h */; };
+		D01B47A61E8AC6BF007D990C /* NSArray+SafeThread.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A061E7D30F20081F2F3 /* NSArray+SafeThread.m */; };
+		D01B47A71E8AC6BF007D990C /* NSCollection+JSON.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A071E7D30F20081F2F3 /* NSCollection+JSON.h */; };
+		D01B47A81E8AC6BF007D990C /* NSCollection+JSON.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A081E7D30F20081F2F3 /* NSCollection+JSON.m */; };
+		D01B47A91E8AC6BF007D990C /* NSDate+Format.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A091E7D30F20081F2F3 /* NSDate+Format.h */; };
+		D01B47AA1E8AC6BF007D990C /* NSDate+Format.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A0A1E7D30F20081F2F3 /* NSDate+Format.m */; };
+		D01B47AB1E8AC6BF007D990C /* UIDevice+Name.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A0E1E7D32B60081F2F3 /* UIDevice+Name.h */; };
+		D01B47AC1E8AC6BF007D990C /* UIDevice+Name.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A0F1E7D32B60081F2F3 /* UIDevice+Name.m */; };
+		D01B47AD1E8AC6BF007D990C /* UIImage+Extention.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A101E7D32B60081F2F3 /* UIImage+Extention.h */; };
+		D01B47AE1E8AC6BF007D990C /* UIImage+Extention.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A111E7D32B60081F2F3 /* UIImage+Extention.m */; };
+		D01B47AF1E8AC6BF007D990C /* UIView+Extention.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A121E7D32B60081F2F3 /* UIView+Extention.h */; };
+		D01B47B01E8AC6BF007D990C /* UIView+Extention.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A131E7D32B60081F2F3 /* UIView+Extention.m */; };
+		D01B47B11E8AC6BF007D990C /* UIViewController+BaseViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A141E7D32B60081F2F3 /* UIViewController+BaseViewController.h */; };
+		D01B47B21E8AC6BF007D990C /* UIViewController+BaseViewController.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A151E7D32B60081F2F3 /* UIViewController+BaseViewController.m */; };
+		D01B47B31E8AC6BF007D990C /* EVFloatTextInputView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A161E7D32B60081F2F3 /* EVFloatTextInputView.h */; };
+		D01B47B41E8AC6BF007D990C /* EVFloatTextInputView.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A171E7D32B60081F2F3 /* EVFloatTextInputView.m */; };
+		D01B47B51E8AC6BF007D990C /* EVFloatTextViewInputView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A6A1E7D37780081F2F3 /* EVFloatTextViewInputView.h */; };
+		D01B47B61E8AC6BF007D990C /* EVFloatTextViewInputView.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A6B1E7D37780081F2F3 /* EVFloatTextViewInputView.m */; };
+		D01B47B71E8AC6BF007D990C /* RPFloatingPlaceholderTextView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A671E7D375B0081F2F3 /* RPFloatingPlaceholderTextView.h */; };
+		D01B47B81E8AC6BF007D990C /* RPFloatingPlaceholderTextView.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A681E7D375B0081F2F3 /* RPFloatingPlaceholderTextView.m */; };
+		D01B47B91E8AC6BF007D990C /* EVLineView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A181E7D32B60081F2F3 /* EVLineView.h */; };
+		D01B47BA1E8AC6BF007D990C /* EVLineView.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4AD8A191E7D32B60081F2F3 /* EVLineView.m */; };
+		D01B47C61E8AC83B007D990C /* ReactiveObjC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D01B47C31E8AC827007D990C /* ReactiveObjC.framework */; };
 		F4AD89CF1E7D2CFD0081F2F3 /* TMCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AD89C91E7D2CFD0081F2F3 /* TMCache.m */; };
 		F4AD89D01E7D2CFD0081F2F3 /* TMDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AD89CC1E7D2CFD0081F2F3 /* TMDiskCache.m */; };
 		F4AD89D11E7D2CFD0081F2F3 /* TMMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AD89CE1E7D2CFD0081F2F3 /* TMMemoryCache.m */; };
@@ -81,6 +204,23 @@
 		F4F0ACEC1E82E1D700D663A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F0ACEB1E82E1D700D663A6 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D01B47C21E8AC827007D990C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D01B47BD1E8AC826007D990C /* ReactiveObjC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D047260C19E49F82006002AA;
+			remoteInfo = "ReactiveObjC-iOS";
+		};
+		D01B47C41E8AC827007D990C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D01B47BD1E8AC826007D990C /* ReactiveObjC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D047261619E49F82006002AA;
+			remoteInfo = "ReactiveObjC-iOSTests";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		F4AD89B61E7D2C5D0081F2F3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -88,6 +228,129 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				D01B47C61E8AC83B007D990C /* ReactiveObjC.framework in CopyFiles */,
+				D01B47411E8AC6BF007D990C /* EventGoCommon.h in CopyFiles */,
+				D01B47421E8AC6BF007D990C /* Circle Thin-64.png in CopyFiles */,
+				D01B47431E8AC6BF007D990C /* mask-circle-avatar-60.png in CopyFiles */,
+				D01B47441E8AC6BF007D990C /* mask-circle-avatar.png in CopyFiles */,
+				D01B47451E8AC6BF007D990C /* Ok-52.png in CopyFiles */,
+				D01B47461E8AC6BF007D990C /* User Default.png in CopyFiles */,
+				D01B47471E8AC6BF007D990C /* user non avatar.png in CopyFiles */,
+				D01B47481E8AC6BF007D990C /* ContactSelectViewCell.h in CopyFiles */,
+				D01B47491E8AC6BF007D990C /* ContactSelectViewCell.m in CopyFiles */,
+				D01B474A1E8AC6BF007D990C /* ContactViewCell.h in CopyFiles */,
+				D01B474B1E8AC6BF007D990C /* ContactViewCell.m in CopyFiles */,
+				D01B474C1E8AC6BF007D990C /* CTAddressBook.h in CopyFiles */,
+				D01B474D1E8AC6BF007D990C /* CTAddressBook.m in CopyFiles */,
+				D01B474E1E8AC6BF007D990C /* CTCacheImageManager.h in CopyFiles */,
+				D01B474F1E8AC6BF007D990C /* CTCacheImageManager.m in CopyFiles */,
+				D01B47501E8AC6BF007D990C /* CTContact.storyboard in CopyFiles */,
+				D01B47511E8AC6BF007D990C /* CTContactManager.h in CopyFiles */,
+				D01B47521E8AC6BF007D990C /* CTContactManager.m in CopyFiles */,
+				D01B47531E8AC6BF007D990C /* CTContactViewController.h in CopyFiles */,
+				D01B47541E8AC6BF007D990C /* CTContactViewController.m in CopyFiles */,
+				D01B47551E8AC6BF007D990C /* CTContactViewControllerDelegate.h in CopyFiles */,
+				D01B47561E8AC6BF007D990C /* UIImage+Text.h in CopyFiles */,
+				D01B47571E8AC6BF007D990C /* UIImage+Text.m in CopyFiles */,
+				D01B47581E8AC6BF007D990C /* UIImageView+Mask.h in CopyFiles */,
+				D01B47591E8AC6BF007D990C /* UIImageView+Mask.m in CopyFiles */,
+				D01B475A1E8AC6BF007D990C /* MBProgressHUD.h in CopyFiles */,
+				D01B475B1E8AC6BF007D990C /* MBProgressHUD.m in CopyFiles */,
+				D01B475C1E8AC6BF007D990C /* MASCompositeConstraint.h in CopyFiles */,
+				D01B475D1E8AC6BF007D990C /* MASCompositeConstraint.m in CopyFiles */,
+				D01B475E1E8AC6BF007D990C /* MASConstraint+Private.h in CopyFiles */,
+				D01B475F1E8AC6BF007D990C /* MASConstraint.h in CopyFiles */,
+				D01B47601E8AC6BF007D990C /* MASConstraint.m in CopyFiles */,
+				D01B47611E8AC6BF007D990C /* MASConstraintMaker.h in CopyFiles */,
+				D01B47621E8AC6BF007D990C /* MASConstraintMaker.m in CopyFiles */,
+				D01B47631E8AC6BF007D990C /* MASLayoutConstraint.h in CopyFiles */,
+				D01B47641E8AC6BF007D990C /* MASLayoutConstraint.m in CopyFiles */,
+				D01B47651E8AC6BF007D990C /* Masonry.h in CopyFiles */,
+				D01B47661E8AC6BF007D990C /* MASUtilities.h in CopyFiles */,
+				D01B47671E8AC6BF007D990C /* MASViewAttribute.h in CopyFiles */,
+				D01B47681E8AC6BF007D990C /* MASViewAttribute.m in CopyFiles */,
+				D01B47691E8AC6BF007D990C /* MASViewConstraint.h in CopyFiles */,
+				D01B476A1E8AC6BF007D990C /* MASViewConstraint.m in CopyFiles */,
+				D01B476B1E8AC6BF007D990C /* NSArray+MASAdditions.h in CopyFiles */,
+				D01B476C1E8AC6BF007D990C /* NSArray+MASAdditions.m in CopyFiles */,
+				D01B476D1E8AC6BF007D990C /* NSArray+MASShorthandAdditions.h in CopyFiles */,
+				D01B476E1E8AC6BF007D990C /* NSLayoutConstraint+MASDebugAdditions.h in CopyFiles */,
+				D01B476F1E8AC6BF007D990C /* NSLayoutConstraint+MASDebugAdditions.m in CopyFiles */,
+				D01B47701E8AC6BF007D990C /* View+MASAdditions.h in CopyFiles */,
+				D01B47711E8AC6BF007D990C /* View+MASAdditions.m in CopyFiles */,
+				D01B47721E8AC6BF007D990C /* View+MASShorthandAdditions.h in CopyFiles */,
+				D01B47731E8AC6BF007D990C /* ViewController+MASAdditions.h in CopyFiles */,
+				D01B47741E8AC6BF007D990C /* ViewController+MASAdditions.m in CopyFiles */,
+				D01B47751E8AC6BF007D990C /* JVFloatLabeledTextField.h in CopyFiles */,
+				D01B47761E8AC6BF007D990C /* JVFloatLabeledTextField.m in CopyFiles */,
+				D01B47771E8AC6BF007D990C /* JVFloatLabeledTextView.h in CopyFiles */,
+				D01B47781E8AC6BF007D990C /* JVFloatLabeledTextView.m in CopyFiles */,
+				D01B47791E8AC6BF007D990C /* NSString+TextDirectionality.h in CopyFiles */,
+				D01B477A1E8AC6BF007D990C /* NSString+TextDirectionality.m in CopyFiles */,
+				D01B477B1E8AC6BF007D990C /* NBAsYouTypeFormatter.h in CopyFiles */,
+				D01B477C1E8AC6BF007D990C /* NBAsYouTypeFormatter.m in CopyFiles */,
+				D01B477D1E8AC6BF007D990C /* NBMetadataCore.h in CopyFiles */,
+				D01B477E1E8AC6BF007D990C /* NBMetadataCore.m in CopyFiles */,
+				D01B477F1E8AC6BF007D990C /* NBMetadataCoreMapper.h in CopyFiles */,
+				D01B47801E8AC6BF007D990C /* NBMetadataCoreMapper.m in CopyFiles */,
+				D01B47811E8AC6BF007D990C /* NBMetadataCoreTest.h in CopyFiles */,
+				D01B47821E8AC6BF007D990C /* NBMetadataCoreTest.m in CopyFiles */,
+				D01B47831E8AC6BF007D990C /* NBMetadataCoreTestMapper.h in CopyFiles */,
+				D01B47841E8AC6BF007D990C /* NBMetadataCoreTestMapper.m in CopyFiles */,
+				D01B47851E8AC6BF007D990C /* NBMetadataHelper.h in CopyFiles */,
+				D01B47861E8AC6BF007D990C /* NBMetadataHelper.m in CopyFiles */,
+				D01B47871E8AC6BF007D990C /* NBNumberFormat.h in CopyFiles */,
+				D01B47881E8AC6BF007D990C /* NBNumberFormat.m in CopyFiles */,
+				D01B47891E8AC6BF007D990C /* NBPhoneMetaData.h in CopyFiles */,
+				D01B478A1E8AC6BF007D990C /* NBPhoneMetaData.m in CopyFiles */,
+				D01B478B1E8AC6BF007D990C /* NBPhoneNumber.h in CopyFiles */,
+				D01B478C1E8AC6BF007D990C /* NBPhoneNumber.m in CopyFiles */,
+				D01B478D1E8AC6BF007D990C /* NBPhoneNumberDefines.h in CopyFiles */,
+				D01B478E1E8AC6BF007D990C /* NBPhoneNumberDefines.m in CopyFiles */,
+				D01B478F1E8AC6BF007D990C /* NBPhoneNumberDesc.h in CopyFiles */,
+				D01B47901E8AC6BF007D990C /* NBPhoneNumberDesc.m in CopyFiles */,
+				D01B47911E8AC6BF007D990C /* NBPhoneNumberUtil.h in CopyFiles */,
+				D01B47921E8AC6BF007D990C /* NBPhoneNumberUtil.m in CopyFiles */,
+				D01B47931E8AC6BF007D990C /* TMCache.h in CopyFiles */,
+				D01B47941E8AC6BF007D990C /* TMCache.m in CopyFiles */,
+				D01B47951E8AC6BF007D990C /* TMCacheBackgroundTaskManager.h in CopyFiles */,
+				D01B47961E8AC6BF007D990C /* TMDiskCache.h in CopyFiles */,
+				D01B47971E8AC6BF007D990C /* TMDiskCache.m in CopyFiles */,
+				D01B47981E8AC6BF007D990C /* TMMemoryCache.h in CopyFiles */,
+				D01B47991E8AC6BF007D990C /* TMMemoryCache.m in CopyFiles */,
+				D01B479A1E8AC6BF007D990C /* UIColor+Ext.h in CopyFiles */,
+				D01B479B1E8AC6BF007D990C /* UIColor+Ext.m in CopyFiles */,
+				D01B479C1E8AC6BF007D990C /* EVCache.h in CopyFiles */,
+				D01B479D1E8AC6BF007D990C /* EVCache.m in CopyFiles */,
+				D01B479E1E8AC6BF007D990C /* NSString+Validation.h in CopyFiles */,
+				D01B479F1E8AC6BF007D990C /* NSString+Validation.m in CopyFiles */,
+				D01B47A01E8AC6BF007D990C /* Macro.h in CopyFiles */,
+				D01B47A11E8AC6BF007D990C /* UIFont+Extension.h in CopyFiles */,
+				D01B47A21E8AC6BF007D990C /* UIFont+Extension.m in CopyFiles */,
+				D01B47A31E8AC6BF007D990C /* UIView+Toast.h in CopyFiles */,
+				D01B47A41E8AC6BF007D990C /* UIView+Toast.m in CopyFiles */,
+				D01B47A51E8AC6BF007D990C /* NSArray+SafeThread.h in CopyFiles */,
+				D01B47A61E8AC6BF007D990C /* NSArray+SafeThread.m in CopyFiles */,
+				D01B47A71E8AC6BF007D990C /* NSCollection+JSON.h in CopyFiles */,
+				D01B47A81E8AC6BF007D990C /* NSCollection+JSON.m in CopyFiles */,
+				D01B47A91E8AC6BF007D990C /* NSDate+Format.h in CopyFiles */,
+				D01B47AA1E8AC6BF007D990C /* NSDate+Format.m in CopyFiles */,
+				D01B47AB1E8AC6BF007D990C /* UIDevice+Name.h in CopyFiles */,
+				D01B47AC1E8AC6BF007D990C /* UIDevice+Name.m in CopyFiles */,
+				D01B47AD1E8AC6BF007D990C /* UIImage+Extention.h in CopyFiles */,
+				D01B47AE1E8AC6BF007D990C /* UIImage+Extention.m in CopyFiles */,
+				D01B47AF1E8AC6BF007D990C /* UIView+Extention.h in CopyFiles */,
+				D01B47B01E8AC6BF007D990C /* UIView+Extention.m in CopyFiles */,
+				D01B47B11E8AC6BF007D990C /* UIViewController+BaseViewController.h in CopyFiles */,
+				D01B47B21E8AC6BF007D990C /* UIViewController+BaseViewController.m in CopyFiles */,
+				D01B47B31E8AC6BF007D990C /* EVFloatTextInputView.h in CopyFiles */,
+				D01B47B41E8AC6BF007D990C /* EVFloatTextInputView.m in CopyFiles */,
+				D01B47B51E8AC6BF007D990C /* EVFloatTextViewInputView.h in CopyFiles */,
+				D01B47B61E8AC6BF007D990C /* EVFloatTextViewInputView.m in CopyFiles */,
+				D01B47B71E8AC6BF007D990C /* RPFloatingPlaceholderTextView.h in CopyFiles */,
+				D01B47B81E8AC6BF007D990C /* RPFloatingPlaceholderTextView.m in CopyFiles */,
+				D01B47B91E8AC6BF007D990C /* EVLineView.h in CopyFiles */,
+				D01B47BA1E8AC6BF007D990C /* EVLineView.m in CopyFiles */,
 				F4E977E21E7DA42400DF2E89 /* Roboto-Black.ttf in CopyFiles */,
 				F4E977E31E7DA42400DF2E89 /* Roboto-BlackItalic.ttf in CopyFiles */,
 				F4E977E41E7DA42400DF2E89 /* Roboto-Bold.ttf in CopyFiles */,
@@ -111,7 +374,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D01B46601E8A4975007D990C /* EventGoCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = EventGoCommon.xcodeproj; sourceTree = SOURCE_ROOT; };
+		D01B47BD1E8AC826007D990C /* ReactiveObjC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveObjC.xcodeproj; path = ReactiveObj/ReactiveObjC.xcodeproj; sourceTree = SOURCE_ROOT; };
 		F4AD89B81E7D2C5D0081F2F3 /* libEventGoCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEventGoCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AD89BB1E7D2C5D0081F2F3 /* EventGoCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventGoCommon.h; sourceTree = "<group>"; };
 		F4AD89C81E7D2CFD0081F2F3 /* TMCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCache.h; sourceTree = "<group>"; };
@@ -269,8 +532,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D01B46611E8A4975007D990C /* Products */ = {
+		D01B47BE1E8AC826007D990C /* Products */ = {
 			isa = PBXGroup;
+			children = (
+				D01B47C31E8AC827007D990C /* ReactiveObjC.framework */,
+				D01B47C51E8AC827007D990C /* ReactiveObjCTests.xctest */,
+			);
 			name = Products;
 			sourceTree = "<group>";
 		};
@@ -294,7 +561,6 @@
 		F4AD89BA1E7D2C5D0081F2F3 /* EventGoCommon */ = {
 			isa = PBXGroup;
 			children = (
-				D01B46601E8A4975007D990C /* EventGoCommon.xcodeproj */,
 				F4AD89BB1E7D2C5D0081F2F3 /* EventGoCommon.h */,
 				F4AD8A521E7D36870081F2F3 /* Resources */,
 				F4AD8A2A1E7D33D60081F2F3 /* ThirdLib */,
@@ -396,6 +662,7 @@
 		F4AD8A2A1E7D33D60081F2F3 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				D01B47BD1E8AC826007D990C /* ReactiveObjC.xcodeproj */,
 				F4F0ACBC1E82DA0A00D663A6 /* CTContact */,
 				F4F0ACA51E82D95B00D663A6 /* MBProgressHUD */,
 				F4AD8A2B1E7D34420081F2F3 /* Masonry */,
@@ -600,8 +867,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D01B46611E8A4975007D990C /* Products */;
-					ProjectRef = D01B46601E8A4975007D990C /* EventGoCommon.xcodeproj */;
+					ProductGroup = D01B47BE1E8AC826007D990C /* Products */;
+					ProjectRef = D01B47BD1E8AC826007D990C /* ReactiveObjC.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -610,6 +877,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D01B47C31E8AC827007D990C /* ReactiveObjC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveObjC.framework;
+			remoteRef = D01B47C21E8AC827007D990C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D01B47C51E8AC827007D990C /* ReactiveObjCTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveObjCTests.xctest;
+			remoteRef = D01B47C41E8AC827007D990C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F4AD89B41E7D2C5D0081F2F3 /* Sources */ = {

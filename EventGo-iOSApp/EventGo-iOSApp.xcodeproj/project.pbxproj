@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		55F2CFC371258F545EE98BBF /* Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0BCB5DE24D9222EF211AD6 /* Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework */; };
 		C9473D78746962E2D90F4191 /* Pods_EventGo_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC63F4ADD9D479D0BBD61CF /* Pods_EventGo_iOSApp.framework */; };
+		D01B47DB1E8B43E7007D990C /* DemoST.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01B47DA1E8B43E7007D990C /* DemoST.storyboard */; };
+		D01B47DD1E8B446B007D990C /* DemoSTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B47DC1E8B446B007D990C /* DemoSTViewController.swift */; };
 		F4056A0F1E8240FC00BEC162 /* EVLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4056A0E1E8240FC00BEC162 /* EVLog.swift */; };
 		F4056A151E8245FF00BEC162 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */; };
 		F4056A171E82460600BEC162 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4056A161E82460600BEC162 /* Photos.framework */; };
@@ -129,6 +131,8 @@
 		6E25C8B0E62EC80BFED04877 /* Pods-EventGo-iOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp/Pods-EventGo-iOSApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8B0BCB5DE24D9222EF211AD6 /* Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC9B2288DB560C0D3B72361 /* Pods-EventGo-iOSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp/Pods-EventGo-iOSApp.release.xcconfig"; sourceTree = "<group>"; };
+		D01B47DA1E8B43E7007D990C /* DemoST.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DemoST.storyboard; sourceTree = "<group>"; };
+		D01B47DC1E8B446B007D990C /* DemoSTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSTViewController.swift; sourceTree = "<group>"; };
 		D2970CF6CE73C5F35F28774B /* Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp-EventGo-iOSAppTests/Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4056A0E1E8240FC00BEC162 /* EVLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EVLog.swift; path = ../Managers/EVLog.swift; sourceTree = "<group>"; };
 		F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -263,6 +267,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D01B47D91E8B43D3007D990C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D01B47DA1E8B43E7007D990C /* DemoST.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F4AD8AC61E7D3C310081F2F3 = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +298,7 @@
 		F4AD8AD11E7D3C310081F2F3 /* EventGo-iOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				D01B47D91E8B43D3007D990C /* View */,
 				F4AD8BBE1E7D3D1F0081F2F3 /* AppDelegate */,
 				F4AD8BC01E7D3D1F0081F2F3 /* Configures */,
 				F4F0ACE11E82DA3C00D663A6 /* Helpers */,
@@ -356,6 +369,7 @@
 				F4CAA6871E82E8A50084FC51 /* ListEventsCalendar */,
 				F4CAA68C1E82E8A50084FC51 /* LoginViewController */,
 				F4AD8BC21E7D3D1F0081F2F3 /* EVViewController.swift */,
+				D01B47DC1E8B446B007D990C /* DemoSTViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -660,6 +674,7 @@
 				F4E978CA1E7E3F3E00DF2E89 /* GoogleService-Info.plist in Resources */,
 				F4AD8ADA1E7D3C310081F2F3 /* Assets.xcassets in Resources */,
 				F4E978EA1E7E3F8400DF2E89 /* FacebookSDKStrings.bundle in Resources */,
+				D01B47DB1E8B43E7007D990C /* DemoST.storyboard in Resources */,
 				F4CAA6A91E82E9D20084FC51 /* EGItemStoreView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -783,6 +798,7 @@
 				F4F0ACE01E82DA1B00D663A6 /* LineView.swift in Sources */,
 				F4E979E31E804B7000DF2E89 /* Marco.swift in Sources */,
 				F4F0ACAF1E82D9A200D663A6 /* ToastView.swift in Sources */,
+				D01B47DD1E8B446B007D990C /* DemoSTViewController.swift in Sources */,
 				F4CAA6A31E82E8CA0084FC51 /* EVItemProtocol.swift in Sources */,
 				F4E979F11E80509500DF2E89 /* EVLocation.swift in Sources */,
 				F4056A0F1E8240FC00BEC162 /* EVLog.swift in Sources */,

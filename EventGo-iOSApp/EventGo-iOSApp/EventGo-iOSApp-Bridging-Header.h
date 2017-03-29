@@ -14,6 +14,7 @@
 #import <EventGoCommon/EventGoCommon.h>
 #import <EventGoCommon/MBProgressHUD.h>
 #import <EventGoNetwork/EventGoNetwork.h>
+#import "EVAuthenticationManager.h"
 
 
 #endif /* EventGo_iOSApp_Bridging_Header_h */

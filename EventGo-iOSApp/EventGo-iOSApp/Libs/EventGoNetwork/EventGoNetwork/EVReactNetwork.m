@@ -12,7 +12,9 @@
 #import "NSError+EVAPI.h"
 
 @interface EVReactNetwork ()
+
 @property (nonatomic, strong) NSURLSession *client;
+
 @end
 
 @implementation EVReactNetwork

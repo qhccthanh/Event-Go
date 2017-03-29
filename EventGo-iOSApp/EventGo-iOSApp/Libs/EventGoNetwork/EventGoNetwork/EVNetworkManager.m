@@ -132,94 +132,139 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
             startTime:(double)startTime
         requestEventId:(NSInteger)requestEventId {
     
-   /* NSURLSessionDataTask *requestTask = */[self.client GET:path
-                                              parameters:requestParams
-                                                progress:nil
-                                                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//                                              DDLogInfo(@"<-- %@", task.currentRequest.URL);
-//                                              DDLogInfo(@"<-- %@", responseObject);
-                                              NSError *error = [self preHandleResult:responseObject
-                                                                               error:nil
-                                                                          subscriber:subscriber];
-                                              if (error) {
-                                                  [self logError:error request:task.currentRequest];
-                                              } else if (requestEventId > 0) {
-                                                  double currentTime = [[NSDate date] timeIntervalSince1970] * 1000;
-                                                  double requestTime = currentTime - startTime;
-                                                  if ([task.originalRequest.URL.path isEqualToString:checkPath]) {
-                                                      requestTime = [task.originalRequest getTimeDurationRequest];
-                                                      
-//                                                      DDLogInfo(@"abc");
-                                                  }
-                                                  
-//                                                  [[ZPAppFactory sharedInstance].eventTracker trackTiming:requestEventId value:@(requestTime)];
-                                              }
-                                          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//                                              DDLogInfo(@"<-- %@", task.currentRequest.URL);
-//                                              DDLogInfo(@"<-- error : %@", error);
-                                              [self logError:error request:task.currentRequest];
-                                              int remainRetry = retryCount - 1;
-                                              if ([error isRequestTimeout] && remainRetry > 0) {
-                                                  [self retryWithPath:path
-                                                               params:requestParams
-                                                            subsciber:subscriber
-                                                         requestRetry:remainRetry
-                                                            startTime:startTime
-                                                        requestEventId:requestEventId];
-                                                  return;
-                                              }
-                                              
-                                              [self preHandleResult:nil
-                                                              error:error
-                                                         subscriber:subscriber];
-                                              
-                                          }];
+    [self.client GET:path
+          parameters:requestParams
+            progress:nil
+             success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                 //                                              DDLogInfo(@"<-- %@", task.currentRequest.URL);
+                 //                                              DDLogInfo(@"<-- %@", responseObject);
+                 NSError *error = [self preHandleResult:responseObject
+                                                  error:nil
+                                             subscriber:subscriber];
+                 if (error) {
+                     [self logError:error request:task.currentRequest];
+                 } else if (requestEventId > 0) {
+                     double currentTime = [[NSDate date] timeIntervalSince1970] * 1000;
+                     double requestTime = currentTime - startTime;
+                     if ([task.originalRequest.URL.path isEqualToString:checkPath]) {
+                         requestTime = [task.originalRequest getTimeDurationRequest];
+                         
+                         //                                                      DDLogInfo(@"abc");
+                     }
+                     
+                     //                                                  [[ZPAppFactory sharedInstance].eventTracker trackTiming:requestEventId value:@(requestTime)];
+                 }
+             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                 //                                              DDLogInfo(@"<-- %@", task.currentRequest.URL);
+                 //                                              DDLogInfo(@"<-- error : %@", error);
+                 [self logError:error request:task.currentRequest];
+                 int remainRetry = retryCount - 1;
+                 if ([error isRequestTimeout] && remainRetry > 0) {
+                     [self retryWithPath:path
+                                  params:requestParams
+                               subsciber:subscriber
+                            requestRetry:remainRetry
+                               startTime:startTime
+                          requestEventId:requestEventId];
+                     return;
+                 }
+                 
+                 [self preHandleResult:nil
+                                 error:error
+                            subscriber:subscriber];
+                 
+             }];
     
-//    DDLogInfo(@"request retry count :%d",retryCount);
-//    DDLogInfo(@" --> %@", requestTask.originalRequest.URL);
+    //    DDLogInfo(@"request retry count :%d",retryCount);
+    //    DDLogInfo(@" --> %@", requestTask.originalRequest.URL);
 }
 
 
 - (RACSignal *)postRequestWithPath:(NSString *)path
-                    parameters:(NSDictionary *)params
-                 requestEventId:(NSInteger)requestEventId {
+                    parameters:(NSDictionary *)params {
     
     NSDictionary *requestParams = [self requestParamWithParam:params];
     //double startTime = requestEventId <= 0 ? 0: [[NSDate date] timeIntervalSince1970] * 1000;
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        /*NSURLSessionDataTask *requestTask = */[self.client POST:path
-                                                   parameters:requestParams
-                                                     progress:nil
-                                                      success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//                                                          DDLogInfo(@"<-- %@", task.currentRequest.URL);
-//                                                          DDLogInfo(@"<-- %@", responseObject);
-                                                          NSError *error = [self preHandleResult:responseObject
-                                                                                           error:nil
-                                                                                      subscriber:subscriber];
-                                                          if (error) {
-                                                              [self logError:error request:task.currentRequest];
-                                                          } else if (requestEventId > 0) {
-                                                              //double currentTime = [[NSDate date] timeIntervalSince1970] * 1000;
-//                                                              double requestTime = currentTime - startTime;
-//                                                              [[ZPAppFactory sharedInstance].eventTracker trackTiming:requestEventId value:@(requestTime)];
-                                                          }
-
-                                                      } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//                                                          DDLogInfo(@"<-- %@", task.currentRequest.URL);
-//                                                          DDLogInfo(@"<-- error : %@", error);
-                                                          [self logError:error request:task.currentRequest];
-                                                          [self preHandleResult:nil
-                                                                          error:error
-                                                                     subscriber:subscriber];
-                                                          
-                                                      }];
-        
-//        DDLogInfo(@" --> %@", requestTask.originalRequest.URL);
+        [self.client POST:path
+               parameters:requestParams
+                 progress:nil
+                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                      
+                      NSError *error = [self preHandleResult:responseObject
+                                                       error:nil
+                                                  subscriber:subscriber];
+                      if (error) {
+                          [self logError:error request:task.currentRequest];
+                      }
+                  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                      
+                      [self logError:error request:task.currentRequest];
+                      [self preHandleResult:nil
+                                      error:error
+                                 subscriber:subscriber];
+                      
+                  }];
         
         return nil;
     }] replayLazily];
 }
 
+
+- (RACSignal *)putRequestWithPath:(NSString *)path
+                       parameters:(NSDictionary *)params {
+    NSDictionary *requestParams = [self requestParamWithParam:params];
+    //double startTime = requestEventId <= 0 ? 0: [[NSDate date] timeIntervalSince1970] * 1000;
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        
+        [self.client PUT:path
+              parameters:requestParams
+                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                     
+                     NSError *error = [self preHandleResult:responseObject
+                                                      error:nil
+                                                 subscriber:subscriber];
+                     if (error) {
+                         [self logError:error request:task.currentRequest];
+                     }
+                 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                     [self logError:error request:task.currentRequest];
+                     [self preHandleResult:nil
+                                     error:error
+                                subscriber:subscriber];
+                     
+                 }];
+        
+        return nil;
+    }] replayLazily];
+}
+
+- (RACSignal *)deleteRequestWithPath:(NSString *)path
+                       parameters:(NSDictionary *)params {
+    NSDictionary *requestParams = [self requestParamWithParam:params];
+    //double startTime = requestEventId <= 0 ? 0: [[NSDate date] timeIntervalSince1970] * 1000;
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        
+        [self.client DELETE:path
+              parameters:requestParams
+                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                     
+                     NSError *error = [self preHandleResult:responseObject
+                                                      error:nil
+                                                 subscriber:subscriber];
+                     if (error) {
+                         [self logError:error request:task.currentRequest];
+                     }
+                 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                     [self logError:error request:task.currentRequest];
+                     [self preHandleResult:nil
+                                     error:error
+                                subscriber:subscriber];
+                     
+                 }];
+        return nil;
+    }] replayLazily];
+}
 
 
 - (void)logError:(NSError *)error request:(NSURLRequest *)request {
@@ -299,7 +344,6 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
                                                     if (requestEventId > 0) {
 //                                                          double currentTime = [[NSDate date] timeIntervalSince1970] * 1000;
 //                                                          double requestTime = currentTime - startTime;
-//                                                          [[ZPAppFactory sharedInstance].eventTracker trackTiming:requestEventId value:@(requestTime)];
                                                       }
                                                   }                                                  
                                                   [self preHandleResult:responseObject

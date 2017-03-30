@@ -16,15 +16,15 @@ public class EVAwardServices {
     static let shareInstance = EVAwardServices()
     
     var path: String{
-        return "events"
+        return "awards"
     }
     
     var headers: [String : String] {
         return ["Content-Type": "application/json", "token": ""]
     }
     
-    func getAllTaskOfEvent(with idEvent: String)-> RACSignal<AnyObject> {
-        let subPath = "\(idEvent)"
+    func getDetailAward(with idAward: String)-> RACSignal<AnyObject> {
+        let subPath = "/\(idAward)"
         
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
             let networkRequest = EVReactNetwork()

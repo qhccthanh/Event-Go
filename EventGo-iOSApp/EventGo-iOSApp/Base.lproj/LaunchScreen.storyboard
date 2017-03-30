@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +21,30 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fm5-6h-Scr">
+                                <rect key="frame" x="87" y="133.5" width="200" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventGo-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ioN-NH-IbI">
+                                        <rect key="frame" x="10" y="10" width="180" height="180"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ioN-NH-IbI" secondAttribute="trailing" constant="10" id="8d2-1W-R0T"/>
+                                    <constraint firstAttribute="height" constant="200" id="Oik-dJ-6O6"/>
+                                    <constraint firstAttribute="width" constant="200" id="T5q-ka-Cce"/>
+                                    <constraint firstItem="ioN-NH-IbI" firstAttribute="leading" secondItem="fm5-6h-Scr" secondAttribute="leading" constant="10" id="Z7V-Lt-kyX"/>
+                                    <constraint firstItem="ioN-NH-IbI" firstAttribute="top" secondItem="fm5-6h-Scr" secondAttribute="top" constant="10" id="iJp-nf-UxA"/>
+                                    <constraint firstAttribute="bottom" secondItem="ioN-NH-IbI" secondAttribute="bottom" constant="10" id="ieH-wP-BLw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fm5-6h-Scr" secondAttribute="bottom" multiplier="2:1" id="I9D-Hq-wwe"/>
+                            <constraint firstItem="fm5-6h-Scr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wAj-8q-fbA"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,4 +52,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="EventGo-Logo" width="512" height="512"/>
+    </resources>
 </document>

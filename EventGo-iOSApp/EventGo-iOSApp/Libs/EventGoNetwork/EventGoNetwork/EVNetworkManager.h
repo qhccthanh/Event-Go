@@ -21,10 +21,6 @@ typedef  void (^DowloadProgressBlock)(float progress);
 typedef  void (^PrehandleServerError)(int errorCode, NSString *message);
 typedef  void (^AccessTokeUpdateHandle)(NSString *accesstoken);
 
-
-extern NSString *kZaloPayClientAppId;
-
-
 @interface EVNetworkManager : NSObject
 
 @property (nonatomic, strong) NSString *accesstoken;

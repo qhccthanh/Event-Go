@@ -75,7 +75,7 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
 
 - (void)setupClientWithConfigure:(NSURLSessionConfiguration *)sessionConfiguration {
     
-    self.client = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]
+    self.client = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseUrl]
                                            sessionConfiguration:sessionConfiguration];
     if (self.client) {
         NSMutableSet *contentType = [[NSMutableSet alloc] initWithSet:self.client.responseSerializer.acceptableContentTypes];
@@ -107,9 +107,7 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
     if (params) {
         [requestParams addEntriesFromDictionary:params];
     }
-    if (![requestParams objectForKey:@"appid"]) {
-        [requestParams setObject:kZaloPayClientAppId forKey:@"appid"];
-    }
+    
      NSString *appVersion = [NSString stringWithFormat:@"%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
     
     [requestParams setObjectCheckNil:appVersion forKey:@"appversion"];
@@ -310,7 +308,7 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
     }
     
     NSString *accesstoken = [responseData stringForKey:@"access_token"];
-    if (accesstoken.length && ![accesstoken isEqualToString:self.access_token])
+    if (accesstoken.length && ![accesstoken isEqualToString:self.accesstoken])
     {
         self.accesstoken = accesstoken;
         if (self.accesstokeUpdateHandle) {
@@ -358,11 +356,7 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
                                                   if (error) {
 //                                                      DDLogInfo(@"<-- error : %@", error);
                                                   }else {
-//                                                      DDLogInfo(@"<-- %@", responseObject);
-                                                    if (requestEventId > 0) {
-//                                                          double currentTime = [[NSDate date] timeIntervalSince1970] * 1000;
-//                                                          double requestTime = currentTime - startTime;
-                                                      }
+
                                                   }                                                  
                                                   [self preHandleResult:responseObject
                                                                   error:error

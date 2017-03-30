@@ -42,7 +42,7 @@
                                                       body:bodyString];
         
         NSInteger eventId = [self eventIdFromUrlString:request.URL];
-        double startTime = eventId <= 0 ? 0 : [[NSDate date] timeIntervalSince1970] * 1000;
+//        double startTime = eventId <= 0 ? 0 : [[NSDate date] timeIntervalSince1970] * 1000;
         
         NSURLSessionDataTask *task = [self.client dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             NSString *stringData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -55,7 +55,7 @@
             }
             
             if (eventId > 0) {
-                double endTime = [[NSDate date] timeIntervalSince1970] * 1000;
+//                double endTime = [[NSDate date] timeIntervalSince1970] * 1000;
                 //NSNumber *value = @(endTime - startTime);
 //                [[ZPAppFactory sharedInstance].eventTracker  trackTiming:eventId value:value];
             }

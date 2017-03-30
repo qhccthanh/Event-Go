@@ -12,18 +12,14 @@ import ReactiveSwift
 import ReactiveCocoa
 import enum Result.NoError
 
-public class EVSupplierServices {
+public class EVSupplierServices: BaseService {
     
     static let shareInstance = EVSupplierServices()
     
-    var path: String{
+    override var subUrl: String{
         return "suppliers"
     }
     
-     var headers: [String : String] {
-        return ["Content-Type": "application/json", "token": ""]
-    }
-
     func getAllSupplier()-> RACSignal<AnyObject> {
         
             return RACSignal.createSignal({ (sub) -> RACDisposable? in
@@ -39,10 +35,10 @@ public class EVSupplierServices {
 
     func getAllEventsOfSupplier( with idSupplier: Int) -> RACSignal<AnyObject> {
         
-        let subPath = path + "\(idSupplier)/events"
+        let url = path + "\(idSupplier)/events"
         
         return RACSignal.createSignal({ (subcrible) -> RACDisposable? in
-            EVNetworkManager.sharedInstance().request(withPath: subPath, parameters: nil).subscribeNext({ (object) in
+            EVNetworkManager.sharedInstance().request(withPath: url, parameters: nil).subscribeNext({ (object) in
                 subcrible.sendNext(object)
             }, error: { (error) in
                 subcrible.sendError(error)
@@ -52,10 +48,10 @@ public class EVSupplierServices {
     
     func getAllItemsOfSupplier( with idSupplier: Int) -> RACSignal<AnyObject> {
         
-        let subPath = path + "\(idSupplier)/items"
+        let url = path + "\(idSupplier)/items"
         
         return RACSignal.createSignal({ (subcrible) -> RACDisposable? in
-            EVNetworkManager.sharedInstance().request(withPath: subPath, parameters: nil).subscribeNext({ (object) in
+            EVNetworkManager.sharedInstance().request(withPath: url, parameters: nil).subscribeNext({ (object) in
                 subcrible.sendNext(object)
             }, error: { (error) in
                 subcrible.sendError(error)
@@ -65,10 +61,10 @@ public class EVSupplierServices {
     
     func getAllAwardsOfSupplier( with idSupplier: Int) -> RACSignal<AnyObject> {
         
-        let subPath = path + "\(idSupplier)/awards"
+        let url = path  + "\(idSupplier)/awards"
         
         return RACSignal.createSignal({ (subcrible) -> RACDisposable? in
-            EVNetworkManager.sharedInstance().request(withPath: subPath, parameters: nil).subscribeNext({ (object) in
+            EVNetworkManager.sharedInstance().request(withPath: url, parameters: nil).subscribeNext({ (object) in
                 subcrible.sendNext(object)
             }, error: { (error) in
                 subcrible.sendError(error)
@@ -78,10 +74,10 @@ public class EVSupplierServices {
     
     func getAllNotificationsOfSupplier( with idSupplier: Int) -> RACSignal<AnyObject> {
         
-        let subPath = path + "\(idSupplier)/notifications"
+       let url = path + "\(idSupplier)/notifications"
         
         return RACSignal.createSignal({ (subcrible) -> RACDisposable? in
-            EVNetworkManager.sharedInstance().request(withPath: subPath, parameters: nil).subscribeNext({ (object) in
+            EVNetworkManager.sharedInstance().request(withPath: url, parameters: nil).subscribeNext({ (object) in
                 subcrible.sendNext(object)
             }, error: { (error) in
                 subcrible.sendError(error)

@@ -11,18 +11,14 @@ import ReactiveSwift
 import ReactiveCocoa
 import enum Result.NoError
 
-public class EVAwardServices {
+public class EVAwardServices: BaseService {
     
     static let shareInstance = EVAwardServices()
     
-    var path: String{
+    override var subUrl: String{
         return "awards"
     }
-    
-    var headers: [String : String] {
-        return ["Content-Type": "application/json", "token": ""]
-    }
-    
+ 
     func getDetailAward(with idAward: String)-> RACSignal<AnyObject> {
         let subPath = "/\(idAward)"
         

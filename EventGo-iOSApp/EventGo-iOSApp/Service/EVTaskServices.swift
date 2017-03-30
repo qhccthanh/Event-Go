@@ -12,24 +12,20 @@ import ReactiveSwift
 import ReactiveCocoa
 import enum Result.NoError
 
-public class EVTaskServices {
+public class EVTaskServices: BaseService {
     
     static let shareInstance = EVTaskServices()
     
-    var path: String{
+    override var subUrl: String{
         return "events"
     }
     
-    var headers: [String : String] {
-        return ["Content-Type": "application/json", "token": ""]
-    }
-
     func getDetailTaskOfEvent(with idTask: String)-> RACSignal<AnyObject> {
-        let subPath = "\(idTask)"
+        let url = path + "\(idTask)"
         
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
             let networkRequest = EVReactNetwork()
-            networkRequest.request(withMethod: "get", header: self.headers, urlString: subPath, params: nil, body: nil).subscribeNext({ (object) in
+            networkRequest.request(withMethod: "get", header: self.headers, urlString: url, params: nil, body: nil).subscribeNext({ (object) in
                 sub.sendNext(object)
             }, error: { (error) in
                 sub.sendError(error)

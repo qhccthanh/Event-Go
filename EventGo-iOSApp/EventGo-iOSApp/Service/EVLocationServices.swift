@@ -7,24 +7,20 @@
 //
 
 import Foundation
-public class EVLocationServices {
+public class EVLocationServices: BaseService {
     
     static let shareInstance = EVLocationServices()
     
-    var path: String{
+    override var subUrl: String{
         return "locations"
     }
     
-    var headers: [String : String] {
-        return ["Content-Type": "application/json", "token": ""]
-    }
-    
     func getDetailLocation(with idLocation: String)-> RACSignal<AnyObject> {
-        let subPath = "\(idLocation)"
+        let url = path + "\(idLocation)"
         
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
             let networkRequest = EVReactNetwork()
-            networkRequest.request(withMethod: "get", header: self.headers, urlString: subPath, params: nil, body: nil).subscribeNext({ (object) in
+            networkRequest.request(withMethod: "get", header: self.headers, urlString: url, params: nil, body: nil).subscribeNext({ (object) in
                 sub.sendNext(object)
             }, error: { (error) in
                 sub.sendError(error)

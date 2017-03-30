@@ -66,7 +66,11 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 }
 
 + (UIColor *)egoBaseColor {
-    return [UIColor colorWithHexValue:0x008fe5];
+    return [UIColor colorWithHexValue:0x266378];
+}
+
++ (UIColor *)egoSecondaryColor {
+    return [UIColor colorWithHexValue:0x52B888];
 }
 
 + (UIColor *)lineColor {

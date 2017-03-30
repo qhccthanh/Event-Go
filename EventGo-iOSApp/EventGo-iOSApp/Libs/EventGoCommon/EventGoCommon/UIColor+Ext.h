@@ -18,6 +18,7 @@
 @interface UIColor (EventGo)
 + (UIColor *)midNightBlueColor;
 + (UIColor *)egoBaseColor;
++ (UIColor *)egoSecondaryColor;
 + (UIColor *)lineColor;
 + (UIColor *)errorColor;
 + (UIColor *)defaultBackground;

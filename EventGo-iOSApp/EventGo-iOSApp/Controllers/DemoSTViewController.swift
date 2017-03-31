@@ -55,26 +55,32 @@ class DemoSTViewController: UIViewController {
 //        }
 //        nameTextField.reactive.text <~ characters
 //
-//        loginButton.reactive.controlEvents(.touchUpInside).observe { _ in
-//            print("da nhan")
-//        }
-        
-        
-        let nameSignal: Signal = nameTextField.reactive.continuousTextValues
-        let emailSignal: Signal = passwordTextField.reactive.continuousTextValues
-        
-        
-        var combineSignal = Signal.combineLatest([nameSignal, emailSignal]).observeResult { (strs) in
-            if let values = strs.value,
-                let value1 = values[0],
-                let value2 = values[1],
-                value1 == "" && value2 == "dfe"
-            {
-                self.loginButton.isEnabled = true
-            } else {
-                self.loginButton.isEnabled = false
-            }
+        loginButton.reactive.controlEvents(.touchUpInside).observe { _ in
+            let loginFacebookSignal = EVAuthenticationManager.share().authenticateWithFacebook(in: self)
+            loginFacebookSignal?.subscribeNext({ (response) in
+                print(response)
+            }, error: { (error) in
+                print(error)
+            })
         }
+        
+        
+//        let nameSignal: Signal = nameTextField.reactive.continuousTextValues
+//        let emailSignal: Signal = passwordTextField.reactive.continuousTextValues
+//        
+//        
+//        var combineSignal = Signal.combineLatest([nameSignal, emailSignal]).observeResult { (strs) in
+//            if let values = strs.value,
+//                let value1 = values[0],
+//                let value2 = values[1],
+//                value1 == "" && value2 == "dfe"
+//            {
+//                self.loginButton.isEnabled = true
+//            } else {
+//                self.loginButton.isEnabled = false
+//            }
+//        }
+
         
     }
 

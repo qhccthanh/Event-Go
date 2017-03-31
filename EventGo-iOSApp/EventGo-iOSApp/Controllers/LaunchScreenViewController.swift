@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import FBSDKLoginKit
+import enum Result.NoError
 class LaunchScreenViewController: UIViewController {
 
     @IBOutlet weak var avatarAppView: UIView!
@@ -28,20 +29,36 @@ class LaunchScreenViewController: UIViewController {
 //        rotateView(targetView: avatarAppView, duration: 5)
         
         self.avatarAppView.rotate360Degrees()
-        Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(self.stopRotateView), userInfo: nil , repeats: false)
+//        Timer.scheduledTimer(timeInterval: 50, target: self, selector: #selector(self.stopRotateView), userInfo: nil , repeats: false)
     }
-//    
-//    private func rotateView(targetView: UIView, duration: Double = 1.0) {
-//        UIView.animate(withDuration: duration, delay: 0.0, options: .curveLinear, animations: {
-//            targetView.transform = targetView.transform.rotated(by: CGFloat(Double.pi))
-//        }) { finished in
-//            self.rotateView(targetView: targetView, duration: duration)
-//            Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.inham), userInfo: nil , repeats: false)
-//        }
-//    }
-//    
+
+    @IBAction func loginFBAction(_ sender: Any) {
+        let loginFacebookSignal = EVAuthenticationManager.share().authenticateWithFacebook(in: self)
+        loginFacebookSignal?.subscribeNext({ (response) in
+            let token = FBSDKAccessToken.current().tokenString
+            var loginServerSignal = EVUserServices.shareInstance.loginWithFB(with: token!)
+            
+            loginServerSignal.subscribeNext({ (result) in
+                print(result)
+            })
+            
+            loginServerSignal.subscribeError({ (error) in
+                print(error)
+            })
+        }, error: { (error) in
+            
+        })
+        
+        
+        
+    }
+    
+    
     func stopRotateView(){
         self.avatarAppView.layer.removeAllAnimations()
+        if let tvc = UIStoryboard(name: "DemoST", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+            self.present(tvc, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {

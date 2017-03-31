@@ -9,7 +9,7 @@ import Foundation
 import SwiftyJSON
 
 open class BaseService {
-    internal let baseURL = "/"
+    internal let baseURL = "https://evgo.herokuapp.com/api/v1.0/"
     internal var subUrl : String {
         get {
             return ""

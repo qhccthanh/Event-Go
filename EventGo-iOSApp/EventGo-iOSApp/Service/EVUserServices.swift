@@ -27,7 +27,6 @@ public class EVUserServices: BaseService {
         
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
             
-            
             EVReactNetwork.request(with: EVReactNetworkMethod_POST, header: self.headers, urlString: self.path, params: params).subscribeNext({ (object) in
                 // Co the la NSDictionary kiem tra ky
                 print(object)

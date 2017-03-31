@@ -39,7 +39,7 @@ class LaunchScreenViewController: UIViewController {
             var loginServerSignal = EVUserServices.shareInstance.loginWithFB(with: token!)
             
             loginServerSignal.subscribeNext({ (result) in
-                print(result)
+                self.stopRotateView()
             })
             
         }, error: { (error) in
@@ -53,7 +53,7 @@ class LaunchScreenViewController: UIViewController {
     
     func stopRotateView(){
         self.avatarAppView.layer.removeAllAnimations()
-        if let tvc = UIStoryboard(name: "DemoST", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+        if let tvc = UIStoryboard(name: "DemoST", bundle: nil).instantiateViewController(withIdentifier: "EVMainGameController") as? EVMainGameController {
             self.present(tvc, animated: true, completion: nil)
         }
     }

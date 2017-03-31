@@ -110,6 +110,27 @@
             </objects>
             <point key="canvasLocation" x="-311.19999999999999" y="-10.344827586206897"/>
         </scene>
+        <!--Main Game Controller-->
+        <scene sceneID="cWV-5T-Cg8">
+            <objects>
+                <viewController storyboardIdentifier="EVMainGameController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WTe-yi-N7i" customClass="EVMainGameController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QY6-8c-JtL"/>
+                        <viewControllerLayoutGuide type="bottom" id="w65-hm-kjh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SU5-Bc-Dlu" customClass="GMSMapView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainMapView" destination="SU5-Bc-Dlu" id="ac3-89-nGd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yba-dC-SHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="688" y="41"/>
+        </scene>
         <!--Launch Screen View Controller-->
         <scene sceneID="lTq-bY-Xkn">
             <objects>

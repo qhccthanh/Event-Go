@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
-
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,15 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        GMSServices.provideAPIKey(EVConstant.API_GOOGLE_MAP_SERVICE_KEY)
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-//        window = UIWindow(frame: SCREEN_FRAME_PORTRAIT)
-//        window?.makeKeyAndVisible()
-//        window?.rootViewController = EVViewController()
-//        if let tvc = UIStoryboard(name: "DemoST", bundle: nil).instantiateViewController(withIdentifier: "LaunchScreenViewController") as? LaunchScreenViewController {
-//            window?.rootViewController = tvc
-//        }
+        window = UIWindow(frame: SCREEN_FRAME_PORTRAIT)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = EVViewController()
+        if let tvc = UIStoryboard(name: "DemoST", bundle: nil).instantiateViewController(withIdentifier: "EVMainGameController") as? EVMainGameController {
+            window?.rootViewController = tvc
+        }
+        
+        
         return true
     }
 

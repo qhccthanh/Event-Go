@@ -9,10 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <EventGoCommon/EventGoCommon.h>
 
+typedef enum : NSInteger {
+    EVReactNetworkMethod_GET,
+    EVReactNetworkMethod_POST,
+    EVReactNetworkMethod_PUT,
+    EVReactNetworkMethod_DELETE,
+} EVReactNetworkMethod;
+
 @interface EVReactNetwork : NSObject
-- (RACSignal *)requestWithMethod:(NSString *)method
+
++ (RACSignal *)requestWithMethod:(EVReactNetworkMethod)method
                           header:(NSDictionary *)headers
                        urlString:(NSString *)urlString
-                          params:(NSDictionary *)param
-                            body:(NSString *)bodyString;
+                          params:(NSDictionary *)params;
+
 @end

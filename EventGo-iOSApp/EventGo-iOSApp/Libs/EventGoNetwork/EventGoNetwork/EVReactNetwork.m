@@ -19,58 +19,88 @@
 
 @implementation EVReactNetwork
 
-- (NSURLSession *)client {
-    if (!_client) {
++ (NSURLSession *)client {
+    static NSURLSession *client = NULL;
+    if (!client) {
         NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
         sessionConfiguration.timeoutIntervalForRequest = 10.;
-        _client = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+        client = [NSURLSession sessionWithConfiguration:sessionConfiguration];
     }
-    return _client;
+    return client;
 }
 
-- (RACSignal *)requestWithMethod:(NSString *)method
++ (NSString *)stringFromEnumMethod:(EVReactNetworkMethod)method {
+    
+    switch (method) {
+        case EVReactNetworkMethod_GET:
+            return @"GET";
+        case EVReactNetworkMethod_POST:
+            return @"POST";
+        case EVReactNetworkMethod_PUT:
+            return @"PUT";
+        case EVReactNetworkMethod_DELETE:
+            return @"DELETE";
+            
+    }
+}
+
++ (RACSignal *)requestWithMethod:(EVReactNetworkMethod)method
                           header:(NSDictionary *)headers
                        urlString:(NSString *)urlString
-                          params:(NSDictionary *)param
-                            body:(NSString *)bodyString {
-    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        NSURLRequest *request = [self urlRequestWithMethod:method
-                                                    header:headers
-                                                 urlString:urlString
-                                                     params:param
-                                                      body:bodyString];
-        
-        NSInteger eventId = [self eventIdFromUrlString:request.URL];
-//        double startTime = eventId <= 0 ? 0 : [[NSDate date] timeIntervalSince1970] * 1000;
-        
+                          params:(NSDictionary *)params {
+    
+    NSString* nMethod = [self stringFromEnumMethod:method];
+    NSURLRequest *request = [self urlRequestWithMethod:nMethod
+                                                header:headers
+                                             urlString:urlString
+                                                  body:params];
+    
+    if ([nMethod isEqualToString:@"GET"]) {
+        request = [self urlRequestWithMethod:nMethod
+                                      header:headers
+                                   urlString:urlString
+                                      params:params
+                                        body:nil];
+    }
+    
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         NSURLSessionDataTask *task = [self.client dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            NSString *stringData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//            DDLogDebug(@"error : %@",error);
-//            DDLogDebug(@"data = %@",stringData);
+            
+            NSError *paraseError;
+            NSDictionary *dictData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&paraseError];
+            NSLog(@"error : %@",error);
+            NSLog(@"data = %@",dictData);
+            
             if (error) {
-                NSError *zaloPayError = [self errorFromNetworkError:error];
-                [subscriber sendError:zaloPayError];
+                [subscriber sendError:error];
                 return;
             }
             
-            if (eventId > 0) {
-//                double endTime = [[NSDate date] timeIntervalSince1970] * 1000;
-                //NSNumber *value = @(endTime - startTime);
-//                [[ZPAppFactory sharedInstance].eventTracker  trackTiming:eventId value:value];
+            if (paraseError) {
+                NSString *errorStr = [[NSString alloc] initWithData:data encoding
+                                                                   :NSUTF8StringEncoding];
+                if (errorStr) {
+                    [subscriber sendError:
+                     [NSError errorWithDomain:@"evgo.com" code:-120 userInfo:@{NSLocalizedDescriptionKey:errorStr}]
+                     ];
+                    return;
+                }
+                
+                [subscriber sendError:paraseError];
+                return;
             }
             
-            [subscriber sendNext:stringData];
+            [subscriber sendNext:dictData];
             [subscriber sendCompleted];
         }];
         [task resume];
         return [RACDisposable disposableWithBlock:^{
             [task cancel];
         }];
-    }] replayLazily];
+    }];
 }
 
-- (NSURLRequest *)urlRequestWithMethod:(NSString *)method
++ (NSURLRequest *)urlRequestWithMethod:(NSString *)method
                                 header:(NSDictionary *)headers
                              urlString:(NSString *)urlString
                                  params:(NSDictionary *)param
@@ -99,12 +129,39 @@
     return request;
 }
 
-- (NSError *)errorFromNetworkError:(NSError *)error {
-    NSDictionary *userInfo = [self userInforFromError:error];
-    return [[NSError alloc ] initWithDomain:@"Zalo Pay" code:error.code userInfo:userInfo];
++ (NSURLRequest *)urlRequestWithMethod:(NSString *)method
+                          header:(NSDictionary *)headers
+                       urlString:(NSString *)urlString
+                            body:(NSDictionary *)body {
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+    if ([headers isKindOfClass:[NSDictionary class]] && headers.count > 0) {
+        request.allHTTPHeaderFields = headers;
+    }
+    
+    if (![method isKindOfClass:[NSString class]] || method.length == 0) {
+        method = @"GET";
+    }
+    
+    request.HTTPMethod = method;
+    request.timeoutInterval = 10.0;
+    NSError *error;
+    if ([body isKindOfClass:[NSDictionary class]] && body.allKeys.count > 0) {
+        NSData *dataFromDict = [NSJSONSerialization dataWithJSONObject:body
+                                                               options:NSJSONWritingPrettyPrinted
+                                                                 error:&error];
+        [request setHTTPBody:dataFromDict];
+    }
+    
+    return request;
 }
 
-- (NSDictionary *)userInforFromError:(NSError *)error {
+//+ (NSError *)errorFromNetworkError:(NSError *)error {
+//    NSDictionary *userInfo = [self userInforFromError:error];
+//    return [[NSError alloc ] initWithDomain:@"Zalo Pay" code:error.code userInfo:userInfo];
+//}
+
++ (NSDictionary *)userInforFromError:(NSError *)error {
     NSString *message;
     NSInteger code = error.code;
     if ([error isRequestTimeout]) {
@@ -124,7 +181,7 @@
              };
 }
 
-- (NSInteger)eventIdFromUrlString:(NSURL *)url {
++ (NSInteger)eventIdFromUrlString:(NSURL *)url {
 //    NSString *urlString = url.relativeString;
     
 //    if ([urlString hasSuffix:@"/esale/zalopayshop/v4/getshopitemlist"]) {

@@ -20,8 +20,8 @@ public class EVItemServices: BaseService {
          let url = path + "\(idItem)"
         
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
-            let networkRequest = EVReactNetwork()
-            networkRequest.request(withMethod: "get", header: self.headers, urlString: url, params: nil, body: nil).subscribeNext({ (object) in
+            
+            EVReactNetwork.request(with: EVReactNetworkMethod_GET, header: self.headers, urlString: url, params: nil).subscribeNext({ (object) in
                 sub.sendNext(object)
             }, error: { (error) in
                 sub.sendError(error)

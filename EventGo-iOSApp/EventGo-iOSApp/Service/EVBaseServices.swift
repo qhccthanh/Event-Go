@@ -9,7 +9,9 @@ import Foundation
 import SwiftyJSON
 
 open class BaseService {
-    internal let baseURL = "https://evgo.herokuapp.com/api/v1.0/"
+    
+    internal let baseURL = EVConstant.isDebug ? "http://localhost:3000/api/v1.0/" : "https://evgo.herokuapp.com/api/v1.0/"
+    
     internal var subUrl : String {
         get {
             return ""
@@ -22,8 +24,12 @@ open class BaseService {
     }
     internal var headers : [String : String] {
         get {
-            return ["Content-Type": "application/json"]
+            return [
+                "Content-Type": "application/json",
+                "withCredentials": "true"
+            ]
         }
+        
     }
     
 }

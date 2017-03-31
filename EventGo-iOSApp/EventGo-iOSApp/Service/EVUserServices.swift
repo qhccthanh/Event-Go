@@ -27,10 +27,10 @@ public class EVUserServices: BaseService {
         
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
             
-            let networkRequest = EVReactNetwork()
-            networkRequest.request(withMethod: "POST", header: self.headers, urlString: self.path, params: params, body: nil).subscribeNext({ (object) in
-                
-                print(object as! String)
+            
+            EVReactNetwork.request(with: EVReactNetworkMethod_POST, header: self.headers, urlString: self.path, params: params).subscribeNext({ (object) in
+                // Co the la NSDictionary kiem tra ky
+                print(object)
                 sub.sendNext(object)
             }, error: { (error) in
                 
@@ -44,8 +44,8 @@ public class EVUserServices: BaseService {
         let subPath = "\(idTask)"
         
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
-            let networkRequest = EVReactNetwork()
-            networkRequest.request(withMethod: "get", header: self.headers, urlString: subPath, params: nil, body: nil).subscribeNext({ (object) in
+            
+            EVReactNetwork.request(with: EVReactNetworkMethod_GET, header: self.headers, urlString: subPath, params: nil).subscribeNext({ (object) in
                 sub.sendNext(object)
             }, error: { (error) in
                 sub.sendError(error)

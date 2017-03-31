@@ -42,9 +42,6 @@ class LaunchScreenViewController: UIViewController {
                 print(result)
             })
             
-            loginServerSignal.subscribeError({ (error) in
-                print(error)
-            })
         }, error: { (error) in
             
         })

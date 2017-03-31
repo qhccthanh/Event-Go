@@ -23,8 +23,8 @@ public class EVAwardServices: BaseService {
         let subPath = "/\(idAward)"
         
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
-            let networkRequest = EVReactNetwork()
-            networkRequest.request(withMethod: "get", header: self.headers, urlString: subPath, params: nil, body: nil).subscribeNext({ (object) in
+            
+            EVReactNetwork.request(with: EVReactNetworkMethod_GET, header: self.headers, urlString: subPath, params: nil).subscribeNext({ (object) in
                 sub.sendNext(object)
             }, error: { (error) in
                 sub.sendError(error)
@@ -37,8 +37,8 @@ public class EVAwardServices: BaseService {
         let subPath = "\(idTask)"
         
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
-            let networkRequest = EVReactNetwork()
-            networkRequest.request(withMethod: "get", header: self.headers, urlString: subPath, params: nil, body: nil).subscribeNext({ (object) in
+            
+            EVReactNetwork.request(with: EVReactNetworkMethod_GET, header: self.headers, urlString: subPath, params: nil).subscribeNext({ (object) in
                 sub.sendNext(object)
             }, error: { (error) in
                 sub.sendError(error)

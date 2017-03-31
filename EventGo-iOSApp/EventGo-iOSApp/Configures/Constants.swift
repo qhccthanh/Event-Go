@@ -16,7 +16,7 @@ struct EVConstant {
     static let API_GOOGLE_PLACE_KEY: String = ""
     static let BASE_URL_STRING: String = ""
     static let BASE_URL: URL = URL(string: EVConstant.BASE_URL_STRING)!
-    
+    static let isDebug: Bool = false
 }
 
 let ONCE_DAY_INTERVAL: TimeInterval = 24 * 60 * 60

@@ -19,7 +19,7 @@ public class EVUserServices: BaseService {
         return "users"
     }
     
-    func loginWithFB(with tokenFB: String)-> RACSignal<AnyObject> {
+    func login(with tokenFB: String)-> RACSignal<AnyObject> {
         
         var params = Dictionary<String, Any>()
         params["provider_type"] = "facebook"

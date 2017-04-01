@@ -192,6 +192,9 @@
                                 <state key="normal" title="ĐĂNG NHẬP VỚI GOOGLE">
                                     <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginGoogleAction:" destination="AGG-TT-03N" eventType="touchUpInside" id="q1P-4u-D3C"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_google" translatesAutoresizingMaskIntoConstraints="NO" id="qcs-xn-lQj">
                                 <rect key="frame" x="82.5" y="478.5" width="30" height="30"/>

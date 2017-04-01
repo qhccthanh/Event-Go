@@ -39,10 +39,12 @@ class LaunchScreenViewController: UIViewController {
         loginFacebookSignal?.subscribeNext({ (response) in
             
             let token = FBSDKAccessToken.current().tokenString
-            var loginServerSignal = EVUserServices.shareInstance.login(with: token!)
+            let loginServerSignal = EVUserServices.shareInstance.login(with: token!, type: "facebook", idUser: nil)
             
             loginServerSignal.subscribeNext({ (result) in
-                self.stopRotateView()
+                dispatch_main_queue_safe {
+                    self.stopRotateView()
+                }
             })
             
         }, error: { (error) in
@@ -51,15 +53,25 @@ class LaunchScreenViewController: UIViewController {
     }
     
     @IBAction func loginGoogleAction(_ sender: Any) {
-        
+   
         let loginGoogleSignal = EVAuthenticationManager.share().authenticateWithGoogle(in: self)
         loginGoogleSignal?.subscribeNext({ (response) in
             print(response ?? nil)
-//            let user = response! GIDGoogleUser
+            let user = response as! GIDGoogleUser
+    
+            let loginServerSignal = EVUserServices.shareInstance.login(with: user.authentication.idToken, type: "google", idUser: user.userID)
+            loginServerSignal.subscribeNext({ (result) in
+                print(result ?? nil)
+                
+                dispatch_main_queue_safe {
+                    self.stopRotateView()
+                }
+               
+            })
+            
         }, error: { (error) in
             print(error ?? nil)
         })
-        
     }
     
     func stopRotateView(){

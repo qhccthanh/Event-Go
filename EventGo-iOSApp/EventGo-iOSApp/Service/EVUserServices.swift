@@ -19,17 +19,19 @@ public class EVUserServices: BaseService {
         return "users"
     }
     
-    func login(with tokenFB: String)-> RACSignal<AnyObject> {
+    func login(with token: String, type: String, idUser: String?)-> RACSignal<AnyObject> {
         
         var params = Dictionary<String, Any>()
-        params["provider_type"] = "facebook"
-        params["provider_access_token"] = tokenFB
+        params["provider_type"] = type
+        params["provider_access_token"] = token
+        if let idUser = idUser {
+        params["provider_id"] = idUser
+        }
         
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
             
             EVReactNetwork.request(with: EVReactNetworkMethod_POST, header: self.headers, urlString: self.path, params: params).subscribeNext({ (object) in
                 // Co the la NSDictionary kiem tra ky
-                print(object)
                 sub.sendNext(object)
             }, error: { (error) in
                 
@@ -38,19 +40,5 @@ public class EVUserServices: BaseService {
             return nil
         })
     }
-    
-    func getDetailTaskOfEvent(with idTask: String)-> RACSignal<AnyObject> {
-        let subPath = "\(idTask)"
         
-        return RACSignal.createSignal({ (sub) -> RACDisposable? in
-            
-            EVReactNetwork.request(with: EVReactNetworkMethod_GET, header: self.headers, urlString: subPath, params: nil).subscribeNext({ (object) in
-                sub.sendNext(object)
-            }, error: { (error) in
-                sub.sendError(error)
-            })
-            return nil
-        })
-    }
-    
 }

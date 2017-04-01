@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import enum Result.NoError
+import GoogleSignIn
 class LaunchScreenViewController: UIViewController {
 
     @IBOutlet weak var avatarAppView: UIView!
@@ -33,10 +34,12 @@ class LaunchScreenViewController: UIViewController {
     }
 
     @IBAction func loginFBAction(_ sender: Any) {
+        
         let loginFacebookSignal = EVAuthenticationManager.share().authenticateWithFacebook(in: self)
         loginFacebookSignal?.subscribeNext({ (response) in
+            
             let token = FBSDKAccessToken.current().tokenString
-            var loginServerSignal = EVUserServices.shareInstance.loginWithFB(with: token!)
+            var loginServerSignal = EVUserServices.shareInstance.login(with: token!)
             
             loginServerSignal.subscribeNext({ (result) in
                 self.stopRotateView()
@@ -45,11 +48,21 @@ class LaunchScreenViewController: UIViewController {
         }, error: { (error) in
             
         })
-        
-        
-        
     }
     
+    @IBAction func loginGoogleAction(_ sender: Any) {
+        
+        let loginGoogleSignal = EVAuthenticationManager.share().authenticateWithGoogle(in: self)
+        loginGoogleSignal?.subscribeNext({ (respone) in
+            
+            print(respone)
+            let user = respone as! GIDGoogleUser
+      
+        })
+        loginGoogleSignal?.subscribeError({ (error) in
+            print(error)
+        })
+    }
     
     func stopRotateView(){
         self.avatarAppView.layer.removeAllAnimations()

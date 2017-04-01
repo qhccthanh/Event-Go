@@ -10,9 +10,11 @@ import UIKit
 import FBSDKLoginKit
 import enum Result.NoError
 import GoogleSignIn
+
 class LaunchScreenViewController: UIViewController {
 
     @IBOutlet weak var avatarAppView: UIView!
+    var userInfo: EVUser?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,12 +59,15 @@ class LaunchScreenViewController: UIViewController {
         let loginGoogleSignal = EVAuthenticationManager.share().authenticateWithGoogle(in: self)
         loginGoogleSignal?.subscribeNext({ (response) in
             print(response ?? nil)
-            let user = response as! GIDGoogleUser
+            let userGoogle = response as! GIDGoogleUser
     
-            let loginServerSignal = EVUserServices.shareInstance.login(with: user.authentication.idToken, type: "google", idUser: user.userID)
+            let loginServerSignal = EVUserServices.shareInstance.login(with: userGoogle.authentication.idToken, type: "google", idUser: userGoogle.userID)
             loginServerSignal.subscribeNext({ (result) in
-                print(result ?? nil)
                 
+                if let user = result as? EVUser {
+                    self.userInfo = user
+                    self.userInfo!.name = userGoogle.profile.name
+                }
                 dispatch_main_queue_safe {
                     self.stopRotateView()
                 }

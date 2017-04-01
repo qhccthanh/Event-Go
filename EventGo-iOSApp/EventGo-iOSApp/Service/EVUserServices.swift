@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import ReactiveSwift
 import ReactiveCocoa
+import SwiftyJSON
 import enum Result.NoError
 
 public class EVUserServices: BaseService {
@@ -32,7 +33,11 @@ public class EVUserServices: BaseService {
             
             EVReactNetwork.request(with: EVReactNetworkMethod_POST, header: self.headers, urlString: self.path, params: params).subscribeNext({ (object) in
                 // Co the la NSDictionary kiem tra ky
-                sub.sendNext(object)
+                let dataJSon = JSON(object!)
+                if dataJSon["code"] == 200 {
+                    let user = EVUser.fromJson(data: dataJSon["data"])
+                    sub.sendNext(user)
+                }
             }, error: { (error) in
                 
                 sub.sendError(error)

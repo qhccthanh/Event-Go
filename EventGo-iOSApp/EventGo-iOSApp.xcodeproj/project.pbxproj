@@ -47,6 +47,7 @@
 		F4CAA6A31E82E8CA0084FC51 /* EVItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6A21E82E8CA0084FC51 /* EVItemProtocol.swift */; };
 		F4CAA6A81E82E9D20084FC51 /* EGItemStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6A61E82E9D20084FC51 /* EGItemStoreView.swift */; };
 		F4CAA6A91E82E9D20084FC51 /* EGItemStoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4CAA6A71E82E9D20084FC51 /* EGItemStoreView.xib */; };
+		F4E3A6ED1E8F56A1008EFAA2 /* libEventGoCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FABF6B1E8A634D0010BE41 /* libEventGoCommon.a */; };
 		F4E9786A1E7DB67500DF2E89 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E978691E7DB67500DF2E89 /* libxml2.tbd */; };
 		F4E9786D1E7DB86100DF2E89 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E9786B1E7DB86100DF2E89 /* libc++.tbd */; };
 		F4E9786E1E7DB86100DF2E89 /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E9786C1E7DB86100DF2E89 /* libc.tbd */; };
@@ -81,7 +82,6 @@
 		F4F0ACE01E82DA1B00D663A6 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACDF1E82DA1B00D663A6 /* LineView.swift */; };
 		F4F0ACE31E82DA5700D663A6 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACE21E82DA5700D663A6 /* UIView+Extension.swift */; };
 		F4F0ACE51E82DA5D00D663A6 /* UIViewController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACE41E82DA5D00D663A6 /* UIViewController+Action.swift */; };
-		F4FAC0401E8A67140010BE41 /* libEventGoCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FABF6B1E8A634D0010BE41 /* libEventGoCommon.a */; };
 		F4FAC04D1E8A6B9F0010BE41 /* libEventGoNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FAC04A1E8A6B730010BE41 /* libEventGoNetwork.a */; };
 /* End PBXBuildFile section */
 
@@ -93,18 +93,18 @@
 			remoteGlobalIDString = F4AD8ACE1E7D3C310081F2F3;
 			remoteInfo = "EventGo-iOSApp";
 		};
+		F4E3A6EB1E8F569D008EFAA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4FABF651E8A634C0010BE41 /* EventGoCommon.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F4AD89B71E7D2C5D0081F2F3;
+			remoteInfo = EventGoCommon;
+		};
 		F4FABF6A1E8A634D0010BE41 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F4FABF651E8A634C0010BE41 /* EventGoCommon.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F4AD89B81E7D2C5D0081F2F3;
-			remoteInfo = EventGoCommon;
-		};
-		F4FAC0391E8A66010010BE41 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F4FABF651E8A634C0010BE41 /* EventGoCommon.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F4AD89B71E7D2C5D0081F2F3;
 			remoteInfo = EventGoCommon;
 		};
 		F4FAC0491E8A6B730010BE41 /* PBXContainerItemProxy */ = {
@@ -235,8 +235,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E3A6ED1E8F56A1008EFAA2 /* libEventGoCommon.a in Frameworks */,
 				F4FAC04D1E8A6B9F0010BE41 /* libEventGoNetwork.a in Frameworks */,
-				F4FAC0401E8A67140010BE41 /* libEventGoCommon.a in Frameworks */,
 				F4056A171E82460600BEC162 /* Photos.framework in Frameworks */,
 				F4056A151E8245FF00BEC162 /* AssetsLibrary.framework in Frameworks */,
 				F4E9786D1E7DB86100DF2E89 /* libc++.tbd in Frameworks */,
@@ -616,8 +616,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				F4E3A6EC1E8F569D008EFAA2 /* PBXTargetDependency */,
 				F4FAC04C1E8A6B9B0010BE41 /* PBXTargetDependency */,
-				F4FAC03A1E8A66010010BE41 /* PBXTargetDependency */,
 			);
 			name = "EventGo-iOSApp";
 			productName = "EventGo-iOSApp";
@@ -911,10 +911,10 @@
 			target = F4AD8ACE1E7D3C310081F2F3 /* EventGo-iOSApp */;
 			targetProxy = F4AD8AE41E7D3C310081F2F3 /* PBXContainerItemProxy */;
 		};
-		F4FAC03A1E8A66010010BE41 /* PBXTargetDependency */ = {
+		F4E3A6EC1E8F569D008EFAA2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EventGoCommon;
-			targetProxy = F4FAC0391E8A66010010BE41 /* PBXContainerItemProxy */;
+			targetProxy = F4E3A6EB1E8F569D008EFAA2 /* PBXContainerItemProxy */;
 		};
 		F4FAC04C1E8A6B9B0010BE41 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

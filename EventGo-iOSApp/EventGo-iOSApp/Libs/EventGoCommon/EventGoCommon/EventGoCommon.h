@@ -27,4 +27,5 @@
 #import "Masonry.h"
 #import "MBProgressHUD.h"
 //#import "CTContact.h"
+#import "EVLocationManager.h"
 #import <ReactiveObjc/ReactiveObjc.h>

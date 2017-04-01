@@ -53,15 +53,13 @@ class LaunchScreenViewController: UIViewController {
     @IBAction func loginGoogleAction(_ sender: Any) {
         
         let loginGoogleSignal = EVAuthenticationManager.share().authenticateWithGoogle(in: self)
-        loginGoogleSignal?.subscribeNext({ (respone) in
-            
-            print(respone)
-            let user = respone as! GIDGoogleUser
-      
+        loginGoogleSignal?.subscribeNext({ (response) in
+            print(response ?? nil)
+//            let user = response! GIDGoogleUser
+        }, error: { (error) in
+            print(error ?? nil)
         })
-        loginGoogleSignal?.subscribeError({ (error) in
-            print(error)
-        })
+        
     }
     
     func stopRotateView(){

@@ -62,7 +62,10 @@
             }
             [subscriber sendError:error];
         };
-//        [[GIDSignIn sharedInstance] signIn];
+        
+        [GIDSignIn sharedInstance].uiDelegate = self;
+        [GIDSignIn sharedInstance].delegate = self;
+        [[GIDSignIn sharedInstance] signIn];
         return [RACDisposable new];
     }];
 }
@@ -103,11 +106,10 @@
 // a spinner or other "please wait" element.
 - (void)signInWillDispatch:(GIDSignIn *)signIn
                      error:(NSError *)error {
-    
+    NSLog(@"%@",error);
 }
 
 - (void)signIn:(GIDSignIn *)signIn presentViewController:(UIViewController *)viewController {
-    
     if (_currentController) {
         [_currentController presentViewController:viewController animated:TRUE completion:nil];
     }
@@ -115,7 +117,9 @@
 
 - (void)signIn:(GIDSignIn *)signIn dismissViewController:(UIViewController *)viewController {
     
-    [viewController dismissViewControllerAnimated:TRUE completion:nil];
+    if (_currentController) {
+        [_currentController dismissViewControllerAnimated:TRUE completion:NULL];
+    }
 }
 
 @end

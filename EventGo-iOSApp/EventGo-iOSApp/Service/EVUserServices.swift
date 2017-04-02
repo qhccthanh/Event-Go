@@ -45,5 +45,27 @@ public class EVUserServices: BaseService {
             return nil
         })
     }
+    
+    func login(with params: Dictionary<String, Any>)-> RACSignal<NSDictionary> {
+
+        return RACSignal.createSignal({ (sub) -> RACDisposable? in
+            
+                EVReactNetwork.request(with: EVReactNetworkMethod_POST, header: self.headers, urlString: self.path, params: params).subscribeNext({ (object) in
+                    if let object = object as? NSDictionary {
+                        
+                        sub.sendNext(object)
+                    } else {
+                        
+                        sub.sendError("Lỗi không parse được data" as? Error)
+                    }
+                }, error: { (error) in
+                    
+                    sub.sendError(error)
+                })
+            
+            return nil
+        })
+    }
+
         
 }

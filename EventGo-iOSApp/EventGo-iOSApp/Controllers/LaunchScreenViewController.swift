@@ -10,6 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import enum Result.NoError
 import GoogleSignIn
+import SwiftyJSON
 
 class LaunchScreenViewController: UIViewController {
 
@@ -57,25 +58,51 @@ class LaunchScreenViewController: UIViewController {
     @IBAction func loginGoogleAction(_ sender: Any) {
    
         let loginGoogleSignal = EVAuthenticationManager.share().authenticateWithGoogle(in: self)
+//        loginGoogleSignal?.subscribeNext({ (response) in
+//            print(response ?? nil)
+//            let userGoogle = response as! GIDGoogleUser
+//    
+//            let loginServerSignal = EVUserServices.shareInstance.login(with: userGoogle.authentication.idToken, type: "google", idUser: userGoogle.userID)
+//            loginServerSignal.subscribeNext({ (result) in
+//                
+//                if let user = result as? EVUser {
+//                    self.userInfo = user
+//                    self.userInfo!.name = userGoogle.profile.name
+//                }
+//                dispatch_main_queue_safe {
+//                    self.stopRotateView()
+//                }
+//               
+//            })
+//            
+//        }, error: { (error) in
+//            print(error ?? nil)
+//        })
+        
         loginGoogleSignal?.subscribeNext({ (response) in
-            print(response ?? nil)
-            let userGoogle = response as! GIDGoogleUser
-    
-            let loginServerSignal = EVUserServices.shareInstance.login(with: userGoogle.authentication.idToken, type: "google", idUser: userGoogle.userID)
-            loginServerSignal.subscribeNext({ (result) in
-                
-                if let user = result as? EVUser {
-                    self.userInfo = user
-                    self.userInfo!.name = userGoogle.profile.name
-                }
-                dispatch_main_queue_safe {
-                    self.stopRotateView()
-                }
+            
+            
+            guard let userGoogle = response as? GIDGoogleUser else {return}
+            var params = Dictionary<String, Any>()
+            params["provider_type"] = EVConstant.PROVIDER_GOOGLE
+            params["provider_access_token"] = userGoogle.authentication.idToken
+            params["provider_id"] = userGoogle.userID
+            params["name"] = userGoogle.profile.name
+            params["image_url"] = userGoogle.profile.imageURL(withDimension: 100).path
+            
+            let loginServerSignal = EVUserServices.shareInstance.login(with: params)
+            loginServerSignal.subscribeNext({ (response) in
                
+                let dataJson = JSON(response!)
+                let user = EVUser.fromJson(data: dataJson["data"])
+                EVAppFactory.shareInstance.currentUser = user
+                
+            }, error: { (error) in
+                
             })
             
         }, error: { (error) in
-            print(error ?? nil)
+        
         })
     }
     

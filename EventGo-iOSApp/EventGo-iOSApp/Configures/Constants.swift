@@ -17,6 +17,8 @@ struct EVConstant {
     static let BASE_URL_STRING: String = ""
     static let BASE_URL: URL = URL(string: EVConstant.BASE_URL_STRING)!
     static let isDebug: Bool = false
+    static let PROVIDER_FACEBOOK:String = "facebook"
+    static let PROVIDER_GOOGLE:String = "google"
 }
 
 let ONCE_DAY_INTERVAL: TimeInterval = 24 * 60 * 60

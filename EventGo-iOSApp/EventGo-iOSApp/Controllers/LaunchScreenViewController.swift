@@ -18,22 +18,7 @@ class LaunchScreenViewController: UIViewController {
     var userInfo: EVUser?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-//        if #available(iOS 10.0, *) {
-//            Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
-//                UIView.animate(withDuration: 11.0, animations: {
-//                    self.avatarAppView.transform = CGAffineTransform(rotationAngle: (180.0 * CGFloat(Double.pi)) / 180.0)
-//                })
-//            }
-//        } else {
-//            // Fallback on earlier versions
-//        }
-        
-//        rotateView(targetView: avatarAppView, duration: 5)
-        
         self.avatarAppView.rotate360Degrees()
-//        Timer.scheduledTimer(timeInterval: 50, target: self, selector: #selector(self.stopRotateView), userInfo: nil , repeats: false)
     }
 
     @IBAction func loginFBAction(_ sender: Any) {
@@ -41,14 +26,36 @@ class LaunchScreenViewController: UIViewController {
         let loginFacebookSignal = EVAuthenticationManager.share().authenticateWithFacebook(in: self)
         loginFacebookSignal?.subscribeNext({ (response) in
             
-            let token = FBSDKAccessToken.current().tokenString
-            let loginServerSignal = EVUserServices.shareInstance.login(with: token!, type: "facebook", idUser: nil)
-            
-            loginServerSignal.subscribeNext({ (result) in
-                dispatch_main_queue_safe {
-                    self.stopRotateView()
-                }
-            })
+            if let token = FBSDKAccessToken.current().tokenString{
+                var params = Dictionary<String, Any>()
+                params["provider_type"] = EVConstant.PROVIDER_FACEBOOK
+                params["provider_access_token"] = token
+                
+                let loginServerSignal = EVUserServices.shareInstance.login(with: params)
+                loginServerSignal.subscribeNext({ (response) in
+                    
+                    let dataJson = JSON(response!)
+                    let user = EVUser.fromJson(data: dataJson["data"])
+                    EVAppFactory.shareInstance.currentUser = user
+                    dispatch_main_queue_safe {
+                        if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
+                            self.present(mainGameVC, animated: true, completion: nil)
+                        }
+                    }
+                    
+                }, error: { (error) in
+                    
+                })
+                
+            }
+//            let loginServerSignal = EVUserServices.shareInstance.login(with: token!, type: "facebook", idUser: nil)
+//            
+//            loginServerSignal.subscribeNext({ (result) in
+//                dispatch_main_queue_safe {
+//                    self.stopRotateView()
+//                }
+//            })
+           
             
         }, error: { (error) in
             
@@ -58,29 +65,7 @@ class LaunchScreenViewController: UIViewController {
     @IBAction func loginGoogleAction(_ sender: Any) {
    
         let loginGoogleSignal = EVAuthenticationManager.share().authenticateWithGoogle(in: self)
-//        loginGoogleSignal?.subscribeNext({ (response) in
-//            print(response ?? nil)
-//            let userGoogle = response as! GIDGoogleUser
-//    
-//            let loginServerSignal = EVUserServices.shareInstance.login(with: userGoogle.authentication.idToken, type: "google", idUser: userGoogle.userID)
-//            loginServerSignal.subscribeNext({ (result) in
-//                
-//                if let user = result as? EVUser {
-//                    self.userInfo = user
-//                    self.userInfo!.name = userGoogle.profile.name
-//                }
-//                dispatch_main_queue_safe {
-//                    self.stopRotateView()
-//                }
-//               
-//            })
-//            
-//        }, error: { (error) in
-//            print(error ?? nil)
-//        })
-        
         loginGoogleSignal?.subscribeNext({ (response) in
-            
             
             guard let userGoogle = response as? GIDGoogleUser else {return}
             var params = Dictionary<String, Any>()
@@ -96,7 +81,12 @@ class LaunchScreenViewController: UIViewController {
                 let dataJson = JSON(response!)
                 let user = EVUser.fromJson(data: dataJson["data"])
                 EVAppFactory.shareInstance.currentUser = user
-                
+                dispatch_main_queue_safe {
+                    if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
+                        self.present(mainGameVC, animated: true, completion: nil)
+                    }
+                }
+
             }, error: { (error) in
                 
             })
@@ -104,6 +94,7 @@ class LaunchScreenViewController: UIViewController {
         }, error: { (error) in
         
         })
+        
     }
     
     func stopRotateView(){

@@ -9,6 +9,17 @@
 import Foundation
 import UIKit
 
+enum StoryBoard: String {
+    
+    
+    case DemoST = "DemoST"
+    case Search = "Search"
+  
+    func viewController(_ name: String) -> UIViewController {
+        return UIStoryboard(name: self.rawValue, bundle: Bundle.main).instantiateViewController(withIdentifier: name)
+    }
+}
+
 extension UIView {
     
     func getSize() -> CGSize {

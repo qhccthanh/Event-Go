@@ -17,8 +17,9 @@ class EVMainGameController: UIViewController {
         
         let camera = GMSCameraPosition.camera(withLatitude: 10.756927 , longitude: 106.684670, zoom: 13.0)
         self.mainMapView.camera = camera
-      
-  }
+    
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

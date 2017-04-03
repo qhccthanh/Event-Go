@@ -133,7 +133,7 @@
         <!--Info Store View Controller-->
         <scene sceneID="gkH-r5-hOa">
             <objects>
-                <viewController id="Pyk-HN-dhg" customClass="InfoStoreViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoStoreViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Pyk-HN-dhg" customClass="InfoStoreViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ts8-2D-QEj"/>
                         <viewControllerLayoutGuide type="bottom" id="zmW-e4-dhW"/>
@@ -384,7 +384,7 @@
         <!--Events Calendar View Controller-->
         <scene sceneID="LJj-H7-1vO">
             <objects>
-                <viewController id="u55-8h-xYl" customClass="EventsCalendarViewController" customModule="EventGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="u55-8h-xYl" customClass="EventsCalendarViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="txJ-g7-rZy"/>
                         <viewControllerLayoutGuide type="bottom" id="Hpe-bL-hxP"/>
@@ -500,8 +500,8 @@
         <!--List Events Collection View Controller-->
         <scene sceneID="rka-9d-dlS">
             <objects>
-                <collectionViewController id="wiq-di-ofF" customClass="ListEventsCollectionViewController" customModule="EventGo" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dIo-Ow-vgi">
+                <collectionViewController id="wiq-di-ofF" customClass="ListEventsCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="dIo-Ow-vgi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="596"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -512,7 +512,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" reuseIdentifier="Cell" id="vKp-vz-g80" customClass="ListEventsCollectionViewCell" customModule="EventGo" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" reuseIdentifier="Cell" id="vKp-vz-g80" customClass="ListEventsCollectionViewCell" customModule="EventGo_iOSApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="141" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -600,8 +600,8 @@
         <!--List Events Upcoming Collection View Controller-->
         <scene sceneID="E52-Mf-XOo">
             <objects>
-                <collectionViewController id="GTy-73-fqn" customClass="ListEventsUpcomingCollectionViewController" customModule="EventGo" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XAJ-aP-rz2">
+                <collectionViewController id="GTy-73-fqn" customClass="ListEventsUpcomingCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="XAJ-aP-rz2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="596"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -612,7 +612,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" reuseIdentifier="Cell" id="e1U-vG-FYF" customClass="ListEventsCollectionViewCell" customModule="EventGo" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" reuseIdentifier="Cell" id="e1U-vG-FYF" customClass="ListEventsCollectionViewCell" customModule="EventGo_iOSApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="141" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -696,6 +696,199 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1VP-Wo-2nB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="725.60000000000002" y="2429.6851574212897"/>
+        </scene>
+        <!--Info Award View Controller-->
+        <scene sceneID="QP4-n2-CJd">
+            <objects>
+                <viewController id="wqz-qj-y6s" customClass="InfoAwardViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e7P-32-BoP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Omb-Wl-Fw5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uCw-JY-SVG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundColor" translatesAutoresizingMaskIntoConstraints="NO" id="O6I-T6-QJ2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventGo-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="d3V-Ao-eut">
+                                <rect key="frame" x="98" y="133.5" width="180" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="OZ9-P6-hQC"/>
+                                    <constraint firstAttribute="height" constant="100" id="nXb-so-1eL"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zj-tB-Hg7">
+                                <rect key="frame" x="98" y="233.5" width="180" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tivi Sony G460" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBm-Y5-jHA">
+                                        <rect key="frame" x="0.0" y="10" width="180" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="mqe-Bv-qcL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="0.58109321749999998" green="0.58881547729999995" blue="0.59495104009999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trị giá" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Goa-ba-AyH">
+                                        <rect key="frame" x="0.0" y="40" width="81" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="EkC-Lk-QBr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" red="0.48246949849999998" green="0.59495104009999999" blue="0.02534888242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df5-Lw-wri">
+                                        <rect key="frame" x="111" y="40" width="81" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oai-hU-bvq">
+                                        <rect key="frame" x="0.0" y="80" width="180" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.80000000000000004" id="g7V-jg-IDB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Df5-Lw-wri" firstAttribute="height" secondItem="Goa-ba-AyH" secondAttribute="height" id="Iy6-M6-Ctj"/>
+                                    <constraint firstItem="Df5-Lw-wri" firstAttribute="centerY" secondItem="Goa-ba-AyH" secondAttribute="centerY" id="LnF-am-jc8"/>
+                                    <constraint firstItem="oai-hU-bvq" firstAttribute="leading" secondItem="3zj-tB-Hg7" secondAttribute="leading" id="Npa-B9-c1b"/>
+                                    <constraint firstItem="oai-hU-bvq" firstAttribute="top" secondItem="Goa-ba-AyH" secondAttribute="bottom" constant="20" id="OWK-5D-GZe"/>
+                                    <constraint firstItem="Goa-ba-AyH" firstAttribute="top" secondItem="FBm-Y5-jHA" secondAttribute="bottom" id="Rak-uC-jJy"/>
+                                    <constraint firstAttribute="trailing" secondItem="FBm-Y5-jHA" secondAttribute="trailing" id="VLk-LY-9fX"/>
+                                    <constraint firstAttribute="trailing" secondItem="oai-hU-bvq" secondAttribute="trailing" id="Z6J-hc-BA1"/>
+                                    <constraint firstAttribute="width" constant="180" id="cAp-ye-IeL"/>
+                                    <constraint firstItem="Goa-ba-AyH" firstAttribute="width" secondItem="3zj-tB-Hg7" secondAttribute="width" multiplier="0.45" id="eWP-OA-BYL"/>
+                                    <constraint firstItem="FBm-Y5-jHA" firstAttribute="top" secondItem="3zj-tB-Hg7" secondAttribute="top" constant="10" id="fgL-VV-hGc"/>
+                                    <constraint firstAttribute="height" constant="100" id="j3r-t5-uWs"/>
+                                    <constraint firstItem="Df5-Lw-wri" firstAttribute="leading" secondItem="Goa-ba-AyH" secondAttribute="trailing" constant="30" id="m7R-0g-W4a"/>
+                                    <constraint firstItem="Df5-Lw-wri" firstAttribute="width" secondItem="Goa-ba-AyH" secondAttribute="width" id="u68-jd-TZE"/>
+                                    <constraint firstItem="FBm-Y5-jHA" firstAttribute="leading" secondItem="3zj-tB-Hg7" secondAttribute="leading" id="uue-H0-jr5"/>
+                                    <constraint firstItem="Goa-ba-AyH" firstAttribute="leading" secondItem="3zj-tB-Hg7" secondAttribute="leading" id="x2R-Sf-NIZ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CÁC BƯỚC THAM GIA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-Rh-jG3">
+                                <rect key="frame" x="88" y="333.5" width="200" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="9u3-Cd-cFB"/>
+                                    <constraint firstAttribute="width" constant="200" id="a6K-ck-cHi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.58105844259999995" green="0.42623944130000002" blue="0.57200249359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qT9-TC-jTm">
+                                <rect key="frame" x="0.0" y="378.5" width="375" height="133"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H3O-a5-7AJ">
+                                    <size key="itemSize" width="98" height="111"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="e9L-PL-J6N" customClass="StoreCollectionViewCell" customModule="EventGo_iOSApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="11" width="98" height="111"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="98" height="111"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yuy-kI-tcp">
+                                                    <rect key="frame" x="24" y="8" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="jq1-3E-05w"/>
+                                                        <constraint firstAttribute="height" constant="50" id="pO5-cF-jky"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6d-Qa-pmc">
+                                                    <rect key="frame" x="0.0" y="58" width="98" height="53"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="P6d-Qa-pmc" secondAttribute="trailing" id="MSG-yv-7AR"/>
+                                            <constraint firstItem="P6d-Qa-pmc" firstAttribute="leading" secondItem="e9L-PL-J6N" secondAttribute="leading" id="UlE-64-F6T"/>
+                                            <constraint firstItem="yuy-kI-tcp" firstAttribute="top" secondItem="e9L-PL-J6N" secondAttribute="topMargin" id="fNx-UR-Azh"/>
+                                            <constraint firstItem="yuy-kI-tcp" firstAttribute="centerX" secondItem="e9L-PL-J6N" secondAttribute="centerX" id="fVB-SY-nua"/>
+                                            <constraint firstItem="P6d-Qa-pmc" firstAttribute="top" secondItem="yuy-kI-tcp" secondAttribute="bottom" id="h9H-p8-bkL"/>
+                                            <constraint firstAttribute="bottom" secondItem="P6d-Qa-pmc" secondAttribute="bottom" id="w8W-LZ-30a"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageEvent" destination="yuy-kI-tcp" id="f9M-i8-8jl"/>
+                                            <outlet property="nameEvent" destination="P6d-Qa-pmc" id="sJt-a2-emM"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="wqz-qj-y6s" id="rkZ-bO-ciU"/>
+                                    <outlet property="delegate" destination="wqz-qj-y6s" id="5c6-sc-M4E"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHR-Lb-2Gw" customClass="EGoButtonModel" customModule="EventGo_iOSApp" customModuleProvider="target">
+                                <rect key="frame" x="113" y="531.5" width="150" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="kWo-L0-tFL"/>
+                                    <constraint firstAttribute="width" constant="150" id="yfl-Af-DFj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Đồng ý">
+                                    <color key="titleColor" red="0.99606366950000003" green="0.994261901" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAcceptAction:" destination="wqz-qj-y6s" eventType="touchUpInside" id="cbr-f3-MLY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csU-uL-N9v" customClass="EGoButtonModel" customModule="EventGo_iOSApp" customModuleProvider="target">
+                                <rect key="frame" x="173" y="30" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GMb-O1-0nE"/>
+                                    <constraint firstAttribute="width" constant="30" id="wPJ-Og-dE5"/>
+                                </constraints>
+                                <state key="normal" image="ic_cancel"/>
+                                <connections>
+                                    <action selector="onCancelAction:" destination="wqz-qj-y6s" eventType="touchUpInside" id="52d-pL-Aou"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d3V-Ao-eut" firstAttribute="centerX" secondItem="uCw-JY-SVG" secondAttribute="centerX" id="03y-fi-Vtx"/>
+                            <constraint firstItem="FHR-Lb-2Gw" firstAttribute="centerX" secondItem="uCw-JY-SVG" secondAttribute="centerX" id="0Qt-Sv-hq7"/>
+                            <constraint firstItem="O6I-T6-QJ2" firstAttribute="leading" secondItem="uCw-JY-SVG" secondAttribute="leading" id="4eN-s0-ib8"/>
+                            <constraint firstItem="csU-uL-N9v" firstAttribute="centerX" secondItem="uCw-JY-SVG" secondAttribute="centerX" id="8aG-ES-4Zc"/>
+                            <constraint firstAttribute="trailing" secondItem="qT9-TC-jTm" secondAttribute="trailing" id="90W-QL-1nh"/>
+                            <constraint firstItem="jL1-Rh-jG3" firstAttribute="top" secondItem="3zj-tB-Hg7" secondAttribute="bottom" id="ARV-5n-eoz"/>
+                            <constraint firstAttribute="bottom" secondItem="3zj-tB-Hg7" secondAttribute="bottom" multiplier="2:1" id="BPJ-Nr-eZc"/>
+                            <constraint firstAttribute="trailing" secondItem="O6I-T6-QJ2" secondAttribute="trailing" id="BXp-U3-WUH"/>
+                            <constraint firstItem="qT9-TC-jTm" firstAttribute="height" secondItem="uCw-JY-SVG" secondAttribute="height" multiplier="0.2" id="L0C-rU-U3w"/>
+                            <constraint firstItem="3zj-tB-Hg7" firstAttribute="top" secondItem="d3V-Ao-eut" secondAttribute="bottom" id="S2N-Th-xyQ"/>
+                            <constraint firstItem="FHR-Lb-2Gw" firstAttribute="top" secondItem="qT9-TC-jTm" secondAttribute="bottom" constant="20" id="ZRL-59-dqu"/>
+                            <constraint firstItem="csU-uL-N9v" firstAttribute="top" secondItem="e7P-32-BoP" secondAttribute="bottom" constant="10" id="eGi-CO-Z0l"/>
+                            <constraint firstItem="3zj-tB-Hg7" firstAttribute="centerX" secondItem="O6I-T6-QJ2" secondAttribute="centerX" id="iPu-8t-QKY"/>
+                            <constraint firstItem="qT9-TC-jTm" firstAttribute="leading" secondItem="uCw-JY-SVG" secondAttribute="leading" id="kE8-Ll-qSE"/>
+                            <constraint firstItem="jL1-Rh-jG3" firstAttribute="centerX" secondItem="uCw-JY-SVG" secondAttribute="centerX" id="qR9-Ow-i8R"/>
+                            <constraint firstItem="Omb-Wl-Fw5" firstAttribute="top" secondItem="O6I-T6-QJ2" secondAttribute="bottom" id="t4V-jW-hN2"/>
+                            <constraint firstItem="O6I-T6-QJ2" firstAttribute="top" secondItem="e7P-32-BoP" secondAttribute="bottom" id="ufq-HX-jcO"/>
+                            <constraint firstItem="qT9-TC-jTm" firstAttribute="top" secondItem="jL1-Rh-jG3" secondAttribute="bottom" constant="20" id="vwd-fn-cj8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GWD-nw-nBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-174" y="789"/>
         </scene>
     </scenes>
     <resources>

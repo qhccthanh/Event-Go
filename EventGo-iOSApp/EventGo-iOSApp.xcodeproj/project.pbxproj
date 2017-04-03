@@ -22,6 +22,7 @@
 		D06C600A1E8E5D0900F473CA /* EVUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C60091E8E5D0900F473CA /* EVUserInfo.swift */; };
 		D06C600E1E8E617600F473CA /* EVUserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C600D1E8E617600F473CA /* EVUserServices.swift */; };
 		D06C601E1E8ECB1F00F473CA /* EVMainGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C601D1E8ECB1F00F473CA /* EVMainGameController.swift */; };
+		D06E45531E929CC4003462FC /* EVButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E45521E929CC4003462FC /* EVButtonModel.swift */; };
 		F4056A0F1E8240FC00BEC162 /* EVLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4056A0E1E8240FC00BEC162 /* EVLog.swift */; };
 		F4056A151E8245FF00BEC162 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */; };
 		F4056A171E82460600BEC162 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4056A161E82460600BEC162 /* Photos.framework */; };
@@ -155,6 +156,7 @@
 		D06C60091E8E5D0900F473CA /* EVUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVUserInfo.swift; sourceTree = "<group>"; };
 		D06C600D1E8E617600F473CA /* EVUserServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVUserServices.swift; sourceTree = "<group>"; };
 		D06C601D1E8ECB1F00F473CA /* EVMainGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVMainGameController.swift; sourceTree = "<group>"; };
+		D06E45521E929CC4003462FC /* EVButtonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVButtonModel.swift; sourceTree = "<group>"; };
 		D2970CF6CE73C5F35F28774B /* Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp-EventGo-iOSAppTests/Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4056A0E1E8240FC00BEC162 /* EVLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EVLog.swift; path = ../Managers/EVLog.swift; sourceTree = "<group>"; };
 		F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -443,6 +445,7 @@
 				F4E979F01E80509500DF2E89 /* EVLocation.swift */,
 				F4E979F21E80509E00DF2E89 /* EVItem.swift */,
 				D06C60091E8E5D0900F473CA /* EVUserInfo.swift */,
+				D06E45521E929CC4003462FC /* EVButtonModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -877,6 +880,7 @@
 				D06C5FE11E8D326800F473CA /* LaunchScreenViewController.swift in Sources */,
 				D06C5FF71E8D60F400F473CA /* EVEventServices.swift in Sources */,
 				D06C600A1E8E5D0900F473CA /* EVUserInfo.swift in Sources */,
+				D06E45531E929CC4003462FC /* EVButtonModel.swift in Sources */,
 				F4E979E51E80502F00DF2E89 /* EVUser.swift in Sources */,
 				F4CAA69A1E82E8A50084FC51 /* LoginViewController.swift in Sources */,
 				D06C601E1E8ECB1F00F473CA /* EVMainGameController.swift in Sources */,

@@ -112,6 +112,7 @@
 }
 
 - (RACSignal *)didUpdateLocation {
+    [self.locationManager startUpdatingLocation];
     @weakify(self);
     return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         @strongify(self);

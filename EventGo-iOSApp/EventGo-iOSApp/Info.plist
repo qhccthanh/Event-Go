@@ -59,6 +59,8 @@
 	<string>Xin phép sử dụng Camera</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Xin phép sử dụng dịch vụ location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Xin phép sử dụng dịch vụ location</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Xin phép sử dụng thư viện</string>
 	<key>UILaunchStoryboardName</key>

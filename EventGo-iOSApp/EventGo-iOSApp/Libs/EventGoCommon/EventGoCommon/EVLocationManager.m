@@ -112,6 +112,10 @@
 }
 
 - (RACSignal *)didUpdateLocation {
+    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+        
     [self.locationManager startUpdatingLocation];
     @weakify(self);
     return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {

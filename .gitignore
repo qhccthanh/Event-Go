@@ -2,3 +2,4 @@
 EventGo-iOSApp/.DS_Store
 EventGo-iOSApp/Pods
 Podfile.lock
+*.xcuserdatad

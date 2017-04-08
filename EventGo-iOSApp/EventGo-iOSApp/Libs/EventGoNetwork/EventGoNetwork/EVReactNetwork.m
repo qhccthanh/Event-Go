@@ -67,6 +67,11 @@
         NSURLSessionDataTask *task = [self.client dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             
             NSError *paraseError;
+            if (!data) {
+                [subscriber sendError:nil];
+                return;
+            }
+            
             NSDictionary *dictData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&paraseError];
             NSLog(@"error : %@",error);
             NSLog(@"data = %@",dictData);

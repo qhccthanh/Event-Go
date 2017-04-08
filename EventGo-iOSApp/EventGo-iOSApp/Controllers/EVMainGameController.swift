@@ -53,17 +53,16 @@ class EVMainGameController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
 }
 
 extension EVMainGameController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
         
-        let card: EVMarkerModel = EVMarkerModel(name: marker.title!, imageName: "EventGo-Logo", descriptionPlace: "Đây là địa điểm có giá trị lịch sử", showHandleButton: false)
-        let infoWindow = EVPopupView(frame: CGRect(x: 0,y: 0,width: 280,height:60))
-        infoWindow.show(with: card, type: .popover) {
-            
-        }
+          let infoWindow = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 280,height: 300))
+          infoWindow.show(content: "Chỉ mới chiếu đến tập thứ 3 nhưng “Sống chung với mẹ chồng” đã khiến khán giả sục sôi chờ đón từng tập. Theo đoàn làm phim thì tác phẩm không xây dựng “cuộc chiến” mẹ chồng nàng dâu nhằm gây ra những suy nghĩ trái chiều của khán giả đối với 2 người phụ nữ. Với “Sống chung với mẹ chồng”, mối quan hệ này không có “đúng – sai”, không có nhân vật “chính diện hay phản diện”. Bộ phim để cho khán giả tự mình lựa chọn họ sẽ đứng ở vị trí của bà mẹ chồng hay của cô con dâu, từ đó đưa ra cách nhìn và lối sống phù hợp.Tuy nhiên, khi ")
+        
         return infoWindow
     }
 }

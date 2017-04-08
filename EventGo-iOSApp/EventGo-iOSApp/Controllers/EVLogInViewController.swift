@@ -12,7 +12,7 @@ import enum Result.NoError
 import GoogleSignIn
 import SwiftyJSON
 
-class LaunchScreenViewController: UIViewController {
+class EVLogInViewController: UIViewController {
 
     @IBOutlet weak var avatarAppView: UIView!
     var userInfo: EVUser?

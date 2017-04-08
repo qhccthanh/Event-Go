@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="688" y="41"/>
         </scene>
-        <!--Launch Screen View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="lTq-bY-Xkn">
             <objects>
-                <viewController storyboardIdentifier="LaunchScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AGG-TT-03N" customClass="LaunchScreenViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EVLogInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AGG-TT-03N" customClass="EVLogInViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U5V-HZ-JPh"/>
                         <viewControllerLayoutGuide type="bottom" id="kQ2-7s-iD9"/>
@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Six-Us-gDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1542" y="55"/>
+            <point key="canvasLocation" x="-2578" y="188"/>
         </scene>
         <!--Info Store View Controller-->
         <scene sceneID="gkH-r5-hOa">
@@ -506,7 +506,7 @@
         <scene sceneID="rka-9d-dlS">
             <objects>
                 <collectionViewController id="wiq-di-ofF" customClass="ListEventsCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="dIo-Ow-vgi">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dIo-Ow-vgi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="596"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -606,7 +606,7 @@
         <scene sceneID="E52-Mf-XOo">
             <objects>
                 <collectionViewController id="GTy-73-fqn" customClass="ListEventsUpcomingCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="XAJ-aP-rz2">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XAJ-aP-rz2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="596"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -899,7 +899,7 @@
         <scene sceneID="0GM-xk-C1b">
             <objects>
                 <collectionViewController storyboardIdentifier="StoreCollectionViewController" id="WJp-HN-Yh1" customClass="StoreCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="AZU-Qp-7f3">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AZU-Qp-7f3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1061,6 +1061,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfy-Ga-6Tc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1574" y="370"/>
+        </scene>
+        <!--Default Controller View Controller-->
+        <scene sceneID="Q3V-Yu-45J">
+            <objects>
+                <viewController storyboardIdentifier="EVDefaultControllerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j6h-zm-Icx" customClass="EVDefaultControllerViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hab-tL-Vak"/>
+                        <viewControllerLayoutGuide type="bottom" id="TMy-k1-Ocb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fw7-PN-IOL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8CU-e2-Zne">
+                                <rect key="frame" x="87" y="133.5" width="200" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventGo-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="S4Y-Yg-rKS">
+                                        <rect key="frame" x="10" y="10" width="180" height="180"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="S4Y-Yg-rKS" firstAttribute="leading" secondItem="8CU-e2-Zne" secondAttribute="leading" constant="10" id="24X-cY-oyI"/>
+                                    <constraint firstItem="S4Y-Yg-rKS" firstAttribute="top" secondItem="8CU-e2-Zne" secondAttribute="top" constant="10" id="2lm-r4-OCw"/>
+                                    <constraint firstAttribute="trailing" secondItem="S4Y-Yg-rKS" secondAttribute="trailing" constant="10" id="Owg-HX-Qgw"/>
+                                    <constraint firstAttribute="width" constant="200" id="oRN-ZC-sb3"/>
+                                    <constraint firstAttribute="height" constant="200" id="ue4-15-4OB"/>
+                                    <constraint firstAttribute="bottom" secondItem="S4Y-Yg-rKS" secondAttribute="bottom" constant="10" id="vXC-XQ-qQQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8CU-e2-Zne" secondAttribute="bottom" multiplier="2:1" id="DGE-uV-4Q7"/>
+                            <constraint firstItem="8CU-e2-Zne" firstAttribute="centerX" secondItem="Fw7-PN-IOL" secondAttribute="centerX" id="K2k-BW-hQS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMm-TF-oeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1542" y="55"/>
         </scene>
     </scenes>
     <resources>

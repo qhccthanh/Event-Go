@@ -20,8 +20,8 @@ class EVMainGameController: UIViewController {
         
         let loaction = CLLocationCoordinate2D(latitude: 10.756927, longitude: 106.684670)
         let loaction1 = CLLocationCoordinate2D(latitude: 10.761369, longitude: 106.6801278)
-        let evMarker = EVMarker(id: 1, location: loaction, title: "EV1", iconName: "ic_pagoda")
-        let evMarker1 = EVMarker(id: 2, location: loaction1, title: "EV2", iconName: "ic_pagoda")
+        let evMarker = EVMarker(id: "1", location: loaction, title: "EV1", iconName: "ic_pagoda")
+        let evMarker1 = EVMarker(id: "2", location: loaction1, title: "EV2", iconName: "ic_pagoda")
         EVMakerManager.shareManager.mapView = mainMapView
         EVMakerManager.shareManager.addMarker(evMarker)
         EVMakerManager.shareManager.addMarker(evMarker1)
@@ -45,7 +45,7 @@ class EVMainGameController: UIViewController {
     
     func deletetMark() {
         temp += 1
-        EVMakerManager.shareManager.deleteMarker(temp)
+        EVMakerManager.shareManager.deleteMarker("\(temp)")
     }
 
     override func didReceiveMemoryWarning() {

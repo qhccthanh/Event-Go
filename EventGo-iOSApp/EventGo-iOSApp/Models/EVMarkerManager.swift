@@ -10,8 +10,8 @@ import Foundation
 import GoogleMaps
 class EVMarker: GMSMarker {
     
-    var id: Int!
-    init(id: Int, location: CLLocationCoordinate2D, title: String, iconName: String) {
+    var id: String!
+    init(id: String, location: CLLocationCoordinate2D, title: String, iconName: String) {
         super.init()
         self.position = location
         self.id = id
@@ -38,7 +38,7 @@ class EVMakerManager: NSObject {
                // Add mapview
     }
     
-    public func deleteMarker(_ id: Int) {
+    public func deleteMarker(_ id: String) {
         for i in 0...self.markers.count - 1 {
             if(markers[i].id == id) {
                 markers[i].map = nil

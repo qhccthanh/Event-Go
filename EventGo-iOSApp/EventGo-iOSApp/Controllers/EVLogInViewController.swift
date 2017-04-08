@@ -44,7 +44,7 @@ class EVLogInViewController: UIViewController {
                     }
                     
                 }, error: { (error) in
-                    
+                    log.error(error)
                 })
                 
             }

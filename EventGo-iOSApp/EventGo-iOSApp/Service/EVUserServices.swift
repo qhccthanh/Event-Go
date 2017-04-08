@@ -20,6 +20,21 @@ public class EVUserServices: BaseService {
         return "users"
     }
     
+    func logOut()->RACSignal<AnyObject> {
+    
+        let url = path + "/signOut"
+        return RACSignal.createSignal({ (sub) -> RACDisposable? in
+            EVReactNetwork.request(with: EVReactNetworkMethod_POST, header: self.headers, urlString: url, params: nil).subscribeNext({ (result) in
+                log.info(result)
+                
+            }, error: { (error) in
+                log.error(error)
+            })
+            return nil
+        })
+
+    }
+    
     func checkInfoUser() -> RACSignal<NSDictionary>{
         
         let url = path + "/me"

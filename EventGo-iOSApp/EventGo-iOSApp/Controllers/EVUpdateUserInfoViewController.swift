@@ -21,7 +21,7 @@ class EVUpdateUserInfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func updateInfoAction(_ sender: Any) {
+    @IBAction func updateInfoAction(_ sender: AnyObject) {
         if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
             self.present(mainGameVC, animated: true, completion: nil)
         }

@@ -148,19 +148,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNt-ek-2Q6">
-                                <rect key="frame" x="137" y="318.5" width="100" height="30"/>
+                                <rect key="frame" x="137" y="318" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.84313725490000002" green="0.098039215690000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="43k-65-0KM"/>
                                     <constraint firstAttribute="height" constant="30" id="krL-Pu-ztY"/>
                                 </constraints>
                                 <state key="normal" title="Change"/>
                                 <connections>
-                                    <action selector="changeInfoAction:" destination="fq6-ub-sO9" eventType="touchUpInside" id="n5Z-zd-vZh"/>
-                                    <action selector="updateInfoAction:" destination="fq6-ub-sO9" eventType="touchUpInside" id="bps-Z7-hzv"/>
+                                    <action selector="updateInfoAction:" destination="fq6-ub-sO9" eventType="touchUpInside" id="Agv-TE-pS7"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XNt-ek-2Q6" firstAttribute="centerY" secondItem="qA7-fH-rsl" secondAttribute="centerY" id="avY-WZ-5jU"/>
                             <constraint firstItem="XNt-ek-2Q6" firstAttribute="centerX" secondItem="qA7-fH-rsl" secondAttribute="centerX" id="uau-Rm-Idj"/>

@@ -18,15 +18,26 @@ class EVDefaultControllerViewController: UIViewController {
         checkUserSignal.subscribeNext({ (response) in
             let dataJson = JSON(response!)
             if dataJson["code"] == 200 {
-                EVAppFactory.shareInstance.currentUser = EVUser.fromJson(data: dataJson["data"])
+                let userCurrent = EVUser.fromJson(data: dataJson["data"])
+                log.info(dataJson)
+                EVAppFactory.shareInstance.currentUser = userCurrent
+                if (userCurrent.image_url == "" || userCurrent.name == "") {
+                    
+                    if let evChangeInfoVC = StoryBoard.DemoST.viewController("EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController {
+                        self.present(evChangeInfoVC, animated: true, completion: nil)
+                    }
+                }else {
+                
+                }
+                
             } else {
                 if let evLoginView = StoryBoard.DemoST.viewController("EVLogInViewController") as? EVLogInViewController {
-                    self.present(evLoginView, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+                    self.present(evLoginView, animated: true, completion: nil)
                 }
             }
         
         }, error: { (error) in
-            
+            log.error()
         })
 
     

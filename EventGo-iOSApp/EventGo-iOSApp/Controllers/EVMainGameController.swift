@@ -44,8 +44,14 @@ class EVMainGameController: UIViewController {
     }
     
     func deletetMark() {
-        temp += 1
-        EVMakerManager.shareManager.deleteMarker("\(temp)")
+//        temp += 1
+//        EVMakerManager.shareManager.deleteMarker("\(temp)")
+        let infoWindow = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 280,height: 300))
+        infoWindow.show(content: "Chỉ mới chiếu đến tập thứ 3 nhưng “Sống chung với mẹ chồng” đã khiến khán giả sục sôi chờ đón từng tập. Theo đoàn làm phim thì tác phẩm không xây dựng “cuộc chiến” mẹ chồng nàng dâu nhằm gây ra những suy nghĩ trái chiều của khán giả đối với 2 người phụ nữ. Với “Sống chung với mẹ chồng”, mối quan hệ này không có “đúng – sai”, không có nhân vật “chính diện hay phản diện”. Bộ phim để cho khán giả tự mình lựa chọn họ sẽ đứng ở vị trí của bà mẹ chồng hay của cô con dâu, từ đó đưa ra cách nhìn và lối sống phù hợp.Tuy nhiên, khiChỉ mới chiếu đến tập thứ 3 nhưng “Sống chung với mẹ chồng” đã khiến khán giả sục sôi chờ đón từng tập. Theo đoàn làm phim thì tác phẩm không xây dựng “cuộc chiến” mẹ chồng nàng dâu ")
+        let controller = EVPopOverController(customView: infoWindow, height: infoWindow.heightView )
+        print(infoWindow.heightView)
+        controller.showView(self)
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -11,12 +11,12 @@ import GoogleMaps
 class EVMarker: GMSMarker {
     
     var id: Int!
-    
-    init(id: Int, location: CLLocationCoordinate2D, title: String) {
+    init(id: Int, location: CLLocationCoordinate2D, title: String, iconName: String) {
         super.init()
         self.position = location
         self.id = id
         self.title = title
+        self.icon = UIImage(named: iconName) 
     }
 }
 

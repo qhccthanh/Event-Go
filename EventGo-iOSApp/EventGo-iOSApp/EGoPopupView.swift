@@ -12,6 +12,7 @@ import SCLAlertView
 enum EgoPopupType {
     case notification
     case detail
+    case popover
 }
 
 class EVPopupView: UIView {
@@ -30,16 +31,25 @@ class EVPopupView: UIView {
     func show(with model : ItemPopupProtocol , type: EgoPopupType, callback: @escaping () -> Void) {
         
         customUI()
-        let appearance = SCLAlertView.SCLAppearance( showCloseButton: false)
+        let appearance = SCLAlertView.SCLAppearance( showCloseButton: model.isShowExitButton())
         let alert = SCLAlertView(appearance: appearance)
-        
         switch type {
         case .notification:
             contentLable.frame = CGRect(x: 0, y: 110, width: self.frame.width, height: 60)
             self.imageContentView.frame = CGRect(x: 0, y: 0, width: self.frame.width , height: 100)
-            self.imageContentView.image = model.imageItem()
             self.addSubview(imageContentView)
             
+            break
+            
+        case .popover:
+            contentLable.frame = CGRect(x: 0, y: 30, width: self.frame.width , height: 30)
+            self.imageContentView.frame = CGRect(x: 0, y: 0, width: self.frame.width  , height: 30)
+            self.imageContentView.contentMode = .scaleAspectFit
+            let horizontalConstraint = NSLayoutConstraint(item: imageContentView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+            let verticalConstraint = NSLayoutConstraint(item: imageContentView, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
+            self.addConstraints([horizontalConstraint,verticalConstraint])
+            imageContentView.image = model.imageItem()
+            self.addSubview(imageContentView)
             break
             
         default:
@@ -47,11 +57,13 @@ class EVPopupView: UIView {
             break
         }
         
-        if (model.isShowExitButton()){
-            alert.addButton("exit", action: { 
-                print("đã bấm exit")
-            })
-        }
+    
+        
+//        if (model.isShowExitButton()){
+//            alert.addButton("exit", action: { 
+//                print("đã bấm exit")
+//            })
+//        }
         
         if (model.isShowHandleButton()){
             alert.addButton("OK", action: {

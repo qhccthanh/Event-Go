@@ -20,8 +20,8 @@ class EVMainGameController: UIViewController {
         
         let loaction = CLLocationCoordinate2D(latitude: 10.756927, longitude: 106.684670)
         let loaction1 = CLLocationCoordinate2D(latitude: 10.761369, longitude: 106.6801278)
-        let evMarker = EVMarker(id: 1, location: loaction, title: "EV1")
-        let evMarker1 = EVMarker(id: 2, location: loaction1, title: "EV2")
+        let evMarker = EVMarker(id: 1, location: loaction, title: "EV1", iconName: "ic_pagoda")
+        let evMarker1 = EVMarker(id: 2, location: loaction1, title: "EV2", iconName: "ic_pagoda")
         EVMakerManager.shareManager.mapView = mainMapView
         EVMakerManager.shareManager.addMarker(evMarker)
         EVMakerManager.shareManager.addMarker(evMarker1)
@@ -59,9 +59,9 @@ extension EVMainGameController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
         
-        var card: NotificatonModel = NotificatonModel(title: "Thai", nameImage: nil, content: "scdcd", isShowExitButton: false, isShowHandleButton: false)
-        let infoWindow = EVPopupView(frame: CGRect(x: 0,y: 0,width: 280,height:40))
-        infoWindow.show(with: card, type: .detail) { 
+        let card: EVMarkerModel = EVMarkerModel(name: marker.title!, imageName: "EventGo-Logo", descriptionPlace: "Đây là địa điểm có giá trị lịch sử", showHandleButton: false)
+        let infoWindow = EVPopupView(frame: CGRect(x: 0,y: 0,width: 280,height:60))
+        infoWindow.show(with: card, type: .popover) {
             
         }
         return infoWindow

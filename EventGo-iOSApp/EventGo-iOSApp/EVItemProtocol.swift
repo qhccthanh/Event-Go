@@ -58,6 +58,41 @@ protocol ItemPopupProtocol: TTItemProtocol {
     func isShowHandleButton() -> Bool
 }
 
+class EVMarkerModel: NSObject, ItemPopupProtocol {
+    
+    var title: String?
+    var imageName: String?
+    var descriptionPlace: String?
+    var showHandleButton: Bool!
+    func imageItem() -> UIImage? {
+        return UIImage(named: imageName ?? "place")
+    }
+    
+    init(name: String, imageName: String, descriptionPlace: String, showHandleButton: Bool = false) {
+        self.title = name
+        self.imageName = imageName
+        self.descriptionPlace = descriptionPlace
+        self.showHandleButton = showHandleButton
+        
+    }
+    
+    func titleItem() -> String {
+        return title ?? ""
+    }
+    
+    func subTitleItem() -> String? {
+        return descriptionPlace
+    }
+    
+    func isShowExitButton() -> Bool {
+       return true
+    }
+    
+    func isShowHandleButton() -> Bool {
+       return showHandleButton
+    }
+}
+
 class NotificatonModel: NSObject, ItemPopupProtocol {
     
     var isExitButton: Bool!

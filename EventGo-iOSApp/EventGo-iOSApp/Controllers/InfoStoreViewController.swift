@@ -29,8 +29,8 @@ class InfoStoreViewController: UIViewController {
         let model = NotificatonModel(title: nil, nameImage: "ic_checked", content: "Bạn đã trúng thưởng ", isShowExitButton: true, isShowHandleButton: false)
         let view = EVPopupView(frame: CGRect(x: 0, y: 0, width: 216, height: 200))
         view.show(with: model, type: .detail) {
-                print("Đã bấm OK")
-            }
+                log.info("Đã bấm OK")
+        }
     }
     
 }

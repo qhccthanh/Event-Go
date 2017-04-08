@@ -58,7 +58,7 @@ class DemoSTViewController: UIViewController {
         loginButton.reactive.controlEvents(.touchUpInside).observe { _ in
             let loginFacebookSignal = EVAuthenticationManager.share().authenticateWithFacebook(in: self)
             loginFacebookSignal?.subscribeNext({ (response) in
-                print(response)
+                log.info(response)
             }, error: { (error) in
                 print(error)
             })

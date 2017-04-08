@@ -33,7 +33,7 @@ public class EVUserServices: BaseService {
                 }
 
             }, error: { (error) in
-                print(error)
+                log.error(error)
             })
             return nil
         })

@@ -35,7 +35,7 @@ extension Realm {
                 self.add(object, update: update)
             }
         } catch {
-            print("Write object fail")
+            log.error("Write object fail")
         }
     }
     

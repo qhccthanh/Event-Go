@@ -135,6 +135,42 @@
             </objects>
             <point key="canvasLocation" x="-2578" y="188"/>
         </scene>
+        <!--Update User Info View Controller-->
+        <scene sceneID="Q8E-dN-ifa">
+            <objects>
+                <viewController storyboardIdentifier="EVUpdateUserInfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fq6-ub-sO9" customClass="EVUpdateUserInfoViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dYa-Fy-88j"/>
+                        <viewControllerLayoutGuide type="bottom" id="lhE-sI-HAN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qA7-fH-rsl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNt-ek-2Q6">
+                                <rect key="frame" x="137" y="318.5" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="43k-65-0KM"/>
+                                    <constraint firstAttribute="height" constant="30" id="krL-Pu-ztY"/>
+                                </constraints>
+                                <state key="normal" title="Change"/>
+                                <connections>
+                                    <action selector="changeInfoAction:" destination="fq6-ub-sO9" eventType="touchUpInside" id="n5Z-zd-vZh"/>
+                                    <action selector="updateInfoAction:" destination="fq6-ub-sO9" eventType="touchUpInside" id="bps-Z7-hzv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XNt-ek-2Q6" firstAttribute="centerY" secondItem="qA7-fH-rsl" secondAttribute="centerY" id="avY-WZ-5jU"/>
+                            <constraint firstItem="XNt-ek-2Q6" firstAttribute="centerX" secondItem="qA7-fH-rsl" secondAttribute="centerX" id="uau-Rm-Idj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Yv-ib-szp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2468" y="873.91304347826099"/>
+        </scene>
         <!--Info Store View Controller-->
         <scene sceneID="gkH-r5-hOa">
             <objects>
@@ -506,7 +542,7 @@
         <scene sceneID="rka-9d-dlS">
             <objects>
                 <collectionViewController id="wiq-di-ofF" customClass="ListEventsCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dIo-Ow-vgi">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="dIo-Ow-vgi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="596"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -606,7 +642,7 @@
         <scene sceneID="E52-Mf-XOo">
             <objects>
                 <collectionViewController id="GTy-73-fqn" customClass="ListEventsUpcomingCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XAJ-aP-rz2">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="XAJ-aP-rz2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="596"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -899,7 +935,7 @@
         <scene sceneID="0GM-xk-C1b">
             <objects>
                 <collectionViewController storyboardIdentifier="StoreCollectionViewController" id="WJp-HN-Yh1" customClass="StoreCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AZU-Qp-7f3">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="AZU-Qp-7f3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

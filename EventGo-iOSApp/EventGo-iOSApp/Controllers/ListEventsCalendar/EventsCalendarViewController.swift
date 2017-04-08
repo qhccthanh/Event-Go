@@ -65,8 +65,6 @@ class EventsCalendarViewController: UIViewController {
         }
         
         upCommingViewController?.collectionView?.reloadData()
-        
-        print(leftConstain.constant)
         upcomingEventsLabel.isHidden = false
         happenEventsLabel.isHidden = true
     }

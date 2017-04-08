@@ -29,7 +29,7 @@ class InfoAwardViewController: UIViewController {
         let model = NotificatonModel(title: "THỬ THÁCH", nameImage: "", content: "Bạn sẽ trãi qua tất cả 4 thử thách từ chương trình", isShowExitButton: true, isShowHandleButton: false)
         let view = EVPopupView(frame: CGRect(x: 0, y: 0, width: 216, height: 100))
         view.show(with: model, type: .detail) {
-            print("Đã bấm OK")
+            log.info("Đã bấm OK")
         }
     }
   

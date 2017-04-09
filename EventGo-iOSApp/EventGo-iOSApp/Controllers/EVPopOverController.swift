@@ -37,6 +37,7 @@ class EVPopOverController: UIViewController {
         self.definesPresentationContext = true;
         self.modalPresentationStyle = .overCurrentContext;
         self.view.backgroundColor = UIColor.clear
+        
     }
     
     func showView(_ vc: UIViewController) {

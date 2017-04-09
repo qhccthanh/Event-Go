@@ -26,7 +26,7 @@ class EVPopOverView: UIView {
     
     
     
-    func show(content : String) {
+    func show(title: String, content : String) {
         
             customUI()
             self.imageContentView.contentMode = .scaleAspectFit
@@ -38,6 +38,7 @@ class EVPopOverView: UIView {
         
 //            exitButton.addTarget(self, action: #selector(exitAction), for: .touchUpInside)
 //            detailButton.addTarget(self, action: #selector(detailViewAction), for: .touchUpInside)
+            titleLabel.text = title
         
             contentLabel.text = content
             var heightContentText = content.height(withConstrainedWidth: self.frame.width, font: UIFont.robotoRegular(withSize: 11))
@@ -57,8 +58,6 @@ class EVPopOverView: UIView {
             }
         
             heightView += 40
-        
-            titleLabel.text = "Title"
         
             imageContentView.snp.makeConstraints({ (make) in
                 make.top.equalTo(10)

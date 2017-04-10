@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: SCREEN_FRAME_PORTRAIT)
         window?.makeKeyAndVisible()
         window?.rootViewController = EVViewController()
-        if let tvc = UIStoryboard(name: "DemoST", bundle: nil).instantiateViewController(withIdentifier: "EVDefaultControllerViewController") as? EVDefaultControllerViewController {
+        if let tvc = UIStoryboard(name: "DemoST", bundle: nil).instantiateViewController(withIdentifier: "EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController {
             window?.rootViewController = tvc
         }
 //

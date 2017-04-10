@@ -7,13 +7,26 @@
 //
 
 import UIKit
-
+import AnimatedTextInput
 class EVUpdateUserInfoViewController: UIViewController {
 
+    @IBOutlet weak var nameView: AnimatedTextInput!
+    @IBOutlet weak var emailView: AnimatedTextInput!
+    @IBOutlet weak var phoneView: AnimatedTextInput!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setup()
+    }
+    
+    private func setup(){
+    
+        avatarImageView.layer.cornerRadius = avatarImageView.frame.height
+        nameView.placeHolderText = "Họ Tên"
+        emailView.placeHolderText = "Email"
+        phoneView.placeHolderText = "Phone"
+        phoneView.type = .numeric
     }
 
     override func didReceiveMemoryWarning() {

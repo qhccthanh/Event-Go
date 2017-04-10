@@ -10,6 +10,9 @@ import UIKit
 
 class EVPopOverController: UIViewController {
 
+    
+    var detailBlock: ((_ object: AnyObject)->Void)?
+    var cancelBlock: (()->Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +24,7 @@ class EVPopOverController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    init(customView: UIView, height: CGFloat) {
+    init(customView: EVPopOverView, height: CGFloat) {
         super.init(nibName: nil, bundle: nil)
        
         self.view.addSubview(customView)
@@ -38,11 +41,28 @@ class EVPopOverController: UIViewController {
         self.modalPresentationStyle = .overCurrentContext;
         self.view.backgroundColor = UIColor.clear
         
+        customView.detailButton.addTarget(self, action: #selector(detailAction), for: .touchUpInside)
+        customView.exitButton.addTarget(self, action: #selector(exitAction), for: .touchUpInside)
     }
     
-    func showView(_ vc: UIViewController) {
+    func showView(_ vc: UIViewController, detailBlock: ((_ object: AnyObject?)-> Void)? = nil, cancelBlock: (() -> Void)? = nil ){
         vc.present(self, animated: true, completion: nil)
+        if detailBlock != nil {
+            self.detailBlock = detailBlock
+        }
+        if cancelBlock != nil {
+            self.cancelBlock = cancelBlock
+        }
     }
+    
+    @objc private func exitAction() {
+        self.cancelBlock?()
+    }
+    
+    @objc private func detailAction() {
+        self.detailBlock?("show detail" as AnyObject)
+    }
+
     
     func dismissView() {
         self.dismiss(animated: true, completion: nil)

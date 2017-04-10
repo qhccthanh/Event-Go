@@ -88,7 +88,7 @@ class EVPopOverView: UIView {
         imageContentView.layer.masksToBounds = true
         exitButton.layer.cornerRadius = 10
         exitButton.clipsToBounds = true
-        exitButton.layer.backgroundColor = UIColor(red: 255/255, green: 87/255, blue: 34/255, alpha: 1).cgColor
+        exitButton.layer.backgroundColor = UIColor.exitButtonBGColor().cgColor
         exitButton.titleLabel?.textColor = UIColor.white
         exitButton.setTitle("Đóng", for: .normal)
         exitButton.setTitleColor(UIColor.white, for: .normal)
@@ -99,7 +99,7 @@ class EVPopOverView: UIView {
         detailButton.setTitleColor(UIColor.white, for: .normal)
         detailButton.layer.cornerRadius = 10
         detailButton.clipsToBounds = true
-        detailButton.layer.backgroundColor = UIColor(red: 0/255, green: 150/255, blue: 136/255, alpha: 1).cgColor
+        detailButton.layer.backgroundColor = UIColor.detailButtonBGColor().cgColor
         detailButton.layer.borderWidth = 0.2
         detailButton.layer.borderColor = UIColor.blue.cgColor
         

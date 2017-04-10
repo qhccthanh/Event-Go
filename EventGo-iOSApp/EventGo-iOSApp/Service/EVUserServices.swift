@@ -35,24 +35,63 @@ public class EVUserServices: BaseService {
 
     }
     
-    func checkInfoUser() -> RACSignal<NSDictionary>{
+//    func checkInfoUser() -> RACSignal<NSDictionary>{
+//        
+//        let url = path + "/me"
+//        
+//        return RACSignal.createSignal({ (sub) -> RACDisposable? in
+//            EVReactNetwork.request(with: EVReactNetworkMethod_GET, header: self.headers, urlString: url, params: nil).subscribeNext({ (result) in
+//                if let result = result as? NSDictionary {
+//                    sub.sendNext(result)
+//                } else {
+//                    sub.sendError("Lỗi không parse được data" as? Error)
+//                }
+//
+//            }, error: { (error) in
+//                log.error(error)
+//            })
+//            return nil
+//        })
+//    }
+    func checkInfoUser() -> RACSignal<AnyObject>{
         
         let url = path + "/me"
         
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
+            
             EVReactNetwork.request(with: EVReactNetworkMethod_GET, header: self.headers, urlString: url, params: nil).subscribeNext({ (result) in
                 if let result = result as? NSDictionary {
-                    sub.sendNext(result)
+                    let dataJson = JSON(result)
+                    if dataJson["code"] == 200{
+                        
+                        let userCurrent = EVUser.fromJson(data: dataJson["data"])
+                        log.info(dataJson)
+                        EVAppFactory.shareInstance.currentUser = userCurrent
+                        
+                        if (userCurrent.image_url == "" || userCurrent.name == "") {
+                            
+                            sub.sendNext(EVCheckUserEnumType.updatedInfo)
+                        } else {
+                            
+                            sub.sendNext(EVCheckUserEnumType.login)
+                        }
+
+                    } else {
+                        sub.sendNext(EVCheckUserEnumType.notLogin)
+                    }
+                    
                 } else {
+                    
                     sub.sendError("Lỗi không parse được data" as? Error)
                 }
-
+                
             }, error: { (error) in
                 log.error(error)
             })
             return nil
         })
     }
+
     
     func login(with token: String, type: String, idUser: String?)-> RACSignal<AnyObject> {
         

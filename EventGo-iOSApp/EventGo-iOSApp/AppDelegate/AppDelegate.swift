@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: SCREEN_FRAME_PORTRAIT)
         window?.makeKeyAndVisible()
         window?.rootViewController = EVViewController()
-        if let tvc = UIStoryboard(name: "DemoST", bundle: nil).instantiateViewController(withIdentifier: "EVMainGameController") as? EVMainGameController {
+        if let tvc = UIStoryboard(name: "DemoST", bundle: nil).instantiateViewController(withIdentifier: "EVDefaultControllerViewController") as? EVDefaultControllerViewController {
             window?.rootViewController = tvc
         }
 //

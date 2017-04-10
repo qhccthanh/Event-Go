@@ -12,44 +12,85 @@ class EVDefaultControllerViewController: UIViewController {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        let checkUserSignal = EVUserServices.shareInstance.checkInfoUser()
+//        checkUserSignal.subscribeNext({ (response) in
+//            
+//            let dataJson = JSON(response!)
+//            dispatch_main_queue_safe {
+//                if dataJson["code"] == 200 {
+//                    let userCurrent = EVUser.fromJson(data: dataJson["data"])
+//                    log.info(dataJson)
+//                    EVAppFactory.shareInstance.currentUser = userCurrent
+//                    if (userCurrent.image_url == "" || userCurrent.name == "") {
+//                        
+//                        if let evChangeInfoVC = StoryBoard.DemoST.viewController("EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController{
+//                            self.present(evChangeInfoVC, animated: true, completion: nil)
+//                        }
+//                    }else {
+//                        
+//                        if let evMainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController{
+//                            self.present(evMainGameVC, animated: true, completion: nil)
+//                        }
+//                    }
+//                    
+//                } else {
+//                    
+//                    if let evLoginView = StoryBoard.DemoST.viewController("EVLogInViewController") as? EVLogInViewController {
+//                        self.present(evLoginView, animated: true, completion: nil)
+//                    }
+//                }
+//                
+//            }
+//        
+//        }, error: { (error) in
+//            log.error()
+//        })
+//
+//    
+//    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let checkUserSignal = EVUserServices.shareInstance.checkInfoUser()
         checkUserSignal.subscribeNext({ (response) in
             
-            let dataJson = JSON(response!)
-            dispatch_main_queue_safe {
-                if dataJson["code"] == 200 {
-                    let userCurrent = EVUser.fromJson(data: dataJson["data"])
-                    log.info(dataJson)
-                    EVAppFactory.shareInstance.currentUser = userCurrent
-                    if (userCurrent.image_url == "" || userCurrent.name == "") {
-                        
-                        if let evChangeInfoVC = StoryBoard.DemoST.viewController("EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController{
-                            self.present(evChangeInfoVC, animated: true, completion: nil)
-                        }
-                    }else {
-                        
+            if let response = response as? EVCheckUserEnumType {
+                
+                dispatch_main_queue_safe {
+                    
+                    switch response {
+                    case .login:
                         if let evMainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController{
                             self.present(evMainGameVC, animated: true, completion: nil)
                         }
-                    }
-                    
-                } else {
-                    
-                    if let evLoginView = StoryBoard.DemoST.viewController("EVLogInViewController") as? EVLogInViewController {
-                        self.present(evLoginView, animated: true, completion: nil)
+                        break
+                        
+                    case .notLogin:
+                        if let evLoginView = StoryBoard.DemoST.viewController("EVLogInViewController") as? EVLogInViewController {
+                            self.present(evLoginView, animated: true, completion: nil)
+                        }
+                        break
+                        
+                    default:
+                        if let evChangeInfoVC = StoryBoard.DemoST.viewController("EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController{
+                            self.present(evChangeInfoVC, animated: true, completion: nil)
+                        }
+                        break
                     }
                 }
-                
             }
-        
+            
+            
         }, error: { (error) in
             log.error()
         })
-
-    
+        
+        
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

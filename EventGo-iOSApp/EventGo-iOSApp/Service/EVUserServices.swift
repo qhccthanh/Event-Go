@@ -53,6 +53,22 @@ public class EVUserServices: BaseService {
 //            return nil
 //        })
 //    }
+    func updateUserInfologin(with params: Dictionary<String, Any>)-> RACSignal<AnyObject> {
+        
+        return RACSignal.createSignal({ (sub) -> RACDisposable? in
+            EVReactNetwork.request(with: EVReactNetworkMethod_PUT, header: self.headers, urlString: self.path, params: params).subscribeNext({ (object) in
+                    let dataJson =  JSON(object)
+                if dataJson["code"] == 200 {
+                    sub.sendNext(EVUpdateResult.success)
+                } else {
+                    sub.sendNext(EVUpdateResult.faillure)
+                }
+            }, error: { (error) in
+                sub.sendError(error)
+            })
+        })
+    }
+    
     func checkInfoUser() -> RACSignal<AnyObject>{
         
         let url = path + "/me"
@@ -68,7 +84,7 @@ public class EVUserServices: BaseService {
                         log.info(dataJson)
                         EVAppFactory.shareInstance.currentUser = userCurrent
                         
-                        if (userCurrent.image_url == "" || userCurrent.name == "") {
+                        if (userCurrent.image_url != "" || userCurrent.name == "") {
                             
                             sub.sendNext(EVCheckUserEnumType.updatedInfo)
                         } else {
@@ -118,6 +134,8 @@ public class EVUserServices: BaseService {
             return nil
         })
     }
+    
+    
     
     func login(with params: Dictionary<String, Any>)-> RACSignal<NSDictionary> {
 

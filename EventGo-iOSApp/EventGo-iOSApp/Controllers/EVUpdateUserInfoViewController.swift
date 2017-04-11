@@ -8,6 +8,7 @@
 
 import UIKit
 import AnimatedTextInput
+
 class EVUpdateUserInfoViewController: UIViewController {
 
     @IBOutlet weak var nameView: AnimatedTextInput!
@@ -66,9 +67,31 @@ class EVUpdateUserInfoViewController: UIViewController {
 //    }
     
     @IBAction func updateInfoAction(_ sender: AnyObject) {
-        if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
-            self.present(mainGameVC, animated: true, completion: nil)
-        }
+        
+        var params = Dictionary<String, Any>()
+        params["name"] = self.nameView.text
+        let updateSignal: RACSignal = EVUserServices.shareInstance.updateUserInfologin(with: params)
+        updateSignal.subscribeNext({ (result) in
+            if let result = result as? EVUpdateResult {
+                switch result {
+                case .success:
+                    dispatch_main_queue_safe {
+                        if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
+                            self.present(mainGameVC, animated: true, completion: nil)
+                        }
+                    }
+                    break
+                    
+                default:
+                    //show message failure
+                    break
+                }
+            }
+
+        }, error: { (error) in
+            
+        })
+        
     }
 
 }

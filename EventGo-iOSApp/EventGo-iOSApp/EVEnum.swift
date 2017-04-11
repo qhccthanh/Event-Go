@@ -12,3 +12,8 @@ enum EVCheckUserEnumType: String {
     case notLogin
     case updatedInfo
 }
+
+enum EVUpdateResult: String {
+    case success
+    case faillure
+}

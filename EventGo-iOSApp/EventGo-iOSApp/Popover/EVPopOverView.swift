@@ -49,8 +49,8 @@ class EVPopOverView: UIView {
         heightView += heightContentText + 10.0
         
         titleLabel.snp.makeConstraints { (make) in
-            make.leading.equalTo(0)
-            make.width.equalTo(self.snp.width)
+            make.leading.equalTo(self.snp.leading).offset(8)
+            make.trailing.equalTo(self.snp.trailing).offset(-8)
             make.top.equalTo(imageContentView.snp.bottom).offset(10)
             make.height.equalTo(30)
         }
@@ -83,9 +83,10 @@ class EVPopOverView: UIView {
         
         imageContentView.layoutIfNeeded()
         imageContentView.image = UIImage(named: "ic_pagoda")
-        imageContentView.backgroundColor = UIColor.blue
         imageContentView.layer.cornerRadius = imageContentView.frame.height / 2.0
         imageContentView.layer.masksToBounds = true
+        imageContentView.layer.borderColor = UIColor.gray.cgColor
+        imageContentView.layer.borderWidth = 0.5
         exitButton.layer.cornerRadius = 10
         exitButton.clipsToBounds = true
         exitButton.layer.backgroundColor = UIColor.exitButtonBGColor().cgColor

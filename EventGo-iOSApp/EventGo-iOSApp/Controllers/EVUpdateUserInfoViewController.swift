@@ -37,14 +37,16 @@ class EVUpdateUserInfoViewController: UIViewController {
         }
         
         if let url = URL(string: (currentUser?.image_url)!) {
-            getDataFromUrl(url: url) { (data, response, error)  in
-                guard let data = data, error == nil else { return }
-                print(response?.suggestedFilename ?? url.lastPathComponent)
-                print("Download Finished")
-                DispatchQueue.main.async() { () -> Void in
-                    self.avatarImageView.image = UIImage(data: data)
-                }
-            }
+//            getDataFromUrl(url: url) { (data, response, error)  in
+//                guard let data = data, error == nil else { return }
+//                print(response?.suggestedFilename ?? url.lastPathComponent)
+//                print("Download Finished")
+//                DispatchQueue.main.async() { () -> Void in
+//                    self.avatarImageView.image = UIImage(data: data)
+//                }
+//            }
+            
+             self.avatarImageView.setImageWith(url, placeholderImage: nil)
         }
         
         nameView.text = self.currentUser?.name
@@ -56,12 +58,12 @@ class EVUpdateUserInfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
-        URLSession.shared.dataTask(with: url) {
-            (data, response, error) in
-            completion(data, response, error)
-            }.resume()
-    }
+//    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+//        URLSession.shared.dataTask(with: url) {
+//            (data, response, error) in
+//            completion(data, response, error)
+//            }.resume()
+//    }
     
     @IBAction func updateInfoAction(_ sender: AnyObject) {
         if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {

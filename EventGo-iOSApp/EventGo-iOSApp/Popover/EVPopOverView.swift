@@ -82,7 +82,7 @@ class EVPopOverView: UIView {
         }
         
         imageContentView.layoutIfNeeded()
-        imageContentView.image = UIImage(named: "ic_pagoda")
+        imageContentView.image = EVImage.ic_pagoda.icon()
         imageContentView.layer.cornerRadius = imageContentView.frame.height / 2.0
         imageContentView.layer.masksToBounds = true
         imageContentView.layer.borderColor = UIColor.gray.cgColor

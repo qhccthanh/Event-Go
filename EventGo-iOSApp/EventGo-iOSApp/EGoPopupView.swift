@@ -95,7 +95,7 @@ class EVPopupView: UIView {
     
     private func customUI(){
         
-        self.layer.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundColor")!).cgColor
+        self.layer.backgroundColor = UIColor(patternImage: EVImage.backgroundColor.icon()).cgColor
         self.imageContentView.contentMode = .scaleAspectFit
         contentLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         contentLabel.numberOfLines = 6

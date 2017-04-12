@@ -33,7 +33,7 @@ class EVHomeViewController: EVViewController {
             make.bottom.equalTo(self.buttonView)
             make.width.height.equalTo(50)
         }
-        homeButton.setImage(UIImage(named: "EventGo-Logo"), for: .normal)
+        homeButton.setImage(EVImage.ic_logo.icon(), for: .normal)
         homeButton.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
         
         self.view.addSubview(animatedView)
@@ -44,11 +44,11 @@ class EVHomeViewController: EVViewController {
         animatedView.isHidden = true
         
         self.animatedView.addSubview(button1)
-        button1.setImage(UIImage(named: "EventGo-Logo"), for: .normal)
+        button1.setImage(EVImage.ic_bag.icon(), for: .normal)
         self.animatedView.addSubview(button2)
-        button2.setImage(UIImage(named: "EventGo-Logo"), for: .normal)
+        button2.setImage(EVImage.ic_checklist.icon(), for: .normal)
         self.animatedView.addSubview(button3)
-        button3.setImage(UIImage(named: "EventGo-Logo"), for: .normal)
+        button3.setImage(EVImage.ic_run.icon(), for: .normal)
         
 
         stopAnimation()

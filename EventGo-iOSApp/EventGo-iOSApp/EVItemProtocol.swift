@@ -123,7 +123,7 @@ class NotificatonModel: NSObject, ItemPopupProtocol {
     }
     
     func imageItem() -> UIImage? {
-        return UIImage(named: self.nameImage!) ?? UIImage(named: "ic_checked")
+        return UIImage(named: self.nameImage!) ?? EVImage.ic_check.icon()
     }
     
     func isShowExitButton() -> Bool {
@@ -156,7 +156,7 @@ class CartoonModel: NSObject, ItemEventProtocol {
     }
     
     func imageItem() -> UIImage? {
-        return UIImage(named: nameImageEvent) ?? UIImage(named: "pokemon")!
+        return UIImage(named: nameImageEvent) ?? EVImage.ic_logo.icon()
     }
     
     func subTitleItem() -> String? {

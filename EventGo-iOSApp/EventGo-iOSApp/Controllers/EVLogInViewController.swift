@@ -12,7 +12,7 @@ import enum Result.NoError
 import GoogleSignIn
 import SwiftyJSON
 
-class EVLogInViewController: UIViewController {
+class EVLogInViewController: EVViewController {
 
     @IBOutlet weak var avatarAppView: UIView!
     var userInfo: EVUser?
@@ -108,6 +108,9 @@ class EVLogInViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    override func id() -> String {
+        return "EVLogInViewController"
+    }
 
 }
 

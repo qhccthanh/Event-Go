@@ -49,7 +49,15 @@ class EVViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func present(evController: EVViewController) {
+        evController.id()
+    }
+    
+    func id() -> String {
+        return ""
+    }
+    
     deinit {
         log.debug("\(NSStringFromClass(self.classForCoder))")
     }

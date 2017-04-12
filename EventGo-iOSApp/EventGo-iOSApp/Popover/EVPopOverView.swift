@@ -87,10 +87,10 @@ class EVPopOverView: UIView {
         imageContentView.layer.masksToBounds = true
         imageContentView.layer.borderColor = UIColor.gray.cgColor
         imageContentView.layer.borderWidth = 0.5
+        
         exitButton.layer.cornerRadius = 10
         exitButton.clipsToBounds = true
         exitButton.layer.backgroundColor = UIColor.exitButtonBGColor().cgColor
-        exitButton.titleLabel?.textColor = UIColor.white
         exitButton.setTitle("Đóng", for: .normal)
         exitButton.setTitleColor(UIColor.white, for: .normal)
         exitButton.layer.borderWidth = 0.2
@@ -103,8 +103,6 @@ class EVPopOverView: UIView {
         detailButton.layer.backgroundColor = UIColor.detailButtonBGColor().cgColor
         detailButton.layer.borderWidth = 0.2
         detailButton.layer.borderColor = UIColor.blue.cgColor
-        
-
     }
         
     private func customUI(){

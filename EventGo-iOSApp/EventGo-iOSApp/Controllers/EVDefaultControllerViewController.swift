@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyJSON
-class EVDefaultControllerViewController: UIViewController {
+class EVDefaultControllerViewController: EVViewController {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     
@@ -59,28 +59,30 @@ class EVDefaultControllerViewController: UIViewController {
             
             if let response = response as? EVCheckUserEnumType {
                 
-                dispatch_main_queue_safe {
-                    
+                
                     switch response {
                     case .login:
-                        if let evMainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController{
-                            self.present(evMainGameVC, animated: true, completion: nil)
-                        }
+//                        if let evMainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController{
+//                            self.present(evMainGameVC, animated: true, completion: nil)
+//                        }
+                        EVController.EVMainGameController.showController(self)
                         break
                         
                     case .notLogin:
-                        if let evLoginView = StoryBoard.DemoST.viewController("EVLogInViewController") as? EVLogInViewController {
-                            self.present(evLoginView, animated: true, completion: nil)
-                        }
+//                        if let evLoginView = StoryBoard.DemoST.viewController("EVLogInViewController") as? EVLogInViewController {
+//                            self.present(evLoginView, animated: true, completion: nil)
+//                        }
+                        EVController.EVLogInViewController.showController(self)
                         break
                         
                     default:
-                        if let evChangeInfoVC = StoryBoard.DemoST.viewController("EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController{
-                            self.present(evChangeInfoVC, animated: true, completion: nil)
-                        }
+//                        if let evChangeInfoVC = StoryBoard.DemoST.viewController("EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController{
+//                            self.present(evChangeInfoVC, animated: true, completion: nil)
+//                        }
+                        EVController.EVUpdateUserInfoViewController.showController(self)
                         break
                     }
-                }
+                
             }
             
             

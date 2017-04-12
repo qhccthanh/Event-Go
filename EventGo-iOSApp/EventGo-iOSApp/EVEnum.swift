@@ -44,3 +44,30 @@ extension EVImage {
         return UIImage(named: self.rawValue)!
     }
 }
+
+enum EVController: String {
+
+    case EVViewController = "EVViewController"
+    case EVLogInViewController = "EVLogInViewController"
+    case EVMainGameController = "EVMainGameController"
+    case EVDefaultControllerViewController = "EVDefaultControllerViewController"
+    case EVUpdateUserInfoViewController = "EVUpdateUserInfoViewController"
+    case EVPopOverController = "EVPopOverController"
+    case EVHomeViewController = "EVHomeViewController"
+    
+}
+extension EVController {
+    
+    func getController() -> EVViewController {
+        let controller = StoryBoard.DemoST.viewController(self.rawValue)
+        return controller as! EVViewController
+    }
+    
+    func showController(_ inController: EVViewController) {
+        dispatch_main_queue_safe {
+            let vc = self.getController()
+            inController.present(vc, animated: true, completion: nil)
+
+        }
+    }
+}

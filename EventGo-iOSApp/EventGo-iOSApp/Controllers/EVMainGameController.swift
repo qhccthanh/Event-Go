@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class EVMainGameController: UIViewController {
+class EVMainGameController: EVViewController {
 
     @IBOutlet var mainMapView: GMSMapView!
     var temp = 0

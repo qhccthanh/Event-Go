@@ -37,11 +37,12 @@ class EVLogInViewController: EVViewController {
                     let dataJson = JSON(response!)
                     let user = EVUser.fromJson(data: dataJson["data"])
                     EVAppFactory.shareInstance.currentUser = user
-                    dispatch_main_queue_safe {
-                        if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
-                            self.present(mainGameVC, animated: true, completion: nil)
-                        }
-                    }
+//                    dispatch_main_queue_safe {
+//                        if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
+//                            self.present(mainGameVC, animated: true, completion: nil)
+//                        }
+                        EVController.EVMainGameController.showController(self)
+//                    }
                     
                 }, error: { (error) in
                     log.error(error)
@@ -82,9 +83,10 @@ class EVLogInViewController: EVViewController {
                 let user = EVUser.fromJson(data: dataJson["data"])
                 EVAppFactory.shareInstance.currentUser = user
                 dispatch_main_queue_safe {
-                    if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
-                        self.present(mainGameVC, animated: true, completion: nil)
-                    }
+//                    if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
+//                        self.present(mainGameVC, animated: true, completion: nil)
+//                    }
+                    EVController.EVMainGameController.showController(self)
                 }
 
             }, error: { (error) in

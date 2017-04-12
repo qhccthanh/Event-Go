@@ -9,7 +9,7 @@
 import UIKit
 import AnimatedTextInput
 
-class EVUpdateUserInfoViewController: UIViewController {
+class EVUpdateUserInfoViewController: EVViewController {
 
     @IBOutlet weak var nameView: AnimatedTextInput!
     @IBOutlet weak var emailView: AnimatedTextInput!
@@ -75,11 +75,12 @@ class EVUpdateUserInfoViewController: UIViewController {
             if let result = result as? EVUpdateResult {
                 switch result {
                 case .success:
-                    dispatch_main_queue_safe {
-                        if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
-                            self.present(mainGameVC, animated: true, completion: nil)
-                        }
-                    }
+//                    dispatch_main_queue_safe {
+//                        if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
+//                            self.present(mainGameVC, animated: true, completion: nil)
+//                        }
+                        EVController.EVMainGameController.showController(self)
+//                    }
                     break
                     
                 default:

@@ -90,7 +90,7 @@ class EVPopupView: UIView {
         contentLabel.text = model.subTitleItem()
         alert.customSubview = self
 //        alert.showInfo(model.titleItem(), subTitle: "")
-        alert.showCustom(model.titleItem(), subTitle: "", color: .white, icon: model.imageItem() ?? UIImage())
+//        alert.showCustom(model.titleItem(), subTitle: "", color: .white, icon: model.imageItem() ?? UIImage())
     }
     
     private func customUI(){

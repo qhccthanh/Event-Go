@@ -12,9 +12,10 @@ class EVHomeViewController: EVViewController {
 
     var homeButton: UIButton = UIButton()
     var animatedView: UIView = UIView()
-    var button1: EGoButtonModel = EGoButtonModel()
-    var button2: EGoButtonModel = EGoButtonModel()
-    var button3: EGoButtonModel = EGoButtonModel()
+//    var button1: EGoButtonModel = EGoButtonModel()
+//    var button2: EGoButtonModel = EGoButtonModel()
+//    var button3: EGoButtonModel = EGoButtonModel()
+    var arrayButton: [EGoButtonModel] = [EGoButtonModel(),EGoButtonModel(),EGoButtonModel(), EGoButtonModel()]
 
     
     @IBOutlet weak var buttonView: UIView!
@@ -35,6 +36,7 @@ class EVHomeViewController: EVViewController {
         }
         homeButton.setImage(EVImage.ic_logo.icon(), for: .normal)
         homeButton.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        arrayButton[3].addTarget(self, action: #selector(quitAnimatedView), for: .touchUpInside)
         
         self.view.addSubview(animatedView)
 
@@ -43,49 +45,70 @@ class EVHomeViewController: EVViewController {
         }
         animatedView.isHidden = true
         
-        self.animatedView.addSubview(button1)
-        button1.setImage(EVImage.ic_bag.icon(), for: .normal)
-        self.animatedView.addSubview(button2)
-        button2.setImage(EVImage.ic_checklist.icon(), for: .normal)
-        self.animatedView.addSubview(button3)
-        button3.setImage(EVImage.ic_run.icon(), for: .normal)
+        self.animatedView.addSubview(arrayButton[0])
+        arrayButton[0].setImage(EVImage.ic_bag.icon(), for: .normal)
+        self.animatedView.addSubview(arrayButton[1])
+        arrayButton[1].setImage(EVImage.ic_checklist.icon(), for: .normal)
+        self.animatedView.addSubview(arrayButton[2])
+        arrayButton[2].setImage(EVImage.ic_run.icon(), for: .normal)
+        self.animatedView.addSubview(arrayButton[3])
+        arrayButton[3].setImage(EVImage.ic_quit.icon(), for: .normal)
         
-
         stopAnimation()
+    }
+    
+    func quitAnimatedView(){
+        UIView.animate(withDuration: 1) { 
+            self.arrayButton[0].center = self.arrayButton[3].center
+            self.arrayButton[1].center = self.arrayButton[3].center
+            self.arrayButton[2].center = self.arrayButton[3].center
+            self.animatedView.alpha = 0.0
+            
+        }
     }
     
     func stopAnimation() {
         
-        button1.isHidden = true
-        button2.isHidden = true
-        button3.isHidden = true
-        button1.snp.makeConstraints { (maker) in
+        arrayButton[0].isHidden = true
+        arrayButton[1].isHidden = true
+        arrayButton[2].isHidden = true
+        arrayButton[3].isHidden = true
+        arrayButton[0].snp.makeConstraints { (maker) in
             maker.width.height.equalTo(30)
             maker.centerY.centerX.equalTo(self.homeButton)
         }
         
-        button2.snp.makeConstraints { (maker) in
+        arrayButton[1].snp.makeConstraints { (maker) in
             maker.width.height.equalTo(30)
             maker.centerY.centerX.equalTo(self.homeButton)
         }
         
-        button3.snp.makeConstraints { (maker) in
+        arrayButton[2].snp.makeConstraints { (maker) in
             maker.width.height.equalTo(30)
             maker.centerY.centerX.equalTo(self.homeButton)
         }
-        self.animatedView.backgroundColor = UIColor.white
+        
+        arrayButton[3].snp.makeConstraints { (make) in
+            make.centerX.centerY.equalTo(self.homeButton)
+            make.width.height.equalTo(50)
+            
+        }
+        self.animatedView.backgroundColor = UIColor.teal()
         self.animatedView.alpha = 0.0
     }
     
     func startAnimation(){
  
-        button1.isHidden = false
-        button2.isHidden = false
-        button3.isHidden = false
+        arrayButton[0].isHidden = false
+        arrayButton[1].isHidden = false
+        arrayButton[2].isHidden = false
+        arrayButton[3].isHidden = false
+      
+
        
-        button1.center = CGPoint(x: self.homeButton.center.x, y: self.homeButton.center.y - 150)
-        button2.center = CGPoint(x: homeButton.center.x - 90, y: self.homeButton.center.y - 120)
-        button3.center = CGPoint(x: homeButton.center.x + 90, y: self.homeButton.center.y - 120)
+        arrayButton[0].center = CGPoint(x: self.homeButton.center.x, y: self.homeButton.center.y - 150)
+        arrayButton[1].center = CGPoint(x: homeButton.center.x - 90, y: self.homeButton.center.y - 120)
+        arrayButton[2].center = CGPoint(x: homeButton.center.x + 90, y: self.homeButton.center.y - 120)
         
     }
     

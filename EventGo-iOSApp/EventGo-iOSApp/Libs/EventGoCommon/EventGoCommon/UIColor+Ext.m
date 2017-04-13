@@ -66,11 +66,15 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 }
 
 // teal 500
++ (UIColor *)tealColor {
+    return [UIColor colorWithHexValue:0x009688];
+}
 + (UIColor *)egoBaseColor {
     return [UIColor colorWithHexValue:0x266378];
 }
 
 // organ 500
+
 + (UIColor *)egoSecondaryColor {
     return [UIColor colorWithHexValue:0x52B888];
 }

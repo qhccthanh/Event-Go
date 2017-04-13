@@ -51,7 +51,7 @@ class EVUpdateUserInfoViewController: EVViewController {
         }
         
         nameView.text = self.currentUser?.name
-        emailView.text = "\(self.currentUser?.age )"
+        emailView.text = "\(String(describing: self.currentUser?.age ))"
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,7 +79,7 @@ class EVUpdateUserInfoViewController: EVViewController {
 //                        if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
 //                            self.present(mainGameVC, animated: true, completion: nil)
 //                        }
-                        EVController.MainGame.showController(self)
+                        EVController.mainGame.showController(self)
 //                    }
                     break
                     

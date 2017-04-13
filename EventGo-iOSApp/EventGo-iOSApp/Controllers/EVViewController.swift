@@ -25,7 +25,7 @@ class EVViewController: UIViewController {
         
         FIRAnalytics.setScreenName("EVViewController", screenClass: "EVViewController")
         log.debug("\(NSStringFromClass(self.classForCoder))")
-        self.view.backgroundColor = .blue
+        self.view.backgroundColor = UIColor.teal()
         // verbose
         // debug
         // warn

@@ -65,21 +65,21 @@ class EVDefaultControllerViewController: EVViewController {
 //                        if let evMainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController{
 //                            self.present(evMainGameVC, animated: true, completion: nil)
 //                        }
-                        EVController.MainGame.showController(self)
+                        EVController.mainGame.showController(self)
                         break
                         
                     case .notLogin:
 //                        if let evLoginView = StoryBoard.DemoST.viewController("EVLogInViewController") as? EVLogInViewController {
 //                            self.present(evLoginView, animated: true, completion: nil)
 //                        }
-                        EVController.LogIn.showController(self)
+                        EVController.logIn.showController(self)
                         break
                         
                     default:
 //                        if let evChangeInfoVC = StoryBoard.DemoST.viewController("EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController{
 //                            self.present(evChangeInfoVC, animated: true, completion: nil)
 //                        }
-                        EVController.UserInfo.showController(self)
+                        EVController.userInfo.showController(self)
                         break
                     }
                 

@@ -30,7 +30,10 @@
 + (UIColor *)payColor;
 + (UIColor *)selectedColor;
 
+
 + (UIColor *)ev_blue;
++ (UIColor *)tealColor;
+
 + (UIColor *)ev_green;
 + (UIColor *)ev_red;
 + (UIColor *)ev_yellow;

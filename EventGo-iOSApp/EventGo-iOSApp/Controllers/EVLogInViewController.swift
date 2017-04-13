@@ -41,7 +41,7 @@ class EVLogInViewController: EVViewController {
 //                        if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
 //                            self.present(mainGameVC, animated: true, completion: nil)
 //                        }
-                        EVController.MainGame.showController(self)
+                        EVController.mainGame.showController(self)
 //                    }
                     
                 }, error: { (error) in
@@ -86,7 +86,7 @@ class EVLogInViewController: EVViewController {
 //                    if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
 //                        self.present(mainGameVC, animated: true, completion: nil)
 //                    }
-                    EVController.EVMainGameController.showController(self)
+                    EVController.mainGame.showController(self)
                 }
 
             }, error: { (error) in

@@ -47,13 +47,13 @@ extension EVImage {
 
 enum EVController: String {
 
-    case EVViewController = "EVViewController"
-    case EVLogInViewController = "EVLogInViewController"
-    case EVMainGameController = "EVMainGameController"
-    case EVDefaultControllerViewController = "EVDefaultControllerViewController"
-    case EVUpdateUserInfoViewController = "EVUpdateUserInfoViewController"
-    case EVPopOverController = "EVPopOverController"
-    case EVHomeViewController = "EVHomeViewController"
+    case ViewController = "EVViewController"
+    case LogIn = "EVLogInViewController"
+    case MainGame = "EVMainGameController"
+    case Default = "EVDefaultControllerViewController"
+    case UserInfo = "EVUpdateUserInfoViewController"
+    case PopOver = "EVPopOverController"
+    case Home = "EVHomeViewController"
     
 }
 extension EVController {

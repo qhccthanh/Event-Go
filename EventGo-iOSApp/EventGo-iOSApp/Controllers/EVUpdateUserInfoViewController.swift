@@ -79,7 +79,7 @@ class EVUpdateUserInfoViewController: EVViewController {
 //                        if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
 //                            self.present(mainGameVC, animated: true, completion: nil)
 //                        }
-                        EVController.EVMainGameController.showController(self)
+                        EVController.MainGame.showController(self)
 //                    }
                     break
                     

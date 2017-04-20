@@ -15,6 +15,12 @@ extension String {
         
         return boundingBox.height
     }
+    
+    
+    func toError() -> NSError {
+        return NSError(domain: "com.eventgo", code: 5, userInfo: [NSLocalizedDescriptionKey: self])
+    }
+    
 }
 
 extension NSAttributedString {

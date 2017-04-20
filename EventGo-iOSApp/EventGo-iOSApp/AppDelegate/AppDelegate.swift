@@ -22,15 +22,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey(EVConstant.API_GOOGLE_MAP_SERVICE_KEY)
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-//        
-        window = UIWindow(frame: SCREEN_FRAME_PORTRAIT)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = EVViewController()
+////        
+//        window = UIWindow(frame: SCREEN_FRAME_PORTRAIT)
+//        window?.makeKeyAndVisible()
+//        window?.rootViewController = EVViewController()
 //        if let tvc = UIStoryboard(name: "DemoST", bundle: nil).instantiateViewController(withIdentifier: "EVHomeViewController") as? EVHomeViewController {
-            window?.rootViewController = EVController.home.getController()
+//            window?.rootViewController = EVController.logIn.getController()
 //        }
 //
 //        
+        
+//        let locationSignal = EVClientService.shareInstance.getCurrentLocation(location: CLLocationCoordinate2D(latitude: 10.859367, longitude: 106.765943))
+//        locationSignal.subscribeNext({ (listLocation) in
+//           
+//        }, error: { (error) in
+//            log.error(error as! Error)
+//        })
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")

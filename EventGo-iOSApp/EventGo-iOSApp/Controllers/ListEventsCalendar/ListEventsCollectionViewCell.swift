@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ListEventsCollectionViewCell: UICollectionViewCell {
     
@@ -14,24 +15,22 @@ class ListEventsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var awardIamageView: UIImageView!
     @IBOutlet weak var nameEventLabel: UILabel!
     
-    weak var itemProtocol: ItemEventProtocol?
     
-    func bindingUI(with model: ItemEventProtocol) {
+    func bindingUI(with eventModel: EVEventModel){
         
-        self.itemProtocol = model
-        
-        if let numberAwardLabel = numberAwardLabel{
-            numberAwardLabel.text = model.subTitleItem()
+        if let nameEvent = nameEventLabel {
+            nameEventLabel.text = eventModel.nameEvent()
         }
         
-        if let awardIamageView = awardIamageView {
-            awardIamageView.image = model.imageItem()
+        if let numberAwardLabel = numberAwardLabel {
+            numberAwardLabel.text = eventModel.descriptionEvent()
         }
-        
-        if let nameEventLabel = nameEventLabel {
-            nameEventLabel.text = model.titleItem()
+        if let url = URL(string: eventModel.imageURL){
+             awardIamageView.af_setImage(withURL: url)
         }
+       
     }
+    
     
     override func prepareForReuse() {
         if let numberAwardLabel = numberAwardLabel{
@@ -45,5 +44,6 @@ class ListEventsCollectionViewCell: UICollectionViewCell {
         if let nameEventLabel = nameEventLabel {
             nameEventLabel.text = nil
         }
+        
     }
 }

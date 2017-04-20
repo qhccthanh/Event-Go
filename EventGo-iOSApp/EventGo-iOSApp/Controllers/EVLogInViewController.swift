@@ -35,15 +35,12 @@ class EVLogInViewController: EVViewController {
                 loginServerSignal.subscribeNext({ (response) in
                     
                     let dataJson = JSON(response!)
+                    if dataJson["code"] != 200 {
+                    } else {
                     let user = EVUser.fromJson(data: dataJson["data"])
                     EVAppFactory.shareInstance.currentUser = user
-//                    dispatch_main_queue_safe {
-//                        if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
-//                            self.present(mainGameVC, animated: true, completion: nil)
-//                        }
                         EVController.mainGame.showController(self)
-//                    }
-                    
+                    }
                 }, error: { (error) in
                     log.error(error)
                 })

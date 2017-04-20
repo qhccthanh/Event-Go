@@ -23,10 +23,10 @@ public class EVEvent: Object {
     dynamic var start_time: Double = 0
     dynamic var end_time: Double = 0
     dynamic var created_date: Double = 0
-    dynamic var location_info: NSDictionary?
+//    dynamic var location_info: NSDictionary?
     dynamic var priority: Double = 1
     dynamic var limit_user: Double = 0
-    dynamic var rule: NSDictionary?
+//    dynamic var rule: NSDictionary?
     dynamic var status: String!
     var award_ids: List<EVString>?
     var task_ids: List<EVString>?
@@ -63,13 +63,23 @@ public class EVEvent: Object {
         event.start_time = data["start_time"].doubleValue
         event.end_time = data["end_time"].doubleValue
         event.created_date = data["created_date"].doubleValue
-        event.location_info = data["location_info"].dictionaryObject as NSDictionary?
+//        event.location_info = data["location_info"].dictionaryObject as NSDictionary?
         event.priority = data["priority"].doubleValue
         event.limit_user = data["limit_user"].doubleValue
-        event.rule = data["rule"].dictionaryObject as NSDictionary?
+//        event.rule = data["rule"].dictionaryObject as NSDictionary?
         event.status = data["status"].stringValue
-        
+        event.tags = EVString.fromJson(data: data["tags"])
         return event
     }
     
+    class func listFromJson(data: JSON) -> [EVEvent] {
+        var listEvent = [EVEvent]()
+        let arrayValues = data["data"].arrayValue
+        for value in arrayValues {
+          listEvent.append(fromJson(data: value))
+        }
+        
+        return listEvent
+    }
 }
+

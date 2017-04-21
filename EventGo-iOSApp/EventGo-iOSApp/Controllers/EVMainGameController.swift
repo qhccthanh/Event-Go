@@ -44,13 +44,12 @@ class EVMainGameController: EVViewController {
     }
     
     func deletetMark() {
-        let infoWindow = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 280), title: "Thông báo", content: "Chỉ mới chiếu đến tập thứ 3 nhưng “Sống chung với mẹ chồng” đã khiến khán giả sục sôi chờ đón từng tập. Theo đoàn làm phim thì tác phẩm không xây dựng “cuộc chiến” mẹ chồng nàng dâu nhằm gây ra những suy nghĩ trái chiều của khán giả đối với 2 người phụ nữ. Với “Sống chung với mẹ chồng”, mối quan hệ này không có “đúng – sai”, không có nhân vật “chính diện hay phản diện”. Bộ phim để cho khán giả tự mình lựa chọn họ sẽ đứng ở vị trí của bà mẹ chồng hay của cô con dâu, từ đó đưa ra cách nhìn và lối sống phù hợp.Tuy nhiên, khi ")
+        
+        let infoWindow = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 300), type: .fullInfo, icon: EVImage.ic_facebook.icon(), title: "Thông báo", content: "Chỉ mới chiếu đến tập thứ 3 nhưng “Sống chung với mẹ chồng” đã khiến khán giả sục sôi chờ đón từng tập. Theo đoàn làm phim thì tác phẩm không xây dựng “cuộc chiến” mẹ chồng nàng dâu nhằm gây ra những suy nghĩ trái chiều của khán giả đối với 2 người phụ nữ. Với “Sống chung với mẹ chồng”, mối quan hệ này không có “đúng – sai”, không có nhân vật “chính diện hay phản diện”. Bộ phim để cho khán giả tự mình lựa chọn họ sẽ đứng ở vị trí của bà mẹ chồng hay của cô con dâu, từ đó đưa ra cách nhìn và lối sống phù hợp.Tuy nhiên, khi")
         let controller = EVPopOverController(customView: infoWindow, height: infoWindow.heightView )
-        controller.showView(self, detailBlock: { (object) in
-            log.info(object)
-        }, cancelBlock: {
-            
-        })
+        controller.showView(self, detailBlock: nil) { 
+            controller.closeVC()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,17 +62,17 @@ class EVMainGameController: EVViewController {
 
 extension EVMainGameController: GMSMapViewDelegate {
     
-    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
-        
-        let infoWindow = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 280), title: "Thông báo", content: "Chỉ mới chiếu đến tập thứ 3 nhưng “Sống chung với mẹ chồng” đã khiến khán giả sục sôi chờ đón từng tập. Theo đoàn làm phim thì tác phẩm không xây dựng “cuộc chiến” mẹ chồng nàng dâu nhằm gây ra những suy nghĩ trái chiều của khán giả đối với 2 người phụ nữ. Với “Sống chung với mẹ chồng”, mối quan hệ này không có “đúng – sai”, không có nhân vật “chính diện hay phản diện”. Bộ phim để cho khán giả tự mình lựa chọn họ sẽ đứng ở vị trí của bà mẹ chồng hay của cô con dâu, từ đó đưa ra cách nhìn và lối sống phù hợp.Tuy nhiên, khi ")
-        let controller = EVPopOverController(customView: infoWindow, height: infoWindow.heightView )
-        controller.showView(self, detailBlock: { (object) in
-            log.info(object)
-        }, cancelBlock: {
-            
-        })
-
-        
-        return nil
-    }
+//    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+//        
+//        let infoWindow = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 280), title: "Thông báo", content: "Chỉ mới chiếu đến tập thứ 3 nhưng “Sống chung với mẹ chồng” đã khiến khán giả sục sôi chờ đón từng tập. Theo đoàn làm phim thì tác phẩm không xây dựng “cuộc chiến” mẹ chồng nàng dâu nhằm gây ra những suy nghĩ trái chiều của khán giả đối với 2 người phụ nữ. Với “Sống chung với mẹ chồng”, mối quan hệ này không có “đúng – sai”, không có nhân vật “chính diện hay phản diện”. Bộ phim để cho khán giả tự mình lựa chọn họ sẽ đứng ở vị trí của bà mẹ chồng hay của cô con dâu, từ đó đưa ra cách nhìn và lối sống phù hợp.Tuy nhiên, khi ")
+//        let controller = EVPopOverController(customView: infoWindow, height: infoWindow.heightView )
+//        controller.showView(self, detailBlock: { (object) in
+//            log.info(object)
+//        }, cancelBlock: {
+//            
+//        })
+//
+//        
+//        return nil
+//    }
 }

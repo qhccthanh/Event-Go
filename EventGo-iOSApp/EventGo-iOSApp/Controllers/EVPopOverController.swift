@@ -45,6 +45,15 @@ class EVPopOverController: UIViewController {
         customView.exitButton.addTarget(self, action: #selector(exitAction), for: .touchUpInside)
     }
     
+    func showLoadingView(_ vc: UIViewController){
+        vc.present(self, animated: true, completion: nil)
+    }
+    
+    func closeVC(){
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func showView(_ vc: UIViewController, detailBlock: ((_ object: AnyObject?)-> Void)? = nil, cancelBlock: (() -> Void)? = nil ){
         vc.present(self, animated: true, completion: nil)
         if detailBlock != nil {

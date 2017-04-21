@@ -10,8 +10,10 @@ import UIKit
 
 class EVHomeViewController: EVViewController {
 
+    @IBOutlet weak var nameUser: UILabel!
     var homeButton: UIButton = UIButton()
     var animatedView: UIView = UIView()
+    @IBOutlet weak var avatarImageView: UIImageView!
 //    var button1: EGoButtonModel = EGoButtonModel()
 //    var button2: EGoButtonModel = EGoButtonModel()
 //    var button3: EGoButtonModel = EGoButtonModel()
@@ -27,6 +29,7 @@ class EVHomeViewController: EVViewController {
     }
     
     private func setupView(){
+        avatarImageView.contentMode = .scaleAspectFill
         self.view.addSubview(homeButton)
         
         homeButton.snp.makeConstraints { (make) in
@@ -44,7 +47,6 @@ class EVHomeViewController: EVViewController {
             make.edges.equalTo(self.view)
         }
         animatedView.isHidden = true
-        
         self.animatedView.addSubview(arrayButton[0])
         arrayButton[0].setImage(EVImage.ic_bag.icon(), for: .normal)
         self.animatedView.addSubview(arrayButton[1])
@@ -53,6 +55,14 @@ class EVHomeViewController: EVViewController {
         arrayButton[2].setImage(EVImage.ic_run.icon(), for: .normal)
         self.animatedView.addSubview(arrayButton[3])
         arrayButton[3].setImage(EVImage.ic_quit.icon(), for: .normal)
+        
+        if let user =  EVAppFactory.shareInstance.currentUser {
+            if let url = URL(string: user.image_url!) {
+                self.avatarImageView.setImageWith(url)
+            }
+            nameUser.text = user.name
+        }
+        
         
         stopAnimation()
     }

@@ -23,11 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(EVConstant.API_GOOGLE_MAP_SERVICE_KEY)
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 ////        
-//        window = UIWindow(frame: SCREEN_FRAME_PORTRAIT)
-//        window?.makeKeyAndVisible()
-//        window?.rootViewController = EVViewController()
+        window = UIWindow(frame: SCREEN_FRAME_PORTRAIT)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = EVViewController()
 //        if let tvc = UIStoryboard(name: "DemoST", bundle: nil).instantiateViewController(withIdentifier: "EVHomeViewController") as? EVHomeViewController {
-//            window?.rootViewController = EVController.logIn.getController()
+            window?.rootViewController = EVController.logIn.getController()
 //        }
 //
 //        

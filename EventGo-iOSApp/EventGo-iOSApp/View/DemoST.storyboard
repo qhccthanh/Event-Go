@@ -749,7 +749,7 @@
         <scene sceneID="wIG-Vt-dJ1">
             <objects>
                 <collectionViewController storyboardIdentifier="EVListEventsCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZIe-J6-FHY" customClass="EVListEventsCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="ewK-vL-ufQ">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ewK-vL-ufQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -892,7 +892,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzg-Iq-gsa">
-                                <rect key="frame" x="71" y="596.5" width="37" height="25"/>
+                                <rect key="frame" x="71" y="596.5" width="57" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="cfF-YD-8ce"/>
                                 </constraints>
@@ -901,17 +901,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carasuan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylP-8S-8rW">
-                                <rect key="frame" x="8" y="621.5" width="100" height="20.5"/>
+                                <rect key="frame" x="8" y="621.5" width="120" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="AxK-rX-suz"/>
+                                    <constraint firstAttribute="width" constant="120" id="AxK-rX-suz"/>
                                     <constraint firstAttribute="height" constant="20" id="S44-ig-NhP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                                 <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1m-AA-yXW">
-                                <rect key="frame" x="275" y="579.5" width="100" height="40"/>
+                                <rect key="frame" x="255" y="579.5" width="120" height="40"/>
                                 <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vps-Uy-NAj"/>
@@ -949,7 +949,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="avatarImageView" destination="yi8-pp-GXq" id="uLS-Tc-4FY"/>
                         <outlet property="buttonView" destination="o1m-AA-yXW" id="rqy-cL-g0E"/>
+                        <outlet property="nameUser" destination="ylP-8S-8rW" id="r11-xo-RGe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MgS-zR-6Vd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -960,7 +962,7 @@
         <scene sceneID="E52-Mf-XOo">
             <objects>
                 <collectionViewController storyboardIdentifier="EVListEventsUpcomingCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GTy-73-fqn" customClass="EVListEventsUpcomingCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="XAJ-aP-rz2">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XAJ-aP-rz2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="596"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1253,7 +1255,7 @@
         <scene sceneID="0GM-xk-C1b">
             <objects>
                 <collectionViewController storyboardIdentifier="StoreCollectionViewController" id="WJp-HN-Yh1" customClass="StoreCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="AZU-Qp-7f3">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AZU-Qp-7f3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

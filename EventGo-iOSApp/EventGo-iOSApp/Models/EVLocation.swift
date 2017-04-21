@@ -22,7 +22,7 @@ class EVInfoLocation {
     
     func jsonToCoordinate(dataJson: JSON) -> CLLocationCoordinate2D{
         var locattion = CLLocationCoordinate2D()
-        locattion.latitude = dataJson["lat"].doubleValue
+        locattion.latitude = dataJson["lat"].doubleValue 
         locattion.longitude = dataJson["lng"].doubleValue
         return locattion
     }

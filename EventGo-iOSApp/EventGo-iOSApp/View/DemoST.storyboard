@@ -18,6 +18,9 @@
         <array key="Roboto-BoldItalic.ttf">
             <string>Roboto-BoldItalic</string>
         </array>
+        <array key="Roboto-Italic.ttf">
+            <string>Roboto-Italic</string>
+        </array>
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
         </array>
@@ -604,6 +607,159 @@
             </objects>
             <point key="canvasLocation" x="-2114" y="1695"/>
         </scene>
+        <!--List Events View Controller-->
+        <scene sceneID="un9-Ah-rol">
+            <objects>
+                <viewController storyboardIdentifier="EVListEventsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="864-Gh-zs4" customClass="EVListEventsViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wiW-q3-LdE"/>
+                        <viewControllerLayoutGuide type="bottom" id="60R-3B-zwr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VMS-sF-qeM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Tr-eT-izu">
+                                <rect key="frame" x="0.0" y="45" width="375" height="622"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ET4-8A-U6W">
+                                    <size key="itemSize" width="375" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="1op-yR-Wvv" customClass="EVListEventsCollectionViewCell" customModule="EventGo_iOSApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xp-z7-RYb">
+                                                    <rect key="frame" x="5" y="5" width="365" height="140"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_coverEvent" translatesAutoresizingMaskIntoConstraints="NO" id="OhS-mb-LCM">
+                                                            <rect key="frame" x="10" y="19.5" width="100" height="100"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="OhS-mb-LCM" secondAttribute="height" multiplier="1:1" id="0Zc-hp-a9k"/>
+                                                                <constraint firstAttribute="width" constant="100" id="Au5-Tc-vPy"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 Năm Thành Lập Circle K" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZO-3b-lxj">
+                                                            <rect key="frame" x="130" y="19" width="235" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="6lf-j6-dG0"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
+                                                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CIRCLE K VIET NAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmo-9i-Bjr">
+                                                            <rect key="frame" x="130" y="49" width="165" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="18" id="jzw-DC-qEP"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TỪ 07/04 ĐẾN 05/05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0g-wl-bB1">
+                                                            <rect key="frame" x="130" y="77" width="205" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="qnt-Sp-e8T"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="13"/>
+                                                            <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 Nhiệm vụ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7E-KY-uOr">
+                                                            <rect key="frame" x="130" y="99" width="235" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="13"/>
+                                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_go" translatesAutoresizingMaskIntoConstraints="NO" id="Y0G-xh-b5z">
+                                                            <rect key="frame" x="335" y="60" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="20" id="Gnc-gc-fmP"/>
+                                                                <constraint firstAttribute="height" constant="20" id="gSt-UN-CXO"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="j0g-wl-bB1" firstAttribute="leading" secondItem="OhS-mb-LCM" secondAttribute="trailing" constant="20" id="2Rg-uk-fJg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Bmo-9i-Bjr" secondAttribute="trailing" constant="70" id="AtM-1Q-soM"/>
+                                                        <constraint firstItem="Y0G-xh-b5z" firstAttribute="centerY" secondItem="7Xp-z7-RYb" secondAttribute="centerY" id="BoK-wM-gFr"/>
+                                                        <constraint firstItem="AZO-3b-lxj" firstAttribute="top" secondItem="OhS-mb-LCM" secondAttribute="top" id="Bvf-RI-nVd"/>
+                                                        <constraint firstAttribute="trailing" secondItem="j0g-wl-bB1" secondAttribute="trailing" constant="30" id="DTA-mg-XZN"/>
+                                                        <constraint firstItem="l7E-KY-uOr" firstAttribute="top" secondItem="j0g-wl-bB1" secondAttribute="bottom" constant="2" id="FrM-3i-MIr"/>
+                                                        <constraint firstAttribute="trailing" secondItem="AZO-3b-lxj" secondAttribute="trailing" id="L0Q-GG-N11"/>
+                                                        <constraint firstItem="OhS-mb-LCM" firstAttribute="leading" secondItem="7Xp-z7-RYb" secondAttribute="leading" constant="10" id="Lu5-4S-Qk6"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Y0G-xh-b5z" secondAttribute="trailing" constant="10" id="OMI-pd-fVl"/>
+                                                        <constraint firstItem="Bmo-9i-Bjr" firstAttribute="top" secondItem="AZO-3b-lxj" secondAttribute="bottom" id="Owq-df-fn9"/>
+                                                        <constraint firstItem="AZO-3b-lxj" firstAttribute="leading" secondItem="OhS-mb-LCM" secondAttribute="trailing" constant="20" id="RNe-6R-H5G"/>
+                                                        <constraint firstItem="j0g-wl-bB1" firstAttribute="top" secondItem="Bmo-9i-Bjr" secondAttribute="bottom" constant="10" id="VbK-d1-9GY"/>
+                                                        <constraint firstItem="Bmo-9i-Bjr" firstAttribute="leading" secondItem="AZO-3b-lxj" secondAttribute="leading" id="mQI-qd-hWK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="l7E-KY-uOr" secondAttribute="trailing" id="nXt-J1-d4w"/>
+                                                        <constraint firstItem="l7E-KY-uOr" firstAttribute="bottom" secondItem="OhS-mb-LCM" secondAttribute="bottom" id="wBe-QK-ogJ"/>
+                                                        <constraint firstItem="OhS-mb-LCM" firstAttribute="centerY" secondItem="7Xp-z7-RYb" secondAttribute="centerY" id="wv4-9H-2Vd"/>
+                                                        <constraint firstItem="l7E-KY-uOr" firstAttribute="leading" secondItem="j0g-wl-bB1" secondAttribute="leading" id="yzY-Dy-560"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="7Xp-z7-RYb" secondAttribute="trailing" constant="5" id="Gwy-NU-Rys"/>
+                                            <constraint firstAttribute="bottom" secondItem="7Xp-z7-RYb" secondAttribute="bottom" constant="5" id="R4O-ZW-OAz"/>
+                                            <constraint firstItem="7Xp-z7-RYb" firstAttribute="top" secondItem="1op-yR-Wvv" secondAttribute="top" constant="5" id="U5U-t1-tVO"/>
+                                            <constraint firstItem="7Xp-z7-RYb" firstAttribute="leading" secondItem="1op-yR-Wvv" secondAttribute="leading" constant="5" id="oaa-mH-adw"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="avatarEventImageView" destination="OhS-mb-LCM" id="etQ-Lj-MRk"/>
+                                            <outlet property="contentCell" destination="7Xp-z7-RYb" id="K1h-DC-F7V"/>
+                                            <outlet property="nameEventLabel" destination="AZO-3b-lxj" id="B18-Yf-YTQ"/>
+                                            <outlet property="numberTaskLabel" destination="l7E-KY-uOr" id="ub2-Gr-XzI"/>
+                                            <outlet property="supplierNameLabel" destination="Bmo-9i-Bjr" id="DoT-6d-XvB"/>
+                                            <outlet property="timeLabel" destination="j0g-wl-bB1" id="aZA-zF-3mI"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="864-Gh-zs4" id="6Mg-JK-4sx"/>
+                                    <outlet property="delegate" destination="864-Gh-zs4" id="cem-lZ-6Ij"/>
+                                </connections>
+                            </collectionView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zau-PF-4iI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="YzX-IW-dZl"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Events" id="MFH-pt-ufy"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Zau-PF-4iI" secondAttribute="trailing" id="2ZU-9c-H8B"/>
+                            <constraint firstItem="Zau-PF-4iI" firstAttribute="top" secondItem="VMS-sF-qeM" secondAttribute="top" id="BLD-qm-NkN"/>
+                            <constraint firstItem="2Tr-eT-izu" firstAttribute="top" secondItem="Zau-PF-4iI" secondAttribute="bottom" constant="1" id="G64-O2-E1N"/>
+                            <constraint firstAttribute="trailing" secondItem="2Tr-eT-izu" secondAttribute="trailing" id="gIv-Ks-sTI"/>
+                            <constraint firstItem="60R-3B-zwr" firstAttribute="top" secondItem="2Tr-eT-izu" secondAttribute="bottom" id="gqW-Ea-PfD"/>
+                            <constraint firstItem="2Tr-eT-izu" firstAttribute="leading" secondItem="VMS-sF-qeM" secondAttribute="leading" id="vcv-ee-Pau"/>
+                            <constraint firstItem="Zau-PF-4iI" firstAttribute="leading" secondItem="VMS-sF-qeM" secondAttribute="leading" id="wtO-GN-Z64"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="2Tr-eT-izu" id="v4M-Nh-MUP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IsW-lf-rA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3108" y="2172.8635682158924"/>
+        </scene>
         <!--Info Store View Controller-->
         <scene sceneID="gkH-r5-hOa">
             <objects>
@@ -968,10 +1124,10 @@
             </objects>
             <point key="canvasLocation" x="-402" y="1532"/>
         </scene>
-        <!--List Events Collection View Controller-->
+        <!--Collection View Controller-->
         <scene sceneID="wIG-Vt-dJ1">
             <objects>
-                <collectionViewController storyboardIdentifier="EVListEventsCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZIe-J6-FHY" customClass="EVListEventsCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="ZIe-J6-FHY" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="ewK-vL-ufQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1692,6 +1848,7 @@
         <image name="ic_distance" width="50" height="50"/>
         <image name="ic_email" width="25" height="25"/>
         <image name="ic_facebook" width="48" height="48"/>
+        <image name="ic_go" width="48" height="48"/>
         <image name="ic_google" width="37" height="37"/>
         <image name="ic_logo" width="1024" height="1024"/>
         <image name="ic_phone" width="32" height="32"/>

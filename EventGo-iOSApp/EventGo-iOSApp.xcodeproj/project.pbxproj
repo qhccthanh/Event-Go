@@ -12,6 +12,7 @@
 		D01B47DB1E8B43E7007D990C /* DemoST.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01B47DA1E8B43E7007D990C /* DemoST.storyboard */; };
 		D037D90B1EA8B876006820A9 /* EVProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D90A1EA8B876006820A9 /* EVProtocol.swift */; };
 		D037D9101EA8C5F2006820A9 /* EVListEventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D90F1EA8C5F2006820A9 /* EVListEventsCollectionViewController.swift */; };
+		D037D91B1EAB570A006820A9 /* EVInfoTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D91A1EAB570A006820A9 /* EVInfoTaskViewController.swift */; };
 		D043DF311E98E723006DE8ED /* ExtentionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D043DF301E98E723006DE8ED /* ExtentionString.swift */; };
 		D043DF331E99003E006DE8ED /* EVDefaultControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D043DF321E99003E006DE8ED /* EVDefaultControllerViewController.swift */; };
 		D0521DAA1E95245000A9C662 /* EVMarkerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0521DA91E95245000A9C662 /* EVMarkerManager.swift */; };
@@ -152,6 +153,7 @@
 		D01B47DA1E8B43E7007D990C /* DemoST.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DemoST.storyboard; sourceTree = "<group>"; };
 		D037D90A1EA8B876006820A9 /* EVProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVProtocol.swift; sourceTree = "<group>"; };
 		D037D90F1EA8C5F2006820A9 /* EVListEventsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVListEventsCollectionViewController.swift; sourceTree = "<group>"; };
+		D037D91A1EAB570A006820A9 /* EVInfoTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVInfoTaskViewController.swift; sourceTree = "<group>"; };
 		D043DF301E98E723006DE8ED /* ExtentionString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtentionString.swift; sourceTree = "<group>"; };
 		D043DF321E99003E006DE8ED /* EVDefaultControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVDefaultControllerViewController.swift; sourceTree = "<group>"; };
 		D0521DA91E95245000A9C662 /* EVMarkerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVMarkerManager.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				D0A273541E993A7B00374E71 /* EVUpdateUserInfoViewController.swift */,
 				D0A982B71E994B9F003162D9 /* EVPopOverController.swift */,
 				D087211C1E9DE6BB0016D6A5 /* EVHomeViewController.swift */,
+				D037D91A1EAB570A006820A9 /* EVInfoTaskViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -907,6 +910,7 @@
 				D087211D1E9DE6BB0016D6A5 /* EVHomeViewController.swift in Sources */,
 				D043DF331E99003E006DE8ED /* EVDefaultControllerViewController.swift in Sources */,
 				F4E979E91E80504600DF2E89 /* EVEvent.swift in Sources */,
+				D037D91B1EAB570A006820A9 /* EVInfoTaskViewController.swift in Sources */,
 				D037D90B1EA8B876006820A9 /* EVProtocol.swift in Sources */,
 				F4F0ACB41E82D9C400D663A6 /* UIColor+Extension.swift in Sources */,
 				D043DF311E98E723006DE8ED /* ExtentionString.swift in Sources */,

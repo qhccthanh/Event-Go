@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InfoStoreViewController: UIViewController {
+class EVDetailEventViewController: EVViewController {
 
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var ratingView: UIView!
@@ -36,7 +36,7 @@ class InfoStoreViewController: UIViewController {
 }
 
 // MARK: delegate event scrollView
-extension InfoStoreViewController: UIScrollViewDelegate {
+extension EVDetailEventViewController: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         

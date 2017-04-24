@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window?.makeKeyAndVisible()
 //        window?.rootViewController = EVViewController()
 //        if let tvc = UIStoryboard(name: "DemoST", bundle: nil).instantiateViewController(withIdentifier: "EVHomeViewController") as? EVHomeViewController {
-            window?.rootViewController = EVController.listAwards.getController()
+            window?.rootViewController = EVController.infoTask.getController()
 //        }
 //
 //        

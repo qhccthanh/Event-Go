@@ -52,6 +52,20 @@ extension UIView {
         self.frame.origin.x = size.width/2 - getSize().width/2
     }
     
+  
+        
+        func dropShadow() {
+            
+            self.layer.masksToBounds = false
+            self.layer.shadowColor = UIColor.gray.cgColor
+            self.layer.shadowOpacity = 0.5
+            self.layer.shadowOffset = CGSize.zero
+            self.layer.shadowRadius = 5
+            
+            self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+            self.layer.shouldRasterize = true
+        }
+    
     
     @IBInspectable var ev_borderColor: UIColor? {
         set {

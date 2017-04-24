@@ -9,10 +9,12 @@
 import UIKit
 
 class EVInfoTaskViewController: EVViewController {
+    @IBOutlet weak var awardImageView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.teal()
+        awardImageView.dropShadow()
     }
 
     override func didReceiveMemoryWarning() {

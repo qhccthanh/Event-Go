@@ -21,7 +21,7 @@ public class EVUserServices: BaseService {
     }
     
     func logOut()->RACSignal<AnyObject> {
-    
+        
         let url = path + "/signOut"
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
             EVReactNetwork.request(with: EVReactNetworkMethod_POST, header: self.headers, urlString: url, params: nil).subscribeNext({ (result) in
@@ -32,32 +32,32 @@ public class EVUserServices: BaseService {
             })
             return nil
         })
-
+        
     }
     
-//    func checkInfoUser() -> RACSignal<NSDictionary>{
-//        
-//        let url = path + "/me"
-//        
-//        return RACSignal.createSignal({ (sub) -> RACDisposable? in
-//            EVReactNetwork.request(with: EVReactNetworkMethod_GET, header: self.headers, urlString: url, params: nil).subscribeNext({ (result) in
-//                if let result = result as? NSDictionary {
-//                    sub.sendNext(result)
-//                } else {
-//                    sub.sendError("Lỗi không parse được data" as? Error)
-//                }
-//
-//            }, error: { (error) in
-//                log.error(error)
-//            })
-//            return nil
-//        })
-//    }
+    //    func checkInfoUser() -> RACSignal<NSDictionary>{
+    //
+    //        let url = path + "/me"
+    //
+    //        return RACSignal.createSignal({ (sub) -> RACDisposable? in
+    //            EVReactNetwork.request(with: EVReactNetworkMethod_GET, header: self.headers, urlString: url, params: nil).subscribeNext({ (result) in
+    //                if let result = result as? NSDictionary {
+    //                    sub.sendNext(result)
+    //                } else {
+    //                    sub.sendError("Lỗi không parse được data" as? Error)
+    //                }
+    //
+    //            }, error: { (error) in
+    //                log.error(error)
+    //            })
+    //            return nil
+    //        })
+    //    }
     func updateUserInfologin(with params: Dictionary<String, Any>)-> RACSignal<AnyObject> {
         
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
             EVReactNetwork.request(with: EVReactNetworkMethod_PUT, header: self.headers, urlString: self.path, params: params).subscribeNext({ (object) in
-                    let dataJson =  JSON(object)
+                let dataJson =  JSON(object)
                 if dataJson["code"] == 200 {
                     sub.sendNext(EVUpdateResult.success)
                 } else {
@@ -91,7 +91,7 @@ public class EVUserServices: BaseService {
                             
                             sub.sendNext(EVCheckUserEnumType.login)
                         }
-
+                        
                     } else {
                         sub.sendNext(EVCheckUserEnumType.notLogin)
                     }
@@ -107,7 +107,7 @@ public class EVUserServices: BaseService {
             return nil
         })
     }
-
+    
     
     func login(with token: String, type: String, idUser: String?)-> RACSignal<AnyObject> {
         
@@ -115,7 +115,7 @@ public class EVUserServices: BaseService {
         params["provider_type"] = type
         params["provider_access_token"] = token
         if let idUser = idUser {
-        params["provider_id"] = idUser
+            params["provider_id"] = idUser
         }
         
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
@@ -135,29 +135,62 @@ public class EVUserServices: BaseService {
         })
     }
     
+    func updateUserDevice() -> RACSignal<AnyObject> {
+        var params = Dictionary<String, Any>()
+        let device = EVDevice(model: UIDevice.current.name, iosVersion: UIDevice.current.systemVersion)
+        
+        params["device"] = device.toJson()
+        
+        return RACSignal.createSignal({ (sub) -> RACDisposable? in
+            
+            EVReactNetwork.request(with: EVReactNetworkMethod_PUT, header: self.headers, urlString: self.path, params: params).subscribeNext({ (object) in
+                
+                if let object = object as? NSDictionary {
+                    
+                    let dataJson = JSON(object)
+                    
+                    if dataJson["code"] == 200 {
+                        sub.sendNext(EVUpdateResult.success)
+                    } else {
+                        sub.sendNext(EVUpdateResult.faillure)
+                    }
+                    
+                } else {
+                    
+                    sub.sendError("Lỗi không parse được data ".toError())
+                }
+            }, error: { (error) in
+                
+                sub.sendError(error)
+            })
+            
+            return nil
+        })
+        
+    }
     
     
     func login(with params: Dictionary<String, Any>)-> RACSignal<NSDictionary> {
-
+        
         return RACSignal.createSignal({ (sub) -> RACDisposable? in
             
-                EVReactNetwork.request(with: EVReactNetworkMethod_POST, header: self.headers, urlString: self.path, params: params).subscribeNext({ (object) in
-                    if let object = object as? NSDictionary {
-                        
-                        sub.sendNext(object)
-                    } else {
-                        
-                        sub.sendError("Lỗi không parse được data" as? Error)
-                    }
-                }, error: { (error) in
+            EVReactNetwork.request(with: EVReactNetworkMethod_POST, header: self.headers, urlString: self.path, params: params).subscribeNext({ (object) in
+                if let object = object as? NSDictionary {
                     
-                    sub.sendError(error)
-                })
+                    sub.sendNext(object)
+                } else {
+                    
+                    sub.sendError("Lỗi không parse được data" as? Error)
+                }
+            }, error: { (error) in
+                
+                sub.sendError(error)
+            })
             
             return nil
         })
     }
-
     
-        
+    
+    
 }

@@ -26,6 +26,7 @@ public class EVUser: Object {
     var level: Int?
     var user_status: String?
     var tags: List<EVString>?
+    var devicce: EVDevice = EVDevice()
     var tags_str:[String] {
         get {
             guard let array = self.tags else {
@@ -50,6 +51,7 @@ public class EVUser: Object {
         user.address = data["address"].stringValue
         user.level = data["level"].intValue
         user.user_status = data["user_status"].stringValue
+        user.devicce = EVDevice.fromJson(data: data["device"])
         return user
     }
 }

@@ -39,7 +39,7 @@ class EVLogInViewController: EVViewController {
                     } else {
                     let user = EVUser.fromJson(data: dataJson["data"])
                     EVAppFactory.shareInstance.currentUser = user
-                        EVController.home.showController(self)
+                        EVController.mainGame.showController(self)
                     }
                 }, error: { (error) in
                     log.error(error)
@@ -71,6 +71,9 @@ class EVLogInViewController: EVViewController {
             params["provider_access_token"] = userGoogle.authentication.idToken
             params["provider_id"] = userGoogle.userID
             params["name"] = userGoogle.profile.name
+            
+            
+        
            
             let contentPath = userGoogle.profile.imageURL(withDimension: 100).path
             if !contentPath.isEmpty {

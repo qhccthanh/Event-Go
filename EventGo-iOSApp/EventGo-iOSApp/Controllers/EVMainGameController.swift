@@ -16,6 +16,12 @@ class EVMainGameController: EVViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainMapView.delegate = self
+        setupView()
+        
+        updateInfo()
+    }
+    
+    func setupView(){
         let camera = GMSCameraPosition.camera(withLatitude: 10.756927 , longitude: 106.684670, zoom: 13.0)
         
         let loaction = CLLocationCoordinate2D(latitude: 10.756927, longitude: 106.684670)
@@ -27,12 +33,16 @@ class EVMainGameController: EVViewController {
         EVMakerManager.shareManager.addMarker(evMarker1)
         
         let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-            button.titleLabel?.text = "xoa"
-            button.layer.backgroundColor = UIColor.red.cgColor
+        button.titleLabel?.text = "xoa"
+        button.layer.backgroundColor = UIColor.red.cgColor
         button.addTarget(self, action: #selector(self.deletetMark), for: .touchUpInside)
         mainMapView.addSubview(button)
         
         self.mainMapView.camera = camera
+    }
+    
+    func updateInfo() {
+        
         let updateLocationSignal = EVLocationManager.share().didUpdateLocation()
         updateLocationSignal?.subscribeNext({ (object) in
             if let object = object as? CLLocation {
@@ -40,6 +50,16 @@ class EVMainGameController: EVViewController {
             }
         }, error: { (error) in
             
+        })
+        
+        let updateUserDevice = EVUserServices.shareInstance.updateUserDevice()
+        updateUserDevice.subscribeNext({ (result) in
+            if let result = result as? EVUpdateResult {
+                
+                log.info(result)
+            }
+        }, error: { (error) in
+            log.error(error)
         })
     }
     

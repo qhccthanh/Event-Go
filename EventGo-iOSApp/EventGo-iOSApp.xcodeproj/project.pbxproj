@@ -334,13 +334,6 @@
 			path = EVListEVents;
 			sourceTree = "<group>";
 		};
-		D06C5FEE1E8D60BA00F473CA /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
-			sourceTree = "<group>";
-		};
 		D06C5FF11E8D60F400F473CA /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,7 +382,6 @@
 			isa = PBXGroup;
 			children = (
 				D06C5FF11E8D60F400F473CA /* Service */,
-				D06C5FEE1E8D60BA00F473CA /* New Group */,
 				D01B47D91E8B43D3007D990C /* View */,
 				F4AD8BBE1E7D3D1F0081F2F3 /* AppDelegate */,
 				F4AD8BC01E7D3D1F0081F2F3 /* Configures */,

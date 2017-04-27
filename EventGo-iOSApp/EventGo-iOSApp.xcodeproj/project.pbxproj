@@ -81,6 +81,8 @@
 		D0C058891EAF578800F3E11F /* EVDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C057941EAEDA6B00F3E11F /* EVDevice.swift */; };
 		F4056A151E8245FF00BEC162 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */; };
 		F4056A171E82460600BEC162 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4056A161E82460600BEC162 /* Photos.framework */; };
+		F45683861EB26C7A007B2D61 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45683851EB26C7A007B2D61 /* ReactiveObjC.framework */; };
+		F4AB21231EB266BB0047CED0 /* Event_Go_App_Client.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = F4AB21221EB266BB0047CED0 /* Event_Go_App_Client.mobileprovision */; };
 		F4AD8ADA1E7D3C310081F2F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AD8AD91E7D3C310081F2F3 /* Assets.xcassets */; };
 		F4AD8ADD1E7D3C310081F2F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AD8ADB1E7D3C310081F2F3 /* LaunchScreen.storyboard */; };
 		F4AD8AE81E7D3C310081F2F3 /* EventGo_iOSAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD8AE71E7D3C310081F2F3 /* EventGo_iOSAppTests.swift */; };
@@ -188,7 +190,9 @@
 		F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		F4056A161E82460600BEC162 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		F4056A181E82810500BEC162 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F45683851EB26C7A007B2D61 /* ReactiveObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveObjC.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/EventGo-iOSApp-fewtznmoskarbfdnwnaqckkrbqwa/Build/Products/Debug-iphonesimulator/ReactiveObjC.framework"; sourceTree = "<group>"; };
 		F457EC7C1E84D51C00E2276A /* EVString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVString.swift; sourceTree = "<group>"; };
+		F4AB21221EB266BB0047CED0 /* Event_Go_App_Client.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = Event_Go_App_Client.mobileprovision; sourceTree = "<group>"; };
 		F4AD8ACF1E7D3C310081F2F3 /* EventGo-iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EventGo-iOSApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AD8AD91E7D3C310081F2F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4AD8ADC1E7D3C310081F2F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F45683861EB26C7A007B2D61 /* ReactiveObjC.framework in Frameworks */,
 				D06E45701E92AFCD003462FC /* libEventGoCommon.a in Frameworks */,
 				D06E45711E92AFCD003462FC /* libEventGoNetwork.a in Frameworks */,
 				F4056A171E82460600BEC162 /* Photos.framework in Frameworks */,
@@ -296,6 +301,7 @@
 		4C27AF5CB6999B032282C468 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F45683851EB26C7A007B2D61 /* ReactiveObjC.framework */,
 				D0C0579A1EAF531F00F3E11F /* MessageUI.framework */,
 				F4056A161E82460600BEC162 /* Photos.framework */,
 				F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */,
@@ -420,6 +426,7 @@
 		F4AD8BBD1E7D3C7B0081F2F3 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				F4AB21221EB266BB0047CED0 /* Event_Go_App_Client.mobileprovision */,
 				F4E978C91E7E3F3E00DF2E89 /* GoogleService-Info.plist */,
 				F4AD8AD91E7D3C310081F2F3 /* Assets.xcassets */,
 				F4AD8ADB1E7D3C310081F2F3 /* LaunchScreen.storyboard */,
@@ -688,9 +695,9 @@
 				TargetAttributes = {
 					F4AD8ACE1E7D3C310081F2F3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = A2NR73B2X5;
+						DevelopmentTeam = 46L7LRCV4G;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					F4AD8AE21E7D3C310081F2F3 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -753,6 +760,7 @@
 			files = (
 				F4AD8ADD1E7D3C310081F2F3 /* LaunchScreen.storyboard in Resources */,
 				F4E978CA1E7E3F3E00DF2E89 /* GoogleService-Info.plist in Resources */,
+				F4AB21231EB266BB0047CED0 /* Event_Go_App_Client.mobileprovision in Resources */,
 				F4AD8ADA1E7D3C310081F2F3 /* Assets.xcassets in Resources */,
 				F4E978EA1E7E3F8400DF2E89 /* FacebookSDKStrings.bundle in Resources */,
 				D01B47DB1E8B43E7007D990C /* DemoST.storyboard in Resources */,
@@ -1076,7 +1084,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A2NR73B2X5;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 46L7LRCV4G;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EventGo-iOSApp/Libs/FacebookSDK",
@@ -1115,8 +1125,10 @@
 					"${PODS_ROOT}/Firebase/Core/Sources",
 					"${PODS_ROOT}/GoogleAnalytics/Libraries",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eventgo.ev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eventgo.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ea981b4d-17ce-477b-afe6-74850da165ac";
+				PROVISIONING_PROFILE_SPECIFIER = "Event Go App Client";
 				SWIFT_INCLUDE_PATHS = "$(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventGo-iOSApp/EventGo-iOSApp-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1129,7 +1141,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A2NR73B2X5;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 46L7LRCV4G;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EventGo-iOSApp/Libs/FacebookSDK",
@@ -1166,8 +1180,10 @@
 					"${PODS_ROOT}/Firebase/Core/Sources",
 					"${PODS_ROOT}/GoogleAnalytics/Libraries",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eventgo.ev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eventgo.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ea981b4d-17ce-477b-afe6-74850da165ac";
+				PROVISIONING_PROFILE_SPECIFIER = "Event Go App Client";
 				SWIFT_INCLUDE_PATHS = "$(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventGo-iOSApp/EventGo-iOSApp-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

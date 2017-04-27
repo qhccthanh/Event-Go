@@ -1,4 +1,8 @@
 PODS:
+  - Alamofire (4.4.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
+  - AnimatedTextInput (0.5.0)
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
@@ -71,17 +75,13 @@ PODS:
   - HTMLReader (2.0.3)
   - OAStackView (1.0.1)
   - Protobuf (3.2.0)
-  - ReactiveCocoa (5.0.1):
-    - ReactiveSwift (~> 1.1)
-  - ReactiveSwift (1.1.0):
-    - Result (~> 3.1)
   - Realm (2.4.3):
     - Realm/Headers (= 2.4.3)
   - Realm/Headers (2.4.3)
   - RealmSwift (2.4.3):
     - Realm (= 2.4.3)
-  - Result (3.2.1)
   - SCLAlertView (0.7.0)
+  - SnapKit (3.2.0)
   - SwiftyJSON (3.1.4)
   - UICollectionViewLeftAlignedLayout (1.0.2)
   - XCGLogger (4.0.0):
@@ -89,6 +89,8 @@ PODS:
   - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
+  - AlamofireImage (~> 3.1)
+  - AnimatedTextInput (~> 0.4)
   - ChameleonFramework (~> 2.1)
   - Firebase/AdMob
   - Firebase/Core
@@ -100,15 +102,17 @@ DEPENDENCIES:
   - GooglePlaces
   - HTMLReader (~> 2.0)
   - OAStackView (~> 1.0)
-  - ReactiveCocoa
-  - ReactiveSwift
   - RealmSwift (~> 2.4)
   - SCLAlertView (~> 0.7)
+  - SnapKit
   - SwiftyJSON
   - UICollectionViewLeftAlignedLayout
   - XCGLogger (~> 4.0.0)
 
 SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  AnimatedTextInput: 876d307ced52d9973c21c91d8b877170ae0c598c
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Firebase: 85a581fb04e44f63ae9f4fbc8d6dabf4a4c18653
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
@@ -128,16 +132,14 @@ SPEC CHECKSUMS:
   HTMLReader: 282f41e641eda8938cfcf8c7b7151f70955aee33
   OAStackView: 95e7cb79cbea25c2342f496a44bdbe8bd4c8d510
   Protobuf: 745f59e122e5de98d4d7ef291e264a0eef80f58e
-  ReactiveCocoa: f577006aa6c7b0b08020109ebaae3b77ada00adc
-  ReactiveSwift: 2f4e4a02e5a5c87ea63f5fe667163ce2a67cbb57
   Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
   RealmSwift: 30d49739ccb3385d201242736ca4dda56aec9dfc
-  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 40b0ff1a2ca0572738308ca93cbdbe511edbe16d
+PODFILE CHECKSUM: 5fcb402dde7b7ce864ab4424687bb1c771766cf1
 
 COCOAPODS: 1.2.0

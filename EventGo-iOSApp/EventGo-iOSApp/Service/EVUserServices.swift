@@ -7,10 +7,9 @@
 //
 import Foundation
 import UIKit
-import ReactiveSwift
-import ReactiveCocoa
+
+
 import SwiftyJSON
-import enum Result.NoError
 
 public class EVUserServices: BaseService {
     

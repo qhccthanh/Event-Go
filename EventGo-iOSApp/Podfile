@@ -23,6 +23,9 @@ pod 'GooglePlacePicker'
 pod 'GoogleMaps'
 pod 'AnimatedTextInput', '~> 0.4'
 pod 'AlamofireImage', '~> 3.1'
+pod 'ESPullToRefresh', '~> 2.6'
+pod 'RxSwift',    '~> 3.0'
+pod 'RxCocoa',    '~> 3.0'
 end
 
 target 'EventGo-iOSApp' do

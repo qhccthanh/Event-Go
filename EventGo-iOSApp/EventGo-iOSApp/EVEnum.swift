@@ -36,12 +36,18 @@ enum EVImage: String {
     case ic_bag = "ic_bag"
     case ic_package = "ic_package"
     case ic_run = "ic_run"
+    case ic_startTime = "ic_startTime"
+    case ic_event = "ic_event"
 }
 
 extension EVImage {
     
     func icon() -> UIImage {
         return UIImage(named: self.rawValue)!
+    }
+    
+    func name() -> String {
+        return self.rawValue
     }
 }
 
@@ -57,6 +63,7 @@ enum EVController: String {
     case infoTask = "EVInfoTaskViewController"
     case detailEvent = "EVDetailEventViewController"
     case listAwards = "EVListAwardsViewController"
+    case listEvents = "EVListEventsViewController"
     
 }
 extension EVController {

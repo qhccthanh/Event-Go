@@ -10,53 +10,80 @@
 		55F2CFC371258F545EE98BBF /* Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0BCB5DE24D9222EF211AD6 /* Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework */; };
 		C9473D78746962E2D90F4191 /* Pods_EventGo_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC63F4ADD9D479D0BBD61CF /* Pods_EventGo_iOSApp.framework */; };
 		D01B47DB1E8B43E7007D990C /* DemoST.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01B47DA1E8B43E7007D990C /* DemoST.storyboard */; };
-		D037D90B1EA8B876006820A9 /* EVProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D90A1EA8B876006820A9 /* EVProtocol.swift */; };
-		D037D91B1EAB570A006820A9 /* EVInfoTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D91A1EAB570A006820A9 /* EVInfoTaskViewController.swift */; };
-		D037D9201EABBA44006820A9 /* EVListEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D91F1EABBA44006820A9 /* EVListEventsViewController.swift */; };
-		D037D9221EABBA64006820A9 /* EVListEventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D9211EABBA64006820A9 /* EVListEventsCollectionViewCell.swift */; };
-		D043DF311E98E723006DE8ED /* ExtentionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D043DF301E98E723006DE8ED /* ExtentionString.swift */; };
-		D043DF331E99003E006DE8ED /* EVDefaultControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D043DF321E99003E006DE8ED /* EVDefaultControllerViewController.swift */; };
-		D0521DAA1E95245000A9C662 /* EVMarkerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0521DA91E95245000A9C662 /* EVMarkerManager.swift */; };
-		D057F2111EAC7E5700FF3A73 /* EVListAwardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D057F2101EAC7E5700FF3A73 /* EVListAwardsViewController.swift */; };
-		D06C5FE11E8D326800F473CA /* EVLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FE01E8D326800F473CA /* EVLogInViewController.swift */; };
-		D06C5FF61E8D60F400F473CA /* EVAwardServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FF21E8D60F400F473CA /* EVAwardServices.swift */; };
-		D06C5FF71E8D60F400F473CA /* EVEventServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FF31E8D60F400F473CA /* EVEventServices.swift */; };
-		D06C5FF81E8D60F400F473CA /* EVSupplierServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FF41E8D60F400F473CA /* EVSupplierServices.swift */; };
-		D06C5FF91E8D60F400F473CA /* EVTaskServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FF51E8D60F400F473CA /* EVTaskServices.swift */; };
-		D06C5FFB1E8D647200F473CA /* EVLocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FFA1E8D647200F473CA /* EVLocationServices.swift */; };
-		D06C5FFD1E8D64E500F473CA /* EVItemServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FFC1E8D64E500F473CA /* EVItemServices.swift */; };
-		D06C60021E8D6C1B00F473CA /* EVBaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C60011E8D6C1B00F473CA /* EVBaseServices.swift */; };
-		D06C600A1E8E5D0900F473CA /* EVUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C60091E8E5D0900F473CA /* EVUserInfo.swift */; };
-		D06C600E1E8E617600F473CA /* EVUserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C600D1E8E617600F473CA /* EVUserServices.swift */; };
-		D06C601E1E8ECB1F00F473CA /* EVMainGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C601D1E8ECB1F00F473CA /* EVMainGameController.swift */; };
-		D06E45531E929CC4003462FC /* EVButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E45521E929CC4003462FC /* EVButtonModel.swift */; };
 		D06E45701E92AFCD003462FC /* libEventGoCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FABF6B1E8A634D0010BE41 /* libEventGoCommon.a */; };
 		D06E45711E92AFCD003462FC /* libEventGoNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D06E45671E92AF21003462FC /* libEventGoNetwork.a */; };
-		D080D8E61E9BDD0F00BE77AC /* EVPopOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D080D8E51E9BDD0F00BE77AC /* EVPopOverView.swift */; };
-		D080D8E81E9BDDBD00BE77AC /* EVEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D080D8E71E9BDDBD00BE77AC /* EVEnum.swift */; };
-		D08721131E9D3A770016D6A5 /* EVClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08721121E9D3A770016D6A5 /* EVClientService.swift */; };
-		D087211D1E9DE6BB0016D6A5 /* EVHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087211C1E9DE6BB0016D6A5 /* EVHomeViewController.swift */; };
-		D0A273551E993A7B00374E71 /* EVUpdateUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A273541E993A7B00374E71 /* EVUpdateUserInfoViewController.swift */; };
-		D0A982B81E994B9F003162D9 /* EVPopOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A982B71E994B9F003162D9 /* EVPopOverController.swift */; };
-		D0C057951EAEDA6C00F3E11F /* EVDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C057941EAEDA6B00F3E11F /* EVDevice.swift */; };
-		F4056A0F1E8240FC00BEC162 /* EVLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4056A0E1E8240FC00BEC162 /* EVLog.swift */; };
+		D0C058451EAF578800F3E11F /* EVUserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C600D1E8E617600F473CA /* EVUserServices.swift */; };
+		D0C058461EAF578800F3E11F /* EVAwardServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FF21E8D60F400F473CA /* EVAwardServices.swift */; };
+		D0C058471EAF578800F3E11F /* EVEventServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FF31E8D60F400F473CA /* EVEventServices.swift */; };
+		D0C058481EAF578800F3E11F /* EVSupplierServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FF41E8D60F400F473CA /* EVSupplierServices.swift */; };
+		D0C058491EAF578800F3E11F /* EVTaskServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FF51E8D60F400F473CA /* EVTaskServices.swift */; };
+		D0C0584A1EAF578800F3E11F /* EVLocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FFA1E8D647200F473CA /* EVLocationServices.swift */; };
+		D0C0584B1EAF578800F3E11F /* EVItemServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FFC1E8D64E500F473CA /* EVItemServices.swift */; };
+		D0C0584C1EAF578800F3E11F /* EVBaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C60011E8D6C1B00F473CA /* EVBaseServices.swift */; };
+		D0C0584D1EAF578800F3E11F /* EVClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08721121E9D3A770016D6A5 /* EVClientService.swift */; };
+		D0C0584F1EAF578800F3E11F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD8BBF1E7D3D1F0081F2F3 /* AppDelegate.swift */; };
+		D0C058501EAF578800F3E11F /* Marco.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E21E804B7000DF2E89 /* Marco.swift */; };
+		D0C058511EAF578800F3E11F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4056A181E82810500BEC162 /* Constants.swift */; };
+		D0C058521EAF578800F3E11F /* EVLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4056A0E1E8240FC00BEC162 /* EVLog.swift */; };
+		D0C058531EAF578800F3E11F /* EVItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6A21E82E8CA0084FC51 /* EVItemProtocol.swift */; };
+		D0C058541EAF578800F3E11F /* EVAppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACA01E82D5C800D663A6 /* EVAppFactory.swift */; };
+		D0C058551EAF578800F3E11F /* VersionSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACB11E82D9B500D663A6 /* VersionSupport.swift */; };
+		D0C058561EAF578800F3E11F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACB31E82D9C400D663A6 /* UIColor+Extension.swift */; };
+		D0C058571EAF578800F3E11F /* CTDateFormart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACBA1E82D9F800D663A6 /* CTDateFormart.swift */; };
+		D0C058581EAF578800F3E11F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACE21E82DA5700D663A6 /* UIView+Extension.swift */; };
+		D0C058591EAF578800F3E11F /* UIViewController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACE41E82DA5D00D663A6 /* UIViewController+Action.swift */; };
+		D0C0585A1EAF578800F3E11F /* EVString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457EC7C1E84D51C00E2276A /* EVString.swift */; };
+		D0C0585B1EAF578800F3E11F /* ExtentionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D043DF301E98E723006DE8ED /* ExtentionString.swift */; };
+		D0C0585C1EAF578800F3E11F /* EGItemStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6A61E82E9D20084FC51 /* EGItemStoreView.swift */; };
+		D0C0585E1EAF578800F3E11F /* EGoPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6A01E82E8C50084FC51 /* EGoPopupView.swift */; };
+		D0C0585F1EAF578800F3E11F /* EGoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA69E1E82E8BB0084FC51 /* EGoButton.swift */; };
+		D0C058601EAF578800F3E11F /* DashLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACB81E82D9F300D663A6 /* DashLine.swift */; };
+		D0C058611EAF578800F3E11F /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACDF1E82DA1B00D663A6 /* LineView.swift */; };
+		D0C058621EAF578800F3E11F /* EVEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D080D8E71E9BDDBD00BE77AC /* EVEnum.swift */; };
+		D0C058631EAF578800F3E11F /* EVPopOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D080D8E51E9BDD0F00BE77AC /* EVPopOverView.swift */; };
+		D0C058641EAF578800F3E11F /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACB61E82D9DE00D663A6 /* Popover.swift */; };
+		D0C058651EAF578800F3E11F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACA81E82D9A200D663A6 /* Toast.swift */; };
+		D0C058661EAF578800F3E11F /* ToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACA91E82D9A200D663A6 /* ToastCenter.swift */; };
+		D0C058671EAF578800F3E11F /* Toaster.h in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACAA1E82D9A200D663A6 /* Toaster.h */; };
+		D0C058681EAF578800F3E11F /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACAB1E82D9A200D663A6 /* ToastView.swift */; };
+		D0C058691EAF578800F3E11F /* ToastWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACAC1E82D9A200D663A6 /* ToastWindow.swift */; };
+		D0C0586A1EAF578800F3E11F /* EVListEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D91F1EABBA44006820A9 /* EVListEventsViewController.swift */; };
+		D0C0586B1EAF578800F3E11F /* EVListEventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D9211EABBA64006820A9 /* EVListEventsCollectionViewCell.swift */; };
+		D0C0586C1EAF578800F3E11F /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6901E82E8A50084FC51 /* StoreCollectionViewCell.swift */; };
+		D0C0586D1EAF578800F3E11F /* StoreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6921E82E8A50084FC51 /* StoreHeaderView.swift */; };
+		D0C0586E1EAF578800F3E11F /* EVDetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6861E82E8A50084FC51 /* EVDetailEventViewController.swift */; };
+		D0C0586F1EAF578800F3E11F /* InfoAwardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6851E82E8A50084FC51 /* InfoAwardViewController.swift */; };
+		D0C058701EAF578800F3E11F /* EVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD8BC21E7D3D1F0081F2F3 /* EVViewController.swift */; };
+		D0C058711EAF578800F3E11F /* EVLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FE01E8D326800F473CA /* EVLogInViewController.swift */; };
+		D0C058721EAF578800F3E11F /* EVMainGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C601D1E8ECB1F00F473CA /* EVMainGameController.swift */; };
+		D0C058731EAF578800F3E11F /* EVDefaultControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D043DF321E99003E006DE8ED /* EVDefaultControllerViewController.swift */; };
+		D0C058741EAF578800F3E11F /* EVUpdateUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A273541E993A7B00374E71 /* EVUpdateUserInfoViewController.swift */; };
+		D0C058751EAF578800F3E11F /* EVPopOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A982B71E994B9F003162D9 /* EVPopOverController.swift */; };
+		D0C058761EAF578800F3E11F /* EVMainBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087211C1E9DE6BB0016D6A5 /* EVMainBottom.swift */; };
+		D0C058771EAF578800F3E11F /* EVInfoTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D91A1EAB570A006820A9 /* EVInfoTaskViewController.swift */; };
+		D0C058781EAF578800F3E11F /* EVListAwardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D057F2101EAC7E5700FF3A73 /* EVListAwardsViewController.swift */; };
+		D0C058791EAF578800F3E11F /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979DE1E80414300DF2E89 /* RealmManager.swift */; };
+		D0C0587A1EAF578800F3E11F /* Realm+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E01E80475500DF2E89 /* Realm+Extension.swift */; };
+		D0C0587B1EAF578800F3E11F /* EVAuthenticationManager.h in Sources */ = {isa = PBXBuildFile; fileRef = F4E979391E80307C00DF2E89 /* EVAuthenticationManager.h */; };
+		D0C0587C1EAF578800F3E11F /* EVAuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E9793A1E80307C00DF2E89 /* EVAuthenticationManager.m */; };
+		D0C0587D1EAF578800F3E11F /* EVUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E41E80502F00DF2E89 /* EVUser.swift */; };
+		D0C0587E1EAF578800F3E11F /* EVSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E61E80503A00DF2E89 /* EVSupplier.swift */; };
+		D0C0587F1EAF578800F3E11F /* EVEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E81E80504600DF2E89 /* EVEvent.swift */; };
+		D0C058801EAF578800F3E11F /* EVTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979EA1E80505200DF2E89 /* EVTask.swift */; };
+		D0C058811EAF578800F3E11F /* EVNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979EC1E80506D00DF2E89 /* EVNotification.swift */; };
+		D0C058821EAF578800F3E11F /* EVAward.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979EE1E80507900DF2E89 /* EVAward.swift */; };
+		D0C058831EAF578800F3E11F /* EVLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979F01E80509500DF2E89 /* EVLocation.swift */; };
+		D0C058841EAF578800F3E11F /* EVItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979F21E80509E00DF2E89 /* EVItem.swift */; };
+		D0C058851EAF578800F3E11F /* EVUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C60091E8E5D0900F473CA /* EVUserInfo.swift */; };
+		D0C058861EAF578800F3E11F /* EVButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E45521E929CC4003462FC /* EVButtonModel.swift */; };
+		D0C058871EAF578800F3E11F /* EVMarkerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0521DA91E95245000A9C662 /* EVMarkerManager.swift */; };
+		D0C058881EAF578800F3E11F /* EVProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D90A1EA8B876006820A9 /* EVProtocol.swift */; };
+		D0C058891EAF578800F3E11F /* EVDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C057941EAEDA6B00F3E11F /* EVDevice.swift */; };
 		F4056A151E8245FF00BEC162 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */; };
 		F4056A171E82460600BEC162 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4056A161E82460600BEC162 /* Photos.framework */; };
-		F4056A191E82810500BEC162 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4056A181E82810500BEC162 /* Constants.swift */; };
-		F457EC7D1E84D51C00E2276A /* EVString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F457EC7C1E84D51C00E2276A /* EVString.swift */; };
 		F4AD8ADA1E7D3C310081F2F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AD8AD91E7D3C310081F2F3 /* Assets.xcassets */; };
 		F4AD8ADD1E7D3C310081F2F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AD8ADB1E7D3C310081F2F3 /* LaunchScreen.storyboard */; };
 		F4AD8AE81E7D3C310081F2F3 /* EventGo_iOSAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD8AE71E7D3C310081F2F3 /* EventGo_iOSAppTests.swift */; };
-		F4AD8BC61E7D3D1F0081F2F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD8BBF1E7D3D1F0081F2F3 /* AppDelegate.swift */; };
-		F4AD8BC71E7D3D1F0081F2F3 /* EVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD8BC21E7D3D1F0081F2F3 /* EVViewController.swift */; };
-		F4CAA6931E82E8A50084FC51 /* InfoAwardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6851E82E8A50084FC51 /* InfoAwardViewController.swift */; };
-		F4CAA6941E82E8A50084FC51 /* EVDetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6861E82E8A50084FC51 /* EVDetailEventViewController.swift */; };
-		F4CAA69B1E82E8A50084FC51 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6901E82E8A50084FC51 /* StoreCollectionViewCell.swift */; };
-		F4CAA69D1E82E8A50084FC51 /* StoreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6921E82E8A50084FC51 /* StoreHeaderView.swift */; };
-		F4CAA69F1E82E8BB0084FC51 /* EGoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA69E1E82E8BB0084FC51 /* EGoButton.swift */; };
-		F4CAA6A11E82E8C50084FC51 /* EGoPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6A01E82E8C50084FC51 /* EGoPopupView.swift */; };
-		F4CAA6A31E82E8CA0084FC51 /* EVItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6A21E82E8CA0084FC51 /* EVItemProtocol.swift */; };
-		F4CAA6A81E82E9D20084FC51 /* EGItemStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6A61E82E9D20084FC51 /* EGItemStoreView.swift */; };
 		F4CAA6A91E82E9D20084FC51 /* EGItemStoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4CAA6A71E82E9D20084FC51 /* EGItemStoreView.xib */; };
 		F4E9786A1E7DB67500DF2E89 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E978691E7DB67500DF2E89 /* libxml2.tbd */; };
 		F4E9786D1E7DB86100DF2E89 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E9786B1E7DB86100DF2E89 /* libc++.tbd */; };
@@ -67,31 +94,6 @@
 		F4E978EC1E7E3F8400DF2E89 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E978E61E7E3F8400DF2E89 /* FBSDKCoreKit.framework */; };
 		F4E978ED1E7E3F8400DF2E89 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E978E71E7E3F8400DF2E89 /* FBSDKLoginKit.framework */; };
 		F4E978EE1E7E3F8400DF2E89 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E978E81E7E3F8400DF2E89 /* FBSDKShareKit.framework */; };
-		F4E9793B1E80307C00DF2E89 /* EVAuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E9793A1E80307C00DF2E89 /* EVAuthenticationManager.m */; };
-		F4E979DF1E80414300DF2E89 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979DE1E80414300DF2E89 /* RealmManager.swift */; };
-		F4E979E11E80475500DF2E89 /* Realm+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E01E80475500DF2E89 /* Realm+Extension.swift */; };
-		F4E979E31E804B7000DF2E89 /* Marco.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E21E804B7000DF2E89 /* Marco.swift */; };
-		F4E979E51E80502F00DF2E89 /* EVUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E41E80502F00DF2E89 /* EVUser.swift */; };
-		F4E979E71E80503A00DF2E89 /* EVSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E61E80503A00DF2E89 /* EVSupplier.swift */; };
-		F4E979E91E80504600DF2E89 /* EVEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979E81E80504600DF2E89 /* EVEvent.swift */; };
-		F4E979EB1E80505200DF2E89 /* EVTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979EA1E80505200DF2E89 /* EVTask.swift */; };
-		F4E979ED1E80506D00DF2E89 /* EVNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979EC1E80506D00DF2E89 /* EVNotification.swift */; };
-		F4E979EF1E80507900DF2E89 /* EVAward.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979EE1E80507900DF2E89 /* EVAward.swift */; };
-		F4E979F11E80509500DF2E89 /* EVLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979F01E80509500DF2E89 /* EVLocation.swift */; };
-		F4E979F31E80509E00DF2E89 /* EVItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E979F21E80509E00DF2E89 /* EVItem.swift */; };
-		F4F0ACA11E82D5C800D663A6 /* EVAppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACA01E82D5C800D663A6 /* EVAppFactory.swift */; };
-		F4F0ACAD1E82D9A200D663A6 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACA81E82D9A200D663A6 /* Toast.swift */; };
-		F4F0ACAE1E82D9A200D663A6 /* ToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACA91E82D9A200D663A6 /* ToastCenter.swift */; };
-		F4F0ACAF1E82D9A200D663A6 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACAB1E82D9A200D663A6 /* ToastView.swift */; };
-		F4F0ACB01E82D9A200D663A6 /* ToastWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACAC1E82D9A200D663A6 /* ToastWindow.swift */; };
-		F4F0ACB21E82D9B500D663A6 /* VersionSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACB11E82D9B500D663A6 /* VersionSupport.swift */; };
-		F4F0ACB41E82D9C400D663A6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACB31E82D9C400D663A6 /* UIColor+Extension.swift */; };
-		F4F0ACB71E82D9DE00D663A6 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACB61E82D9DE00D663A6 /* Popover.swift */; };
-		F4F0ACB91E82D9F300D663A6 /* DashLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACB81E82D9F300D663A6 /* DashLine.swift */; };
-		F4F0ACBB1E82D9F800D663A6 /* CTDateFormart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACBA1E82D9F800D663A6 /* CTDateFormart.swift */; };
-		F4F0ACE01E82DA1B00D663A6 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACDF1E82DA1B00D663A6 /* LineView.swift */; };
-		F4F0ACE31E82DA5700D663A6 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACE21E82DA5700D663A6 /* UIView+Extension.swift */; };
-		F4F0ACE51E82DA5D00D663A6 /* UIViewController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACE41E82DA5D00D663A6 /* UIViewController+Action.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,10 +178,11 @@
 		D080D8E51E9BDD0F00BE77AC /* EVPopOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVPopOverView.swift; sourceTree = "<group>"; };
 		D080D8E71E9BDDBD00BE77AC /* EVEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVEnum.swift; sourceTree = "<group>"; };
 		D08721121E9D3A770016D6A5 /* EVClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVClientService.swift; sourceTree = "<group>"; };
-		D087211C1E9DE6BB0016D6A5 /* EVHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVHomeViewController.swift; sourceTree = "<group>"; };
+		D087211C1E9DE6BB0016D6A5 /* EVMainBottom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVMainBottom.swift; sourceTree = "<group>"; };
 		D0A273541E993A7B00374E71 /* EVUpdateUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVUpdateUserInfoViewController.swift; sourceTree = "<group>"; };
 		D0A982B71E994B9F003162D9 /* EVPopOverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVPopOverController.swift; sourceTree = "<group>"; };
 		D0C057941EAEDA6B00F3E11F /* EVDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVDevice.swift; sourceTree = "<group>"; };
+		D0C0579A1EAF531F00F3E11F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D2970CF6CE73C5F35F28774B /* Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp-EventGo-iOSAppTests/Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4056A0E1E8240FC00BEC162 /* EVLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EVLog.swift; path = ../Managers/EVLog.swift; sourceTree = "<group>"; };
 		F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -293,6 +296,7 @@
 		4C27AF5CB6999B032282C468 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0C0579A1EAF531F00F3E11F /* MessageUI.framework */,
 				F4056A161E82460600BEC162 /* Photos.framework */,
 				F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */,
 				F4E9786B1E7DB86100DF2E89 /* libc++.tbd */,
@@ -456,7 +460,7 @@
 				D043DF321E99003E006DE8ED /* EVDefaultControllerViewController.swift */,
 				D0A273541E993A7B00374E71 /* EVUpdateUserInfoViewController.swift */,
 				D0A982B71E994B9F003162D9 /* EVPopOverController.swift */,
-				D087211C1E9DE6BB0016D6A5 /* EVHomeViewController.swift */,
+				D087211C1E9DE6BB0016D6A5 /* EVMainBottom.swift */,
 				D037D91A1EAB570A006820A9 /* EVInfoTaskViewController.swift */,
 				D057F2101EAC7E5700FF3A73 /* EVListAwardsViewController.swift */,
 			);
@@ -863,71 +867,73 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4E9793B1E80307C00DF2E89 /* EVAuthenticationManager.m in Sources */,
-				D06C600E1E8E617600F473CA /* EVUserServices.swift in Sources */,
-				D06C5FFD1E8D64E500F473CA /* EVItemServices.swift in Sources */,
-				D06C5FF91E8D60F400F473CA /* EVTaskServices.swift in Sources */,
-				F457EC7D1E84D51C00E2276A /* EVString.swift in Sources */,
-				D06C5FFB1E8D647200F473CA /* EVLocationServices.swift in Sources */,
-				D080D8E81E9BDDBD00BE77AC /* EVEnum.swift in Sources */,
-				D0A273551E993A7B00374E71 /* EVUpdateUserInfoViewController.swift in Sources */,
-				F4E979DF1E80414300DF2E89 /* RealmManager.swift in Sources */,
-				F4F0ACB21E82D9B500D663A6 /* VersionSupport.swift in Sources */,
-				F4F0ACB91E82D9F300D663A6 /* DashLine.swift in Sources */,
-				F4E979E71E80503A00DF2E89 /* EVSupplier.swift in Sources */,
-				F4CAA6A81E82E9D20084FC51 /* EGItemStoreView.swift in Sources */,
-				F4F0ACE01E82DA1B00D663A6 /* LineView.swift in Sources */,
-				F4E979E31E804B7000DF2E89 /* Marco.swift in Sources */,
-				F4F0ACAF1E82D9A200D663A6 /* ToastView.swift in Sources */,
-				F4CAA6A31E82E8CA0084FC51 /* EVItemProtocol.swift in Sources */,
-				F4E979F11E80509500DF2E89 /* EVLocation.swift in Sources */,
-				D06C5FF81E8D60F400F473CA /* EVSupplierServices.swift in Sources */,
-				D06C60021E8D6C1B00F473CA /* EVBaseServices.swift in Sources */,
-				F4056A0F1E8240FC00BEC162 /* EVLog.swift in Sources */,
-				D080D8E61E9BDD0F00BE77AC /* EVPopOverView.swift in Sources */,
-				F4AD8BC61E7D3D1F0081F2F3 /* AppDelegate.swift in Sources */,
-				F4CAA6A11E82E8C50084FC51 /* EGoPopupView.swift in Sources */,
-				F4F0ACAD1E82D9A200D663A6 /* Toast.swift in Sources */,
-				D0C057951EAEDA6C00F3E11F /* EVDevice.swift in Sources */,
-				F4056A191E82810500BEC162 /* Constants.swift in Sources */,
-				F4CAA69D1E82E8A50084FC51 /* StoreHeaderView.swift in Sources */,
-				F4CAA69F1E82E8BB0084FC51 /* EGoButton.swift in Sources */,
-				F4E979EB1E80505200DF2E89 /* EVTask.swift in Sources */,
-				F4CAA6931E82E8A50084FC51 /* InfoAwardViewController.swift in Sources */,
-				F4CAA6941E82E8A50084FC51 /* EVDetailEventViewController.swift in Sources */,
-				F4F0ACB01E82D9A200D663A6 /* ToastWindow.swift in Sources */,
-				F4F0ACBB1E82D9F800D663A6 /* CTDateFormart.swift in Sources */,
-				D0A982B81E994B9F003162D9 /* EVPopOverController.swift in Sources */,
-				F4E979F31E80509E00DF2E89 /* EVItem.swift in Sources */,
-				F4CAA69B1E82E8A50084FC51 /* StoreCollectionViewCell.swift in Sources */,
-				D06C5FF61E8D60F400F473CA /* EVAwardServices.swift in Sources */,
-				F4F0ACAE1E82D9A200D663A6 /* ToastCenter.swift in Sources */,
-				D06C5FE11E8D326800F473CA /* EVLogInViewController.swift in Sources */,
-				D06C5FF71E8D60F400F473CA /* EVEventServices.swift in Sources */,
-				D0521DAA1E95245000A9C662 /* EVMarkerManager.swift in Sources */,
-				D06C600A1E8E5D0900F473CA /* EVUserInfo.swift in Sources */,
-				D06E45531E929CC4003462FC /* EVButtonModel.swift in Sources */,
-				F4E979E51E80502F00DF2E89 /* EVUser.swift in Sources */,
-				D06C601E1E8ECB1F00F473CA /* EVMainGameController.swift in Sources */,
-				D087211D1E9DE6BB0016D6A5 /* EVHomeViewController.swift in Sources */,
-				D043DF331E99003E006DE8ED /* EVDefaultControllerViewController.swift in Sources */,
-				F4E979E91E80504600DF2E89 /* EVEvent.swift in Sources */,
-				D037D91B1EAB570A006820A9 /* EVInfoTaskViewController.swift in Sources */,
-				D057F2111EAC7E5700FF3A73 /* EVListAwardsViewController.swift in Sources */,
-				D037D9221EABBA64006820A9 /* EVListEventsCollectionViewCell.swift in Sources */,
-				D037D90B1EA8B876006820A9 /* EVProtocol.swift in Sources */,
-				F4F0ACB41E82D9C400D663A6 /* UIColor+Extension.swift in Sources */,
-				D043DF311E98E723006DE8ED /* ExtentionString.swift in Sources */,
-				F4E979E11E80475500DF2E89 /* Realm+Extension.swift in Sources */,
-				F4F0ACE31E82DA5700D663A6 /* UIView+Extension.swift in Sources */,
-				F4F0ACB71E82D9DE00D663A6 /* Popover.swift in Sources */,
-				F4E979ED1E80506D00DF2E89 /* EVNotification.swift in Sources */,
-				D08721131E9D3A770016D6A5 /* EVClientService.swift in Sources */,
-				F4E979EF1E80507900DF2E89 /* EVAward.swift in Sources */,
-				F4AD8BC71E7D3D1F0081F2F3 /* EVViewController.swift in Sources */,
-				F4F0ACE51E82DA5D00D663A6 /* UIViewController+Action.swift in Sources */,
-				D037D9201EABBA44006820A9 /* EVListEventsViewController.swift in Sources */,
-				F4F0ACA11E82D5C800D663A6 /* EVAppFactory.swift in Sources */,
+				D0C058451EAF578800F3E11F /* EVUserServices.swift in Sources */,
+				D0C058461EAF578800F3E11F /* EVAwardServices.swift in Sources */,
+				D0C058471EAF578800F3E11F /* EVEventServices.swift in Sources */,
+				D0C058481EAF578800F3E11F /* EVSupplierServices.swift in Sources */,
+				D0C058491EAF578800F3E11F /* EVTaskServices.swift in Sources */,
+				D0C0584A1EAF578800F3E11F /* EVLocationServices.swift in Sources */,
+				D0C0584B1EAF578800F3E11F /* EVItemServices.swift in Sources */,
+				D0C0584C1EAF578800F3E11F /* EVBaseServices.swift in Sources */,
+				D0C0584D1EAF578800F3E11F /* EVClientService.swift in Sources */,
+				D0C0584F1EAF578800F3E11F /* AppDelegate.swift in Sources */,
+				D0C058501EAF578800F3E11F /* Marco.swift in Sources */,
+				D0C058511EAF578800F3E11F /* Constants.swift in Sources */,
+				D0C058521EAF578800F3E11F /* EVLog.swift in Sources */,
+				D0C058531EAF578800F3E11F /* EVItemProtocol.swift in Sources */,
+				D0C058541EAF578800F3E11F /* EVAppFactory.swift in Sources */,
+				D0C058551EAF578800F3E11F /* VersionSupport.swift in Sources */,
+				D0C058561EAF578800F3E11F /* UIColor+Extension.swift in Sources */,
+				D0C058571EAF578800F3E11F /* CTDateFormart.swift in Sources */,
+				D0C058581EAF578800F3E11F /* UIView+Extension.swift in Sources */,
+				D0C058591EAF578800F3E11F /* UIViewController+Action.swift in Sources */,
+				D0C0585A1EAF578800F3E11F /* EVString.swift in Sources */,
+				D0C0585B1EAF578800F3E11F /* ExtentionString.swift in Sources */,
+				D0C0585C1EAF578800F3E11F /* EGItemStoreView.swift in Sources */,
+				D0C0585E1EAF578800F3E11F /* EGoPopupView.swift in Sources */,
+				D0C0585F1EAF578800F3E11F /* EGoButton.swift in Sources */,
+				D0C058601EAF578800F3E11F /* DashLine.swift in Sources */,
+				D0C058611EAF578800F3E11F /* LineView.swift in Sources */,
+				D0C058621EAF578800F3E11F /* EVEnum.swift in Sources */,
+				D0C058631EAF578800F3E11F /* EVPopOverView.swift in Sources */,
+				D0C058641EAF578800F3E11F /* Popover.swift in Sources */,
+				D0C058651EAF578800F3E11F /* Toast.swift in Sources */,
+				D0C058661EAF578800F3E11F /* ToastCenter.swift in Sources */,
+				D0C058671EAF578800F3E11F /* Toaster.h in Sources */,
+				D0C058681EAF578800F3E11F /* ToastView.swift in Sources */,
+				D0C058691EAF578800F3E11F /* ToastWindow.swift in Sources */,
+				D0C0586A1EAF578800F3E11F /* EVListEventsViewController.swift in Sources */,
+				D0C0586B1EAF578800F3E11F /* EVListEventsCollectionViewCell.swift in Sources */,
+				D0C0586C1EAF578800F3E11F /* StoreCollectionViewCell.swift in Sources */,
+				D0C0586D1EAF578800F3E11F /* StoreHeaderView.swift in Sources */,
+				D0C0586E1EAF578800F3E11F /* EVDetailEventViewController.swift in Sources */,
+				D0C0586F1EAF578800F3E11F /* InfoAwardViewController.swift in Sources */,
+				D0C058701EAF578800F3E11F /* EVViewController.swift in Sources */,
+				D0C058711EAF578800F3E11F /* EVLogInViewController.swift in Sources */,
+				D0C058721EAF578800F3E11F /* EVMainGameController.swift in Sources */,
+				D0C058731EAF578800F3E11F /* EVDefaultControllerViewController.swift in Sources */,
+				D0C058741EAF578800F3E11F /* EVUpdateUserInfoViewController.swift in Sources */,
+				D0C058751EAF578800F3E11F /* EVPopOverController.swift in Sources */,
+				D0C058761EAF578800F3E11F /* EVMainBottom.swift in Sources */,
+				D0C058771EAF578800F3E11F /* EVInfoTaskViewController.swift in Sources */,
+				D0C058781EAF578800F3E11F /* EVListAwardsViewController.swift in Sources */,
+				D0C058791EAF578800F3E11F /* RealmManager.swift in Sources */,
+				D0C0587A1EAF578800F3E11F /* Realm+Extension.swift in Sources */,
+				D0C0587B1EAF578800F3E11F /* EVAuthenticationManager.h in Sources */,
+				D0C0587C1EAF578800F3E11F /* EVAuthenticationManager.m in Sources */,
+				D0C0587D1EAF578800F3E11F /* EVUser.swift in Sources */,
+				D0C0587E1EAF578800F3E11F /* EVSupplier.swift in Sources */,
+				D0C0587F1EAF578800F3E11F /* EVEvent.swift in Sources */,
+				D0C058801EAF578800F3E11F /* EVTask.swift in Sources */,
+				D0C058811EAF578800F3E11F /* EVNotification.swift in Sources */,
+				D0C058821EAF578800F3E11F /* EVAward.swift in Sources */,
+				D0C058831EAF578800F3E11F /* EVLocation.swift in Sources */,
+				D0C058841EAF578800F3E11F /* EVItem.swift in Sources */,
+				D0C058851EAF578800F3E11F /* EVUserInfo.swift in Sources */,
+				D0C058861EAF578800F3E11F /* EVButtonModel.swift in Sources */,
+				D0C058871EAF578800F3E11F /* EVMarkerManager.swift in Sources */,
+				D0C058881EAF578800F3E11F /* EVProtocol.swift in Sources */,
+				D0C058891EAF578800F3E11F /* EVDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1102,7 +1108,7 @@
 					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
 				);
 				INFOPLIST_FILE = "EventGo-iOSApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1153,7 +1159,7 @@
 					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
 				);
 				INFOPLIST_FILE = "EventGo-iOSApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

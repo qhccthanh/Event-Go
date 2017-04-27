@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey(EVConstant.API_GOOGLE_MAP_SERVICE_KEY)
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        EVUserServices.shareInstance.logOut()
+//        EVUserServices.shareInstance.logOut()
 ////        
 //        window = UIWindow(frame: SCREEN_FRAME_PORTRAIT)
 //        window?.makeKeyAndVisible()

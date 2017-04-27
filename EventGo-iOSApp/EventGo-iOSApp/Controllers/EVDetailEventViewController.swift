@@ -9,14 +9,37 @@
 import UIKit
 
 class EVDetailEventViewController: EVViewController {
-
-    @IBOutlet weak var bottomView: UIView!
-    @IBOutlet weak var ratingView: UIView!
+    
+    @IBOutlet weak var coverEventImageView: UIImageView!
+    @IBOutlet weak var nameEventLabel: UILabel!
+    @IBOutlet weak var timeStartLabel: UILabel!
+    @IBOutlet weak var timeEndLabel: UILabel!
+    @IBOutlet weak var infoEventLabel: UILabel!
+    @IBOutlet weak var awardImageView: UIImageView!
+    @IBOutlet weak var nameAwardLabel: UILabel!
+    @IBOutlet weak var awardDescriptionLabel: UILabel!
+    
+    var event: EVEvent?
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard event != nil else {
+            return
+        }
+        bindingUI()
         
+    }
+    
+    func bindingUI(){
+        nameEventLabel.text = event!.name
+        timeStartLabel.text = event!.start_time?.description
+        timeEndLabel.text = event!.end_time?.description
+        if let url = URL(string: event!.cover_url!){
+             coverEventImageView.af_setImage(withURL: url)
+        }
         
+        print(event?.awards)
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,27 +47,14 @@ class EVDetailEventViewController: EVViewController {
        
     }
     
-    @IBAction func exitAction(_ sender: AnyObject) {
+    @IBAction func joinEventAction(_ sender: Any) {
         
-        let model = NotificatonModel(title: nil, nameImage: "ic_checked", content: "Bạn đã trúng thưởng ", isShowExitButton: true, isShowHandleButton: false)
-        let view = EVPopupView(frame: CGRect(x: 0, y: 0, width: 216, height: 200))
-        view.show(with: model, type: .detail) {
-                log.info("Đã bấm OK")
-        }
     }
+
     
 }
 
 // MARK: delegate event scrollView
 extension EVDetailEventViewController: UIScrollViewDelegate {
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        bottomView.isHidden = true
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
-        bottomView.isHidden = false
-    }
 }

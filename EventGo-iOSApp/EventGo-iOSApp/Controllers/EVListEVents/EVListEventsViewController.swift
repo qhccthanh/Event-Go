@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "cell"
 
-class EVListEventsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var collectionView: UICollectionView!
     var listEvents:[EVEvent] = [EVEvent]()
     
@@ -55,6 +55,14 @@ class EVListEventsViewController: UIViewController, UICollectionViewDelegate, UI
         let model = EVEventModel(event: event)
         cell.bindingUI(with: model)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let event = listEvents[indexPath.row]
+        
+        let vc = EVController.detailEvent.getController() as! EVDetailEventViewController
+        vc.event = event
+        self.present(vc, animated: true, completion: nil)
     }
 
 }

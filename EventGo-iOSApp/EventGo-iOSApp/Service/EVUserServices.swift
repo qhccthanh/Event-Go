@@ -84,7 +84,7 @@ public class EVUserServices: BaseService {
                         log.info(dataJson)
                         EVAppFactory.shareInstance.currentUser = userCurrent
                         
-                        if (userCurrent.image_url != "" || userCurrent.name == "") {
+                        if (userCurrent.image_url == "" || userCurrent.name == "") {
                             
                             sub.sendNext(EVCheckUserEnumType.updatedInfo)
                         } else {

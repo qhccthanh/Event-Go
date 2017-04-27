@@ -20,8 +20,8 @@ public class EVEvent: Object {
     dynamic var cover_url: String?
     dynamic var policy_url: String?
     dynamic var detail_url: String?
-    dynamic var start_time: Double = 0
-    dynamic var end_time: Double = 0
+    dynamic var start_time: Date?
+    dynamic var end_time: Date?
     dynamic var created_date: Double = 0
 //    dynamic var location_info: NSDictionary?
     dynamic var priority: Double = 1
@@ -60,8 +60,8 @@ public class EVEvent: Object {
         event.cover_url = data["cover_url"].stringValue
         event.policy_url = data["policy_url"].stringValue
         event.detail_url = data["detail_url"].stringValue
-        event.start_time = data["start_time"].doubleValue
-        event.end_time = data["end_time"].doubleValue
+        event.start_time = Date.fromStringDate(data["start_time"].stringValue)
+        event.end_time = Date.fromStringDate(data["end_time"].stringValue) 
         event.created_date = data["created_date"].doubleValue
 //        event.location_info = data["location_info"].dictionaryObject as NSDictionary?
         event.priority = data["priority"].doubleValue

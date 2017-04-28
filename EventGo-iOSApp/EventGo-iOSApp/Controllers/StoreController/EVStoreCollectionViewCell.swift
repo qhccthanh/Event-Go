@@ -8,25 +8,14 @@
 
 import UIKit
 
-class StoreCollectionViewCell: UICollectionViewCell {
+class EVStoreCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageEvent: UIImageView!
     @IBOutlet weak var nameEvent: UILabel!
     @IBOutlet weak var numberStepEvent: UILabel!
     
-    func bindingUI(itemEvent: ItemEventProtocol) {
+    func bindingUI(itemAward: EVEventProtocol) {
         
-        if let imageEvent = imageEvent {
-            imageEvent.image = itemEvent.imageItem()
-        }
-        
-        if let nameEvent = nameEvent {
-            nameEvent.text = itemEvent.titleItem()
-        }
-        
-        if let numberStepEvent = numberStepEvent {
-            numberStepEvent.text = itemEvent.subTitleItem()
-        }
     }
     
     override func prepareForReuse() {

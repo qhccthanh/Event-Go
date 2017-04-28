@@ -584,18 +584,23 @@
                                                     <action selector="joinEventAction:" destination="0K0-wu-ZZx" eventType="touchUpInside" id="R7t-6Z-M3p"/>
                                                 </connections>
                                             </button>
+                                            <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8WN-2y-m2W">
+                                                <rect key="frame" x="0.0" y="182.5" width="375" height="40"/>
+                                                <color key="backgroundColor" red="0.39401570429999999" green="0.39401570429999999" blue="0.39401570429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 năm thành lập Circle K Việt Nam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAK-VE-ABj">
                                                 <rect key="frame" x="0.0" y="182.5" width="375" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="gWy-08-m4o"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="8WN-2y-m2W" firstAttribute="top" secondItem="eAK-VE-ABj" secondAttribute="top" id="3xk-U6-o4m"/>
                                             <constraint firstAttribute="height" constant="700" id="40p-D8-tgr"/>
                                             <constraint firstItem="E8h-mE-2vT" firstAttribute="top" secondItem="eAK-VE-ABj" secondAttribute="bottom" id="4nl-EJ-xwd"/>
                                             <constraint firstItem="0Qc-r0-XSS" firstAttribute="centerX" secondItem="05H-Uu-QFL" secondAttribute="centerX" id="6mI-Vd-H1c"/>
@@ -613,10 +618,13 @@
                                             <constraint firstItem="05H-Uu-QFL" firstAttribute="top" secondItem="vpQ-Y5-btG" secondAttribute="top" id="dk9-2r-cgA"/>
                                             <constraint firstItem="mhM-PW-qgN" firstAttribute="width" secondItem="zXh-Hc-WfQ" secondAttribute="width" id="h8A-El-YjS"/>
                                             <constraint firstAttribute="trailing" secondItem="E8h-mE-2vT" secondAttribute="trailing" id="nZp-YW-bIs"/>
+                                            <constraint firstItem="8WN-2y-m2W" firstAttribute="trailing" secondItem="eAK-VE-ABj" secondAttribute="trailing" id="nkb-8B-iMO"/>
                                             <constraint firstItem="LpU-fS-fHX" firstAttribute="leading" secondItem="vpQ-Y5-btG" secondAttribute="leading" constant="8" id="pMr-sN-fVR"/>
                                             <constraint firstAttribute="trailing" secondItem="05H-Uu-QFL" secondAttribute="trailing" id="pTg-TQ-WBH"/>
+                                            <constraint firstItem="8WN-2y-m2W" firstAttribute="bottom" secondItem="eAK-VE-ABj" secondAttribute="bottom" id="qs2-RJ-jSS"/>
                                             <constraint firstAttribute="trailing" secondItem="eAK-VE-ABj" secondAttribute="trailing" id="tsb-xl-AW1"/>
                                             <constraint firstItem="GzA-iX-4pC" firstAttribute="top" secondItem="0Qc-r0-XSS" secondAttribute="bottom" constant="5" id="xfz-qz-d9j"/>
+                                            <constraint firstItem="8WN-2y-m2W" firstAttribute="leading" secondItem="eAK-VE-ABj" secondAttribute="leading" id="zC7-n9-aS3"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -655,7 +663,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mju-1u-8HN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1175.2" y="1694.3028485757122"/>
+            <point key="canvasLocation" x="-810" y="1939"/>
         </scene>
         <!--List Events View Controller-->
         <scene sceneID="un9-Ah-rol">
@@ -1173,7 +1181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HtI-to-e3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536.79999999999995" y="1531.4842578710645"/>
+            <point key="canvasLocation" x="1665" y="1812"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="wIG-Vt-dJ1">
@@ -1491,7 +1499,7 @@
         <!--Info Award View Controller-->
         <scene sceneID="QP4-n2-CJd">
             <objects>
-                <viewController storyboardIdentifier="InfoStoreViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wqz-qj-y6s" customClass="InfoAwardViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EVInfoAwardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wqz-qj-y6s" customClass="EVInfoAwardViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e7P-32-BoP"/>
                         <viewControllerLayoutGuide type="bottom" id="Omb-Wl-Fw5"/>
@@ -1567,11 +1575,10 @@
                                     <constraint firstItem="Goa-ba-AyH" firstAttribute="leading" secondItem="3zj-tB-Hg7" secondAttribute="leading" id="x2R-Sf-NIZ"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CÁC BƯỚC THAM GIA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-Rh-jG3">
-                                <rect key="frame" x="88" y="333.5" width="200" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CÁC GIẢI THƯỞNG KHÁC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-Rh-jG3">
+                                <rect key="frame" x="84.5" y="333.5" width="207.5" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="9u3-Cd-cFB"/>
-                                    <constraint firstAttribute="width" constant="200" id="a6K-ck-cHi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.58105844259999995" green="0.42623944130000002" blue="0.57200249359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1648,7 +1655,7 @@
                                     <constraint firstAttribute="height" constant="30" id="GMb-O1-0nE"/>
                                     <constraint firstAttribute="width" constant="30" id="wPJ-Og-dE5"/>
                                 </constraints>
-                                <state key="normal" image="ic_cancel"/>
+                                <state key="normal" image="ic_quit"/>
                                 <connections>
                                     <action selector="onCancelAction:" destination="wqz-qj-y6s" eventType="touchUpInside" id="52d-pL-Aou"/>
                                 </connections>
@@ -1676,6 +1683,10 @@
                             <constraint firstItem="qT9-TC-jTm" firstAttribute="top" secondItem="jL1-Rh-jG3" secondAttribute="bottom" constant="20" id="vwd-fn-cj8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageMainAward" destination="d3V-Ao-eut" id="12g-IF-EGY"/>
+                        <outlet property="nameMainAward" destination="FBm-Y5-jHA" id="1p5-fc-R40"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWD-nw-nBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1852,7 +1863,6 @@
     <resources>
         <image name="EventGo-Logo" width="512" height="512"/>
         <image name="backgroundColor" width="540" height="960"/>
-        <image name="ic_cancel" width="16" height="16"/>
         <image name="ic_coverEvent" width="720" height="311"/>
         <image name="ic_distance" width="50" height="50"/>
         <image name="ic_email" width="25" height="25"/>

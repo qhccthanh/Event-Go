@@ -22,7 +22,9 @@ class EVEventModel: EVEventProtocol {
     init(event: EVEvent) {
         self.name = event.name
         self.imageURL = event.cover_url
-        self.description = "\(event.start_time!) - \(event.end_time!)"
+        let start_time_string = CTDateFormart(date: event.start_time!).daymonyear()
+        let end_time_string = CTDateFormart(date: event.end_time!).daymonyear()
+        self.description = "\(start_time_string) - \(end_time_string)"
     }
     
     func nameEvent() -> String! {

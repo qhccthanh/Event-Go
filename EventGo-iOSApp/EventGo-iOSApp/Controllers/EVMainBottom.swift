@@ -64,7 +64,7 @@ class EVHomeBottom {
     }
     
     @objc func quitAnimatedView(){
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.3) {
             self.arrayButton[0].center = self.arrayButton[3].center
             self.arrayButton[1].center = self.arrayButton[3].center
             self.arrayButton[2].center = self.arrayButton[3].center
@@ -120,8 +120,8 @@ class EVHomeBottom {
     
     @objc func homeButtonAction(){
         animatedView.isHidden = false
-        UIView.animate(withDuration: 1) {
-            self.animatedView.alpha = 0.9
+        UIView.animate(withDuration: 0.3) {
+            self.animatedView.alpha = 0.6
             self.startAnimation()
         }
     }

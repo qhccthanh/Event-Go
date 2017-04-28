@@ -248,6 +248,10 @@ extension Date {
     func toString() -> String {
         return self.toCTDateFormat().toDayString()
     }
+    
+//    func daymonyear() -> String {
+//    
+//    }
 }
 
 

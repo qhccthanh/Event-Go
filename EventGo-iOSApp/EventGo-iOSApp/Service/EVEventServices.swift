@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
-
-
-
+import SwiftyJSON
+import Alamofire
+import RxSwift
+import RxCocoa
 
 public class EVEventServices: BaseService {
     
@@ -36,5 +37,30 @@ public class EVEventServices: BaseService {
     }
     
 
+    func getListAwards(with id: String) -> Observable<[EVAward]> {
+        let url = baseURL + "client/events/\(id)/awards"
+        
+        return Observable.create({ (sub) -> Disposable in
+            EVReactNetwork.request(with: EVReactNetworkMethod_GET, header: self.headers, urlString: url, params: nil).subscribeNext({ (respone) in
+                if let dataDic = respone as? NSDictionary {
+                    let dataJson = JSON(dataDic)
+                    if dataJson["code"] == 200 {
+                        let listAward = EVAward.fromArrayJson(data: dataJson)
+                        sub.onNext(listAward)
+                    } else {
+                    
+                        sub.onError(dataJson["error"].stringValue.toError())
+                    }
+                
+                } else {
+                    sub.onError("Không parse được Data".toError())
+                }
+                
+            }, error: { (error) in
+                sub.onError(error ?? "Không xác định lỗi".toError())
+            })
+           return Disposables.create()
+        })  as Observable<[EVAward]>
+    }
     
 }

@@ -105,7 +105,7 @@ extension EVMainGameController: GMSMapViewDelegate {
        
             if let mark = listMarker.filter({$0.position.latitude == marker.position.latitude && $0.position.longitude == marker.position.longitude}).first {
              
-                let infoWindow = EVPopOverView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), type: EVPopOverAppearance.info, icon: mark.icon! , title: marker.title!, content: "")
+                let infoWindow = EVPopOverView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), type: EVPopOverAppearance.info, icon: mark.icon! , title: mark.title!, content: "")
                 let controller = EVPopOverController(customView: infoWindow, height: infoWindow.heightView )
                 controller.showView(self, detailBlock: { (object) in
                     log.info(object)

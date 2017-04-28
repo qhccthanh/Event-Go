@@ -8,12 +8,26 @@
 
 import UIKit
 
-class InfoAwardViewController: UIViewController {
+class EVInfoAwardViewController: EVViewController {
+    
+    @IBOutlet weak var imageMainAward: UIImageView!
+    @IBOutlet weak var nameMainAward: UILabel!
+    
+    var listAward: [EVAward]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        guard listAward != nil || listAward!.count == 0 else {return}
+        
+        let mainAward = listAward!.first
+        nameMainAward.text = mainAward!.name
+        if let url = URL(string: mainAward!.image_url!) {
+            imageMainAward.af_setImage(withURL: url)
+        } else {
+            imageMainAward.image = EVImage.ic_logo.icon()
+        }
+        
+        self.listAward!.remove(at: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,25 +48,23 @@ class InfoAwardViewController: UIViewController {
     }
   
 }
-extension InfoAwardViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension EVInfoAwardViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        
+        guard listAward != nil else {return 0}
+        return listAward!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? StoreCollectionViewCell {
-            if (indexPath.row % 2 == 0){
-            let itemEventCartoon = CartoonModel(nameEvent: "Circle K Thủ Đức", nameImageEvent: "pokemon_ic", numberStepEvent: 3)
-                cell.bindingUI(itemEvent: itemEventCartoon)
-            } else {
-                cell.imageEvent.image = UIImage(named: "arrow")
-            }
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? EVStoreCollectionViewCell {
+            
+//            cell.bindingUI(itemEvent: <#T##ItemEventProtocol#>)
             return cell
         }
         

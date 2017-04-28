@@ -26,6 +26,8 @@ class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UI
         }) { (error) in
             log.error(error)
         }
+        
+    
 
     }
 

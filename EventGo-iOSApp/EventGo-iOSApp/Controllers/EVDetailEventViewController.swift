@@ -68,6 +68,18 @@ class EVDetailEventViewController: EVViewController {
        
     }
     
+    @IBAction func onDetailAwardsAction(_ sender: Any) {
+        guard self.listAward.count != 0 else {
+            return
+        }
+        if let vc = EVController.infoAwards.getController() as? EVInfoAwardViewController {
+            vc.listAward = listAward
+            self.present(vc, animated: true, completion: nil)
+        }
+        
+    }
+    
+    
     @IBAction func joinEventAction(_ sender: Any) {
         
     }

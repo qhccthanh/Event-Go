@@ -12,13 +12,14 @@ class EVInfoAwardViewController: EVViewController {
     
     @IBOutlet weak var imageMainAward: UIImageView!
     @IBOutlet weak var nameMainAward: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var listAward: [EVAward]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard listAward != nil || listAward!.count == 0 else {return}
-        
+        guard listAward != nil  else {return}
+        guard listAward?.count != 0  else {return}
         let mainAward = listAward!.first
         nameMainAward.text = mainAward!.name
         if let url = URL(string: mainAward!.image_url!) {
@@ -28,6 +29,8 @@ class EVInfoAwardViewController: EVViewController {
         }
         
         self.listAward!.remove(at: 0)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,8 +64,11 @@ extension EVInfoAwardViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = listAward![indexPath.row]
+        let model = EVAwardModel(award: item)
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? EVStoreCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? EVListAwardsCollectionViewCell {
+            cell.binding(item: model)
             
 //            cell.bindingUI(itemEvent: <#T##ItemEventProtocol#>)
             return cell
@@ -73,12 +79,7 @@ extension EVInfoAwardViewController: UICollectionViewDelegate, UICollectionViewD
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if let flow = collectionViewLayout as? UICollectionViewFlowLayout {
-            if(indexPath.row  % 2 != 0){
-            return CGSize(width: 20, height: collectionView.frame.height)
-            }
-        }
-        return CGSize(width: 60, height: collectionView.frame.height)
+        return CGSize(width: 150, height: collectionView.frame.height)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

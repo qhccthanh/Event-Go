@@ -14,6 +14,31 @@ protocol EVEventProtocol {
     func descriptionEvent() -> String
 }
 
+extension EVEventProtocol {
+    func descriptionEvent() -> String {
+        return ""
+    }
+}
+
+class EVAwardModel: EVEventProtocol{
+    var nameAward: String!
+    var avatarAward: String!
+    
+    init(award: EVAward) {
+        
+        self.nameAward = award.name
+        self.avatarAward = award.image_url
+    }
+    
+    func avatarEvent() -> String! {
+        return avatarAward
+    }
+    
+    func nameEvent() -> String! {
+        return nameAward
+    }
+}
+
 class EVEventModel: EVEventProtocol {
     var name: String!
     var imageURL: String!

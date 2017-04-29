@@ -76,7 +76,7 @@ class EVUpdateUserInfoViewController: EVViewController {
                 switch result {
                 case .success:
 //                    dispatch_main_queue_safe {
-//                        if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
+//                        if let mainGameVC = StoryBoard.EventGo.viewController("EVMainGameController") as? EVMainGameController {
 //                            self.present(mainGameVC, animated: true, completion: nil)
 //                        }
                         EVController.mainGame.showController(self)

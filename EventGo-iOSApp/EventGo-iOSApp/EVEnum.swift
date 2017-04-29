@@ -70,7 +70,7 @@ enum EVController: String {
 extension EVController {
     
     func getController() -> EVViewController {
-        let controller = StoryBoard.DemoST.viewController(self.rawValue)
+        let controller = StoryBoard.EventGo.viewController(self.rawValue)
         return controller as! EVViewController
     }
     

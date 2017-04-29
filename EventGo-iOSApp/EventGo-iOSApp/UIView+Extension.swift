@@ -12,7 +12,7 @@ import UIKit
 enum StoryBoard: String {
     
     
-    case DemoST = "DemoST"
+    case EventGo = "EVentGo"
     case Search = "Search"
   
     func viewController(_ name: String) -> UIViewController {

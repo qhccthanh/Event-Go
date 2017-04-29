@@ -92,7 +92,7 @@ class EVLogInViewController: EVViewController {
                 }
                
 //                dispatch_main_queue_safe {
-//                    if let mainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController {
+//                    if let mainGameVC = StoryBoard.EventGo.viewController("EVMainGameController") as? EVMainGameController {
 //                        self.present(mainGameVC, animated: true, completion: nil)
 //                    }
                 
@@ -110,7 +110,7 @@ class EVLogInViewController: EVViewController {
     
     func stopRotateView(){
         self.avatarAppView.layer.removeAllAnimations()
-        if let tvc = UIStoryboard(name: "DemoST", bundle: nil).instantiateViewController(withIdentifier: "EVMainGameController") as? EVMainGameController {
+        if let tvc = UIStoryboard(name: "EventGo", bundle: nil).instantiateViewController(withIdentifier: "EVMainGameController") as? EVMainGameController {
             self.present(tvc, animated: true, completion: nil)
         }
     }

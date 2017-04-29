@@ -25,19 +25,19 @@ class EVDefaultControllerViewController: EVViewController {
 //                    EVAppFactory.shareInstance.currentUser = userCurrent
 //                    if (userCurrent.image_url == "" || userCurrent.name == "") {
 //                        
-//                        if let evChangeInfoVC = StoryBoard.DemoST.viewController("EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController{
+//                        if let evChangeInfoVC = StoryBoard.EventGo.viewController("EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController{
 //                            self.present(evChangeInfoVC, animated: true, completion: nil)
 //                        }
 //                    }else {
 //                        
-//                        if let evMainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController{
+//                        if let evMainGameVC = StoryBoard.EventGo.viewController("EVMainGameController") as? EVMainGameController{
 //                            self.present(evMainGameVC, animated: true, completion: nil)
 //                        }
 //                    }
 //                    
 //                } else {
 //                    
-//                    if let evLoginView = StoryBoard.DemoST.viewController("EVLogInViewController") as? EVLogInViewController {
+//                    if let evLoginView = StoryBoard.EventGo.viewController("EVLogInViewController") as? EVLogInViewController {
 //                        self.present(evLoginView, animated: true, completion: nil)
 //                    }
 //                }
@@ -62,21 +62,21 @@ class EVDefaultControllerViewController: EVViewController {
                 
                     switch response {
                     case .login:
-//                        if let evMainGameVC = StoryBoard.DemoST.viewController("EVMainGameController") as? EVMainGameController{
+//                        if let evMainGameVC = StoryBoard.EventGo.viewController("EVMainGameController") as? EVMainGameController{
 //                            self.present(evMainGameVC, animated: true, completion: nil)
 //                        }
                         EVController.mainGame.showController(self)
                         break
                         
                     case .notLogin:
-//                        if let evLoginView = StoryBoard.DemoST.viewController("EVLogInViewController") as? EVLogInViewController {
+//                        if let evLoginView = StoryBoard.EventGo.viewController("EVLogInViewController") as? EVLogInViewController {
 //                            self.present(evLoginView, animated: true, completion: nil)
 //                        }
                         EVController.logIn.showController(self)
                         break
                         
                     default:
-//                        if let evChangeInfoVC = StoryBoard.DemoST.viewController("EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController{
+//                        if let evChangeInfoVC = StoryBoard.EventGo.viewController("EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController{
 //                            self.present(evChangeInfoVC, animated: true, completion: nil)
 //                        }
                         EVController.userInfo.showController(self)

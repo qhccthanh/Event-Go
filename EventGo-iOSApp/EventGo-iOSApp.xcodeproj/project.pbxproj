@@ -15,6 +15,10 @@
 		D02059EF1EB4FDAD004EA7D3 /* EVInfoAwardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02059EE1EB4FDAD004EA7D3 /* EVInfoAwardViewController.swift */; };
 		D06E45701E92AFCD003462FC /* libEventGoCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FABF6B1E8A634D0010BE41 /* libEventGoCommon.a */; };
 		D06E45711E92AFCD003462FC /* libEventGoNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D06E45671E92AF21003462FC /* libEventGoNetwork.a */; };
+		D097FD821EB840FE004535F2 /* EVEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D097FD811EB840FE004535F2 /* EVEventCollectionViewCell.swift */; };
+		D097FD841EB842A5004535F2 /* EVListHappeningEventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D097FD831EB842A5004535F2 /* EVListHappeningEventsCollectionViewController.swift */; };
+		D097FD861EB84353004535F2 /* EVListUpcomingEventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D097FD851EB84353004535F2 /* EVListUpcomingEventsCollectionViewController.swift */; };
+		D097FD881EB843EF004535F2 /* EVEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D097FD871EB843EF004535F2 /* EVEventsViewController.swift */; };
 		D0C058451EAF578800F3E11F /* EVUserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C600D1E8E617600F473CA /* EVUserServices.swift */; };
 		D0C058461EAF578800F3E11F /* EVAwardServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FF21E8D60F400F473CA /* EVAwardServices.swift */; };
 		D0C058471EAF578800F3E11F /* EVEventServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C5FF31E8D60F400F473CA /* EVEventServices.swift */; };
@@ -184,6 +188,10 @@
 		D080D8E71E9BDDBD00BE77AC /* EVEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVEnum.swift; sourceTree = "<group>"; };
 		D08721121E9D3A770016D6A5 /* EVClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVClientService.swift; sourceTree = "<group>"; };
 		D087211C1E9DE6BB0016D6A5 /* EVMainBottom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVMainBottom.swift; sourceTree = "<group>"; };
+		D097FD811EB840FE004535F2 /* EVEventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVEventCollectionViewCell.swift; sourceTree = "<group>"; };
+		D097FD831EB842A5004535F2 /* EVListHappeningEventsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVListHappeningEventsCollectionViewController.swift; sourceTree = "<group>"; };
+		D097FD851EB84353004535F2 /* EVListUpcomingEventsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVListUpcomingEventsCollectionViewController.swift; sourceTree = "<group>"; };
+		D097FD871EB843EF004535F2 /* EVEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVEventsViewController.swift; sourceTree = "<group>"; };
 		D0A273541E993A7B00374E71 /* EVUpdateUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVUpdateUserInfoViewController.swift; sourceTree = "<group>"; };
 		D0A982B71E994B9F003162D9 /* EVPopOverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVPopOverController.swift; sourceTree = "<group>"; };
 		D0C057941EAEDA6B00F3E11F /* EVDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVDevice.swift; sourceTree = "<group>"; };
@@ -370,6 +378,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D097FD801EB840CC004535F2 /* EVListEventsCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				D097FD811EB840FE004535F2 /* EVEventCollectionViewCell.swift */,
+				D097FD831EB842A5004535F2 /* EVListHappeningEventsCollectionViewController.swift */,
+				D097FD851EB84353004535F2 /* EVListUpcomingEventsCollectionViewController.swift */,
+				D097FD871EB843EF004535F2 /* EVEventsViewController.swift */,
+			);
+			path = EVListEventsCalendar;
+			sourceTree = "<group>";
+		};
 		F4AD8AC61E7D3C310081F2F3 = {
 			isa = PBXGroup;
 			children = (
@@ -463,6 +482,7 @@
 			children = (
 				D02059E91EB4FD52004EA7D3 /* Award */,
 				D037D91E1EABBA44006820A9 /* EVListEVents */,
+				D097FD801EB840CC004535F2 /* EVListEventsCalendar */,
 				F4CAA6A51E82E9A70084FC51 /* Stores */,
 				F4CAA68C1E82E8A50084FC51 /* LoginViewController */,
 				F4AD8BC21E7D3D1F0081F2F3 /* EVViewController.swift */,
@@ -870,6 +890,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D097FD821EB840FE004535F2 /* EVEventCollectionViewCell.swift in Sources */,
 				D0C058451EAF578800F3E11F /* EVUserServices.swift in Sources */,
 				D0C058461EAF578800F3E11F /* EVAwardServices.swift in Sources */,
 				D0C058471EAF578800F3E11F /* EVEventServices.swift in Sources */,
@@ -918,17 +939,20 @@
 				D0C058741EAF578800F3E11F /* EVUpdateUserInfoViewController.swift in Sources */,
 				D0C058751EAF578800F3E11F /* EVPopOverController.swift in Sources */,
 				D02059EF1EB4FDAD004EA7D3 /* EVInfoAwardViewController.swift in Sources */,
+				D097FD841EB842A5004535F2 /* EVListHappeningEventsCollectionViewController.swift in Sources */,
 				D0C058761EAF578800F3E11F /* EVMainBottom.swift in Sources */,
 				D0C058771EAF578800F3E11F /* EVInfoTaskViewController.swift in Sources */,
 				D0C058791EAF578800F3E11F /* RealmManager.swift in Sources */,
 				D0C0587A1EAF578800F3E11F /* Realm+Extension.swift in Sources */,
 				D0C0587B1EAF578800F3E11F /* EVAuthenticationManager.h in Sources */,
 				D0C0587C1EAF578800F3E11F /* EVAuthenticationManager.m in Sources */,
+				D097FD861EB84353004535F2 /* EVListUpcomingEventsCollectionViewController.swift in Sources */,
 				D0C0587D1EAF578800F3E11F /* EVUser.swift in Sources */,
 				D0C0587E1EAF578800F3E11F /* EVSupplier.swift in Sources */,
 				D0C0587F1EAF578800F3E11F /* EVEvent.swift in Sources */,
 				D0C058801EAF578800F3E11F /* EVTask.swift in Sources */,
 				D0C058811EAF578800F3E11F /* EVNotification.swift in Sources */,
+				D097FD881EB843EF004535F2 /* EVEventsViewController.swift in Sources */,
 				D0C058821EAF578800F3E11F /* EVAward.swift in Sources */,
 				D0C058831EAF578800F3E11F /* EVLocation.swift in Sources */,
 				D0C058841EAF578800F3E11F /* EVItem.swift in Sources */,

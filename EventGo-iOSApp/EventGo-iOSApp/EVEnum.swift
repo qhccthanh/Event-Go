@@ -65,6 +65,7 @@ enum EVController: String {
     case listAwards = "EVListAwardsViewController"
     case listEvents = "EVListEventsViewController"
     case infoAwards = "EVInfoAwardViewController"
+    case events = "EVEventsViewController"
     
 }
 extension EVController {

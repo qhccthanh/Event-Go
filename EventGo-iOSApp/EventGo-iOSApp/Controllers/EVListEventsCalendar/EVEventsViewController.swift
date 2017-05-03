@@ -11,8 +11,14 @@ import UIKit
 class EVEventsViewController: EVViewController {
 
     @IBOutlet weak var leading: NSLayoutConstraint!
+    @IBOutlet weak var happenningButton: UIButton!
+    @IBOutlet weak var upcomingButton: UIButton!
+    @IBOutlet weak var happeningLabel: UILabel!
+    @IBOutlet weak var upcomingLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        upcomingLabel.isHidden = true
 
     }
 
@@ -22,8 +28,15 @@ class EVEventsViewController: EVViewController {
     }
 
     @IBAction func onHappeningEventsAction(_ sender: Any) {
-        
+        leading.constant = 0
+        happeningLabel.isHidden = false
+        upcomingLabel.isHidden = true
     }
     @IBAction func onUpcomingEventsAction(_ sender: Any) {
+        if leading.constant == 0 {
+            leading.constant += self.view.frame.width
+            happeningLabel.isHidden = true
+            upcomingLabel.isHidden = false
+        }
     }
 }

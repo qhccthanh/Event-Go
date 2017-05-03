@@ -1112,8 +1112,7 @@
                                     <color key="titleColor" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onHappeningEventsAction:" destination="u55-8h-xYl" eventType="touchUpInside" id="w1y-Em-90t"/>
-                                    <action selector="onhappenEventAction:" destination="u55-8h-xYl" eventType="touchUpInside" id="yN8-Fh-A8u"/>
+                                    <action selector="onHappeningEventsAction:" destination="u55-8h-xYl" eventType="touchUpInside" id="ikO-Cj-NxA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqd-Kb-aGF">
@@ -1125,6 +1124,9 @@
                                 <state key="normal" title="Sắp diễn ra">
                                     <color key="titleColor" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onUpcomingEventsAction:" destination="u55-8h-xYl" eventType="touchUpInside" id="vaY-hH-ua7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjU-rR-O2D">
                                 <rect key="frame" x="33" y="70" width="122" height="1"/>
@@ -1189,7 +1191,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="happeningLabel" destination="AjU-rR-O2D" id="kIO-et-65p"/>
+                        <outlet property="happenningButton" destination="QmX-EE-MzJ" id="J8y-TF-uZ9"/>
                         <outlet property="leading" destination="A1E-Ce-qkK" id="ac9-X4-tpm"/>
+                        <outlet property="upcomingButton" destination="kqd-Kb-aGF" id="1eQ-80-IUU"/>
+                        <outlet property="upcomingLabel" destination="hpT-8E-Dm8" id="hA9-vK-ifs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HtI-to-e3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1799,7 +1805,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="s9A-LY-SaH">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" reuseIdentifier="cell" id="s9A-LY-SaH" customClass="EVEventCollectionViewCell" customModule="EventGo_iOSApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="169" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1867,6 +1873,13 @@
                                     <constraint firstItem="GSN-ld-yIZ" firstAttribute="leading" secondItem="Ejb-X8-KXh" secondAttribute="trailing" constant="20" id="rEL-SC-xli"/>
                                     <constraint firstItem="2z0-oj-pM1" firstAttribute="centerX" secondItem="s9A-LY-SaH" secondAttribute="centerX" id="yvi-hE-lQf"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="avatarEventsImageView" destination="RVB-Xg-h3t" id="kF9-IH-zxw"/>
+                                    <outlet property="endTimeLabel" destination="GSN-ld-yIZ" id="2q9-La-T9u"/>
+                                    <outlet property="nameEventLabel" destination="KF6-SQ-ugF" id="Gej-lH-eqm"/>
+                                    <outlet property="nameSupplierLabel" destination="sfN-yg-bJq" id="azn-SP-okc"/>
+                                    <outlet property="startTimeLabel" destination="Ejb-X8-KXh" id="Neh-OW-XAD"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                     </collectionView>

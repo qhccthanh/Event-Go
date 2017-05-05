@@ -25,7 +25,6 @@
 #import "RPFloatingPlaceholderTextView.h"
 #import "EVLineView.h"
 #import "Masonry.h"
-#import "MBProgressHUD.h"
 //#import "CTContact.h"
 #import "EVLocationManager.h"
 #import <ReactiveObjc/ReactiveObjc.h>

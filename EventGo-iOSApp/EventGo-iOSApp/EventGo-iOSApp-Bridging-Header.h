@@ -12,8 +12,6 @@
 
 #import <EventGoNetwork/EventGoNetwork.h>
 #import <EventGoCommon/EventGoCommon.h>
-#import <EventGoCommon/MBProgressHUD.h>
-#import <EventGoNetwork/EventGoNetwork.h>
 #import <Google/SignIn.h>
 #import "EVAuthenticationManager.h"
 

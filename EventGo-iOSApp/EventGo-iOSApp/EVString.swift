@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 import SwiftyJSON
+
 public class EVString: Object {
     
     dynamic var value = ""
@@ -39,7 +40,7 @@ public class EVString: Object {
     
     class func fromJson(data: JSON) -> List<EVString> {
         let newList = List<EVString>()
-        var arrayValues = data.arrayValue
+        let arrayValues = data.arrayValue
         for value in arrayValues {
             newList.append(EVString.fromString(value.stringValue))
         }

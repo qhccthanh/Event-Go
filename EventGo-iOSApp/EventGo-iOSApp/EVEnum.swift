@@ -75,11 +75,14 @@ extension EVController {
         return controller as! EVViewController
     }
     
-    func showController(_ inController: EVViewController) {
+    func showController(_ inController: EVViewController? = nil) {
         dispatch_main_queue_safe {
             let vc = self.getController()
+            guard let inController = inController else {
+                UIApplication.shared.keyWindow?.rootViewController = vc
+                return
+            }
             inController.present(vc, animated: true, completion: nil)
-
         }
     }
 }

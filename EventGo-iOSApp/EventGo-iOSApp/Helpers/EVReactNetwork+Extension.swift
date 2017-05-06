@@ -34,7 +34,7 @@ enum EVSReactNetworkMethod: String {
 
 extension EVReactNetwork {
     
-    func ev_request(with method: EVSReactNetworkMethod = .get, header: [AnyHashable: Any]? = nil, urlString: String, params: [AnyHashable: Any]? = nil) -> Observable<JSON> {
+    class func ev_request(with method: EVSReactNetworkMethod = .get, header: [AnyHashable: Any]? = nil, urlString: String, params: [AnyHashable: Any]? = nil) -> Observable<JSON> {
         
         log.info("Request URL: \(urlString)")
         log.info("Method: \(method.rawValue)")
@@ -46,33 +46,26 @@ extension EVReactNetwork {
             
             let request = EVReactNetwork.request(with: method.toNetworkMethod(), header: header ?? [:], urlString: urlString, params: params ?? [:]).subscribeNext({
                 (result) in
-                log.info(result)
                 
+                log.info("Result: \(result) from: \(urlString)")
                 guard let result = result else {
                     let error = "Result API nil".toError()
                     log.error(error)
                     subs.onError(error)
-                    
                     return
                 }
                 
                 let dataJson = JSON(result)
                 subs.onNext(dataJson)
             }, error: { (error) in
-                
-                log.error(error)
+                log.error("Error: \(error ?? "Error not found".toError()) from: \(urlString)")
                 subs.onError(error ?? NSError.defaultAPIError())
             })
             
             return Disposables.create {
+                log.info("Stop task \(urlString)")
                 request.dispose()
             }
         }
-    }
-}
-
-extension NSError {
-    class func defaultAPIError() -> NSError {
-        return NSError(domain: "com.eventGo", code: 5, userInfo: [NSLocalizedDescriptionKey: "api error"])
     }
 }

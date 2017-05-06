@@ -64,21 +64,12 @@ class EVMainGameController: EVViewController {
                 dispatch_main_queue_safe {
                     GMSCameraPosition.camera(withLatitude: object.coordinate.latitude , longitude: object.coordinate.longitude, zoom: 13.0)
                 }
-
             }
         }, error: { (error) in
             
         })
         
-        let updateUserDevice = EVUserServices.shareInstance.updateUserDevice()
-        updateUserDevice.subscribeNext({ (result) in
-            if let result = result as? EVUpdateResult {
-                
-                log.info(result)
-            }
-        }, error: { (error) in
-            log.error(error)
-        })
+        EVAppFactory.users.updateDeviceInfo()
     }
     
     func deletetMark() {

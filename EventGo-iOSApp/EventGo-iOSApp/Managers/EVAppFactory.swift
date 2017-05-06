@@ -11,25 +11,15 @@ import Foundation
 public class EVAppFactory: NSObject {
     
     static var shareInstance: EVAppFactory = EVAppFactory()
+    static var users: EVAppFactoryUsers = EVAppFactoryUsers()
     
     public var currentUser: EVUser?
     public var currentEvents: [EVEvent]?
-    private static var toast: Toast!
     
     private override init() {
         super.init()
         
     }
-    
-    public func signIn(_ userInfo: NSDictionary) -> RACSignal<AnyObject> {
-        // Check access_token
-        return RACSignal.empty()
-    }
-    
-    public func signOut() {
-        
-    }
-    
     
 }
 

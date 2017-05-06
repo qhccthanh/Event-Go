@@ -7,96 +7,39 @@
 //
 
 import UIKit
-import SwiftyJSON
-class EVDefaultControllerViewController: EVViewController {
 
+import SwiftyJSON
+import RxSwift
+
+class EVDefaultControllerViewController: EVViewController {
+    
     @IBOutlet weak var avatarImageView: UIImageView!
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        let checkUserSignal = EVUserServices.shareInstance.checkInfoUser()
-//        checkUserSignal.subscribeNext({ (response) in
-//            
-//            let dataJson = JSON(response!)
-//            dispatch_main_queue_safe {
-//                if dataJson["code"] == 200 {
-//                    let userCurrent = EVUser.fromJson(data: dataJson["data"])
-//                    log.info(dataJson)
-//                    EVAppFactory.shareInstance.currentUser = userCurrent
-//                    if (userCurrent.image_url == "" || userCurrent.name == "") {
-//                        
-//                        if let evChangeInfoVC = StoryBoard.EventGo.viewController("EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController{
-//                            self.present(evChangeInfoVC, animated: true, completion: nil)
-//                        }
-//                    }else {
-//                        
-//                        if let evMainGameVC = StoryBoard.EventGo.viewController("EVMainGameController") as? EVMainGameController{
-//                            self.present(evMainGameVC, animated: true, completion: nil)
-//                        }
-//                    }
-//                    
-//                } else {
-//                    
-//                    if let evLoginView = StoryBoard.EventGo.viewController("EVLogInViewController") as? EVLogInViewController {
-//                        self.present(evLoginView, animated: true, completion: nil)
-//                    }
-//                }
-//                
-//            }
-//        
-//        }, error: { (error) in
-//            log.error()
-//        })
-//
-//    
-//    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let checkUserSignal = EVUserServices.shareInstance.checkInfoUser()
-        checkUserSignal.subscribeNext({ (response) in
-            
-            if let response = response as? EVCheckUserEnumType {
-                
-                
-                    switch response {
-                    case .login:
-//                        if let evMainGameVC = StoryBoard.EventGo.viewController("EVMainGameController") as? EVMainGameController{
-//                            self.present(evMainGameVC, animated: true, completion: nil)
-//                        }
-                        EVController.mainGame.showController(self)
-                        break
-                        
-                    case .notLogin:
-//                        if let evLoginView = StoryBoard.EventGo.viewController("EVLogInViewController") as? EVLogInViewController {
-//                            self.present(evLoginView, animated: true, completion: nil)
-//                        }
-                        EVController.logIn.showController(self)
-                        break
-                        
-                    default:
-//                        if let evChangeInfoVC = StoryBoard.EventGo.viewController("EVUpdateUserInfoViewController") as? EVUpdateUserInfoViewController{
-//                            self.present(evChangeInfoVC, animated: true, completion: nil)
-//                        }
-                        EVController.userInfo.showController(self)
-                        break
-                    }
-                
-            }
-            
-            
-        }, error: { (error) in
-            log.error()
-        })
         
-        
+        checkUser()
     }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func checkUser() {
+        _ = EVUserServices.shareInstance
+            .authorizedUser()
+            .subscribe(onNext: { (result) in
+                switch result {
+                case .login:
+                    EVController.mainGame.showController(self)
+                    break
+                    
+                case .notLogin:
+                    EVController.logIn.showController(self)
+                    break
+                    
+                default:
+                    EVController.userInfo.showController(self)
+                    break
+                }
+            }, onError: { (error) in
+                // toast lên hay alert lên
+            })
     }
-
 }

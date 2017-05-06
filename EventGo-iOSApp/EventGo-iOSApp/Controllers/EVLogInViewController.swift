@@ -11,6 +11,7 @@ import FBSDKLoginKit
 
 import GoogleSignIn
 import SwiftyJSON
+import RxSwift
 
 class EVLogInViewController: EVViewController {
 
@@ -20,7 +21,7 @@ class EVLogInViewController: EVViewController {
         super.viewDidLoad()
         self.avatarAppView.rotate360Degrees()
     }
-
+    
     @IBAction func loginFBAction(_ sender: Any) {
         
         let loginFacebookSignal = EVAuthenticationManager.share().authenticateWithFacebook(in: self)
@@ -31,30 +32,8 @@ class EVLogInViewController: EVViewController {
                 params["provider_type"] = EVConstant.PROVIDER_FACEBOOK
                 params["provider_access_token"] = token
                 
-                let loginServerSignal = EVUserServices.shareInstance.login(with: params)
-                loginServerSignal.subscribeNext({ (response) in
-                    
-                    let dataJson = JSON(response!)
-                    if dataJson["code"] != 200 {
-                    } else {
-                    let user = EVUser.fromJson(data: dataJson["data"])
-                    EVAppFactory.shareInstance.currentUser = user
-                        EVController.mainGame.showController(self)
-                    }
-                }, error: { (error) in
-                    log.error(error)
-                })
-                
+                EVAppFactory.users.signIn(with: params)
             }
-//            let loginServerSignal = EVUserServices.shareInstance.login(with: token!, type: "facebook", idUser: nil)
-//            
-//            loginServerSignal.subscribeNext({ (result) in
-//                dispatch_main_queue_safe {
-//                    self.stopRotateView()
-//                }
-//            })
-           
-            
         }, error: { (error) in
             
         })
@@ -72,53 +51,25 @@ class EVLogInViewController: EVViewController {
             params["provider_id"] = userGoogle.userID
             params["name"] = userGoogle.profile.name
             
-            
-        
-           
             let contentPath = userGoogle.profile.imageURL(withDimension: 100).path
             if !contentPath.isEmpty {
                 let headURL = "https://lh3.googleusercontent.com"
                  params["image_url"] = headURL + "\(contentPath)"
             }
             
-            let loginServerSignal = EVUserServices.shareInstance.login(with: params)
-            loginServerSignal.subscribeNext({ (response) in
-               
-                let dataJson = JSON(response!)
-                if dataJson["code"] == 200 {
-                    let user = EVUser.fromJson(data: dataJson["data"])
-                    EVAppFactory.shareInstance.currentUser = user
-                    EVController.mainGame.showController(self)
-                }
-               
-//                dispatch_main_queue_safe {
-//                    if let mainGameVC = StoryBoard.EventGo.viewController("EVMainGameController") as? EVMainGameController {
-//                        self.present(mainGameVC, animated: true, completion: nil)
-//                    }
-                
-//                }
-
-            }, error: { (error) in
-                
-            })
-            
+            EVAppFactory.users.signIn(with: params)
         }, error: { (error) in
         
         })
         
     }
     
-    func stopRotateView(){
+    func stopRotateView() {
         self.avatarAppView.layer.removeAllAnimations()
         if let tvc = UIStoryboard(name: "EventGo", bundle: nil).instantiateViewController(withIdentifier: "EVMainGameController") as? EVMainGameController {
             self.present(tvc, animated: true, completion: nil)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
 
 }
 

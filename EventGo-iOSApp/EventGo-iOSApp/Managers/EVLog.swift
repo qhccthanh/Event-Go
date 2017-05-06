@@ -13,9 +13,9 @@ let log: XCGLogger = {
     let log = XCGLogger(identifier: "advancedLogger", includeDefaultDestinations: false)
     
     #if DEBUG
-        log.setup(level: .debug, showThreadName: true, showLevel: true, showFileNames: true, showLineNumbers: true)
+        log.setup(level: .debug, showThreadName: false, showLevel: true, showFileNames: true, showLineNumbers: true)
     #else
-        log.setup(level: .severe, showThreadName: true, showLevel: true, showFileNames: true, showLineNumbers: true)
+        log.setup(level: .severe, showThreadName: false, showLevel: true, showFileNames: true, showLineNumbers: true)
     #endif
     
     // Create a destination for the system console log (via NSLog)
@@ -24,11 +24,11 @@ let log: XCGLogger = {
     systemDestination.outputLevel = .debug
     systemDestination.showLogIdentifier = false
     systemDestination.showFunctionName = true
-    systemDestination.showThreadName = true
+    systemDestination.showThreadName = false
     systemDestination.showLevel = true
     systemDestination.showFileName = true
     systemDestination.showLineNumber = true
-    systemDestination.showDate = true
+    systemDestination.showDate = false
     
     // Add the destination to the logger
     log.add(destination: systemDestination)
@@ -44,7 +44,7 @@ let log: XCGLogger = {
     fileDestination.showLevel = true
     fileDestination.showFileName = true
     fileDestination.showLineNumber = true
-    fileDestination.showDate = true
+    fileDestination.showDate = false
     
     // Process this destination in the background
     fileDestination.logQueue = XCGLogger.logQueue

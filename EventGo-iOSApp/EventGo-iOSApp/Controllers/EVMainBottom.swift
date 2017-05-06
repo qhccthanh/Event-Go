@@ -14,6 +14,11 @@ class EVHomeBottom {
     var homeButton: UIButton = UIButton()
     var animatedView: UIView = UIView()
     
+    let subItemButtonHeight: CGFloat = 40
+    let mainMenuButtonHeight: CGFloat = 64
+    let animationDuration: Double = 0.25
+    let animatedBackgroundColor: UIColor = UIColor.teal().withAlphaComponent(0.65)
+    
     init(viewController: EVViewController!) {
         self.evViewController = viewController
         settupView()
@@ -43,7 +48,9 @@ class EVHomeBottom {
         animatedView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.rootView)
         }
+        
         animatedView.isHidden = true
+        self.animatedView.backgroundColor = animatedBackgroundColor
         
         self.animatedView.addSubview(arrayButton[0])
         arrayButton[0].setImage(EVImage.ic_bag.icon(), for: .normal)
@@ -63,13 +70,12 @@ class EVHomeBottom {
         EVController.listEvents.showController(self.evViewController)
     }
     
-    @objc func quitAnimatedView(){
-        UIView.animate(withDuration: 0.3) {
+    @objc func quitAnimatedView() {
+        UIView.animate(withDuration: animationDuration) {
             self.arrayButton[0].center = self.arrayButton[3].center
             self.arrayButton[1].center = self.arrayButton[3].center
             self.arrayButton[2].center = self.arrayButton[3].center
             self.animatedView.alpha = 0.0
-            
         }
     }
     
@@ -80,26 +86,26 @@ class EVHomeBottom {
         arrayButton[2].isHidden = true
         arrayButton[3].isHidden = true
         arrayButton[0].snp.makeConstraints { (maker) in
-            maker.width.height.equalTo(30)
+            maker.width.height.equalTo(subItemButtonHeight)
             maker.centerY.centerX.equalTo(self.homeButton)
         }
         
         arrayButton[1].snp.makeConstraints { (maker) in
-            maker.width.height.equalTo(30)
+            maker.width.height.equalTo(subItemButtonHeight)
             maker.centerY.centerX.equalTo(self.homeButton)
         }
         
         arrayButton[2].snp.makeConstraints { (maker) in
-            maker.width.height.equalTo(30)
+            maker.width.height.equalTo(subItemButtonHeight)
             maker.centerY.centerX.equalTo(self.homeButton)
         }
         
         arrayButton[3].snp.makeConstraints { (make) in
             make.centerX.centerY.equalTo(self.homeButton)
-            make.width.height.equalTo(50)
+            make.width.height.equalTo(mainMenuButtonHeight)
             
         }
-        self.animatedView.backgroundColor = UIColor.teal()
+        
         self.animatedView.alpha = 0.0
     }
     
@@ -110,22 +116,18 @@ class EVHomeBottom {
         arrayButton[2].isHidden = false
         arrayButton[3].isHidden = false
         
-        
-        
         arrayButton[0].center = CGPoint(x: self.homeButton.center.x, y: self.homeButton.center.y - 150)
         arrayButton[1].center = CGPoint(x: homeButton.center.x - 90, y: self.homeButton.center.y - 120)
         arrayButton[2].center = CGPoint(x: homeButton.center.x + 90, y: self.homeButton.center.y - 120)
-        
     }
     
     @objc func homeButtonAction(){
         animatedView.isHidden = false
-        UIView.animate(withDuration: 0.3) {
-            self.animatedView.alpha = 0.6
+        UIView.animate(withDuration: animationDuration, delay: 0.0, options: .curveEaseOut, animations: {
+            self.animatedView.alpha = 1.0
             self.startAnimation()
-        }
+        }, completion: nil)
     }
-    
 
     
 }

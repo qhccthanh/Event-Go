@@ -8,11 +8,12 @@
 
 import Foundation
 import SwiftyJSON
+
 public class EVClientService: BaseService {
     
     static let shareInstance = EVClientService()
     
-    override var subUrl: String{
+    override public var subUrl: String {
         return "client"
     }
     

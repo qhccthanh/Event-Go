@@ -75,7 +75,7 @@ extension EVController {
         return controller as! EVViewController
     }
     
-    func showController(_ inController: EVViewController? = nil) {
+    func showController(_ inController: UIViewController? = nil) {
         dispatch_main_queue_safe {
             let vc = self.getController()
             guard let inController = inController else {

@@ -7,7 +7,8 @@
 //
 
 import Foundation
-public class EVItemServices: BaseService {
+
+class EVItemServices: BaseService {
     
     static let shareInstance = EVItemServices()
     

@@ -11,7 +11,7 @@ import Foundation
 public struct EVAppFactoryUsers {
     
     public func signIn(with params: [String:Any]) {
-        _ = EVUserServices.shareInstance
+        _ = EVUserServices
             .signIn(with: params)
             .subscribe(onNext: { (json) in
                 
@@ -29,7 +29,7 @@ public struct EVAppFactoryUsers {
     }
     
     public func signOut() {
-        _ = EVUserServices.shareInstance
+        _ = EVUserServices
             .signOut()
             .subscribe(onNext: { (json) in
                 
@@ -46,13 +46,57 @@ public struct EVAppFactoryUsers {
         params["device"] = device.toJson()
         
         
-        let updateUserDevice = EVUserServices.shareInstance.updateDeviceInfo(with: params)
-        _ = updateUserDevice.subscribe(onNext: { (result) in
-            log.info("Update device info: ")
-            log.info(result)
+        _ = EVUserServices
+            .updateDeviceInfo(with: params)
+            .subscribe(onNext: { (result) in
+                log.info("Update device info: ")
+                log.info(result)
         }, onError: { (error) in
-            log.error(error)
+                log.error(error)
         })
+    }
+    
+    public func authorizedUser(_ inController: UIViewController? = nil) {
+        _ = EVUserServices
+            .authorizedUser()
+            .subscribe(onNext: { (result) in
+                switch result {
+                case .login:
+                    EVController.mainGame.showController(inController)
+                    break
+                    
+                case .notLogin:
+                    EVController.logIn.showController(inController)
+                    break
+                    
+                default:
+                    EVController.userInfo.showController(inController)
+                    break
+                }
+            }, onError: { (error) in
+                // toast lên hay alert lên
+            })
+    }
+    
+    public func updateUserInfo(params: [String: Any]) {
+        _ = EVUserServices
+            .updateUserInfo(with: params)
+            .subscribe(onNext: { (result) in
+                switch result {
+                case .success:
+                    //                    dispatch_main_queue_safe {
+                    //                        if let mainGameVC = StoryBoard.EventGo.viewController("EVMainGameController") as? EVMainGameController {
+                    //                            self.present(mainGameVC, animated: true, completion: nil)
+                    //                        }
+                    EVController.mainGame.showController()
+                    break
+                default:
+                    //show message failure
+                    break
+                }
+            }, onError: { (error) in
+                //show message failure
+            })
     }
     
 }

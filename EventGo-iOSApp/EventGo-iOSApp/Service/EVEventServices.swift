@@ -17,7 +17,7 @@ public class EVEventServices: BaseService {
     
     static let shareInstance = EVEventServices()
     
-    override var subUrl: String{
+    override public var subUrl: String{
         return "events"
     }
  

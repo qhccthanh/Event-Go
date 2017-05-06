@@ -69,29 +69,10 @@ class EVUpdateUserInfoViewController: EVViewController {
 //    }
     
     @IBAction func updateInfoAction(_ sender: AnyObject) {
-        
         var params = Dictionary<String, Any>()
         params["name"] = self.nameView.text
         
-        _ = EVUserServices.shareInstance
-            .updateUserInfo(with: params)
-            .subscribe(onNext: { (result) in
-                switch result {
-                case .success:
-//                    dispatch_main_queue_safe {
-//                        if let mainGameVC = StoryBoard.EventGo.viewController("EVMainGameController") as? EVMainGameController {
-//                            self.present(mainGameVC, animated: true, completion: nil)
-//                        }
-                    EVController.mainGame.showController(self)
-                    break
-                    
-                default:
-                    //show message failure
-                    break
-                }
-            }, onError: { (error) in
-                //show message failure
-            })
+        EVAppFactory.users.updateUserInfo(params: params)
     }
 
 }

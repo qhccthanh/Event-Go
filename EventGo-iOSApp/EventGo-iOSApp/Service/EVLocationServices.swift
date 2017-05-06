@@ -7,7 +7,8 @@
 //
 
 import Foundation
-public class EVLocationServices: BaseService {
+
+class EVLocationServices: BaseService {
     
     static let shareInstance = EVLocationServices()
     

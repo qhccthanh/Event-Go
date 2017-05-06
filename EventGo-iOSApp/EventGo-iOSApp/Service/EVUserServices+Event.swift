@@ -17,8 +17,8 @@ extension EVUserServices {
     func getAllEvent() -> Observable<JSON> {
         
         return Observable.create() {
-            obser in
-            
+            sub in
+            _ = EVReactNetwork.ev_request(with: .get, header: self.headers, urlString: "", params: nil)
             return Disposables.create {
                 
             }

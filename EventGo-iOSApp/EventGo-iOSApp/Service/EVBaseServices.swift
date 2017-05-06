@@ -10,19 +10,44 @@ import SwiftyJSON
 
 open class BaseService {
     
-    internal let baseURL = EVConstant.isDebug ? "http://localhost:3000/api/v1.0/" : "https://evgo.herokuapp.com/api/v1.0/"
+    public let baseURL = EVConstant.isDebug ? "http://localhost:3000/api/v1.0/" : "https://evgo.herokuapp.com/api/v1.0/"
     
-    internal var subUrl : String {
+    public var subUrl : String {
         get {
             return ""
         }
     }
-    internal var path : String {
+    public var path : String {
         get {
             return baseURL.appending(subUrl)
         }
     }
-    internal var headers : [String : String] {
+    
+    public var headers : [String : String] {
+        get {
+            return [
+                "Content-Type": "application/json",
+                "withCredentials": "true"
+            ]
+        }
+        
+    }
+    
+    static public let baseURL = EVConstant.isDebug ? "http://localhost:3000/api/v1.0/" : "https://evgo.herokuapp.com/api/v1.0/"
+    
+    class public var subUrl : String {
+        get {
+            return ""
+        }
+    }
+    
+    static public var path : String {
+        get {
+            return baseURL.appending(subUrl)
+        }
+    }
+    
+    static public var headers : [String : String] {
         get {
             return [
                 "Content-Type": "application/json",

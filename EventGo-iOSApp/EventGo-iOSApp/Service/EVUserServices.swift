@@ -14,18 +14,18 @@ import SwiftyJSON
 
 public class EVUserServices: BaseService {
     
-    static let shareInstance = EVUserServices()
-    
-    override var subUrl: String{
-        return "users"
+    override class public var subUrl : String {
+        get {
+            return "users"
+        }
     }
     
-    func signOut() -> Observable<JSON> {
+    class func signOut() -> Observable<JSON> {
         let url = path + "/signOut"
         return EVReactNetwork.ev_request(with: .post, header: self.headers, urlString: url, params: nil)
     }
         
-    func updateUserInfo(with params: [String: Any]) -> Observable<EVUpdateResult> {
+    class func updateUserInfo(with params: [String: Any]) -> Observable<EVUpdateResult> {
         return Observable.create({ (sub) -> Disposable in
             
             let request = EVReactNetwork.ev_request(with: .put, header: self.headers, urlString: self.path, params: params)
@@ -42,7 +42,7 @@ public class EVUserServices: BaseService {
         })
     }
     
-    func authorizedUser() -> Observable<EVCheckUserEnumType> {
+    class func authorizedUser() -> Observable<EVCheckUserEnumType> {
         let url = path + "/me"
         return Observable.create({ (sub) -> Disposable in
             let request = EVReactNetwork
@@ -60,7 +60,7 @@ public class EVUserServices: BaseService {
         })
     }
     
-    func checkUserData(_ sub: AnyObserver<EVCheckUserEnumType>,data dataJson: JSON) {
+    class func checkUserData(_ sub: AnyObserver<EVCheckUserEnumType>,data dataJson: JSON) {
         if dataJson["code"] != 200 {
             sub.onNext(EVCheckUserEnumType.notLogin)
             return
@@ -74,7 +74,7 @@ public class EVUserServices: BaseService {
         sub.onNext(result)
     }
     
-    func updateDeviceInfo(with params: [String: Any]) -> Observable<EVUpdateResult> {
+    class func updateDeviceInfo(with params: [String: Any]) -> Observable<EVUpdateResult> {
         
         return Observable.create({ (sub) -> Disposable in
             let request = EVReactNetwork.ev_request(with: .put, header: self.headers, urlString: self.path, params: params)
@@ -91,8 +91,7 @@ public class EVUserServices: BaseService {
         })
     }
     
-    
-    func signIn(with params: Dictionary<String, Any>) -> Observable<JSON> {
+    class func signIn(with params: Dictionary<String, Any>) -> Observable<JSON> {
         return EVReactNetwork.ev_request(with: .post, header: self.headers, urlString: self.path, params: params)
     }
 

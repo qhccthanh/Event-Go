@@ -10,9 +10,7 @@ import Foundation
 import UIKit
 
 
-
-
-public class EVSupplierServices: BaseService {
+class EVSupplierServices: BaseService {
     
     static let shareInstance = EVSupplierServices()
     

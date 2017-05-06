@@ -9,14 +9,11 @@
 import Foundation
 import UIKit
 
-
-
-
-public class EVTaskServices: BaseService {
+class EVTaskServices: BaseService {
     
     static let shareInstance = EVTaskServices()
     
-    override var subUrl: String{
+    override var subUrl: String {
         return "events"
     }
     

@@ -15,7 +15,7 @@ public class EVAwardServices: BaseService {
     
     static let shareInstance = EVAwardServices()
     
-    override var subUrl: String{
+    override public var subUrl: String{
         return "awards"
     }
  

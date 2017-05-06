@@ -39,7 +39,7 @@ class EVNotification: Object {
     
     class func fromJson(data: JSON) -> EVNotification {
         
-        var notification = EVNotification()
+        let notification = EVNotification()
         notification.notification_id = data["notification_id"].stringValue
         notification.supplier_id = data["supplier_id"].stringValue
         notification.title = data["title"].stringValue

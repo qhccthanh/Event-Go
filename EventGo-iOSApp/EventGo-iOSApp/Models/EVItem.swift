@@ -38,7 +38,7 @@ class EVItem: Object {
     
     class func fromJson(data: JSON) -> EVItem {
         
-        var item = EVItem()
+        let item = EVItem()
         item.item_id = data["item_id"].stringValue
         item.supplier_id = data["supplier_id"].stringValue
         item.name = data["name"].stringValue

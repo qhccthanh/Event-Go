@@ -47,7 +47,6 @@ extension EVReactNetwork {
             let request = EVReactNetwork.request(with: method.toNetworkMethod(), header: header ?? [:], urlString: urlString, params: params ?? [:]).subscribeNext({
                 (result) in
                 
-                log.info("Result: \(result) from: \(urlString)")
                 guard let result = result else {
                     let error = "Result API nil".toError()
                     log.error(error)
@@ -57,6 +56,7 @@ extension EVReactNetwork {
                 
                 let dataJson = JSON(result)
                 subs.onNext(dataJson)
+                log.info("Result: \(dataJson) from: \(urlString)")
             }, error: { (error) in
                 log.error("Error: \(error ?? "Error not found".toError()) from: \(urlString)")
                 subs.onError(error ?? NSError.defaultAPIError())

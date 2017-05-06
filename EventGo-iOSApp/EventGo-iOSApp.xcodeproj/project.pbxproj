@@ -41,11 +41,6 @@
 		D0C058621EAF578800F3E11F /* EVEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D080D8E71E9BDDBD00BE77AC /* EVEnum.swift */; };
 		D0C058631EAF578800F3E11F /* EVPopOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D080D8E51E9BDD0F00BE77AC /* EVPopOverView.swift */; };
 		D0C058641EAF578800F3E11F /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACB61E82D9DE00D663A6 /* Popover.swift */; };
-		D0C058651EAF578800F3E11F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACA81E82D9A200D663A6 /* Toast.swift */; };
-		D0C058661EAF578800F3E11F /* ToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACA91E82D9A200D663A6 /* ToastCenter.swift */; };
-		D0C058671EAF578800F3E11F /* Toaster.h in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACAA1E82D9A200D663A6 /* Toaster.h */; };
-		D0C058681EAF578800F3E11F /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACAB1E82D9A200D663A6 /* ToastView.swift */; };
-		D0C058691EAF578800F3E11F /* ToastWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0ACAC1E82D9A200D663A6 /* ToastWindow.swift */; };
 		D0C0586A1EAF578800F3E11F /* EVListEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D91F1EABBA44006820A9 /* EVListEventsViewController.swift */; };
 		D0C0586B1EAF578800F3E11F /* EVListEventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D9211EABBA64006820A9 /* EVListEventsCollectionViewCell.swift */; };
 		D0C0586C1EAF578800F3E11F /* EVStoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAA6901E82E8A50084FC51 /* EVStoreCollectionViewCell.swift */; };
@@ -94,6 +89,7 @@
 		F45F189D1EBD8B7F00B38828 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F18901EBD8B7F00B38828 /* UIView+Extension.swift */; };
 		F45F189E1EBD8B7F00B38828 /* UIViewController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F18911EBD8B7F00B38828 /* UIViewController+Action.swift */; };
 		F45F189F1EBD8B7F00B38828 /* VersionSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F18921EBD8B7F00B38828 /* VersionSupport.swift */; };
+		F45F18A41EBD903D00B38828 /* EVToaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F18A31EBD903D00B38828 /* EVToaster.swift */; };
 		F4AB21231EB266BB0047CED0 /* Event_Go_App_Client.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = F4AB21221EB266BB0047CED0 /* Event_Go_App_Client.mobileprovision */; };
 		F4AD8ADA1E7D3C310081F2F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AD8AD91E7D3C310081F2F3 /* Assets.xcassets */; };
 		F4AD8ADD1E7D3C310081F2F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AD8ADB1E7D3C310081F2F3 /* LaunchScreen.storyboard */; };
@@ -224,6 +220,7 @@
 		F45F18901EBD8B7F00B38828 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		F45F18911EBD8B7F00B38828 /* UIViewController+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Action.swift"; sourceTree = "<group>"; };
 		F45F18921EBD8B7F00B38828 /* VersionSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionSupport.swift; sourceTree = "<group>"; };
+		F45F18A31EBD903D00B38828 /* EVToaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVToaster.swift; sourceTree = "<group>"; };
 		F4AB21221EB266BB0047CED0 /* Event_Go_App_Client.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = Event_Go_App_Client.mobileprovision; sourceTree = "<group>"; };
 		F4AD8ACF1E7D3C310081F2F3 /* EventGo-iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EventGo-iOSApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AD8AD91E7D3C310081F2F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -269,11 +266,6 @@
 		F4E979F01E80509500DF2E89 /* EVLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVLocation.swift; sourceTree = "<group>"; };
 		F4E979F21E80509E00DF2E89 /* EVItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVItem.swift; sourceTree = "<group>"; };
 		F4F0ACA01E82D5C800D663A6 /* EVAppFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVAppFactory.swift; sourceTree = "<group>"; };
-		F4F0ACA81E82D9A200D663A6 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
-		F4F0ACA91E82D9A200D663A6 /* ToastCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastCenter.swift; sourceTree = "<group>"; };
-		F4F0ACAA1E82D9A200D663A6 /* Toaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toaster.h; sourceTree = "<group>"; };
-		F4F0ACAB1E82D9A200D663A6 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
-		F4F0ACAC1E82D9A200D663A6 /* ToastWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastWindow.swift; sourceTree = "<group>"; };
 		F4F0ACB61E82D9DE00D663A6 /* Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
 		F4F0ACB81E82D9F300D663A6 /* DashLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashLine.swift; sourceTree = "<group>"; };
 		F4F0ACDF1E82DA1B00D663A6 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
@@ -430,6 +422,7 @@
 				F45F18901EBD8B7F00B38828 /* UIView+Extension.swift */,
 				F45F18911EBD8B7F00B38828 /* UIViewController+Action.swift */,
 				F45F18921EBD8B7F00B38828 /* VersionSupport.swift */,
+				F45F18A31EBD903D00B38828 /* EVToaster.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -648,21 +641,8 @@
 				F4F0ACDF1E82DA1B00D663A6 /* LineView.swift */,
 				D080D8E71E9BDDBD00BE77AC /* EVEnum.swift */,
 				F4F0ACB51E82D9DE00D663A6 /* Popover */,
-				F4F0ACA71E82D9A200D663A6 /* Toaster */,
 			);
 			name = Controls;
-			sourceTree = "<group>";
-		};
-		F4F0ACA71E82D9A200D663A6 /* Toaster */ = {
-			isa = PBXGroup;
-			children = (
-				F4F0ACA81E82D9A200D663A6 /* Toast.swift */,
-				F4F0ACA91E82D9A200D663A6 /* ToastCenter.swift */,
-				F4F0ACAA1E82D9A200D663A6 /* Toaster.h */,
-				F4F0ACAB1E82D9A200D663A6 /* ToastView.swift */,
-				F4F0ACAC1E82D9A200D663A6 /* ToastWindow.swift */,
-			);
-			path = Toaster;
 			sourceTree = "<group>";
 		};
 		F4F0ACB51E82D9DE00D663A6 /* Popover */ = {
@@ -956,15 +936,10 @@
 				D0C058621EAF578800F3E11F /* EVEnum.swift in Sources */,
 				D0C058631EAF578800F3E11F /* EVPopOverView.swift in Sources */,
 				D0C058641EAF578800F3E11F /* Popover.swift in Sources */,
-				D0C058651EAF578800F3E11F /* Toast.swift in Sources */,
 				F45F18981EBD8B7F00B38828 /* MBProgressHUD+Extension.swift in Sources */,
-				D0C058661EAF578800F3E11F /* ToastCenter.swift in Sources */,
-				D0C058671EAF578800F3E11F /* Toaster.h in Sources */,
-				D0C058681EAF578800F3E11F /* ToastView.swift in Sources */,
 				D02059ED1EB4FD52004EA7D3 /* EVListAwardsViewController.swift in Sources */,
 				F45F189A1EBD8B7F00B38828 /* String+Extension.swift in Sources */,
 				F45F189F1EBD8B7F00B38828 /* VersionSupport.swift in Sources */,
-				D0C058691EAF578800F3E11F /* ToastWindow.swift in Sources */,
 				D0C0586A1EAF578800F3E11F /* EVListEventsViewController.swift in Sources */,
 				D0C0586B1EAF578800F3E11F /* EVListEventsCollectionViewCell.swift in Sources */,
 				D0C0586C1EAF578800F3E11F /* EVStoreCollectionViewCell.swift in Sources */,
@@ -984,6 +959,7 @@
 				F45F189B1EBD8B7F00B38828 /* UIAlertController+Extension.swift in Sources */,
 				D0C058761EAF578800F3E11F /* EVMainBottom.swift in Sources */,
 				F45F18991EBD8B7F00B38828 /* NSError+Extension.swift in Sources */,
+				F45F18A41EBD903D00B38828 /* EVToaster.swift in Sources */,
 				D0C058771EAF578800F3E11F /* EVInfoTaskViewController.swift in Sources */,
 				D0C058791EAF578800F3E11F /* RealmManager.swift in Sources */,
 				D0C0587A1EAF578800F3E11F /* Realm+Extension.swift in Sources */,

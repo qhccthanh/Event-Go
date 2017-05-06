@@ -47,7 +47,7 @@ extension EVListAwardsViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? EVStoreCollectionViewCell {
-            let itemEventCartoon = CartoonModel(nameEvent: "Circle K", nameImageEvent: "iconGoc", numberStepEvent: 3)
+            _ = CartoonModel(nameEvent: "Circle K", nameImageEvent: "iconGoc", numberStepEvent: 3)
 //            cell.bindingUI(itemAward: itemEventCartoon)
             return cell
         }

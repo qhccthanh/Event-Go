@@ -160,7 +160,7 @@ class CartoonModel: NSObject, ItemEventProtocol {
     }
     
     func subTitleItem() -> String? {
-        return numberStep as? String ?? "0"
+        return "\(numberStep)"
     }
 }
 

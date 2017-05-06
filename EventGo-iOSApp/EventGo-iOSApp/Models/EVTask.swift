@@ -35,7 +35,7 @@ class EVTask: Object {
     
     class func fromJson(data: JSON) -> EVTask {
         
-        var task = EVTask()
+        let task = EVTask()
         task.task_id = data["task_id"].stringValue
         task.supplier_id = data["supplier_id"].stringValue
         task.name = data["name"].stringValue
@@ -47,10 +47,10 @@ class EVTask: Object {
         task.start_time = data["start_time"].doubleValue
         task.end_time = data["end_time"].doubleValue
         task.created_date = data["created_date"].doubleValue
-        task.location_info = data["location_info"].dictionaryObject as? NSDictionary
+        task.location_info = data["location_info"].dictionaryObject as NSDictionary?
         task.priority = data["priority"].doubleValue
         task.limit_user = data["limit_user"].doubleValue
-        task.rule = data["rule"].dictionaryObject as? NSDictionary
+        task.rule = data["rule"].dictionaryObject as NSDictionary?
         task.status = data["status"].stringValue
         
         return task

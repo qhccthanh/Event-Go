@@ -50,6 +50,7 @@
         _locationManager.delegate = self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
         _locationManager.distanceFilter = 1;
+        [_locationManager startUpdatingLocation];
     }
     return _locationManager;
 }
@@ -103,12 +104,14 @@
 }
 
 - (RACSignal *)didUpdateLocation {
+    
     [self stopUpdating];
+    [_locationManager startUpdatingLocation];
+    
     if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
         [self.locationManager requestWhenInUseAuthorization];
     }
-        
-    [self.locationManager startUpdatingLocation];
+    
     @weakify(self);
     return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         @strongify(self);
@@ -122,6 +125,11 @@
                 [subscriber sendError:NULL];
             }
         };
+        
+        // GET STORAGE LOCATION
+        CLLocationCoordinate2D coordinate = [self getCoordinate];
+        CLLocation *locationTemp = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+        [subscriber sendNext: locationTemp];
         
         return [RACDisposable disposableWithBlock:^{
             [self.locationManager stopUpdatingLocation];

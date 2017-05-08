@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <ReactiveObjc/ReactiveObjc.h>
 
-#define UPDATE_LOCATION_TIME 300.0f
+#define UPDATE_LOCATION_TIME 2.0f
 
 typedef void(^LocationCompletionBlock)(NSArray<CLLocation *>* locations);
 
@@ -22,8 +22,9 @@ typedef void(^LocationCompletionBlock)(NSArray<CLLocation *>* locations);
 
 - (void)stopUpdating;
 
+- (void)startUpdating;
+
 - (void)setConfigureLocationManager:(CLLocationManager *)manager;
 
-- (RACSignal *)didUpdateLocation;
 
 @end

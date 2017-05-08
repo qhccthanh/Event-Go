@@ -8,6 +8,7 @@
 
 import Foundation
 import GoogleMaps
+
 class EVMarker: GMSMarker {
     
     var id: String!

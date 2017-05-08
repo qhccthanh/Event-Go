@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleMaps
+import RxSwift
+import RxCocoa
 
 class EVMainGameController: EVViewController {
 
@@ -19,57 +21,59 @@ class EVMainGameController: EVViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         mainMapView.delegate = self
         setupView()
         
         mainBottonModel = EVMainBottomModel(gameControler: self)
         buttonHomeView = EVHomeBottom(viewController: self)
         
-        updateInfo()
+        setupLocationUpdating()
+        EVAppFactory.users.updateDeviceInfo()
     }
     
-    func setupView(){
-        let camera = GMSCameraPosition.camera(withLatitude: 10.756927 , longitude: 106.684670, zoom: 12.0)
+    func setupLocationUpdating() {
         
-//        let loaction = CLLocationCoordinate2D(latitude: 10.756927, longitude: 106.684670)
-        let loaction = CLLocationCoordinate2D(latitude: 10.761369, longitude: 106.6801278)
-        EVMakerManager.shareManager.mapView = mainMapView
-        let locationSignal = EVClientService.shareInstance.getCurrentLocation(location: loaction)
-        locationSignal.subscribeNext({ (listEvent) in
-            let listLocation = listEvent as! [EVLocation]
-            dispatch_main_queue_safe {
-                for location in listLocation {
+        EVLocationManager.share()
+            .didUpdateLocation()
+            .take(until: self.rac_willDeallocSignal())
+            .subscribeNext({ (object) in
+                if let object = object as? CLLocation {
                     
+                    self.loadLocations(coordinate: object.coordinate)
+                    dispatch_main_queue_safe {
+                        GMSCameraPosition.camera(withTarget: object.coordinate, zoom: 14.0)
+                    }
+                }
+            }, error: { (error) in
+                
+            })
+
+    }
+    
+    func setupView() {
+        let coordinate = CLLocationCoordinate2D(latitude: 10.756927, longitude: 106.684670)
+        let camera = GMSCameraPosition.camera(withTarget: coordinate, zoom: 14.0)
+        EVMakerManager.shareManager.mapView = mainMapView
+        self.mainMapView.camera = camera
+    }
+    
+    func loadLocations(coordinate: CLLocationCoordinate2D) {
+        _ = EVAppFactory.client
+            .loadLocations(coordinate: coordinate)
+            .observeOn(MainScheduler.instance)
+            .takeUntil(self.rx.deallocating)
+            .subscribe(onNext: { (locations) in
+                for location in locations {
                     if let infoLocation = location.location_info {
                         let temp = EVMarker(id: location.location_id , location: infoLocation.coordinate, title: location.name!, iconName: EVImage.ic_event.name())
                         EVMakerManager.shareManager.addMarker(temp)
                         self.listMarker.append(temp)
                     }
                 }
-            }
-          
-        }) { (error) in
-            log.error(error)
-        }
-
-        
-        self.mainMapView.camera = camera
-    }
-    
-    func updateInfo() {
-        
-        let updateLocationSignal = EVLocationManager.share().didUpdateLocation()
-        updateLocationSignal?.subscribeNext({ (object) in
-            if let object = object as? CLLocation {
-                dispatch_main_queue_safe {
-                    GMSCameraPosition.camera(withLatitude: object.coordinate.latitude , longitude: object.coordinate.longitude, zoom: 13.0)
-                }
-            }
-        }, error: { (error) in
-            
-        })
-        
-        EVAppFactory.users.updateDeviceInfo()
+            }, onError: { (error) in
+                
+            })
     }
     
     func deletetMark() {
@@ -81,16 +85,9 @@ class EVMainGameController: EVViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
 }
 
 extension EVMainGameController: GMSMapViewDelegate {
-    
     
         func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
        

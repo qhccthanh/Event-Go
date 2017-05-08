@@ -23,10 +23,10 @@ class EVTask: Object {
     dynamic var start_time: Double = 0
     dynamic var end_time: Double = 0
     dynamic var created_date: Double = 0
-    dynamic var location_info: NSDictionary?
+//    dynamic var location_info: NSDictionary?
     dynamic var priority: Double = 1
     dynamic var limit_user: Double = 0
-    dynamic var rule: NSDictionary?
+//    dynamic var rule: NSDictionary?
     dynamic var status: String!
     
     override public static func primaryKey() -> String? {
@@ -47,10 +47,10 @@ class EVTask: Object {
         task.start_time = data["start_time"].doubleValue
         task.end_time = data["end_time"].doubleValue
         task.created_date = data["created_date"].doubleValue
-        task.location_info = data["location_info"].dictionaryObject as NSDictionary?
+//        task.location_info = data["location_info"].dictionaryObject as NSDictionary?
         task.priority = data["priority"].doubleValue
         task.limit_user = data["limit_user"].doubleValue
-        task.rule = data["rule"].dictionaryObject as NSDictionary?
+//        task.rule = data["rule"].dictionaryObject as NSDictionary?
         task.status = data["status"].stringValue
         
         return task

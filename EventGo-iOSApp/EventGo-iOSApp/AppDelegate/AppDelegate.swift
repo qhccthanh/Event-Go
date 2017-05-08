@@ -43,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
         
+        print(evRealm().isEmpty)
+        
         return true
     }
 

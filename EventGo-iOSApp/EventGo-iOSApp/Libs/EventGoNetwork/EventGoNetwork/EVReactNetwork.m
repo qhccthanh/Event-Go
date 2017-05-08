@@ -187,29 +187,7 @@
 }
 
 + (NSInteger)eventIdFromUrlString:(NSURL *)url {
-//    NSString *urlString = url.relativeString;
-    
-//    if ([urlString hasSuffix:@"/esale/zalopayshop/v4/getshopitemlist"]) {
-//        return EventAction_esale_api_v4_getshopitemlist;
-//    }
-//    if ([urlString hasSuffix:@"/esale/zalopayshop/v4/createorder"]) {
-//        return EventAction_esale_api_v4_createorder;
-//    }
-//    if ([urlString hasSuffix:@"/esale/zalopayshop/v4/gethistory"]) {
-//        return EventAction_esale_api_v4_gethistory;
-//    }
-//    if ([urlString hasSuffix:@"/esale/zalopayshop/v4/getresult"]) {
-//        return EventAction_esale_api_v4_getresult;
-//    }
-//    if ([urlString hasSuffix:@"/esale/zalopayshop/v4/carddetail"]) {
-//        return EventAction_esale_api_v4_carddetail;
-//    }
-//    if ([urlString hasSuffix:@"/esale/zalopayshop/v4/getproviders"]) {
-//        return EventAction_esale_api_v4_getproviders;
-//    }
-//    if ([urlString hasSuffix:@"/esale/zalopayshop/v4/querybill"]) {
-//        return EventAction_esale_api_v4_querybill;
-//    }
+
     return -1;
 }
 

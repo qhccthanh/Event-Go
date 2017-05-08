@@ -7,68 +7,65 @@
 //
 
 import Foundation
+
 import SwiftyJSON
+import RxSwift
 
 public class EVClientService: BaseService {
     
-    static let shareInstance = EVClientService()
-    
-    override public var subUrl: String {
+    override class public var subUrl: String {
         return "client"
     }
     
-    
-    func getAllEventsForClient()-> RACSignal<AnyObject> {
+    static func getAllEventsForClient() -> Observable<[EVEvent]> {
         let url = path + "/events"
-        
-        return RACSignal.createSignal({ (sub) -> RACDisposable? in
+        return Observable.create({ (sub) -> Disposable in
+            let request = EVReactNetwork.ev_request(with: .get, header: self.headers, urlString: url, params: nil)
+                            .subscribe(onNext: { (dataJson) in
+                                if dataJson["code"] != 200 {
+                                    let error = "Code khong phai 200 error: \(dataJson["error"].stringValue)".toError()
+                                    sub.onError(error)
+                                    log.error(error)
+                                    return
+                                }
+                                
+                                let events: [EVEvent] = EVEvent.listFromJson(data: dataJson)
+                                sub.onNext(events)
+                                log.info("Load all events: \(events)")
+                            }, onError: { (error) in
+                                sub.onError(error)
+                            })
             
-            EVReactNetwork.request(with: EVReactNetworkMethod_GET, header: self.headers, urlString: url, params: nil).subscribeNext({ (object) in
-                if let object = object as? NSDictionary {
-                  let dataJson = JSON(object)
+            return Disposables.create {
+                request.dispose()
+            }
+        })
+    }
+    
+    static func getStores(in coordinate: CLLocationCoordinate2D) -> Observable<[EVLocation]> {
+        
+        let url = path + "/locations?current_location_lat=\(coordinate.latitude)&current_location_lng=\(coordinate.longitude)"
+        
+        return Observable.create({ (sub) -> Disposable in
+            
+            let request = EVReactNetwork.ev_request(with: .get, header: self.headers, urlString: url, params: nil)
+                .subscribe(onNext: { (dataJson) in
                     if dataJson["code"] != 200 {
-                        sub.sendError("Code khong phai 200".toError())
-                    } else {
-                        let listEvents: [EVEvent] = EVEvent.listFromJson(data: dataJson)
-                        sub.sendNext(listEvents)
+                        let error = "Code khong phai 200 error: \(dataJson["error"].stringValue)".toError()
+                        sub.onError(error)
+                        log.error(error)
+                        return
                     }
-                  
-                } else {
-                  sub.sendError("Không phải kiểu NSDictionary".toError())
-                }
-              
-              
-            }, error: { (error) in
-                sub.sendError(error)
-            })
-            return nil
-        })
-    }
-    
-    func getCurrentLocation(location: CLLocationCoordinate2D) -> RACSignal<AnyObject> {
-        
-        let url = path + "/locations?current_location_lat=\(location.latitude)&current_location_lng=\(location.longitude)"
-        
-        return RACSignal.createSignal({ (sub) -> RACDisposable? in
-            EVReactNetwork.request(with: EVReactNetworkMethod_GET, header: self.headers, urlString: url, params: nil).subscribeNext({ (responseObject) in
-                if let responseObject = responseObject as? NSDictionary {
-                    let dataJson = JSON(responseObject)
-                    if dataJson["code"] == 200 {
-                        let listLocation: [EVLocation] = EVLocation.listFromJson(data: dataJson)
-                        sub.sendNext(listLocation)
-                    } else {
-                        sub.sendError("Code khong phai 200".toError())
-                    }
-                } else {
-                    // lỗi k parse dictionary
-                    sub.sendError("Không parse được response sang NSDictionaray".toError())
-                }
-            }, error: { (error) in
-                sub.sendError(error)
-            })
+                    
+                    let listLocation: [EVLocation] = EVLocation.listFromJson(data: dataJson)
+                    sub.onNext(listLocation)
+                }, onError: { (error) in
+                    sub.onError(error)
+                })
             
-            return nil
+            return Disposables.create {
+                request.dispose()
+            }
         })
     }
-    
 }

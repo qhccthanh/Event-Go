@@ -16,19 +16,16 @@ class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let eventSignal = EVClientService.shareInstance.getAllEventsForClient()
-        eventSignal.subscribeNext({ (listEvents) in
-            self.listEvents = listEvents as! [EVEvent]
-            dispatch_main_queue_safe {
-                self.collectionView?.reloadData()
-            }
-        }) { (error) in
-            log.error(error)
-        }
         
-    
-
+        _ = EVAppFactory.client.loadEvents()
+            .subscribe(onNext: { (events) in
+                self.listEvents = events
+                dispatch_main_queue_safe {
+                    self.collectionView?.reloadData()
+                }
+            }, onError: { (error) in
+                // xu ly loi thong bao ...
+            })
     }
 
     override func didReceiveMemoryWarning() {

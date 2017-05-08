@@ -11,10 +11,11 @@ import Foundation
 public class EVAppFactory: NSObject {
     
     static var shareInstance: EVAppFactory = EVAppFactory()
+    
     static var users: EVAppFactoryUsers = EVAppFactoryUsers()
+    static var client: EVAppFactoryClient = EVAppFactoryClient()
     
     public var currentUser: EVUser?
-    public var currentEvents: [EVEvent]?
     
     private override init() {
         super.init()

@@ -9,18 +9,21 @@
 import Foundation
 
 protocol EVEventProtocol {
+    
     func nameEvent() -> String!
     func avatarEvent() -> String!
     func descriptionEvent() -> String
 }
 
 extension EVEventProtocol {
+    
     func descriptionEvent() -> String {
         return ""
     }
 }
 
-class EVAwardModel: EVEventProtocol{
+class EVAwardModel: EVEventProtocol {
+    
     var nameAward: String!
     var avatarAward: String!
     
@@ -40,6 +43,7 @@ class EVAwardModel: EVEventProtocol{
 }
 
 class EVEventModel: EVEventProtocol {
+    
     var name: String!
     var imageURL: String!
     var description: String!

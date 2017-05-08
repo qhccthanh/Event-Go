@@ -51,7 +51,7 @@ public class EVEvent: Object {
     
     class func fromJson(data: JSON) -> EVEvent {
         
-        var event = EVEvent()
+        let event = EVEvent()
         event.event_id = data["event_id"].stringValue
         event.supplier_id = data["supplier_id"].stringValue
         event.name = data["name"].stringValue

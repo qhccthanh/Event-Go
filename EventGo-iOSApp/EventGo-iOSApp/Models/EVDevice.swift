@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+
 public class EVDevice {
     
     var deviceToken: String = ""

@@ -16,7 +16,7 @@ class EVSupplier: Object {
     dynamic var name: String!
     dynamic var image_url: String?
     dynamic var level: Int = 1
-    dynamic var company_info: NSDictionary?
+//    dynamic var company_info: NSDictionary?
     dynamic var status: String!
     var tags: List<EVString>?
 
@@ -44,7 +44,7 @@ class EVSupplier: Object {
         supplier.name = data["name"].stringValue
         supplier.image_url = data["image_urL"].stringValue
         supplier.level = data["level"].intValue
-        supplier.company_info = data["company_info"].dictionaryObject as NSDictionary?
+//        supplier.company_info = data["company_info"].dictionaryObject as NSDictionary?
         supplier.status = data["status"].stringValue
         
         return supplier

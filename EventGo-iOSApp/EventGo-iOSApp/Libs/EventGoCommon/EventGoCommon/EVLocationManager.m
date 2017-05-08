@@ -56,8 +56,7 @@
 
 - (void)updateLocation {
     @weakify(self);
-    [[[self getCurrentPositionInfo]
-      take:1]
+    [[self getCurrentPositionInfo]
      subscribeNext:^(NSArray<CLLocation *> *locations) {
          @strongify(self);
          if (locations && locations.lastObject) {
@@ -79,12 +78,8 @@
 
             [subscriber sendError:NULL];
         } else {
-            @weakify(self);
+            
             self.requestLocationCallback = ^(NSError *error,NSArray<CLLocation *> *locations) {
-                @strongify(self);
-                if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0")) {
-                    [self.locationManager stopUpdatingLocation];
-                }
                 
                 if (error) {
                     [subscriber sendError:error];
@@ -93,13 +88,9 @@
                 } else {
                     [subscriber sendError:NULL];
                 }
-                self.requestLocationCallback = NULL;
             };
-            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0")) {
-                [self.locationManager requestLocation];
-            } else {
-                [self.locationManager startUpdatingLocation];
-            }
+            
+            [self.locationManager startUpdatingLocation];
         }
         return NULL;
     }];
@@ -112,6 +103,7 @@
 }
 
 - (RACSignal *)didUpdateLocation {
+    [self stopUpdating];
     if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
         [self.locationManager requestWhenInUseAuthorization];
     }
@@ -121,7 +113,7 @@
     return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         @strongify(self);
         
-        self.updateLocationCallback = ^(NSError *error, NSArray<CLLocation *> *locations){
+        self.updateLocationCallback = ^(NSError *error, NSArray<CLLocation *> *locations) {
             if (error) {
                 [subscriber sendError:error];
             } else if (locations) {

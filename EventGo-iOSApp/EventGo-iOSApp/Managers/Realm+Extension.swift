@@ -11,59 +11,28 @@ import RealmSwift
 
 extension Realm {
     
-    func write(_ object: Object, update: Bool = true) -> RACSignal<AnyObject> {
-        
-        return RACSignal.createSignal { (subscribe) -> RACDisposable? in
-            
+    func ev_write(_ object: Object, update: Bool = true)  {
+        dispatch_main_queue_safe {
             do {
                 try self.write {
                     self.add(object, update: update)
-                    subscribe.sendNext(object)
                 }
             } catch {
-                subscribe.sendError(nil)
+                log.error("Write object fail")
             }
-            
-            return nil
         }
     }
     
-    func write(_ object: Object, update: Bool = true)  {
-        
-        do {
-            try self.write {
-                self.add(object, update: update)
-            }
-        } catch {
-            log.error("Write object fail")
-        }
-    }
     
-    func write(_ objects: [Object], update: Bool = true) -> RACSignal<AnyObject> {
-        
-        return RACSignal.createSignal { (subscribe) -> RACDisposable? in
-            
+    func ev_write(_ objects: [Object], update: Bool = true)  {
+        dispatch_main_queue_safe {
             do {
                 try self.write {
                     self.add(objects, update: update)
-                    subscribe.sendNext(objects)
                 }
             } catch {
-                subscribe.sendError(nil)
+                print("Write object fail")
             }
-            
-            return nil
-        }
-    }
-    
-    func write(_ objects: [Object], update: Bool = true)  {
-        
-        do {
-            try self.write {
-                self.add(objects, update: update)
-            }
-        } catch {
-            print("Write object fail")
         }
     }
     
@@ -76,10 +45,11 @@ extension Realm {
     func read<T: Object>() -> [T] {
         
         var arrayT = [T]()
-        self.objects(T.self).forEach { (value) in
-            arrayT.append(value)
+        dispatch_main_queue_safe {
+            self.objects(T.self).forEach { (value) in
+                arrayT.append(value)
+            }
         }
-        
         return arrayT
     }
 }

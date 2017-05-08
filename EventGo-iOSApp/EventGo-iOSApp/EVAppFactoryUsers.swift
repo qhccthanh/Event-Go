@@ -64,17 +64,16 @@ public struct EVAppFactoryUsers {
                 case .login:
                     EVController.mainGame.showController(inController)
                     break
-                    
                 case .notLogin:
                     EVController.logIn.showController(inController)
                     break
-                    
-                default:
+                case .updatedInfo:
                     EVController.userInfo.showController(inController)
                     break
                 }
             }, onError: { (error) in
                 // toast lên hay alert lên
+                EVController.logIn.showController(inController)
             })
     }
     

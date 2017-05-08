@@ -12,14 +12,38 @@ import FBSDKLoginKit
 import GoogleSignIn
 import SwiftyJSON
 import RxSwift
+import Pulsator
 
 class EVLogInViewController: EVViewController {
 
     @IBOutlet weak var avatarAppView: UIView!
-    var userInfo: EVUser?
+    @IBOutlet weak var pulseLogoView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.avatarAppView.rotate360Degrees()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        _ = Observable<Int>
+            .interval(0.6, scheduler: MainScheduler.instance)
+            .take(5)
+            .subscribe { [weak self] (_) in
+                self?.setupPulsator()
+        }
+    }
+    
+    func setupPulsator() {
+        let pulsator = Pulsator()
+        pulsator.animationDuration = 3
+        pulsator.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7).cgColor
+        pulsator.radius = pulseLogoView.getSize().width
+        
+        pulseLogoView.layer.addSublayer(pulsator)
+        pulsator.start()
     }
     
     @IBAction func loginFBAction(_ sender: Any) {
@@ -80,7 +104,7 @@ extension UIView {
         rotateAnimation.toValue = CGFloat(Double.pi * 2)
         rotateAnimation.isRemovedOnCompletion = false
         rotateAnimation.duration = duration
-        rotateAnimation.repeatCount=Float.infinity
+        rotateAnimation.repeatCount = Float.infinity
         self.layer.add(rotateAnimation, forKey: nil)
     }
 }

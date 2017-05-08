@@ -23,6 +23,9 @@
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
         </array>
+        <array key="SFUIText-Medium.ttf">
+            <string>SFUIText-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Main Game Controller-->
@@ -61,6 +64,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTF-Cp-6TX">
                                 <rect key="frame" x="87" y="133.5" width="200" height="200"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0UI-ww-6CF">
+                                        <rect key="frame" x="100" y="100" width="300" height="300"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="0UI-ww-6CF" secondAttribute="height" multiplier="1:1" id="bTo-do-T5n"/>
+                                        </constraints>
+                                    </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventGo-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="knJ-si-3Sn">
                                         <rect key="frame" x="10" y="10" width="180" height="180"/>
                                     </imageView>
@@ -69,10 +79,13 @@
                                 <constraints>
                                     <constraint firstItem="knJ-si-3Sn" firstAttribute="top" secondItem="mTF-Cp-6TX" secondAttribute="top" constant="10" id="0m7-Fc-wen"/>
                                     <constraint firstAttribute="bottom" secondItem="knJ-si-3Sn" secondAttribute="bottom" constant="10" id="97M-Vw-ixy"/>
+                                    <constraint firstItem="0UI-ww-6CF" firstAttribute="top" secondItem="knJ-si-3Sn" secondAttribute="top" constant="90" id="Iyy-Z0-c5j"/>
+                                    <constraint firstItem="0UI-ww-6CF" firstAttribute="leading" secondItem="knJ-si-3Sn" secondAttribute="leading" constant="90" id="Ofu-CL-UV6"/>
                                     <constraint firstAttribute="width" constant="200" id="SHF-ap-Bk4"/>
                                     <constraint firstAttribute="height" constant="200" id="e68-MH-T5J"/>
                                     <constraint firstItem="knJ-si-3Sn" firstAttribute="leading" secondItem="mTF-Cp-6TX" secondAttribute="leading" constant="10" id="iqj-Vd-fwE"/>
                                     <constraint firstAttribute="trailing" secondItem="knJ-si-3Sn" secondAttribute="trailing" constant="10" id="mye-RZ-ZVZ"/>
+                                    <constraint firstItem="0UI-ww-6CF" firstAttribute="width" secondItem="mTF-Cp-6TX" secondAttribute="width" multiplier="1.5" id="qwP-2t-Zg5"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mr9-3H-whf">
@@ -175,11 +188,12 @@
                     </view>
                     <connections>
                         <outlet property="avatarAppView" destination="mTF-Cp-6TX" id="FhA-5l-EET"/>
+                        <outlet property="pulseLogoView" destination="0UI-ww-6CF" id="r6V-eq-ap6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Six-Us-gDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2578" y="188"/>
+            <point key="canvasLocation" x="-2297" y="54"/>
         </scene>
         <!--Update User Info View Controller-->
         <scene sceneID="Q8E-dN-ifa">
@@ -1787,10 +1801,10 @@
             </objects>
             <point key="canvasLocation" x="2293" y="372"/>
         </scene>
-        <!--Default Controller View Controller-->
+        <!--Default View Controller-->
         <scene sceneID="Q3V-Yu-45J">
             <objects>
-                <viewController storyboardIdentifier="EVDefaultControllerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j6h-zm-Icx" customClass="EVDefaultControllerViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EVDefaultViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j6h-zm-Icx" customClass="EVDefaultViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hab-tL-Vak"/>
                         <viewControllerLayoutGuide type="bottom" id="TMy-k1-Ocb"/>
@@ -1802,6 +1816,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8CU-e2-Zne">
                                 <rect key="frame" x="87" y="133.5" width="200" height="200"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EA0-vP-WyE">
+                                        <rect key="frame" x="100" y="99.5" width="270" height="270"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="EA0-vP-WyE" secondAttribute="height" multiplier="1:1" id="9GN-k2-IXe"/>
+                                        </constraints>
+                                    </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventGo-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="S4Y-Yg-rKS">
                                         <rect key="frame" x="10" y="10" width="180" height="180"/>
                                     </imageView>
@@ -1810,19 +1831,35 @@
                                 <constraints>
                                     <constraint firstItem="S4Y-Yg-rKS" firstAttribute="leading" secondItem="8CU-e2-Zne" secondAttribute="leading" constant="10" id="24X-cY-oyI"/>
                                     <constraint firstItem="S4Y-Yg-rKS" firstAttribute="top" secondItem="8CU-e2-Zne" secondAttribute="top" constant="10" id="2lm-r4-OCw"/>
+                                    <constraint firstItem="EA0-vP-WyE" firstAttribute="top" secondItem="S4Y-Yg-rKS" secondAttribute="top" constant="90" id="8Rh-HM-M5C"/>
                                     <constraint firstAttribute="trailing" secondItem="S4Y-Yg-rKS" secondAttribute="trailing" constant="10" id="Owg-HX-Qgw"/>
+                                    <constraint firstItem="EA0-vP-WyE" firstAttribute="leading" secondItem="S4Y-Yg-rKS" secondAttribute="leading" constant="90" id="XPK-cb-rab"/>
                                     <constraint firstAttribute="width" constant="200" id="oRN-ZC-sb3"/>
+                                    <constraint firstItem="EA0-vP-WyE" firstAttribute="width" secondItem="S4Y-Yg-rKS" secondAttribute="width" multiplier="1.5" id="ruf-z1-b5p"/>
                                     <constraint firstAttribute="height" constant="200" id="ue4-15-4OB"/>
                                     <constraint firstAttribute="bottom" secondItem="S4Y-Yg-rKS" secondAttribute="bottom" constant="10" id="vXC-XQ-qQQ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đang tải..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBL-Ew-Fle">
+                                <rect key="frame" x="138" y="543" width="99" height="24"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.29803921568627451" green="0.68627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="8CU-e2-Zne" secondAttribute="bottom" multiplier="2:1" id="DGE-uV-4Q7"/>
                             <constraint firstItem="8CU-e2-Zne" firstAttribute="centerX" secondItem="Fw7-PN-IOL" secondAttribute="centerX" id="K2k-BW-hQS"/>
+                            <constraint firstItem="CBL-Ew-Fle" firstAttribute="centerX" secondItem="Fw7-PN-IOL" secondAttribute="centerX" id="fGU-Ot-Quw"/>
+                            <constraint firstItem="TMy-k1-Ocb" firstAttribute="top" secondItem="CBL-Ew-Fle" secondAttribute="bottom" constant="100" id="rZw-Uf-W2I"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundLogoView" destination="8CU-e2-Zne" id="FGQ-35-enE"/>
+                        <outlet property="logoImageView" destination="S4Y-Yg-rKS" id="4J6-0c-HSS"/>
+                        <outlet property="pulseLogoView" destination="EA0-vP-WyE" id="wSi-Yk-a9W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uMm-TF-oeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

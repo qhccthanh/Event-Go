@@ -56,7 +56,7 @@ enum EVController: String {
     case viewController = "EVViewController"
     case logIn = "EVLogInViewController"
     case mainGame = "EVMainGameController"
-    case defaultVC = "EVDefaultControllerViewController"
+    case defaultVC = "EVDefaultViewController"
     case userInfo = "EVUpdateUserInfoViewController"
     case popOver = "EVPopOverController"
     case home = "EVHomeViewController"

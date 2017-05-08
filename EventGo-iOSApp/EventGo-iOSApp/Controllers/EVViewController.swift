@@ -32,19 +32,6 @@ class EVViewController: UIViewController {
         // info
     }
     
-    func injected() {
-        
-        self.view.backgroundColor = .yellow
-        
-        if self.presentedViewController == nil {
-            self.present(tViewController(), animated: true, completion: nil)
-        } else {
-            self.presentedViewController?.dismiss(animated: false, completion: { 
-                self.present(tViewController(), animated: true, completion: nil)
-            })
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -56,24 +43,3 @@ class EVViewController: UIViewController {
         log.debug("\(NSStringFromClass(self.classForCoder))")
     }
 }
-
-class tViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.view.backgroundColor = .red
-        setupView()
-    }
-    
-    func setupView() {
-        
-        let tView = UIView(frame: .zero)
-        tView.frame.size = CGSize(width: 50, height: 100)
-        tView.setCenterInView(self.view)
-        tView.backgroundColor = .white
-        
-        self.view.addSubview(tView)
-    }
-}
-

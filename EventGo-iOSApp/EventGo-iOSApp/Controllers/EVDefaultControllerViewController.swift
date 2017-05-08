@@ -7,9 +7,7 @@
 //
 
 import UIKit
-
-import SwiftyJSON
-import RxSwift
+import Pulsator
 
 class EVDefaultControllerViewController: EVViewController {
     
@@ -18,7 +16,10 @@ class EVDefaultControllerViewController: EVViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        EVAppFactory.users.authorizedUser(self)
+        let pulsator = Pulsator()
+        avatarImageView.layer.addSublayer(pulsator)
+        pulsator.start()
+        //EVAppFactory.users.authorizedUser(self)
     }
 
 }

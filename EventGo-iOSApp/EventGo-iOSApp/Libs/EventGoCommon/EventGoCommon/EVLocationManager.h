@@ -1,6 +1,6 @@
 //
-//  ZPLocationManager.h
-//  ZaloPay
+//  EVLocationManager.h
+//  Event Go
 //
 //  Created by thanhqhc on 3/16/17.
 //  Copyright © 2017 VNG Corporation. All rights reserved.
@@ -26,5 +26,6 @@ typedef void(^LocationCompletionBlock)(NSArray<CLLocation *>* locations);
 
 - (void)setConfigureLocationManager:(CLLocationManager *)manager;
 
+- (RACSignal *)didUpdateLocation;
 
 @end

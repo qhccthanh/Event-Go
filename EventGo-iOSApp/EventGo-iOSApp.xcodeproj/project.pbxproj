@@ -71,6 +71,9 @@
 		D0C058871EAF578800F3E11F /* EVMarkerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0521DA91E95245000A9C662 /* EVMarkerManager.swift */; };
 		D0C058881EAF578800F3E11F /* EVProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D90A1EA8B876006820A9 /* EVProtocol.swift */; };
 		D0C058891EAF578800F3E11F /* EVDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C057941EAEDA6B00F3E11F /* EVDevice.swift */; };
+		F40106701EC0CE80003EDE8E /* EVClientUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401066F1EC0CE80003EDE8E /* EVClientUserService.swift */; };
+		F40106721EC0D17C003EDE8E /* EVAppFactoryEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40106711EC0D17C003EDE8E /* EVAppFactoryEvents.swift */; };
+		F40106741EC0D230003EDE8E /* EVAppFactoryTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40106731EC0D230003EDE8E /* EVAppFactoryTasks.swift */; };
 		F4056A151E8245FF00BEC162 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */; };
 		F4056A171E82460600BEC162 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4056A161E82460600BEC162 /* Photos.framework */; };
 		F43D6A291EBE313D007DD1F9 /* EVAppFactoryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43D6A281EBE313D007DD1F9 /* EVAppFactoryClient.swift */; };
@@ -201,6 +204,9 @@
 		D0C057941EAEDA6B00F3E11F /* EVDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVDevice.swift; sourceTree = "<group>"; };
 		D0C0579A1EAF531F00F3E11F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D2970CF6CE73C5F35F28774B /* Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp-EventGo-iOSAppTests/Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F401066F1EC0CE80003EDE8E /* EVClientUserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVClientUserService.swift; sourceTree = "<group>"; };
+		F40106711EC0D17C003EDE8E /* EVAppFactoryEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVAppFactoryEvents.swift; sourceTree = "<group>"; };
+		F40106731EC0D230003EDE8E /* EVAppFactoryTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVAppFactoryTasks.swift; sourceTree = "<group>"; };
 		F4056A0E1E8240FC00BEC162 /* EVLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EVLog.swift; path = ../Managers/EVLog.swift; sourceTree = "<group>"; };
 		F4056A141E8245FF00BEC162 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		F4056A161E82460600BEC162 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -377,6 +383,7 @@
 				D06C5FFA1E8D647200F473CA /* EVLocationServices.swift */,
 				D06C5FFC1E8D64E500F473CA /* EVItemServices.swift */,
 				D06C60011E8D6C1B00F473CA /* EVBaseServices.swift */,
+				F401066F1EC0CE80003EDE8E /* EVClientUserService.swift */,
 				D08721121E9D3A770016D6A5 /* EVClientService.swift */,
 			);
 			path = Service;
@@ -406,7 +413,7 @@
 			children = (
 				F4F0ACA01E82D5C800D663A6 /* EVAppFactory.swift */,
 				F45F18801EBD876D00B38828 /* EVAppFactoryUsers.swift */,
-				F43D6A281EBE313D007DD1F9 /* EVAppFactoryClient.swift */,
+				F4BA6FCE1EC2052F00F2DC1B /* Clients */,
 			);
 			name = AppFactory;
 			sourceTree = "<group>";
@@ -570,6 +577,16 @@
 				D0C057941EAEDA6B00F3E11F /* EVDevice.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F4BA6FCE1EC2052F00F2DC1B /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				F43D6A281EBE313D007DD1F9 /* EVAppFactoryClient.swift */,
+				F40106711EC0D17C003EDE8E /* EVAppFactoryEvents.swift */,
+				F40106731EC0D230003EDE8E /* EVAppFactoryTasks.swift */,
+			);
+			name = Clients;
 			sourceTree = "<group>";
 		};
 		F4CAA68C1E82E8A50084FC51 /* LoginViewController */ = {
@@ -941,6 +958,7 @@
 				D0C0585F1EAF578800F3E11F /* EGoButton.swift in Sources */,
 				D0C058601EAF578800F3E11F /* DashLine.swift in Sources */,
 				D0C058611EAF578800F3E11F /* LineView.swift in Sources */,
+				F40106721EC0D17C003EDE8E /* EVAppFactoryEvents.swift in Sources */,
 				D0C058621EAF578800F3E11F /* EVEnum.swift in Sources */,
 				D0C058631EAF578800F3E11F /* EVPopOverView.swift in Sources */,
 				D0C058641EAF578800F3E11F /* Popover.swift in Sources */,
@@ -974,6 +992,7 @@
 				D0C0587B1EAF578800F3E11F /* EVAuthenticationManager.h in Sources */,
 				D0C0587C1EAF578800F3E11F /* EVAuthenticationManager.m in Sources */,
 				D097FD861EB84353004535F2 /* EVListUpcomingEventsCollectionViewController.swift in Sources */,
+				F40106701EC0CE80003EDE8E /* EVClientUserService.swift in Sources */,
 				D0C0587D1EAF578800F3E11F /* EVUser.swift in Sources */,
 				D0C0587E1EAF578800F3E11F /* EVSupplier.swift in Sources */,
 				D0C0587F1EAF578800F3E11F /* EVEvent.swift in Sources */,
@@ -986,6 +1005,7 @@
 				D0C058851EAF578800F3E11F /* EVUserInfo.swift in Sources */,
 				D0C058861EAF578800F3E11F /* EVButtonModel.swift in Sources */,
 				D0C058871EAF578800F3E11F /* EVMarkerManager.swift in Sources */,
+				F40106741EC0D230003EDE8E /* EVAppFactoryTasks.swift in Sources */,
 				D0C058881EAF578800F3E11F /* EVProtocol.swift in Sources */,
 				D02059EC1EB4FD52004EA7D3 /* EVListAwardsCollectionViewCell.swift in Sources */,
 				D0C058891EAF578800F3E11F /* EVDevice.swift in Sources */,

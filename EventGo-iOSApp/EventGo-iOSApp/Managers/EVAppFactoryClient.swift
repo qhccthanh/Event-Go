@@ -12,29 +12,18 @@ import Foundation
 import RxSwift
 import SwiftyJSON
 
+enum EVResponseMission {
+    case success
+    case failure(String)
+}
+
+
 public struct EVAppFactoryClient {
     
-    func loadEvents() -> Observable<[EVEvent]> {
-        
-        return Observable.create({ (sub) -> Disposable in
-            
-            let events: [EVEvent] = evRealm().read()
-            sub.onNext(events)
-            
-            let request = EVClientService
-                .getAllEventsForClient()
-                .subscribe(onNext: { (events) in
-                    evRealm().ev_write(events, update: true)
-                    sub.onNext(events)
-                }, onError: { (error) in
-                    // xu ly loi thong bao ...
-                })
-            
-            return Disposables.create {
-                request.dispose()
-            }
-        })
-    }
+    var events: EVAppFactoryEvents = EVAppFactoryEvents()
+    var tasks: EVAppFactoryTasks = EVAppFactoryTasks()
+    var awards: EVAppFactoryEvents = EVAppFactoryEvents()
+    var notifications: EVAppFactoryEvents = EVAppFactoryEvents()
     
     func loadLocations(coordinate: CLLocationCoordinate2D) -> Observable<[EVLocation]> {
         
@@ -50,6 +39,31 @@ public struct EVAppFactoryClient {
                     sub.onNext(locations)
                 }, onError: { (error) in
                     // xu ly loi thong bao ...
+                })
+            
+            return Disposables.create {
+                request.dispose()
+            }
+        })
+    }
+    
+    static func requestMission(_ requestRx: Observable<JSON>) -> Observable<EVResponseMission> {
+        
+        return Observable.create({ (sub) -> Disposable in
+            
+            let request = requestRx
+                .observeOn(MainScheduler.instance)
+                .subscribe(onNext: { (dataJson) in
+                    if dataJson["code"] != 200 {
+                        let error = "Code khong phai 200 error: \(dataJson["error"].stringValue)".toError()
+                        sub.onNext(.failure("Có lỗi từ máy chủ vui lòng thử lại"))
+                        log.error(error)
+                        return
+                    }
+                    
+                    sub.onNext(.success)
+                }, onError: { (error) in
+                    sub.onNext(.failure("Có lỗi từ máy chủ vui lòng thử lại"))
                 })
             
             return Disposables.create {

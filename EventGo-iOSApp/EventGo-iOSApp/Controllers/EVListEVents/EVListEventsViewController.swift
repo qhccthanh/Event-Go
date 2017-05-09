@@ -17,7 +17,8 @@ class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _ = EVAppFactory.client.loadEvents()
+        _ = EVAppFactory.client.events
+            .loadPresentingEvents()
             .subscribe(onNext: { (events) in
                 self.listEvents = events
                 dispatch_main_queue_safe {

@@ -10,7 +10,7 @@ import Foundation
 
 extension Date {
     
-    static var js_StringFormart: DateFormatter = {
+    static fileprivate var js_StringFormart: DateFormatter = {
         
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
@@ -25,5 +25,12 @@ extension Date {
         let date = dateFormatter.date(from: string)!
         
         return date
+    }
+}
+
+extension String {
+    
+    func toISODate() -> Date {
+        return self == "" ? Date() : Date.fromStringDate(self)
     }
 }

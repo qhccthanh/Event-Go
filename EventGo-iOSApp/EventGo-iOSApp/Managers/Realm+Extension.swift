@@ -9,6 +9,19 @@
 import Foundation
 import RealmSwift
 
+extension Object {
+    
+    func save(_ update: Bool = true) {
+        evRealm().ev_write(self, update: update)
+    }
+}
+
+extension Array where Element : Object {
+    func save(_ update: Bool = true) {
+        evRealm().ev_write(self, update: update)
+    }
+}
+
 extension Realm {
     
     func ev_write(_ object: Object, update: Bool = true)  {

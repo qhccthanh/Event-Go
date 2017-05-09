@@ -38,7 +38,7 @@ class EVSupplier: Object {
     
     class func fromJson(data: JSON) -> EVSupplier {
         
-        var supplier = EVSupplier()
+        let supplier = EVSupplier()
         
         supplier.supplier_id = data["supplier_id"].stringValue
         supplier.name = data["name"].stringValue

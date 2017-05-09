@@ -38,6 +38,21 @@ class EVDefaultViewController: EVViewController {
             .subscribe { [weak self] (_) in
                self?.setupPulsator()
         }
+        
+        _ = Observable<Int>
+            .interval(0.4, scheduler: MainScheduler.instance)
+            .delay(0.3, scheduler: MainScheduler.instance)
+            .subscribe { [weak self] (time) in
+                guard let timeT = time.element else {
+                    return
+                }
+                
+                if timeT % 2 == 0 {
+                    _ = self?.logoImageView.scaleTo(1.25, scaleY: 1.25, duration: 0.4)
+                } else {
+                    _ = self?.logoImageView.scaleTo(1, scaleY: 1, duration: 0.4)
+                }
+        }
     }
     
     func setupPulsator() {

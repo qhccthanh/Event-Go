@@ -21,6 +21,7 @@ public class EVClientService: BaseService {
         let url = path + "/events"
         return Observable.create({ (sub) -> Disposable in
             let request = EVReactNetwork.ev_request(with: .get, header: self.headers, urlString: url, params: nil)
+                            .observeOn(MainScheduler.instance)
                             .subscribe(onNext: { (dataJson) in
                                 if dataJson["code"] != 200 {
                                     let error = "Code khong phai 200 error: \(dataJson["error"].stringValue)".toError()

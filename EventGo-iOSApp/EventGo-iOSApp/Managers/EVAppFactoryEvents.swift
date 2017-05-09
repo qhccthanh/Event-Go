@@ -18,13 +18,16 @@ public struct EVAppFactoryEvents {
         
         return Observable.create({ (sub) -> Disposable in
             
-            let events: [EVEvent] = evRealm().read()
-            sub.onNext(events)
-            
+            dispatch_main_queue_safe {
+                let events: [EVEvent] = evRealm().read()
+                sub.onNext(events)
+            }
+
             let request = EVClientService
                 .getAllEventsForClient()
+                .observeOn(MainScheduler.instance)
                 .subscribe(onNext: { (events) in
-                    evRealm().ev_write(events, update: true)
+                    events.save()
                     sub.onNext(events)
                 }, onError: { (error) in
                     // xu ly loi thong bao ...
@@ -40,8 +43,10 @@ public struct EVAppFactoryEvents {
         
         return Observable.create({ (sub) -> Disposable in
             
-            let events: [EVEvent] = evRealm().read()
-            sub.onNext(events)
+            dispatch_main_queue_safe {
+                let events: [EVEvent] = evRealm().read()
+                sub.onNext(events)
+            }
             
             let request = EVClientService
                 .getAllEventsForClient()

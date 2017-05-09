@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import SwiftyJSON
 
-class EVNotification: Object {
+class EVUserNotification: Object {
 
     dynamic var id: String!
     dynamic var title: String!
@@ -22,9 +22,9 @@ class EVNotification: Object {
         return "id"
     }
     
-    class func fromJson(data: JSON) -> EVNotification {
+    class func fromJson(data: JSON) -> EVUserNotification {
         
-        let notification = EVNotification()
+        let notification = EVUserNotification()
         notification.id = data["_id"].stringValue
         notification.title = data["title"].stringValue
         notification.body = data["body"].stringValue

@@ -13,20 +13,23 @@ import GoogleSignIn
 import SwiftyJSON
 import RxSwift
 import Pulsator
+import JDAnimationKit
 
 class EVLogInViewController: EVViewController {
 
     @IBOutlet weak var avatarAppView: UIView!
+    @IBOutlet weak var backgroundLogoView: UIView!
     @IBOutlet weak var pulseLogoView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.avatarAppView.rotate360Degrees()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+//        self.avatarAppView.rotate360Degrees()
         
         _ = Observable<Int>
             .interval(0.6, scheduler: MainScheduler.instance)
@@ -34,6 +37,22 @@ class EVLogInViewController: EVViewController {
             .subscribe { [weak self] (_) in
                 self?.setupPulsator()
         }
+        
+        _ = Observable<Int>
+            .interval(0.4, scheduler: MainScheduler.instance)
+            .delay(0.3, scheduler: MainScheduler.instance)
+            .subscribe { [weak self] (time) in
+                guard let timeT = time.element else {
+                    return
+                }
+                
+                if timeT % 2 == 0 {
+                    _ = self?.backgroundLogoView.scaleTo(1.25, scaleY: 1.25, duration: 0.4)
+                } else {
+                    _ = self?.backgroundLogoView.scaleTo(1, scaleY: 1, duration: 0.4)
+                }
+        }
+        
     }
     
     func setupPulsator() {

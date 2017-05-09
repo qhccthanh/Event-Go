@@ -15,7 +15,11 @@ public func evRealm() -> Realm {
 
 class RealmManager: NSObject {
     
-    var realm: Realm!
+    var realm: Realm! {
+        get {
+            return try! Realm.init(configuration: Realm.Configuration.defaultConfiguration)
+        }
+    }
     static var manager: RealmManager = RealmManager()
     
     private override init() {
@@ -45,8 +49,7 @@ class RealmManager: NSObject {
         
         // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config
-        
-        realm = try! Realm()
+    
     }
 }
 

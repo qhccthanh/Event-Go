@@ -14,8 +14,19 @@ class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var collectionView: UICollectionView!
     var listEvents:[EVEvent] = [EVEvent]()
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.modalTransitionStyle = .coverVertical
+        self.definesPresentationContext = true
+        self.modalPresentationStyle = .overCurrentContext
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.isOpaque = false
+        self.view.backgroundColor = .clear
         
         _ = EVAppFactory.client.events
             .loadPresentingEvents()
@@ -28,14 +39,7 @@ class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UI
                 // xu ly loi thong bao ...
             })
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
-
+    
     // MARK: UICollectionViewDataSource
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -62,6 +66,10 @@ class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UI
         
         let vc = EVController.detailEvent.getController() as! EVDetailEventViewController
         vc.event = event
+        vc.modalTransitionStyle = .crossDissolve
+        vc.definesPresentationContext = true
+        vc.modalPresentationStyle = .overCurrentContext
+        
         self.present(vc, animated: true, completion: nil)
     }
 

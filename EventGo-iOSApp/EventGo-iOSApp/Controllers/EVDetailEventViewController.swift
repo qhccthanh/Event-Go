@@ -29,6 +29,8 @@ class EVDetailEventViewController: EVViewController {
         }
         bindingUI()
         
+        self.view.isOpaque = false
+        self.view.backgroundColor = .clear
     }
     
     func bindingUI(){
@@ -44,7 +46,7 @@ class EVDetailEventViewController: EVViewController {
                     if let url = URL(string: award.image_url!) {
                         self.awardImageView.setImageWith(url)
                     } else {
-                        self.awardImageView.image = EVImage.ic_check.icon()
+                        self.awardImageView.image = EVImage.ic_gift.icon()
                     }
                 }
             
@@ -74,7 +76,13 @@ class EVDetailEventViewController: EVViewController {
         }
         if let vc = EVController.infoAwards.getController() as? EVInfoAwardViewController {
             vc.listAward = listAward
-            self.present(vc, animated: true, completion: nil)
+            vc.modalTransitionStyle = .crossDissolve
+            vc.definesPresentationContext = true
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true, completion: {
+                vc.view.backgroundColor = .clear
+                vc.view.frame = self.view.frame
+            })
         }
         
     }

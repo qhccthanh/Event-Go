@@ -32,18 +32,21 @@ enum EVImage: String {
     case ic_logo = "ic_logo"
     case ic_back = "ic_back"
     case ic_check = "ic_check"
+    case ic_gift = "ic_gift"
     case ic_checklist = "ic_checklist"
     case ic_bag = "ic_bag"
     case ic_package = "ic_package"
     case ic_run = "ic_run"
     case ic_startTime = "ic_startTime"
     case ic_event = "ic_event"
+    case ic_app_3d = "appIcon_3d"
+    
 }
 
 extension EVImage {
     
-    func icon() -> UIImage {
-        return UIImage(named: self.rawValue)!
+    func icon() -> UIImage? {
+        return UIImage(named: self.rawValue)
     }
     
     func name() -> String {

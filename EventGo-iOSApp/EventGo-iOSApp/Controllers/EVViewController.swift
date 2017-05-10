@@ -25,7 +25,7 @@ class EVViewController: UIViewController {
         
         FIRAnalytics.setScreenName("EVViewController", screenClass: "EVViewController")
         log.debug("\(NSStringFromClass(self.classForCoder))")
-        self.view.backgroundColor = UIColor.init(hexString: "#4CAF50")
+//        self.view.backgroundColor = UIColor.init(hexString: "#4CAF50")
     }
     
     override func didReceiveMemoryWarning() {

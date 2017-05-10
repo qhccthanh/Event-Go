@@ -8,6 +8,10 @@
 
 import UIKit
 
+import JDAnimationKit
+import RxSwift
+import RxCocoa
+
 class EVHomeBottom {
     
     var arrayButton: [EGoButtonModel] = [EGoButtonModel(),EGoButtonModel(),EGoButtonModel(), EGoButtonModel()]
@@ -15,7 +19,7 @@ class EVHomeBottom {
     var animatedView: UIView = UIView()
     
     let subItemButtonHeight: CGFloat = 40
-    let mainMenuButtonHeight: CGFloat = 64
+    let mainMenuButtonHeight: CGFloat = 60
     let animationDuration: Double = 0.25
     let animatedBackgroundColor: UIColor = UIColor.teal().withAlphaComponent(0.65)
     
@@ -37,11 +41,11 @@ class EVHomeBottom {
         homeButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.rootView)
             make.bottom.equalTo(self.rootView).offset(-30)
-            make.width.height.equalTo(50)
+            make.width.height.equalTo(mainMenuButtonHeight)
         }
-        homeButton.setImage(EVImage.ic_logo.icon(), for: .normal)
+        homeButton.setImage(EVImage.ic_app_3d.icon(), for: .normal)
         homeButton.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
-        arrayButton[3].addTarget(self, action: #selector(quitAnimatedView), for: .touchUpInside)
+        arrayButton[3].addTarget(self, action: #selector(cancelAnimatedView), for: .touchUpInside)
         
         self.rootView.addSubview(animatedView)
         
@@ -63,20 +67,56 @@ class EVHomeBottom {
         arrayButton[3].setImage(EVImage.ic_quit.icon(), for: .normal)
         
         stopAnimation()
-
+        animationHomeButton()
     }
     
-    @objc func showListEvent(){
-        EVController.listEvents.showController(self.evViewController)
+    func animationHomeButton() {
+        _ = Observable<Int>
+            .interval(0.6, scheduler: MainScheduler.instance)
+            .subscribe { [weak self] (time) in
+                guard let timeT = time.element else {
+                    return
+                }
+                
+                switch timeT % 6 {
+                case 0:
+                    _ = self?.homeButton.scaleTo(1.15, scaleY: 1.15, duration: 0.25)
+                case 1:
+                    _ = self?.homeButton.scaleTo(1.25, scaleY: 1.25, duration: 0.25)
+                case 2:
+                    _ = self?.homeButton.rotateTo(360, duration: 0.5)
+                case 3:
+                    _ = self?.homeButton.scaleTo(1.15, scaleY: 1.15, duration: 0.25)
+                case 4:
+                    _ = self?.homeButton.scaleTo(1, scaleY: 1, duration: 0.25)
+                case 5:
+                    _ = self?.homeButton.rotateTo(0, duration: 0.5)
+                default:
+                    break
+                }       
+        }
     }
     
-    @objc func quitAnimatedView() {
-        UIView.animate(withDuration: animationDuration) {
+    @objc func showListEvent() {
+        self.quitAnimatedView {
+            EVController.listEvents.showController(self.evViewController)
+        }
+    }
+    
+    @objc func quitAnimatedView(_ successBlock: (() -> Void)? = nil) {
+        
+        UIView.animate(withDuration: animationDuration, animations: { 
             self.arrayButton[0].center = self.arrayButton[3].center
             self.arrayButton[1].center = self.arrayButton[3].center
             self.arrayButton[2].center = self.arrayButton[3].center
             self.animatedView.alpha = 0.0
+        }) { (_) in
+            successBlock?()
         }
+    }
+    
+    @objc func cancelAnimatedView() {
+        self.quitAnimatedView()
     }
     
     func stopAnimation() {

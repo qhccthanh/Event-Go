@@ -32,7 +32,7 @@ class EVPopOverView: UIView {
         super.init(coder: aDecoder)
     }
  
-    private func setFullInfoView(icon: UIImage, title: String, content: String){
+    private func setFullInfoView(icon: UIImage?, title: String, content: String) {
         self.addSubview(imageContentView)
         self.addSubview(titleLabel)
         self.addSubview(contentLabel)
@@ -109,7 +109,7 @@ class EVPopOverView: UIView {
 
     }
     
-    private func setInfoView(icon: UIImage, title: String, content: String){
+    private func setInfoView(icon: UIImage?, title: String, content: String){
         self.addSubview(imageContentView)
         self.addSubview(titleLabel)
         self.addSubview(contentLabel)
@@ -167,7 +167,7 @@ class EVPopOverView: UIView {
         exitButton.layer.borderColor = UIColor.blue.cgColor
     }
     
-    func setLoadingView(icon: UIImage, title: String, content: String) {
+    func setLoadingView(icon: UIImage?, title: String, content: String) {
         
         self.addSubview(imageContentView)
         self.addSubview(titleLabel)
@@ -284,7 +284,7 @@ class EVPopOverView: UIView {
         detailButton.layer.borderColor = UIColor.blue.cgColor
     }*/
     
-    convenience init(frame: CGRect, type: EVPopOverAppearance, icon: UIImage, title: String, content: String) {
+    convenience init(frame: CGRect, type: EVPopOverAppearance, icon: UIImage?, title: String, content: String) {
         self.init(frame: frame)
         customUI()
         switch type {

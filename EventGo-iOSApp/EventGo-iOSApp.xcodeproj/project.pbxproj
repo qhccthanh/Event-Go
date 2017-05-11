@@ -70,6 +70,7 @@
 		D0C058871EAF578800F3E11F /* EVMarkerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0521DA91E95245000A9C662 /* EVMarkerManager.swift */; };
 		D0C058881EAF578800F3E11F /* EVProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D90A1EA8B876006820A9 /* EVProtocol.swift */; };
 		D0C058891EAF578800F3E11F /* EVDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C057941EAEDA6B00F3E11F /* EVDevice.swift */; };
+		D0F2477C1EC3FB7E0003114A /* EventGo-iOSApp-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = F4E977E11E7DA25000DF2E89 /* EventGo-iOSApp-Bridging-Header.h */; };
 		F40106701EC0CE80003EDE8E /* EVClientUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401066F1EC0CE80003EDE8E /* EVClientUserService.swift */; };
 		F40106721EC0D17C003EDE8E /* EVAppFactoryEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40106711EC0D17C003EDE8E /* EVAppFactoryEvents.swift */; };
 		F40106741EC0D230003EDE8E /* EVAppFactoryTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40106731EC0D230003EDE8E /* EVAppFactoryTasks.swift */; };
@@ -122,14 +123,14 @@
 			remoteGlobalIDString = F4AD8A781E7D3A480081F2F3;
 			remoteInfo = EventGoNetwork;
 		};
-		D06E456C1E92AFC7003462FC /* PBXContainerItemProxy */ = {
+		D0F2477D1EC3FBA40003114A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D06E45621E92AF21003462FC /* EventGoNetwork.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F4AD8A771E7D3A480081F2F3;
 			remoteInfo = EventGoNetwork;
 		};
-		D06E456E1E92AFC7003462FC /* PBXContainerItemProxy */ = {
+		D0F2477F1EC3FBA40003114A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F4FABF651E8A634C0010BE41 /* EventGoCommon.xcodeproj */;
 			proxyType = 1;
@@ -728,8 +729,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				D06E456D1E92AFC7003462FC /* PBXTargetDependency */,
-				D06E456F1E92AFC7003462FC /* PBXTargetDependency */,
+				D0F2477E1EC3FBA40003114A /* PBXTargetDependency */,
+				D0F247801EC3FBA40003114A /* PBXTargetDependency */,
 			);
 			name = "EventGo-iOSApp";
 			productName = "EventGo-iOSApp";
@@ -955,6 +956,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F2477C1EC3FB7E0003114A /* EventGo-iOSApp-Bridging-Header.h in Sources */,
 				D097FD821EB840FE004535F2 /* EVEventCollectionViewCell.swift in Sources */,
 				D0C058451EAF578800F3E11F /* EVUserServices.swift in Sources */,
 				F43D6A291EBE313D007DD1F9 /* EVAppFactoryClient.swift in Sources */,
@@ -1051,15 +1053,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D06E456D1E92AFC7003462FC /* PBXTargetDependency */ = {
+		D0F2477E1EC3FBA40003114A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EventGoNetwork;
-			targetProxy = D06E456C1E92AFC7003462FC /* PBXContainerItemProxy */;
+			targetProxy = D0F2477D1EC3FBA40003114A /* PBXContainerItemProxy */;
 		};
-		D06E456F1E92AFC7003462FC /* PBXTargetDependency */ = {
+		D0F247801EC3FBA40003114A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EventGoCommon;
-			targetProxy = D06E456E1E92AFC7003462FC /* PBXContainerItemProxy */;
+			targetProxy = D0F2477F1EC3FBA40003114A /* PBXContainerItemProxy */;
 		};
 		F4AD8AE51E7D3C310081F2F3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

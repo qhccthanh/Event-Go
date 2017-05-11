@@ -24,7 +24,7 @@ class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.view.isOpaque = false
         self.view.backgroundColor = .clear
         

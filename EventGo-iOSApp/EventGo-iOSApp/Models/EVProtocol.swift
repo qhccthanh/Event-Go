@@ -13,9 +13,20 @@ protocol EVEventProtocol {
     func nameEvent() -> String!
     func avatarEvent() -> String!
     func descriptionEvent() -> String
+    
+    func startDay() -> String!
+    func endDay() -> String!
 }
 
 extension EVEventProtocol {
+    
+    func startDay() -> String! {
+        return ""
+    }
+    
+    func endDay() -> String! {
+        return ""
+    }
     
     func descriptionEvent() -> String {
         return ""
@@ -44,27 +55,48 @@ class EVAwardModel: EVEventProtocol {
 
 class EVEventModel: EVEventProtocol {
     
-    var name: String!
-    var imageURL: String!
-    var description: String!
+    private var name: String!
+    private var imageURL: String!
+//    var description: String!
+    private var start_day: String!
+    private var end_day: String!
+    private var supplier: String
     
     init(event: EVEvent) {
+//        self.name = event.name
+//        self.imageURL = event.cover_url
+//        let start_time_string = CTDateFormart(date: event.start_time!).daymonyear()
+//        let end_time_string = CTDateFormart(date: event.end_time!).daymonyear()
+//        self.description = "\(start_time_string) - \(end_time_string)"
+        
         self.name = event.name
         self.imageURL = event.cover_url
-        let start_time_string = CTDateFormart(date: event.start_time!).daymonyear()
-        let end_time_string = CTDateFormart(date: event.end_time!).daymonyear()
-        self.description = "\(start_time_string) - \(end_time_string)"
+        self.start_day = CTDateFormart(date: event.start_time!).daymonyear()
+        self.end_day = CTDateFormart(date: event.end_time!).daymonyear()
+        self.supplier = event.supplier_id
     }
     
     func nameEvent() -> String! {
         return name
     }
     
+    func nameSupplier() -> String! {
+        return supplier
+    }
+    
+    func startDay() -> String! {
+        return self.start_day
+    }
+    
+    func endDay() -> String! {
+        return self.end_day
+    }
+    
     func avatarEvent() -> String! {
         return imageURL
     }
     
-    func descriptionEvent() -> String {
-        return description
-    }
+//    func descriptionEvent() -> String {
+//        return description
+//    }
 }

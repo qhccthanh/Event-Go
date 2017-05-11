@@ -16,6 +16,15 @@ class EVEventsViewController: EVViewController {
     @IBOutlet weak var happeningLabel: UILabel!
     @IBOutlet weak var upcomingLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.modalTransitionStyle = .coverVertical
+        self.definesPresentationContext = true
+        self.modalPresentationStyle = .overCurrentContext
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         upcomingLabel.isHidden = true
@@ -27,6 +36,10 @@ class EVEventsViewController: EVViewController {
 
     }
 
+    @IBAction func onQuitAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func onHappeningEventsAction(_ sender: Any) {
         leading.constant = 0
         happeningLabel.isHidden = false

@@ -99,7 +99,7 @@ class EVHomeBottom {
     
     @objc func showListEvent() {
         self.quitAnimatedView {
-            EVController.listEvents.showController(self.evViewController)
+            EVController.events.showController(self.evViewController)
         }
     }
     

@@ -26,7 +26,7 @@ class EVListEventsCollectionViewCell: UICollectionViewCell {
         if let time = timeLabel {
             timeLabel.text = eventModel.descriptionEvent()
         }
-        if let url = URL(string: eventModel.imageURL){
+        if let url = URL(string: eventModel.avatarEvent()){
             avatarEventImageView.af_setImage(withURL: url)
         }
         

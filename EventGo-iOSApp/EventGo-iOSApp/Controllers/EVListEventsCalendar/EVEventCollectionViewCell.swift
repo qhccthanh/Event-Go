@@ -15,5 +15,13 @@ class EVEventCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
     
-    
+    func bindingUI(mode: EVEventModel ){
+        self.nameEventLabel.text = mode.nameEvent()
+        self.nameSupplierLabel.text = mode.nameSupplier()
+        if let url = URL(string: mode.avatarEvent()){
+            avatarEventsImageView.af_setImage(withURL: url)
+        }
+        startTimeLabel.text = mode.startDay()
+        endTimeLabel.text = mode.endDay()
+     }
 }

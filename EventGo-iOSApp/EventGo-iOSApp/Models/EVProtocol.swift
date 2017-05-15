@@ -33,6 +33,59 @@ extension EVEventProtocol {
     }
 }
 
+class EVTaskModel: EVEventProtocol {
+   
+    var name: String!
+    var image_url: String?
+    var address: String!
+    var status: String!
+    var description: String!
+    
+    init(task: EVTask) {
+        
+        self.name = task.name
+        self.image_url = task.thumbnail_url
+        self.address = task.task_info.address
+        self.status = task.status
+        self.description = task.descriptionTask
+    }
+    
+    func nameEvent() -> String! {
+        return self.name
+    }
+
+    func avatarEvent() -> String! {
+        return self.image_url ?? ""
+    }
+
+    func statusTask() -> EVTaskStatus {
+        return raw(self.status)
+    }
+    
+    func descriptionEvent() -> String {
+        return self.description
+    }
+    
+    func addressTask() -> String {
+        return self.address
+    }
+    
+    func raw(_ status: String) -> EVTaskStatus!{
+        
+        switch status {
+            
+        case "opening":
+            return .pending
+        case "ready":
+            return .ready
+        default:
+            return .finished
+            
+        }
+    }
+    
+}
+
 class EVAwardModel: EVEventProtocol {
     
     var nameAward: String!

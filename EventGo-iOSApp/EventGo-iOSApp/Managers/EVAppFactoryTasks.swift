@@ -14,6 +14,29 @@ import RxCocoa
 
 public struct EVAppFactoryTasks {
     
+    func getAllTask(_ idEvent: String) -> Observable<[EVTask]> {
+        
+        
+        return Observable.create({ (sub) -> Disposable in
+            
+//            dispatch_main_queue_safe {
+//                let tasks: [EVTask] = evRealm().read()
+////                sub.onNext(EVTask)
+//            }
+            
+            let request = EVTaskServices.getAllTasks(idEvent)
+                .observeOn(MainScheduler.instance).subscribe(onNext: { (tasks) in
+//                    tasks.save()
+                    sub.onNext(tasks)
+                }, onError: { (error) in
+                    sub.onError(error)
+                })
+            return Disposables.create {
+                request.dispose()
+            }
+        })
+    }
+    
     func joinEvent(_ task: EVTask) -> Observable<EVResponseMission> {
         return EVAppFactoryClient.requestMission(EVClientUserService.joinTask(task.task_id))
     }

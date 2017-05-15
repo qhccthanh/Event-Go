@@ -13,6 +13,14 @@ enum EVCheckUserEnumType: String {
     case updatedInfo
 }
 
+enum EVTaskStatus: String {
+    case pending,finished,ready
+    
+    func name() -> String{
+        return self.rawValue
+    }
+}
+
 enum EVUpdateResult: String {
     case success
     case faillure
@@ -69,7 +77,7 @@ enum EVController: String {
     case listEvents = "EVListEventsViewController"
     case infoAwards = "EVInfoAwardViewController"
     case events = "EVEventsViewController"
-    
+    case tasks = "EVTasksViewController"
 }
 extension EVController {
     

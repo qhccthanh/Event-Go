@@ -30,15 +30,15 @@ public struct EVAppFactoryClient {
         return Observable.create({ (sub) -> Disposable in
             
             dispatch_main_queue_safe {
-                let locations: [EVLocation] = evRealm().read()
-                sub.onNext(locations)
+//                let locations: [EVLocation] = evRealm().read()
+//                sub.onNext(locations)
             }
             
             let request = EVClientService
                 .getStores(in: coordinate)
                 .observeOn(MainScheduler.instance)
                 .subscribe(onNext: { (locations) in
-                    evRealm().ev_write(locations, update: true)
+//                    evRealm().ev_write(locations, update: true)
                     sub.onNext(locations)
                 }, onError: { (error) in
                     // xu ly loi thong bao ...

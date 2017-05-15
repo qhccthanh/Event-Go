@@ -83,7 +83,7 @@ class EVLocation: Object {
     
     class func listFromJson(data: JSON) -> [EVLocation] {
         var listLocation: [EVLocation] = [EVLocation]()
-        var arrayValues = data["data"].arrayValue
+        let arrayValues = data["data"].arrayValue
         for value in arrayValues {
             listLocation.append(fromJson(data: value))
         }

@@ -8,13 +8,39 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
+import RxSwift
 
 class EVTaskServices: BaseService {
-    
-    static let shareInstance = EVTaskServices()
-    
+
     override var subUrl: String {
         return "events"
+    }
+    
+   static func getAllTasks(_ idEvent: String ) -> Observable<[EVTask]>{
+        
+        let url = path + "events/\(idEvent)/tasks"
+        return Observable.create({ (sub) -> Disposable in
+            
+            let request = EVReactNetwork.ev_request(with: .get, header: self.headers, urlString: url, params: nil)
+                .subscribe(onNext: { (dataJson) in
+                    if dataJson["code"] != 200 {
+                        let error = "Code khong phai 200 error: \(dataJson["error"].stringValue)".toError()
+                        sub.onError(error)
+                        log.error(error)
+                        return
+                    }
+                    
+                    let listLocation: [EVTask] = EVTask.listFromJson(data: dataJson["data"])
+                    sub.onNext(listLocation)
+                }, onError: { (error) in
+                    sub.onError(error)
+                })
+            
+            return Disposables.create {
+                request.dispose()
+            }
+        })
     }
     
     func getDetailTaskOfEvent(with idTask: String)-> RACSignal<AnyObject> {

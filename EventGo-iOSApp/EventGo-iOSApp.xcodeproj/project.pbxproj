@@ -72,6 +72,7 @@
 		D0C058871EAF578800F3E11F /* EVMarkerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0521DA91E95245000A9C662 /* EVMarkerManager.swift */; };
 		D0C058881EAF578800F3E11F /* EVProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037D90A1EA8B876006820A9 /* EVProtocol.swift */; };
 		D0C058891EAF578800F3E11F /* EVDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C057941EAEDA6B00F3E11F /* EVDevice.swift */; };
+		D0CFBAE01ECB3B7E009984FB /* EVCompleteTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CFBADF1ECB3B7E009984FB /* EVCompleteTaskViewController.swift */; };
 		D0F2477C1EC3FB7E0003114A /* EventGo-iOSApp-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = F4E977E11E7DA25000DF2E89 /* EventGo-iOSApp-Bridging-Header.h */; };
 		F40106701EC0CE80003EDE8E /* EVClientUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401066F1EC0CE80003EDE8E /* EVClientUserService.swift */; };
 		F40106721EC0D17C003EDE8E /* EVAppFactoryEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40106711EC0D17C003EDE8E /* EVAppFactoryEvents.swift */; };
@@ -210,6 +211,7 @@
 		D0A982B71E994B9F003162D9 /* EVPopOverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVPopOverController.swift; sourceTree = "<group>"; };
 		D0C057941EAEDA6B00F3E11F /* EVDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVDevice.swift; sourceTree = "<group>"; };
 		D0C0579A1EAF531F00F3E11F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		D0CFBADF1ECB3B7E009984FB /* EVCompleteTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVCompleteTaskViewController.swift; sourceTree = "<group>"; };
 		D2970CF6CE73C5F35F28774B /* Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp-EventGo-iOSAppTests/Pods-EventGo-iOSApp-EventGo-iOSAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F401066F1EC0CE80003EDE8E /* EVClientUserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVClientUserService.swift; sourceTree = "<group>"; };
 		F40106711EC0D17C003EDE8E /* EVAppFactoryEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVAppFactoryEvents.swift; sourceTree = "<group>"; };
@@ -567,6 +569,7 @@
 				D0A982B71E994B9F003162D9 /* EVPopOverController.swift */,
 				D087211C1E9DE6BB0016D6A5 /* EVMainBottom.swift */,
 				D037D91A1EAB570A006820A9 /* EVInfoTaskViewController.swift */,
+				D0CFBADF1ECB3B7E009984FB /* EVCompleteTaskViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -989,6 +992,7 @@
 				D0C0584F1EAF578800F3E11F /* AppDelegate.swift in Sources */,
 				D0C058501EAF578800F3E11F /* Marco.swift in Sources */,
 				D0C058511EAF578800F3E11F /* Constants.swift in Sources */,
+				D0CFBAE01ECB3B7E009984FB /* EVCompleteTaskViewController.swift in Sources */,
 				D0C058521EAF578800F3E11F /* EVLog.swift in Sources */,
 				F45F18811EBD876D00B38828 /* EVAppFactoryUsers.swift in Sources */,
 				D0C058541EAF578800F3E11F /* EVAppFactory.swift in Sources */,

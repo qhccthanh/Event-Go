@@ -114,6 +114,7 @@ class EVEventModel: EVEventProtocol {
     private var start_day: String!
     private var end_day: String!
     private var supplier: String
+    private var status: String
     
     init(event: EVEvent) {
 //        self.name = event.name
@@ -127,7 +128,9 @@ class EVEventModel: EVEventProtocol {
         self.start_day = CTDateFormart(date: event.start_time!).daymonyear()
         self.end_day = CTDateFormart(date: event.end_time!).daymonyear()
         self.supplier = event.supplier_id
+        self.status = event.status
     }
+    
     
     func nameEvent() -> String! {
         return name
@@ -149,7 +152,25 @@ class EVEventModel: EVEventProtocol {
         return imageURL
     }
     
+    func statusEvent() -> EVEventStatus! {
+        return raw(self.status)
+    }
+    
+    func raw(_ status: String) -> EVEventStatus!{
+        
+        switch status {
+            
+        case "preparing":
+            return .preparing
+        case "stagging":
+            return .stagging
+        default:
+            return .expired
+            
+        }
+    }
+    
 //    func descriptionEvent() -> String {
-//        return description
+//        return "\(self.start_day)-\(self.end_day)"
 //    }
 }

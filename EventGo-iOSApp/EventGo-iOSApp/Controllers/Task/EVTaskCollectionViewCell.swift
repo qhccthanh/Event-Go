@@ -16,7 +16,7 @@ class EVTaskCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var taskDecriptionLabel: UILabel!
     
-    func bindingUI(with model: EVTaskModel, location: CLLocationCoordinate2D) {
+    func bindingUI(with model: EVTaskModel, location: String) {
         
         nameTasksLabel.text = model.nameEvent()
         addressLabel.text = model.address
@@ -42,15 +42,18 @@ class EVTaskCollectionViewCell: UICollectionViewCell {
             break
         }
         
-        let camera = GMSCameraPosition.camera(withLatitude: location.latitude , longitude: location.longitude, zoom: 13.0)
+//        EVLocationServices.shareInstance.getDetailLocation(with: location).
         
-        self.mapView.camera = camera
-        self.mapView.isUserInteractionEnabled = false
-        
-        let position = CLLocationCoordinate2D(latitude: location.latitude , longitude: location.longitude)
-        let marker = GMSMarker(position: position)
-        marker.title = model.nameEvent()
-        marker.map = mapView
+//        let camera = GMSCameraPosition.camera(withLatitude: location.latitude , longitude: location.longitude, zoom: 13.0)
+//        
+//        self.mapView.camera = camera
+//        self.mapView.isUserInteractionEnabled = false
+//        
+//        let position = CLLocationCoordinate2D(latitude: location.latitude , longitude: location.longitude)
+//        let marker = GMSMarker(position: position)
+//        marker.title = model.nameEvent()
+//        marker.map = mapView
+       
     }
     
 }

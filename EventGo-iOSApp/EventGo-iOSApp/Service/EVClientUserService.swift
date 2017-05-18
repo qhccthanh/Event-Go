@@ -27,7 +27,7 @@ public class EVClientUserService: BaseService {
     }
     
     static func joinEvent(_ event_id: String) -> Observable<JSON> {
-        let urlRequest = path + "/events\(event_id)/joinEvent"
+        let urlRequest = path + "/events/\(event_id)/joinEvent"
         return EVReactNetwork.ev_request(with: .post, header: self.headers, urlString: urlRequest, params: nil)
     }
     

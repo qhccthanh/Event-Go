@@ -19,15 +19,29 @@ class EVListEventsCollectionViewCell: UICollectionViewCell {
     func bindingUI(with eventModel: EVEventModel){
      
         
-        if let nameEvent = nameEventLabel {
+        if (nameEventLabel) != nil {
             nameEventLabel.text = eventModel.nameEvent()
         }
-        
-        if let time = timeLabel {
-            timeLabel.text = eventModel.descriptionEvent()
+   
+        if (timeLabel) != nil {
+            timeLabel.text = "Từ \(eventModel.startDay()!) đến \(eventModel.endDay()!)"
         }
         if let url = URL(string: eventModel.avatarEvent()){
             avatarEventImageView.af_setImage(withURL: url)
+        }
+        
+        if numberTaskLabel != nil {
+            let caseEvent = eventModel.statusEvent()
+            switch caseEvent! {
+            case .preparing:
+                numberTaskLabel.text = "Sắp diễn ra"
+                break
+            case .stagging:
+                numberTaskLabel.text = "Đang diễn ra"
+                break
+            default:
+                numberTaskLabel.text = "Đã kết thúc"
+            }
         }
         
     }

@@ -12,7 +12,7 @@ class EVTasksViewController: EVViewController {
 
     @IBOutlet weak var colletionView: UICollectionView!
     var listTasks: Array<EVTask> = Array<EVTask>()
-    var idEvent: String? = "58e9304064e8f1356d8e4ec8"
+    var idEvent: String?
     var height: CGFloat = 500.0
     var width: CGFloat = 300.0
     override func viewDidLoad() {
@@ -37,6 +37,9 @@ class EVTasksViewController: EVViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func quitAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 }
 
@@ -51,10 +54,12 @@ extension EVTasksViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EVTaskCollectionViewCell
+        guard self.idEvent != nil || self.listTasks.count > 0 else {return cell}
         let task = listTasks[indexPath.row]
         let model = EVTaskModel(task: task)
-        cell.bindingUI(with: model, location: task.task_info.location_info!.coordinate)
+        cell.bindingUI(with: model, location: task.task_info.location_id)
         return cell
     }
     

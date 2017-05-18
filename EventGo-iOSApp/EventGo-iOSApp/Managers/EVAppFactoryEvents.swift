@@ -39,6 +39,30 @@ public struct EVAppFactoryEvents {
         })
     }
     
+    func loadUserEvents() -> Observable<[EVUserEvent]> {
+        
+        return Observable.create({ (sub) -> Disposable in
+//            dispatch_main_queue_safe {
+//                let events: [EVEvent] = evRealm().read()
+//                sub.onNext(events)
+//            }
+            
+            let request = EVClientUserService.getAllMyEvents().observeOn(MainScheduler.instance).subscribe(onNext: { (data) in
+                if data["code"] == 200 {
+                    let listEvent = EVUserEvent.listFromJson(data: data["data"])
+                    sub.onNext(listEvent)
+                } else {
+                    sub.onError("Không parse dc data".toError())
+                }
+            }, onError: { (error) in
+                
+            })
+            return Disposables.create {
+                request.dispose()
+            }
+        })
+    }
+    
     func loadMyEvents()  -> Observable<[EVEvent]> {
         
         return Observable.create({ (sub) -> Disposable in

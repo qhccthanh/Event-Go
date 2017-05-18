@@ -21,6 +21,14 @@ enum EVTaskStatus: String {
     }
 }
 
+enum EVEventStatus: String {
+    case preparing,stagging,expired
+    
+    func name() -> String{
+        return self.rawValue
+    }
+}
+
 enum EVUpdateResult: String {
     case success
     case faillure

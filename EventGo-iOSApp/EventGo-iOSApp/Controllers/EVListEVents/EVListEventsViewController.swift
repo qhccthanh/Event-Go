@@ -12,7 +12,7 @@ private let reuseIdentifier = "cell"
 
 class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var collectionView: UICollectionView!
-    var listEvents:[EVEvent] = [EVEvent]()
+    var listEvents:[EVUserEvent] = [EVUserEvent]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,17 +27,19 @@ class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UI
 
         self.view.isOpaque = false
         self.view.backgroundColor = .clear
+
         
         _ = EVAppFactory.client.events
-            .loadPresentingEvents()
+            .loadUserEvents()
             .subscribe(onNext: { (events) in
                 self.listEvents = events
                 dispatch_main_queue_safe {
-                    self.collectionView?.reloadData()
+                    self.collectionView.reloadData()
                 }
             }, onError: { (error) in
-                // xu ly loi thong bao ...
+                
             })
+        
     }
     
     // MARK: UICollectionViewDataSource
@@ -56,20 +58,20 @@ class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! EVListEventsCollectionViewCell
         let event = listEvents[indexPath.row]
-        let model = EVEventModel(event: event)
+        let condition = "event_id == \"\(event.event_id!)\""
+        let eventInfo: EVEvent? = evRealm().filter(condition).first
+        guard eventInfo != nil else {
+            return cell
+        }
+        let model = EVEventModel(event: eventInfo!)
         cell.bindingUI(with: model)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let event = listEvents[indexPath.row]
-        
-        let vc = EVController.detailEvent.getController() as! EVDetailEventViewController
-        vc.event = event
-        vc.modalTransitionStyle = .crossDissolve
-        vc.definesPresentationContext = true
-        vc.modalPresentationStyle = .overCurrentContext
-        
+        let vc = EVController.tasks.getController() as! EVTasksViewController
+        vc.idEvent = event.event_id
         self.present(vc, animated: true, completion: nil)
     }
 

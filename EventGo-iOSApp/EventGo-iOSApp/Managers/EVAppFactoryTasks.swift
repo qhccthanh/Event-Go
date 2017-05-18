@@ -19,14 +19,14 @@ public struct EVAppFactoryTasks {
         
         return Observable.create({ (sub) -> Disposable in
             
-//            dispatch_main_queue_safe {
-//                let tasks: [EVTask] = evRealm().read()
-////                sub.onNext(EVTask)
-//            }
+            dispatch_main_queue_safe {
+                let tasks: [EVTask] = evRealm().read()
+//                sub.onNext(tasks)
+            }
             
             let request = EVTaskServices.getAllTasks(idEvent)
                 .observeOn(MainScheduler.instance).subscribe(onNext: { (tasks) in
-//                    tasks.save()
+                    tasks.save()
                     sub.onNext(tasks)
                 }, onError: { (error) in
                     sub.onError(error)

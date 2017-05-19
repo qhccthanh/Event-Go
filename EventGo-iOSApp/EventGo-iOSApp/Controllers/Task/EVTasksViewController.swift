@@ -17,8 +17,8 @@ class EVTasksViewController: EVViewController {
     var width: CGFloat = 300.0
     override func viewDidLoad() {
         super.viewDidLoad()
-        width = self.colletionView.frame.width - 40
-        height = self.colletionView.frame.height - 20
+        width = self.view.frame.width - 40
+        height = self.view.frame.height - 20
         
         guard self.idEvent != nil else {return}
         _ = EVAppFactory.client.tasks
@@ -59,7 +59,11 @@ extension EVTasksViewController: UICollectionViewDelegate, UICollectionViewDataS
         guard self.idEvent != nil || self.listTasks.count > 0 else {return cell}
         let task = listTasks[indexPath.row]
         let model = EVTaskModel(task: task)
-        cell.bindingUI(with: model, location: task.task_info.location_id)
+        if let infoTask = task.task_info {
+            cell.bindingUI(with: model, location: infoTask.location_info!.coordinate)
+        } else {
+            cell.bindingUI(with: model, location: nil)
+        }
         return cell
     }
     

@@ -17,7 +17,7 @@ class EVTask: Object {
     dynamic var event_id: String!
     dynamic var thumbnail_url: String?
     dynamic var task_type: String!
-    dynamic var task_info: EVLocation! = EVLocation()
+    dynamic var task_info: EVLocation!// = EVLocation()
     dynamic var status: String!
     dynamic var descriptionTask: String!
     dynamic var name: String!
@@ -60,7 +60,8 @@ class EVTask: Object {
         var listTasks: [EVTask] = [EVTask]()
         let arrayData = data.arrayValue
         for item in arrayData {
-            listTasks.append(EVTask.fromJson(data: item))
+            let temp = EVTask.fromJson(data: item)
+            listTasks.append(temp)
         }
         return listTasks
     }

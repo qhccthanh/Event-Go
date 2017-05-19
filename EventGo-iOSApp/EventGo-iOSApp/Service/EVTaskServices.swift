@@ -31,8 +31,8 @@ class EVTaskServices: BaseService {
                         return
                     }
                     
-                    let listLocation: [EVTask] = EVTask.listFromJson(data: dataJson["data"])
-                    sub.onNext(listLocation)
+                    let task: [EVTask] = EVTask.listFromJson(data: dataJson["data"])
+                    sub.onNext(task)
                 }, onError: { (error) in
                     sub.onError(error)
                 })

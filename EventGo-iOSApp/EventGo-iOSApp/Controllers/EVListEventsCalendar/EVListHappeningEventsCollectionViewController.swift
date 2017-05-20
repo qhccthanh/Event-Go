@@ -81,8 +81,7 @@ extension EVListHappeningEventsCollectionViewController: UICollectionViewDelegat
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-      
-        if let flow = collectionViewLayout as? UICollectionViewFlowLayout {
+        if collectionViewLayout is UICollectionViewFlowLayout {
             return CGSize(width: widthItem, height: 250)
         }
         

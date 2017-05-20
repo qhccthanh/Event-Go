@@ -9,6 +9,37 @@
 import Foundation
 import UIKit
 
+class CircleView: UIView {
+    
+    override func layoutSubviews() {
+        self.layer.cornerRadius = self.bounds.width / 2
+        self.clipsToBounds = true
+        
+    }
+    
+}
+
+class DashView: UIView {
+    override func layoutSubviews() {
+        self.layer.masksToBounds = true
+        self.layer.masksToBounds = true
+        let  borderLayer = CAShapeLayer()
+        let frameSize = self.frame.size
+        let shapeRect = CGRect(x: 0, y: 0, width: frameSize.width,height: frameSize.height)
+        borderLayer.bounds=shapeRect
+        borderLayer.position = CGPoint(x: frameSize.width / 2,y: frameSize.height/2)
+        borderLayer.fillColor = UIColor.clear.cgColor
+        borderLayer.strokeColor = UIColor.gray.cgColor
+        borderLayer.lineWidth = 1
+        borderLayer.lineJoin = kCALineJoinRound
+        borderLayer.lineDashPattern = [8,4]
+        
+        let path = UIBezierPath(roundedRect: shapeRect, cornerRadius: 5).cgPath
+        borderLayer.path = path
+        self.layer.addSublayer(borderLayer)
+    }
+}
+
 enum StoryBoard: String {
     
     

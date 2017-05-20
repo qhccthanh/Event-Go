@@ -7,14 +7,33 @@
 //
 
 import UIKit
+import SystemConfiguration
 
 class EVCompleteTaskViewController: EVViewController {
 
-    @IBOutlet weak var chooseImageView: UIView!
+    @IBOutlet weak var chooseImageView: DashView!
+    @IBOutlet weak var contentImageView: UIImageView!
+    @IBOutlet weak var labelAddress: UILabel!
+    
+    
+    var imageSeleted: UIImage!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let borderLayer  = dashedBorderLayerWithColor(color: UIColor.black.cgColor)
-        chooseImageView.layer.addSublayer(borderLayer)
+      
+    }
+    
+    var locationManager = CLLocationManager()
+    var myLocation: CLLocationCoordinate2D?
+    @IBAction func takePhotoAction(_ sender: Any) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let imgPicker = UIImagePickerController()
+            imgPicker.delegate = self
+            imgPicker.sourceType = UIImagePickerControllerSourceType.camera
+            imgPicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureMode.photo
+            
+            self.present(imgPicker, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,28 +41,52 @@ class EVCompleteTaskViewController: EVViewController {
   
     }
     
-    
-    func dashedBorderLayerWithColor(color:CGColor) -> CAShapeLayer {
+    @IBAction func onCheckInAction(_ sender: Any) {
         
-        let  borderLayer = CAShapeLayer()
-        borderLayer.name  = "borderLayer"
-        let frameSize = self.chooseImageView.frame.size
-        let shapeRect = CGRect(x: 0, y: 0, width: frameSize.width,height: frameSize.height)
-        
-        borderLayer.bounds=shapeRect
-        borderLayer.position = CGPoint(x: frameSize.width / 2,y: frameSize.height/2)
-        borderLayer.fillColor = UIColor.clear.cgColor
-        borderLayer.strokeColor = color
-        borderLayer.lineWidth = 1
-        borderLayer.lineJoin = kCALineJoinRound
-        borderLayer.lineDashPattern = NSArray(array: [NSNumber(value: 8),NSNumber(value:4)]) as? [NSNumber]
-        
-        let path = UIBezierPath.init(roundedRect: shapeRect, cornerRadius: 0)
-        
-        borderLayer.path = path.cgPath
-        
-        return borderLayer
-        
+        if CLLocationManager.authorizationStatus() != .denied {
+            self.locationManager.startUpdatingLocation()
+            self.locationManager.delegate = self
+        } else {
+            let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: "Vui lòng bật định vị để thực hiện chức năng này")
+            let controller = EVPopOverController(customView: info, height: info.heightView )
+            controller.showView(self, detailBlock: nil) {
+                controller.closeVC()
+            }
+        }
     }
-   
+}
+extension EVCompleteTaskViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageSeleted = image
+            contentImageView.image = imageSeleted
+            dismiss(animated: true, completion: nil)
+        }
+    }
+}
+
+extension EVCompleteTaskViewController: CLLocationManagerDelegate {
+    
+    @objc(locationManager:didChangeAuthorizationStatus:) internal func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            self.locationManager.startUpdatingLocation()
+            self.locationManager.delegate = self
+        } else {
+          
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+        myLocation = nil
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            self.myLocation = location.coordinate
+            self.locationManager.stopUpdatingLocation()
+            self.locationManager.delegate = nil
+        }
+    }
 }

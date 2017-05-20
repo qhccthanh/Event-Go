@@ -15,6 +15,7 @@ class EVTaskCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var taskDecriptionLabel: UILabel!
+    @IBOutlet weak var buttonJoinTask: EGoButton!
     
     func bindingUI(with model: EVTaskModel, location: CLLocationCoordinate2D?) {
         
@@ -31,6 +32,7 @@ class EVTaskCollectionViewCell: UICollectionViewCell {
         case .ready:
             statusLabel.text = "Đang tham gia"
             statusLabel.textColor = UIColor.green
+            self.buttonJoinTask.isHidden = true
             break
         case .pending :
             statusLabel.text = "Đang chờ"
@@ -39,6 +41,7 @@ class EVTaskCollectionViewCell: UICollectionViewCell {
         default:
             statusLabel.text = "Đã tham gia"
             statusLabel.textColor = UIColor.blue
+             self.buttonJoinTask.isHidden = true
             break
         }
         
@@ -59,5 +62,7 @@ class EVTaskCollectionViewCell: UICollectionViewCell {
         marker.map = mapView
        
     }
+    
+    
     
 }

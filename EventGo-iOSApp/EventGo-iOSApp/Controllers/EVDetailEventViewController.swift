@@ -93,17 +93,18 @@ class EVDetailEventViewController: EVViewController {
         guard event != nil else {return}
         
         _ = EVClientUserService.joinEvent(event!.event_id)
-            .subscribe(onNext: { (data) in
-                if data["code"] == 200 {
+            .subscribe(onNext: { (json) in
+                if json["code"] == 200 {
                     dispatch_main_queue_safe {
                         let vc = EVController.tasks.getController() as! EVTasksViewController
+                        let data = json["data"]
                         vc.idEvent = data["event_id"].stringValue
                         self.present(vc, animated: true, completion: nil)
                     }
                 } else {
                     
                     dispatch_main_queue_safe {
-                        let error = data["error"].stringValue
+                        let error = json["error"].stringValue
                         let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: error)
                         let controller = EVPopOverController(customView: info, height: info.heightView )
                         controller.showView(self, detailBlock: nil) {

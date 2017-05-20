@@ -222,6 +222,13 @@
 			remoteGlobalIDString = D047261619E49F82006002AA;
 			remoteInfo = "ReactiveObjC-iOSTests";
 		};
+		D0BEEA4E1ED0A85700AFF73E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D01B47BD1E8AC826007D990C /* ReactiveObjC.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D047260B19E49F82006002AA;
+			remoteInfo = "ReactiveObjC-iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -841,6 +848,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D0BEEA4F1ED0A85700AFF73E /* PBXTargetDependency */,
 			);
 			name = EventGoCommon;
 			productName = EventGoCommon;
@@ -968,6 +976,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D0BEEA4F1ED0A85700AFF73E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ReactiveObjC-iOS";
+			targetProxy = D0BEEA4E1ED0A85700AFF73E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		F4AD89BF1E7D2C5D0081F2F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1060,10 +1076,13 @@
 		F4AD89C21E7D2C5D0081F2F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ZPV9U8ULVA;
 				HEADER_SEARCH_PATHS = (
 					"\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"",
+					"$(inherited)",
+					"$(inherited)/**",
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
 				);
@@ -1080,10 +1099,13 @@
 		F4AD89C31E7D2C5D0081F2F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ZPV9U8ULVA;
 				HEADER_SEARCH_PATHS = (
 					"\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"",
+					"$(inherited)",
+					"$(inherited)/**",
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
 				);

@@ -236,14 +236,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWG-4n-UpL" customClass="GMSMapView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="348" height="120"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="348" height="200"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="120" id="j8M-u0-OSt"/>
+                                                        <constraint firstAttribute="height" constant="200" id="j8M-u0-OSt"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gift" translatesAutoresizingMaskIntoConstraints="NO" id="sMr-fc-mUt">
-                                                    <rect key="frame" x="124" y="70" width="100" height="100"/>
+                                                    <rect key="frame" x="124" y="150" width="100" height="100"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="dI6-R1-d6A"/>
@@ -259,13 +259,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check in circle K" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kr3-Ro-eUU">
-                                                    <rect key="frame" x="18" y="180" width="312" height="20"/>
+                                                    <rect key="frame" x="18" y="260" width="312" height="20"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                                     <color key="textColor" red="0.84313725490000002" green="0.098039215690000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJv-2y-lLj">
-                                                    <rect key="frame" x="-2" y="215" width="352" height="60"/>
+                                                    <rect key="frame" x="-2" y="295" width="352" height="60"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4f-i6-AOW">
                                                             <rect key="frame" x="2" y="0.0" width="176" height="60"/>
@@ -278,7 +278,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opening" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1a-NS-Xkc">
-                                                                    <rect key="frame" x="85" y="33" width="48" height="18"/>
+                                                                    <rect key="frame" x="84.5" y="33" width="48" height="18"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="OtA-Vn-7SA"/>
                                                                     </constraints>
@@ -366,29 +366,29 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_run" translatesAutoresizingMaskIntoConstraints="NO" id="OlM-D0-EXs">
-                                                    <rect key="frame" x="16" y="283" width="20" height="20"/>
+                                                    <rect key="frame" x="16" y="363" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="OlM-D0-EXs" secondAttribute="height" multiplier="1:1" id="cpG-zf-uOf"/>
                                                         <constraint firstAttribute="width" constant="20" id="qq6-81-kpy"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="some where in viet nam" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfo-f1-xoF">
-                                                    <rect key="frame" x="44" y="283" width="288" height="15.5"/>
+                                                    <rect key="frame" x="44" y="363" width="288" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                                     <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_distance" translatesAutoresizingMaskIntoConstraints="NO" id="eo8-dP-Pl0">
-                                                    <rect key="frame" x="16" y="306.5" width="20" height="20"/>
+                                                    <rect key="frame" x="16" y="386.5" width="20" height="20"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ube-fB-1gV">
-                                                    <rect key="frame" x="44" y="307" width="288" height="0.0"/>
+                                                    <rect key="frame" x="44" y="387" width="288" height="0.0"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                                     <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MA-Yc-K9V" customClass="EGoButton" customModule="EventGo_iOSApp" customModuleProvider="target">
-                                                    <rect key="frame" x="124" y="327" width="100" height="30"/>
+                                                    <rect key="frame" x="124" y="407" width="100" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Vn0-Pb-fnN"/>
                                                         <constraint firstAttribute="width" constant="100" id="wbX-Va-O9U"/>
@@ -439,6 +439,7 @@
                                         <connections>
                                             <outlet property="addressLabel" destination="gfo-f1-xoF" id="Y8S-nN-ReM"/>
                                             <outlet property="avatarImageView" destination="sMr-fc-mUt" id="Ybb-b9-s9G"/>
+                                            <outlet property="buttonJoinTask" destination="7MA-Yc-K9V" id="ihp-5M-xDe"/>
                                             <outlet property="mapView" destination="DWG-4n-UpL" id="oUK-AQ-XFE"/>
                                             <outlet property="nameTasksLabel" destination="kr3-Ro-eUU" id="4AB-A4-xNb"/>
                                             <outlet property="statusLabel" destination="R1a-NS-Xkc" id="kSB-Rf-aJS"/>
@@ -1787,7 +1788,7 @@
         <scene sceneID="E52-Mf-XOo">
             <objects>
                 <collectionViewController storyboardIdentifier="EVListHappeningEventsCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GTy-73-fqn" customClass="EVListHappeningEventsCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XAJ-aP-rz2">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="XAJ-aP-rz2">
                         <rect key="frame" x="0.0" y="0.0" width="351" height="540"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2222,7 +2223,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cer-wh-CZz">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gift" translatesAutoresizingMaskIntoConstraints="NO" id="fOL-PG-O4h">
                                                 <rect key="frame" x="67" y="8" width="240" height="130"/>
@@ -2291,14 +2292,24 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUH-fP-vxV">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
+                                                                        <connections>
+                                                                            <action selector="onCheckInAction:" destination="lZH-Pr-QBm" eventType="touchUpInside" id="ahQ-Bd-YBs"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="99T-Fy-wdT"/>
                                                                     <constraint firstItem="EFx-4g-stp" firstAttribute="leading" secondItem="ATK-LT-6h4" secondAttribute="leading" constant="8" id="H7H-CD-Yd5"/>
                                                                     <constraint firstItem="t7H-74-OeH" firstAttribute="centerY" secondItem="EFx-4g-stp" secondAttribute="centerY" id="Mmm-Mc-Ton"/>
+                                                                    <constraint firstItem="XUH-fP-vxV" firstAttribute="leading" secondItem="ATK-LT-6h4" secondAttribute="leading" id="U9s-1i-eOt"/>
                                                                     <constraint firstItem="EFx-4g-stp" firstAttribute="centerY" secondItem="ATK-LT-6h4" secondAttribute="centerY" id="VEb-0g-66e"/>
                                                                     <constraint firstItem="t7H-74-OeH" firstAttribute="leading" secondItem="EFx-4g-stp" secondAttribute="trailing" constant="8" id="ahc-TQ-C7U"/>
+                                                                    <constraint firstItem="XUH-fP-vxV" firstAttribute="top" secondItem="ATK-LT-6h4" secondAttribute="top" id="anZ-Ze-34S"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="XUH-fP-vxV" secondAttribute="bottom" id="jXg-vo-ze5"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="XUH-fP-vxV" secondAttribute="trailing" id="toc-gW-wV3"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gvq-Ee-5Kn">
@@ -2338,7 +2349,7 @@
                                                                     <constraint firstAttribute="bottom" secondItem="qur-qb-lrp" secondAttribute="bottom" id="oWW-JU-ZDS"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5A-Li-92l">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5A-Li-92l" customClass="DashView" customModule="EventGo_iOSApp" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="65" width="190" height="90"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera" translatesAutoresizingMaskIntoConstraints="NO" id="Zrh-S7-Wzq">
@@ -2354,13 +2365,23 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQE-Ps-Rb3">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="190" height="90"/>
+                                                                        <connections>
+                                                                            <action selector="takePhotoAction:" destination="lZH-Pr-QBm" eventType="touchUpInside" id="upx-Gj-l9z"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstItem="ZdL-S3-jqq" firstAttribute="top" secondItem="Zrh-S7-Wzq" secondAttribute="bottom" constant="8" id="13X-Px-SMO"/>
+                                                                    <constraint firstItem="TQE-Ps-Rb3" firstAttribute="leading" secondItem="j5A-Li-92l" secondAttribute="leading" id="77N-Mv-pt4"/>
                                                                     <constraint firstItem="ZdL-S3-jqq" firstAttribute="centerX" secondItem="j5A-Li-92l" secondAttribute="centerX" id="7zs-EF-2aU"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="TQE-Ps-Rb3" secondAttribute="trailing" id="GdZ-M8-0wW"/>
                                                                     <constraint firstAttribute="height" constant="90" id="InH-0V-g3X"/>
                                                                     <constraint firstItem="Zrh-S7-Wzq" firstAttribute="centerX" secondItem="j5A-Li-92l" secondAttribute="centerX" id="Pm3-Kl-FTC"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="TQE-Ps-Rb3" secondAttribute="bottom" id="QME-Jg-bAX"/>
+                                                                    <constraint firstItem="TQE-Ps-Rb3" firstAttribute="top" secondItem="j5A-Li-92l" secondAttribute="top" id="oYW-g2-JSj"/>
                                                                     <constraint firstItem="Zrh-S7-Wzq" firstAttribute="top" secondItem="j5A-Li-92l" secondAttribute="top" constant="8" id="saK-yY-hxa"/>
                                                                 </constraints>
                                                             </view>
@@ -2441,6 +2462,7 @@
                                                     <constraint firstItem="5Gg-5w-8UQ" firstAttribute="centerX" secondItem="aI7-ws-nqh" secondAttribute="centerX" id="5hl-fN-dds"/>
                                                     <constraint firstItem="mej-P7-Edd" firstAttribute="top" secondItem="5Gg-5w-8UQ" secondAttribute="bottom" constant="4" id="8Hg-V9-hjp"/>
                                                     <constraint firstItem="aI7-ws-nqh" firstAttribute="top" secondItem="8cw-ca-rMj" secondAttribute="top" constant="10" id="KfP-3i-E1G"/>
+                                                    <constraint firstAttribute="bottom" secondItem="n5P-MT-flU" secondAttribute="bottom" constant="50" id="S62-4i-E3N"/>
                                                     <constraint firstItem="aI7-ws-nqh" firstAttribute="leading" secondItem="8cw-ca-rMj" secondAttribute="leading" constant="8" id="SZu-J4-ShX"/>
                                                     <constraint firstAttribute="trailing" secondItem="aI7-ws-nqh" secondAttribute="trailing" constant="8" id="cRv-KC-C0U"/>
                                                     <constraint firstItem="mej-P7-Edd" firstAttribute="centerX" secondItem="aI7-ws-nqh" secondAttribute="centerX" id="dYZ-Dd-grI"/>
@@ -2457,7 +2479,7 @@
                                             <constraint firstItem="fOL-PG-O4h" firstAttribute="top" secondItem="Cer-wh-CZz" secondAttribute="top" constant="8" id="Enx-fO-OAU"/>
                                             <constraint firstItem="8cw-ca-rMj" firstAttribute="top" secondItem="fOL-PG-O4h" secondAttribute="bottom" constant="10" id="Fet-Y2-gcf"/>
                                             <constraint firstItem="fOL-PG-O4h" firstAttribute="centerX" secondItem="Cer-wh-CZz" secondAttribute="centerX" id="KIJ-32-26n"/>
-                                            <constraint firstAttribute="bottom" secondItem="8cw-ca-rMj" secondAttribute="bottom" constant="100" id="tT1-72-tLB"/>
+                                            <constraint firstAttribute="height" constant="700" id="jnX-hl-Feq"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXS-JV-v2V" customClass="EGoButtonModel" customModule="EventGo_iOSApp" customModuleProvider="target">
@@ -2469,12 +2491,12 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Cer-wh-CZz" secondAttribute="bottom" id="3U9-S3-3Vh"/>
                                     <constraint firstItem="yXS-JV-v2V" firstAttribute="centerX" secondItem="Cer-wh-CZz" secondAttribute="centerX" id="Ond-Hy-p1e"/>
                                     <constraint firstItem="yXS-JV-v2V" firstAttribute="width" secondItem="yXS-JV-v2V" secondAttribute="height" multiplier="1:1" id="TiD-Sc-nLQ"/>
                                     <constraint firstItem="Cer-wh-CZz" firstAttribute="leading" secondItem="LM8-ne-QE9" secondAttribute="leading" id="aZp-ie-3cf"/>
                                     <constraint firstAttribute="trailing" secondItem="Cer-wh-CZz" secondAttribute="trailing" id="bsM-JJ-umq"/>
-                                    <constraint firstAttribute="bottom" secondItem="yXS-JV-v2V" secondAttribute="bottom" constant="50" id="yPM-rz-vVi"/>
+                                    <constraint firstItem="yXS-JV-v2V" firstAttribute="top" secondItem="8cw-ca-rMj" secondAttribute="bottom" constant="10" id="csl-d2-XAk"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cer-wh-CZz" secondAttribute="bottom" id="ste-p2-saR"/>
                                     <constraint firstItem="Cer-wh-CZz" firstAttribute="top" secondItem="LM8-ne-QE9" secondAttribute="top" id="zUJ-Gj-iJX"/>
                                 </constraints>
                             </scrollView>
@@ -2485,7 +2507,6 @@
                             <constraint firstItem="odT-sJ-LF0" firstAttribute="top" secondItem="PH3-ak-7x4" secondAttribute="bottom" id="9lC-z6-YJy"/>
                             <constraint firstItem="LM8-ne-QE9" firstAttribute="top" secondItem="SeN-WJ-n1p" secondAttribute="bottom" id="OLR-oV-1pE"/>
                             <constraint firstAttribute="trailing" secondItem="LM8-ne-QE9" secondAttribute="trailing" id="RU8-9h-hlF"/>
-                            <constraint firstItem="Cer-wh-CZz" firstAttribute="height" secondItem="Ei3-ap-4nZ" secondAttribute="height" id="RlM-Cz-HjA"/>
                             <constraint firstItem="odT-sJ-LF0" firstAttribute="top" secondItem="LM8-ne-QE9" secondAttribute="bottom" id="X80-Q2-hW3"/>
                             <constraint firstItem="LM8-ne-QE9" firstAttribute="leading" secondItem="Ei3-ap-4nZ" secondAttribute="leading" id="cXE-HO-zxQ"/>
                             <constraint firstItem="Cer-wh-CZz" firstAttribute="width" secondItem="Ei3-ap-4nZ" secondAttribute="width" id="eBX-64-q44"/>
@@ -2494,7 +2515,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="chooseImageView" destination="j5A-Li-92l" id="8rk-7G-0Ue"/>
+                        <outlet property="chooseImageView" destination="j5A-Li-92l" id="f0K-4I-hgD"/>
+                        <outlet property="contentImageView" destination="fOL-PG-O4h" id="fmM-Gs-FKh"/>
+                        <outlet property="labelAddress" destination="mej-P7-Edd" id="02s-lS-LMi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5L-Vm-wz6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2569,7 +2592,7 @@
         <scene sceneID="Rb2-j4-nHK">
             <objects>
                 <collectionViewController storyboardIdentifier="EVListUpcomingEventsCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yse-FD-if7" customClass="EVListUpcomingEventsCollectionViewController" customModule="EventGo_iOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Pn0-QA-yzT">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Pn0-QA-yzT">
                         <rect key="frame" x="0.0" y="0.0" width="351" height="540"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

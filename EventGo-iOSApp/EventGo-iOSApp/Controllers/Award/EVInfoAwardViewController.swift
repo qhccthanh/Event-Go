@@ -16,6 +16,14 @@ class EVInfoAwardViewController: EVViewController {
     
     var listAward: [EVAward]?
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.modalTransitionStyle = .coverVertical
+        self.definesPresentationContext = true
+        self.modalPresentationStyle = .overCurrentContext
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard listAward != nil  else {return}

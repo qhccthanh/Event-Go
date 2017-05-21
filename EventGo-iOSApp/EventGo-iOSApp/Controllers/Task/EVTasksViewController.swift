@@ -67,11 +67,13 @@ extension EVTasksViewController: UICollectionViewDelegate, UICollectionViewDataS
         guard self.idEvent != nil || self.listTasks.count > 0 else {return cell}
         let task = listTasks[indexPath.row]
         let model = EVTaskModel(task: task)
-        if let infoTask = task.task_info {
-            cell.bindingUI(with: model, location: infoTask.location_info!.coordinate)
-        } else {
-            cell.bindingUI(with: model, location: nil)
+        cell.bindingUI(with: model, infoLocation: task.task_info.location_info) { (sender) in
+            
+            dispatch_main_queue_safe {
+                EVController.completeTask.showController(self)
+            }
         }
+        
         return cell
     }
     

@@ -65,6 +65,14 @@
 	<string>Xin phép sử dụng dịch vụ location</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Xin phép sử dụng thư viện</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto-Regular.ttf</string>
+		<string>Roboto-Italic.ttf</string>
+		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>Roboto-Thin.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

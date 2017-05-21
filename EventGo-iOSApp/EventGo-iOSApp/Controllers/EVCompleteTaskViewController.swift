@@ -41,6 +41,12 @@ class EVCompleteTaskViewController: EVViewController {
   
     }
     
+    
+    @IBAction func quitAction(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func onCheckInAction(_ sender: Any) {
         
         if CLLocationManager.authorizationStatus() != .denied {
@@ -87,6 +93,34 @@ extension EVCompleteTaskViewController: CLLocationManagerDelegate {
             self.myLocation = location.coordinate
             self.locationManager.stopUpdatingLocation()
             self.locationManager.delegate = nil
+            let geocoder = CLGeocoder()
+            geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
+                var addressString : String = ""
+                
+                if error == nil && placemarks!.count > 0 {
+                    let placemark = placemarks!.first!
+                    if placemark.subThoroughfare != nil {
+                        addressString = placemark.subThoroughfare! + " "
+                    }
+                    if placemark.thoroughfare != nil {
+                        addressString = addressString + placemark.thoroughfare! + ", "
+                    }
+                    
+                    if placemark.locality != nil {
+                        addressString = addressString + placemark.locality! + ", "
+                    }
+                    if placemark.administrativeArea != nil {
+                        addressString = addressString + placemark.administrativeArea! + " "
+                    }
+                    if placemark.country != nil {
+                        addressString = addressString + placemark.country!
+                    }
+                    
+                    dispatch_main_queue_safe {
+                        self.labelAddress.text = addressString
+                    }
+                }
+            })
         }
     }
 }

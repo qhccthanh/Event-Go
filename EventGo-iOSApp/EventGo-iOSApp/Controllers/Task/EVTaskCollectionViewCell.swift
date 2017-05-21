@@ -16,8 +16,8 @@ class EVTaskCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var taskDecriptionLabel: UILabel!
     @IBOutlet weak var buttonJoinTask: EGoButton!
-    
-    func bindingUI(with model: EVTaskModel, location: CLLocationCoordinate2D?) {
+    var blockJoinTask: ((Any)->Void)!
+    func bindingUI(with model: EVTaskModel, infoLocation: EVInfoLocation?, block: @escaping (Any)-> Void) {
         
         nameTasksLabel.text = model.nameEvent()
         addressLabel.text = model.address
@@ -41,28 +41,34 @@ class EVTaskCollectionViewCell: UICollectionViewCell {
         default:
             statusLabel.text = "Đã tham gia"
             statusLabel.textColor = UIColor.blue
-             self.buttonJoinTask.isHidden = true
+            
             break
         }
         
-        guard location != nil else {
+        self.blockJoinTask = block
+        
+        guard infoLocation != nil else {
             return
         }
+
         
-//        EVLocationServices.shareInstance.getDetailLocation(with: location).
+        let coordinate = infoLocation!.coordinate
         
-        let camera = GMSCameraPosition.camera(withLatitude: location!.latitude , longitude: location!.longitude, zoom: 13.0)
+        let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude , longitude: coordinate.longitude, zoom: 13.0)
         
         self.mapView.camera = camera
         self.mapView.isUserInteractionEnabled = false
         
-        let position = CLLocationCoordinate2D(latitude: location!.latitude , longitude: location!.longitude)
+        let position = CLLocationCoordinate2D(latitude: coordinate.latitude , longitude: coordinate.longitude)
         let marker = GMSMarker(position: position)
         marker.title = model.nameEvent()
         marker.map = mapView
        
     }
     
-    
-    
+    @IBAction func onJoinTaskAction(_ sender: Any) {
+        if blockJoinTask != nil {
+            blockJoinTask!(sender)
+        }
+    }
 }

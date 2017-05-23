@@ -30,6 +30,10 @@ class EVListEventsCollectionViewCell: UICollectionViewCell {
             avatarEventImageView.af_setImage(withURL: url)
         }
         
+        if supplierNameLabel != nil {
+            supplierNameLabel.text = eventModel.nameSupplier()
+        }
+        
         if numberTaskLabel != nil {
             let caseEvent = eventModel.statusEvent()
             switch caseEvent! {

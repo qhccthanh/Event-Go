@@ -17,9 +17,9 @@ class EVTaskServices: BaseService {
         return "events"
     }
     
-   static func getAllTasks(_ idEvent: String ) -> Observable<[EVTask]>{
+    static func getAllTasks(_ idEvent: String, userId: String ) -> Observable<[EVTask]>{
         
-        let url = path + "events/\(idEvent)/tasks"
+        let url = path + "events/\(idEvent)/tasks?\(userId)"
         return Observable.create({ (sub) -> Disposable in
             
             let request = EVReactNetwork.ev_request(with: .get, header: self.headers, urlString: url, params: nil)

@@ -13,6 +13,7 @@ class EVTasksViewController: EVViewController {
     @IBOutlet weak var colletionView: UICollectionView!
     var listTasks: Array<EVTask> = Array<EVTask>()
     var idEvent: String?
+    var userId: String?
     var height: CGFloat = 500.0
     var width: CGFloat = 300.0
     override func viewDidLoad() {
@@ -22,7 +23,7 @@ class EVTasksViewController: EVViewController {
         
         guard self.idEvent != nil else {return}
         _ = EVAppFactory.client.tasks
-            .getAllTask(idEvent!)
+            .getAllTask(idEvent!, userId: userId!)
             .subscribe(onNext: { (tasks) in
                 self.listTasks = tasks
                 dispatch_main_queue_safe {

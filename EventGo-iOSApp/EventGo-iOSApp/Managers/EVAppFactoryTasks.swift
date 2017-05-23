@@ -14,7 +14,7 @@ import RxCocoa
 
 public struct EVAppFactoryTasks {
     
-    func getAllTask(_ idEvent: String) -> Observable<[EVTask]> {
+    func getAllTask(_ idEvent: String, userId: String) -> Observable<[EVTask]> {
         
         
         return Observable.create({ (sub) -> Disposable in
@@ -24,7 +24,7 @@ public struct EVAppFactoryTasks {
 //                sub.onNext(tasks)
             }
             
-            let request = EVTaskServices.getAllTasks(idEvent)
+            let request = EVTaskServices.getAllTasks(idEvent, userId: userId)
                 .observeOn(MainScheduler.instance).subscribe(onNext: { (tasks) in
 //                    tasks.save()
                     sub.onNext(tasks)

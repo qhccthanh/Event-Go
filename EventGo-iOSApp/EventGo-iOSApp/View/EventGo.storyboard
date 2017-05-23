@@ -63,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTF-Cp-6TX">
-                                <rect key="frame" x="87" y="133.5" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="133.5" width="200" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0UI-ww-6CF">
                                         <rect key="frame" x="100" y="100" width="300" height="300"/>
@@ -218,10 +218,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundColor" translatesAutoresizingMaskIntoConstraints="NO" id="8oq-jX-3SS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3UA-5T-hpA">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3UA-5T-hpA">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vGA-0U-7BR">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="vGA-0U-7BR">
                                     <size key="itemSize" width="348" height="598"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -284,7 +284,7 @@
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opening" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1a-NS-Xkc">
-                                                                                    <rect key="frame" x="85" y="33" width="48" height="18"/>
+                                                                                    <rect key="frame" x="84.5" y="33" width="48" height="18"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="18" id="OtA-Vn-7SA"/>
                                                                                     </constraints>
@@ -481,7 +481,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DANH SÁCH NHIỆM VỤ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypf-Y3-NqQ">
-                                <rect key="frame" x="109" y="41" width="158.5" height="21"/>
+                                <rect key="frame" x="108.5" y="41" width="158.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="r9v-pj-jWo"/>
                                 </constraints>
@@ -1387,7 +1387,7 @@
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrD-Je-e5X">
-                                                                <rect key="frame" x="-26" y="78" width="302" height="1"/>
+                                                                <rect key="frame" x="-26.5" y="78" width="302" height="1"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="0.80000000000000004" id="L5W-MN-daE"/>
@@ -1679,7 +1679,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJC-WP-bbp">
-                                <rect key="frame" x="163" y="32" width="48" height="48"/>
+                                <rect key="frame" x="163.5" y="32" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yJC-WP-bbp" secondAttribute="height" multiplier="1:1" id="62T-Y3-Geh"/>
                                     <constraint firstAttribute="width" constant="48" id="zFk-CC-Ej7"/>
@@ -2099,7 +2099,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csU-uL-N9v" customClass="EGoButtonModel" customModule="EventGo_iOSApp" customModuleProvider="target">
-                                <rect key="frame" x="163" y="32" width="48" height="48"/>
+                                <rect key="frame" x="163.5" y="32" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="GMb-O1-0nE"/>
                                     <constraint firstAttribute="width" constant="48" id="wPJ-Og-dE5"/>
@@ -2209,7 +2209,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EW6-bu-yUk">
-                                            <rect key="frame" x="153" y="18" width="70" height="30"/>
+                                            <rect key="frame" x="152.5" y="18" width="70" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="13q-xf-EVR"/>
                                                 <constraint firstAttribute="height" constant="30" id="Gyu-T4-gnD"/>
@@ -2592,7 +2592,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8CU-e2-Zne">
-                                <rect key="frame" x="87" y="133.5" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="133.5" width="200" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EA0-vP-WyE">
                                         <rect key="frame" x="100" y="99.5" width="270" height="270"/>

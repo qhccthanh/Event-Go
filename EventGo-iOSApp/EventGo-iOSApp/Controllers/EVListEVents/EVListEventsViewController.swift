@@ -72,6 +72,7 @@ class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UI
         let event = listEvents[indexPath.row]
         let vc = EVController.tasks.getController() as! EVTasksViewController
         vc.idEvent = event.event_id
+        vc.userId = event.user_id
         self.present(vc, animated: true, completion: nil)
     }
 

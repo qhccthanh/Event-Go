@@ -22,6 +22,7 @@ public class EVEvent: Object {
     dynamic var detail_url: String?
     dynamic var start_time: Date?
     dynamic var end_time: Date?
+    dynamic var supplierName: String! = ""
     dynamic var created_date: Double = 0
 //    dynamic var location_info: NSDictionary?
     dynamic var priority: Double = 1
@@ -53,7 +54,8 @@ public class EVEvent: Object {
         
         let event = EVEvent()
         event.event_id = data["event_id"].stringValue
-        event.supplier_id = data["supplier_id"].stringValue
+//        event.supplier_id = data["supplier_id"].stringValue
+        event.supplierName = data["supplier_id"]["name"].stringValue
         event.name = data["name"].stringValue
         event.sub_name = data["sub_name"].stringValue
         event.thumbnail_url = data["thumbnail_url"].stringValue

@@ -127,7 +127,7 @@ class EVEventModel: EVEventProtocol {
         self.imageURL = event.cover_url
         self.start_day = CTDateFormart(date: event.start_time!).daymonyear()
         self.end_day = CTDateFormart(date: event.end_time!).daymonyear()
-        self.supplier = event.supplier_id
+        self.supplier = event.supplierName
         self.status = event.status
     }
     

@@ -87,7 +87,7 @@
                     CLLocation *lastLocationGet = locations.lastObject;
                     double deltaLng = fabs(self.lastCoordinate.latitude - lastLocationGet.coordinate.latitude);
                     double deltaLat = fabs(self.lastCoordinate.longitude - lastLocationGet.coordinate.longitude);
-                    if ( deltaLng > 0.00001 || deltaLng > 0.00001) {
+                    if ( deltaLng > 0.00001 || deltaLat > 0.00001) {
                         [subscriber sendNext:locations];
                         self.lastCoordinate = locations.lastObject.coordinate;
                         [self storageLocation];
@@ -120,18 +120,24 @@
     
     @weakify(self);
     return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-        @strongify(self);
-        
         self.updateLocationCallback = ^(NSError *error, NSArray<CLLocation *> *locations) {
+            @strongify(self);
             if (error) {
                 [subscriber sendError:error];
             } else if (locations) {
-                [subscriber sendNext:locations.lastObject];
+                CLLocation *lastLocationGet = locations.lastObject;
+                double deltaLng = fabs(self.lastCoordinate.latitude - lastLocationGet.coordinate.latitude);
+                double deltaLat = fabs(self.lastCoordinate.longitude - lastLocationGet.coordinate.longitude);
+                if ( deltaLng > 0.00001 || deltaLat > 0.00001) {
+                    [subscriber sendNext:lastLocationGet];
+                    self.lastCoordinate = locations.lastObject.coordinate;
+                    [self storageLocation];
+                }
             } else {
                 [subscriber sendError:NULL];
             }
         };
-        
+         @strongify(self);
         // GET STORAGE LOCATION
         CLLocationCoordinate2D coordinate = [self getCoordinate];
         CLLocation *locationTemp = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
@@ -217,9 +223,9 @@
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray<CLLocation *> *)locations{
     
-    if (self.requestLocationCallback) {
-        self.requestLocationCallback(NULL, locations);
-    }
+//    if (self.requestLocationCallback) {
+//        self.requestLocationCallback(NULL, locations);
+//    }
     
     if (self.updateLocationCallback) {
         self.updateLocationCallback(NULL,locations);
@@ -228,9 +234,9 @@
 
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error {
-    if (self.requestLocationCallback) {
-        self.requestLocationCallback(error, NULL);
-    }
+//    if (self.requestLocationCallback) {
+//        self.requestLocationCallback(error, NULL);
+//    }
     if(self.updateLocationCallback) {
         self.updateLocationCallback(error,NULL);
     }

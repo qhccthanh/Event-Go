@@ -37,11 +37,11 @@ public struct EVAppFactoryTasks {
         })
     }
     
-    func joinEvent(_ task: EVTask) -> Observable<EVResponseMission> {
+    func joinTask(_ task: EVTask) -> Observable<EVResponseMission> {
         return EVAppFactoryClient.requestMission(EVClientUserService.joinTask(task.task_id))
     }
     
-    func completeEvent(_ task: EVTask, linkPost: String, imageURL: String) -> Observable<EVResponseMission> {
+    func completeTask(_ task: EVTask, linkPost: String, imageURL: String) -> Observable<EVResponseMission> {
         return EVAppFactoryClient.requestMission(EVClientUserService
             .completeTask(task.task_id,
                           params: [
@@ -52,7 +52,7 @@ public struct EVAppFactoryTasks {
                 ]))
     }
     
-    func outEvent(_ task: EVTask) -> Observable<EVResponseMission> {
+    func outTask(_ task: EVTask) -> Observable<EVResponseMission> {
         return EVAppFactoryClient.requestMission(EVClientUserService.outTask(task.task_id))
     }
     

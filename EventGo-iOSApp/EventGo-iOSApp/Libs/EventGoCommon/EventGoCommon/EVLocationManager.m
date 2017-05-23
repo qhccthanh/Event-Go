@@ -49,8 +49,7 @@
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-        _locationManager.distanceFilter = 1;
-        [_locationManager startUpdatingLocation];
+        _locationManager.distanceFilter = 2;
     }
     return _locationManager;
 }
@@ -79,13 +78,20 @@
 
             [subscriber sendError:NULL];
         } else {
-            
+            @weakify(self);
             self.requestLocationCallback = ^(NSError *error,NSArray<CLLocation *> *locations) {
-                
+                @strongify(self);
                 if (error) {
                     [subscriber sendError:error];
-                } else if (locations) {
-                    [subscriber sendNext:locations];
+                } else if (locations && locations.lastObject) {
+                    CLLocation *lastLocationGet = locations.lastObject;
+                    double deltaLng = fabs(self.lastCoordinate.latitude - lastLocationGet.coordinate.latitude);
+                    double deltaLat = fabs(self.lastCoordinate.longitude - lastLocationGet.coordinate.longitude);
+                    if ( deltaLng > 0.00001 || deltaLng > 0.00001) {
+                        [subscriber sendNext:locations];
+                        self.lastCoordinate = locations.lastObject.coordinate;
+                        [self storageLocation];
+                    }
                 } else {
                     [subscriber sendError:NULL];
                 }

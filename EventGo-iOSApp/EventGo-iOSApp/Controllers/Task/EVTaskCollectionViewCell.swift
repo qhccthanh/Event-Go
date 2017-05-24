@@ -46,23 +46,6 @@ class EVTaskCollectionViewCell: UICollectionViewCell {
         }
         
         self.blockJoinTask = block
-        
-        guard infoLocation != nil else {
-            return
-        }
-
-        
-        let coordinate = infoLocation!.coordinate
-        
-        let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude , longitude: coordinate.longitude, zoom: 13.0)
-        
-        self.mapView.camera = camera
-        self.mapView.isUserInteractionEnabled = false
-        
-        let position = CLLocationCoordinate2D(latitude: coordinate.latitude , longitude: coordinate.longitude)
-        let marker = GMSMarker(position: position)
-        marker.title = model.nameEvent()
-        marker.map = mapView
        
     }
     

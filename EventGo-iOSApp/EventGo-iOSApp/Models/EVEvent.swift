@@ -54,6 +54,9 @@ public class EVEvent: Object {
         
         let event = EVEvent()
         event.event_id = data["event_id"].stringValue
+        if event.event_id == "" {
+            event.event_id = data["_id"].stringValue
+        }
 //        event.supplier_id = data["supplier_id"].stringValue
         event.supplierName = data["supplier_id"]["name"].stringValue
         event.name = data["name"].stringValue

@@ -12,6 +12,7 @@ import SwiftyJSON
 
 public class EVUser: Object {
 
+    var id: String!
     var name: String!
     var nick_name: String?
     var gender: String?
@@ -40,6 +41,11 @@ public class EVUser: Object {
     class func fromJson(data: JSON) -> EVUser {
         
         let user = EVUser()
+        user.id = data["user_id"].stringValue
+        if user.id == "" {
+            user.id = data["_id"].stringValue
+        }
+        
         user.name = data["name"].stringValue
         user.nick_name = data["nick_name"].stringValue
         user.image_url = data["image_url"].stringValue

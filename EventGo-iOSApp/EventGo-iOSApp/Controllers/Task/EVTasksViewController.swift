@@ -7,28 +7,34 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class EVTasksViewController: EVViewController {
 
+    @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var colletionView: UICollectionView!
     var listTasks: Array<EVTask> = Array<EVTask>()
     var idEvent: String?
     var userId: String?
-    var height: CGFloat = 500.0
-    var width: CGFloat = 300.0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        width = self.view.frame.width - 40
-        height = self.view.frame.height - 20
         
-        guard self.idEvent != nil else {return}
+        
+        guard let idFEvent = self.idEvent,
+                let userID = EVAppFactory.shareInstance.currentUser?.id
+        else {
+            return
+        }
+        
         _ = EVAppFactory.client.tasks
-            .getAllTask(idEvent!, userId: userId!)
+            .getAllTask(idFEvent, userId: userID)
             .subscribe(onNext: { (tasks) in
                 self.listTasks = tasks
                 dispatch_main_queue_safe {
                     self.colletionView.reloadData()
-                }
+                   }
             }, onError: { (error) in
                 
                 dispatch_main_queue_safe {
@@ -79,10 +85,30 @@ extension EVTasksViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: width, height: height)
+        return CGSize(width: collectionView.getSize().width, height: collectionView.getSize().height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-         return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20);
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let model = listTasks[indexPath.row]
+        guard let infoLocation = model.task_info.location_info else {return}
+        
+        let camera = GMSCameraPosition.camera(withLatitude: infoLocation.coordinate.latitude, longitude: infoLocation.coordinate.longitude, zoom: 13.0)
+        
+        self.mapView.camera = camera
+        self.mapView.isUserInteractionEnabled = false
+        
+        let position = CLLocationCoordinate2D(latitude: infoLocation.coordinate.latitude, longitude: infoLocation.coordinate.longitude)
+        let marker = GMSMarker(position: position)
+        marker.title = model.name
+        marker.map = self.mapView
+
     }
 }

@@ -59,7 +59,7 @@ class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! EVListEventsCollectionViewCell
         let event = listEvents[indexPath.row]
         let condition = "event_id == \"\(event.event_id!)\""
-        let eventInfo: EVEvent? = evRealm().filter(condition).first
+        let eventInfo: EVEvent? = evRealm().filter(condition).first      
         guard eventInfo != nil else {
             return cell
         }
@@ -91,5 +91,4 @@ extension EVListEventsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
-
 }

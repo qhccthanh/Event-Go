@@ -77,7 +77,9 @@ extension EVTasksViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.bindingUI(with: model, infoLocation: task.task_info.location_info) { (sender) in
             
             dispatch_main_queue_safe {
-                EVController.completeTask.showController(self)
+                let vc = EVController.completeTask.getController() as! EVCompleteTaskViewController
+                vc.task = task
+                self.present(vc, animated: true, completion: nil)
             }
         }
         

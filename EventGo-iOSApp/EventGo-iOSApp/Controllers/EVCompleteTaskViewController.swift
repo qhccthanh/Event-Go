@@ -15,6 +15,7 @@ class EVCompleteTaskViewController: EVViewController {
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var labelAddress: UILabel!
     
+    var  task: EVTask?
     
     var imageSeleted: UIImage!
     override func viewDidLoad() {
@@ -60,6 +61,41 @@ class EVCompleteTaskViewController: EVViewController {
             }
         }
     }
+    
+    @IBAction func completeAction(_ sender: Any) {
+        guard let task = task, let myLocation = myLocation else {
+            return
+        }
+//        guard let imageSeleted = imageSeleted else {
+//            return
+//        }
+        _ = EVAppFactory
+            .client
+            .tasks
+            .completeTask(task, userEventId: "", linkPost: "", imageURL: "", location: myLocation)
+            .subscribe(onNext: { (response) in
+                
+                if case .failure(let message) = response {
+                    let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: message)
+                    let controller = EVPopOverController(customView: info, height: info.heightView )
+                    controller.showView(self, detailBlock: nil) {
+                        controller.closeVC()
+                    }
+                    
+                } else { // success
+                    
+                }
+                
+            }, onError: { (error) in
+                let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: error.localizedDescription)
+                let controller = EVPopOverController(customView: info, height: info.heightView )
+                controller.showView(self, detailBlock: nil) {
+                    controller.closeVC()
+                }
+                
+            })
+    }
+    
 }
 extension EVCompleteTaskViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

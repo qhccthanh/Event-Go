@@ -56,8 +56,8 @@ public class EVClientUserService: BaseService {
         return EVReactNetwork.ev_request(with: .post, header: self.headers, urlString: urlRequest, params: nil)
     }
     
-    static func completeTask(_ task_id: String, params: [String:Any]) -> Observable<JSON> {
-        let urlRequest = path + "/tasks\(task_id)/completeTask"
+    static func completeTask(_ userEventId: String,_ task_id: String, params: [String:Any]) -> Observable<JSON> {
+        let urlRequest = path + "/events/\(userEventId)/tasks/\(task_id)/completeTask"
         return EVReactNetwork.ev_request(with: .post, header: self.headers, urlString: urlRequest, params: params)
     }
     

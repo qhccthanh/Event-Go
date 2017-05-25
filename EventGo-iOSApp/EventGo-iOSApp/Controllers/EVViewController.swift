@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import MBProgressHUD
 
 class EVViewController: UIViewController {
 
@@ -33,6 +34,26 @@ class EVViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func showLoading() {
+        
+        
+        if let loader = UIApplication.shared.windows.first!.viewWithTag(9999) as? MBProgressHUD {
+            
+            loader.show(animated: true)
+        } else {
+            
+            let loader = MBProgressHUD.showAdded(to: UIApplication.shared.windows.first!, animated: true)
+            //            loader.contentColor = UIColor.blue
+            //            loader.label.font = UIFont.systemFont(ofSize: 14)
+            loader.tag = 9999
+            UIApplication.shared.windows.first!.bringSubview(toFront: loader)
+        }
+        
+    }
+    func hideLoading() {
+        (UIApplication.shared.windows.first!.viewWithTag(9999) as? MBProgressHUD)?.hide(animated: false)
+        
+    }
 
     
     deinit {

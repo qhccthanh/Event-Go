@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class EVDetailEventViewController: EVViewController {
     
@@ -89,11 +90,16 @@ class EVDetailEventViewController: EVViewController {
     
     
     @IBAction func joinEventAction(_ sender: Any) {
-        
-        guard event != nil else {return}
-        
-        _ = EVClientUserService.joinEvent(event!.event_id)
+       
+      
+        guard let event = event else {return}
+         MBProgressHUD.showHUDLoading()
+        _ = EVClientUserService.joinEvent(event.event_id)
             .subscribe(onNext: { (json) in
+                dispatch_main_queue_safe {
+                    MBProgressHUD.hideHUDLoading()
+                }
+               
                 if json["code"] == 200 {
                     dispatch_main_queue_safe {
                         let vc = EVController.tasks.getController() as! EVTasksViewController

@@ -41,13 +41,15 @@ public struct EVAppFactoryTasks {
         return EVAppFactoryClient.requestMission(EVClientUserService.joinTask(task.task_id))
     }
     
-    func completeTask(_ task: EVTask, linkPost: String, imageURL: String) -> Observable<EVResponseMission> {
+    func completeTask(_ task: EVTask, userEventId: String, linkPost: String, imageURL: String, location: CLLocationCoordinate2D) -> Observable<EVResponseMission> {
         return EVAppFactoryClient.requestMission(EVClientUserService
-            .completeTask(task.task_id,
+            .completeTask(task.event_id, task.task_id,
                           params: [
                             "result": [
                                 "link_post": linkPost,
                                 "image_url": imageURL,
+                                "lat": location.latitude,
+                                "lng": location.longitude
                             ]
                 ]))
     }

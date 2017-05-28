@@ -21,6 +21,7 @@ class EVTasksViewController: EVViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.mapView.isHidden = true
         
         guard let idFEvent = self.idEvent,
                 let userID = EVAppFactory.shareInstance.currentUser?.id
@@ -33,6 +34,11 @@ class EVTasksViewController: EVViewController {
             .subscribe(onNext: { (tasks) in
                 self.listTasks = tasks
                 dispatch_main_queue_safe {
+                    if self.listTasks.count > 0 {
+                        self.mapView.isHidden = false
+                    } else {
+                        self.mapView.isHidden = true
+                    }
                     self.colletionView.reloadData()
                    }
             }, onError: { (error) in

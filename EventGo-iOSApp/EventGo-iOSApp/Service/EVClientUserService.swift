@@ -46,8 +46,8 @@ public class EVClientUserService: BaseService {
         return getInfo(urlRequest, lastTime: lastTime)
     }
     
-    static func joinTask(_ task_id: String) -> Observable<JSON> {
-        let urlRequest = path + "/tasks\(task_id)/joinTask"
+    static func joinTask(_ task_id: String, eventId: String) -> Observable<JSON> {
+        let urlRequest = path + "/events/\(eventId)/tasks/\(task_id)/joinTask"
         return EVReactNetwork.ev_request(with: .post, header: self.headers, urlString: urlRequest, params: nil)
     }
     
@@ -70,5 +70,6 @@ public class EVClientUserService: BaseService {
         let urlRequest = path + "/notifications"
         return getInfo(urlRequest, lastTime: lastTime)
     }
+    
     
 }

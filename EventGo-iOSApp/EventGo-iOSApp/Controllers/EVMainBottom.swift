@@ -59,11 +59,15 @@ class EVHomeBottom {
         self.animatedView.addSubview(arrayButton[0])
         arrayButton[0].setImage(EVImage.ic_bag.icon(), for: .normal)
         arrayButton[0].addTarget(self, action: #selector(showListEvent), for: .touchUpInside)
+        
         self.animatedView.addSubview(arrayButton[1])
         arrayButton[1].addTarget(self, action: #selector(showListUserEvent), for: .touchUpInside)
         arrayButton[1].setImage(EVImage.ic_checklist.icon(), for: .normal)
+        
         self.animatedView.addSubview(arrayButton[2])
         arrayButton[2].setImage(EVImage.ic_run.icon(), for: .normal)
+        arrayButton[2].addTarget(self, action: #selector(showListUserTask), for: .touchUpInside)
+        
         self.animatedView.addSubview(arrayButton[3])
         arrayButton[3].setImage(EVImage.ic_quit.icon(), for: .normal)
         
@@ -107,6 +111,12 @@ class EVHomeBottom {
     @objc func showListUserEvent() {
         self.quitAnimatedView {
             EVController.listEvents.showController(self.evViewController)
+        }
+    }
+    
+    @objc func showListUserTask(){
+        self.quitAnimatedView { 
+            EVController.userEvents.showController(self.evViewController)
         }
     }
 

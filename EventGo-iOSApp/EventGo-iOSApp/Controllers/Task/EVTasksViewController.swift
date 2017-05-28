@@ -16,7 +16,7 @@ class EVTasksViewController: EVViewController {
     var listTasks: Array<EVTask> = Array<EVTask>()
     var idEvent: String?
     var userId: String?
-    
+    var userEvenId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,11 +76,32 @@ extension EVTasksViewController: UICollectionViewDelegate, UICollectionViewDataS
         let model = EVTaskModel(task: task)
         cell.bindingUI(with: model, infoLocation: task.task_info.location_info) { (sender) in
             
-            dispatch_main_queue_safe {
-                let vc = EVController.completeTask.getController() as! EVCompleteTaskViewController
-                vc.task = task
-                self.present(vc, animated: true, completion: nil)
-            }
+           
+          
+                _ = EVAppFactory.client.tasks
+                    .joinTask(task, idEvent: self.userEvenId!)
+                    .subscribe(onNext: { (result) in
+                        
+                        if case EVResponseMission.failure(let message) = result {
+                            
+                            let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: message)
+                            let controller = EVPopOverController(customView: info, height: info.heightView )
+                            controller.showView(self, detailBlock: nil) {
+                                controller.closeVC()
+                            }
+                        } else {
+                            dispatch_main_queue_safe {
+                                let vc = EVController.completeTask.getController() as! EVCompleteTaskViewController
+                                vc.task = task
+                                vc.userEventId = self.userEvenId
+                                self.present(vc, animated: true, completion: nil)
+                            }
+                            
+                        }
+                    }, onError: { (error) in
+                        
+                    })
+            
         }
         
         return cell

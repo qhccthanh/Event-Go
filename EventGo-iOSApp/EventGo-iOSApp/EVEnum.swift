@@ -21,6 +21,14 @@ enum EVTaskStatus: String {
     }
 }
 
+enum EVUserTaskStatus: String {
+    case doing, cancel, completed
+    
+    func name() -> String {
+        return self.rawValue
+    }
+}
+
 enum EVEventStatus: String {
     case preparing,stagging,expired
     
@@ -87,6 +95,7 @@ enum EVController: String {
     case events = "EVEventsViewController"
     case tasks = "EVTasksViewController"
     case completeTask = "EVCompleteTaskViewController"
+    case userEvents = "EVListUserEventsViewController"
 }
 extension EVController {
     

@@ -59,7 +59,8 @@ public struct EVAppFactoryClient {
                 .subscribe(onNext: { (dataJson) in
                     if dataJson["code"] != 200 {
                         let error = "Code khong phai 200 error: \(dataJson["error"].stringValue)".toError()
-                        sub.onNext(.failure("Có lỗi từ máy chủ vui lòng thử lại"))
+                        let message = dataJson["error"].stringValue
+                        sub.onNext(.failure(message))
                         log.error(error)
                         return
                     }

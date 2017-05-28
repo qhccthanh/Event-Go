@@ -8,6 +8,7 @@
 
 import UIKit
 import SystemConfiguration
+import MBProgressHUD
 
 class EVCompleteTaskViewController: EVViewController {
 
@@ -15,7 +16,8 @@ class EVCompleteTaskViewController: EVViewController {
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var labelAddress: UILabel!
     
-    var  task: EVTask?
+    var task: EVTask?
+    var userEventId: String?
     
     var imageSeleted: UIImage!
     override func viewDidLoad() {
@@ -63,38 +65,95 @@ class EVCompleteTaskViewController: EVViewController {
     }
     
     @IBAction func completeAction(_ sender: Any) {
-        guard let task = task, let myLocation = myLocation else {
+        
+        guard let task = task, let userEventId = self.userEventId else {
+            let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: "Thông tin không hợp lệ, vui lòng thực hiện lại sau")
+            let controller = EVPopOverController(customView: info, height: info.heightView )
+            controller.showView(self, detailBlock: nil) {
+                controller.closeVC()
+            }
             return
         }
-//        guard let imageSeleted = imageSeleted else {
-//            return
-//        }
-        _ = EVAppFactory
-            .client
+        
+        guard let myLocation = myLocation else {
+            let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: "Vui lòng check in vị trí bạn đang thực hiện nhiệm vụ")
+            let controller = EVPopOverController(customView: info, height: info.heightView )
+            controller.showView(self, detailBlock: nil) {
+                controller.closeVC()
+            }
+            return
+        }
+        
+        guard let imageSeleted = self.imageSeleted  else {
+            let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: "Vui lòng chụp ảnh để chúng tôi xác thực thông tin của bạn")
+            let controller = EVPopOverController(customView: info, height: info.heightView )
+            controller.showView(self, detailBlock: nil) {
+                controller.closeVC()
+            }
+            return
+        }
+        
+        MBProgressHUD.showHUDLoading()
+        _ = EVAppFactory.client
             .tasks
-            .completeTask(task, userEventId: "", linkPost: "", imageURL: "", location: myLocation)
-            .subscribe(onNext: { (response) in
+            .uploadImage(image: imageSeleted, supplierId: "58d8d17ddfcd0e00116cf0e6")
+            .subscribe(onNext: { (result) in
                 
-                if case .failure(let message) = response {
-                    let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: message)
+                dispatch_main_queue_safe {
+                    
+                    _ = EVAppFactory
+                        .client
+                        .tasks
+                        .completeTask(task, userEventId: userEventId, linkPost: "", imageURL: result, location: myLocation)
+                        .subscribe(onNext: { (response) in
+                            dispatch_main_queue_safe {
+                                
+                                MBProgressHUD.hideHUDLoading()
+                                if case .failure(let message) = response {
+                                    let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: message)
+                                    let controller = EVPopOverController(customView: info, height: info.heightView )
+                                    controller.showView(self, detailBlock: nil) {
+                                        controller.closeVC()
+                                    }
+                                    
+                                } else { // success
+                                    let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: "Bạn đã hoàn thành nhiệm vụ")
+                                    let controller = EVPopOverController(customView: info, height: info.heightView )
+                                    controller.showView(self, detailBlock: nil) {
+                                        controller.closeVC()
+                                        self.dismiss(animated: true, completion: nil)
+                                    }
+
+                                }
+                            }
+                        }, onError: { (error) in
+                            
+                            dispatch_main_queue_safe {
+                                MBProgressHUD.hideHUDLoading()
+                                let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: error.localizedDescription)
+                                let controller = EVPopOverController(customView: info, height: info.heightView )
+                                controller.showView(self, detailBlock: nil) {
+                                    controller.closeVC()
+                                }
+
+                            }
+                            
+                        })
+
+                }
+                
+            }, onError: { (error) in
+                dispatch_main_queue_safe {
+                    MBProgressHUD.hideHUDLoading()
+                    let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: error.localizedDescription)
                     let controller = EVPopOverController(customView: info, height: info.heightView )
                     controller.showView(self, detailBlock: nil) {
                         controller.closeVC()
                     }
-                    
-                } else { // success
-                    
                 }
-                
-            }, onError: { (error) in
-                let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: error.localizedDescription)
-                let controller = EVPopOverController(customView: info, height: info.heightView )
-                controller.showView(self, detailBlock: nil) {
-                    controller.closeVC()
-                }
-                
             })
-    }
+        
+         }
     
 }
 extension EVCompleteTaskViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

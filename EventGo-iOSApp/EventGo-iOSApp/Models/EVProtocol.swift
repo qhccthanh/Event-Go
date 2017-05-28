@@ -40,6 +40,7 @@ class EVTaskModel: EVEventProtocol {
     var address: String!
     var status: String!
     var description: String!
+    var taskName: String!
     
     init(task: EVTask) {
         
@@ -48,6 +49,14 @@ class EVTaskModel: EVEventProtocol {
         self.address = task.task_info.address
         self.status = task.status
         self.description = task.descriptionTask
+    }
+    
+    init(userTask: EVUserTask){
+        
+        self.name = userTask.eventName
+        self.taskName = userTask.task.name
+        self.image_url = userTask.task.thumbnail_url
+        self.status = userTask.status
     }
     
     func nameEvent() -> String! {
@@ -62,12 +71,31 @@ class EVTaskModel: EVEventProtocol {
         return raw(self.status)
     }
     
+    func nameTask() -> String {
+        return self.taskName
+    }
+    
     func descriptionEvent() -> String {
         return self.description
     }
     
     func addressTask() -> String {
         return self.address
+    }
+    
+    func statusUserTask() -> EVUserTaskStatus {
+       return getStatus(self.status)
+    }
+    
+    func getStatus(_ status: String) -> EVUserTaskStatus {
+        switch status {
+        case "doing":
+            return .doing
+        case "cancel":
+            return .cancel
+        default:
+            return .completed
+        }
     }
     
     func raw(_ status: String) -> EVTaskStatus!{

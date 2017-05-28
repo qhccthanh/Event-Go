@@ -14,7 +14,7 @@ class EVInfoTaskViewController: EVViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.teal()
-        //awardImageView.dropShadow()
+//        awardImageView.dropShadow()
     }
 
     override func didReceiveMemoryWarning() {

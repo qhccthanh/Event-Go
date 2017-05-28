@@ -37,13 +37,38 @@ public struct EVAppFactoryTasks {
         })
     }
     
-    func joinTask(_ task: EVTask) -> Observable<EVResponseMission> {
-        return EVAppFactoryClient.requestMission(EVClientUserService.joinTask(task.task_id))
+    func joinTask(_ task: EVTask, idEvent: String) -> Observable<EVResponseMission> {
+        return EVAppFactoryClient.requestMission(EVClientUserService.joinTask(task.task_id, eventId: idEvent))
+    }
+    
+    func getMyTasks() -> Observable<[EVUserTask]>{
+        return Observable.create({ (sub) -> Disposable in
+            
+            dispatch_main_queue_safe {
+                let userEvent: [EVUserTask] = evRealm().read()
+                sub.onNext(userEvent)
+            }
+            let request = EVClientUserService.getAllMyTasks().observeOn(MainScheduler.instance).subscribe(onNext: { (dataJson) in
+                if dataJson["code"] == 200 {
+                    let listTasks = EVUserTask.listFromJson(data: dataJson["data"])
+                    sub.onNext(listTasks)
+                } else {
+                    sub.onError("Không parse dc data".toError())
+                }
+
+                
+            }, onError: { (error) in
+                sub.onError(error)
+            })
+            return Disposables.create {
+                request.dispose()
+            }
+        })
     }
     
     func completeTask(_ task: EVTask, userEventId: String, linkPost: String, imageURL: String, location: CLLocationCoordinate2D) -> Observable<EVResponseMission> {
         return EVAppFactoryClient.requestMission(EVClientUserService
-            .completeTask(task.event_id, task.task_id,
+            .completeTask(userEventId, task.task_id,
                           params: [
                             "result": [
                                 "link_post": linkPost,
@@ -58,4 +83,19 @@ public struct EVAppFactoryTasks {
         return EVAppFactoryClient.requestMission(EVClientUserService.outTask(task.task_id))
     }
     
+    func uploadImage(image: UIImage, supplierId: String) -> Observable<String> {
+        let tempImage = EVImageResource(name: "upload", image: image)
+        
+        return Observable.create({ (sub) -> Disposable in
+            let request = EVTaskServices.uploadImage(imageStore: tempImage, supplierId: supplierId).subscribe(onNext: { (image_url) in
+                
+                sub.onNext(image_url)
+            }, onError: { (error) in
+                sub.onError(error)
+            })
+            return Disposables.create {
+                request.dispose()
+            }
+        })
+    }
 }

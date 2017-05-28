@@ -32,11 +32,14 @@ class EVUserTask: Object {
     dynamic var event_id: String!
     dynamic var user_id: String!
     dynamic var task_id: String!
+    dynamic var eventName: String!
     dynamic var user_event_id: String!
     dynamic var status: String!
     dynamic var start_time: NSDate = NSDate()
     dynamic var end_time: NSDate = NSDate()
+    dynamic var task: EVTask! = EVTask()
     dynamic var result: EVTaskResult?
+    dynamic var name: String! = ""
     
     override public static func primaryKey() -> String? {
         return "id"
@@ -46,7 +49,7 @@ class EVUserTask: Object {
         
         let userTask = EVUserTask().build {
             $0.id = data["_id"].stringValue
-            $0.event_id = data["event_id"].stringValue
+//            $0.event_id = data["event_id"].stringValue
             $0.user_id = data["user_id"].stringValue
             $0.task_id = data["task_id"].stringValue
             $0.user_event_id = data["user_event_id"].stringValue
@@ -54,8 +57,19 @@ class EVUserTask: Object {
             $0.start_time = data["start_time"].stringValue.toISODate() as NSDate
             $0.end_time = data["end_time"].stringValue.toISODate() as NSDate
             $0.result = EVTaskResult.fromJson(data: data["result"])
+            $0.task = EVTask.fromJson(data: data["task_id"])
+            $0.name = data["name"].stringValue
+            $0.eventName = data["event_id"]["name"].stringValue
         }
         
         return userTask
+    }
+    
+    class func listFromJson(data: JSON) -> [EVUserTask] {
+        var listUserTasks: [EVUserTask] = [EVUserTask]()
+        for object in data.arrayValue {
+            listUserTasks.append(self.fromJson(data: object))
+        }
+        return listUserTasks
     }
 }

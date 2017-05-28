@@ -20,7 +20,8 @@ public struct EVAppFactoryUsers {
                     return
                 }
                 
-                let user = EVUser.fromJson(data: json["data"])
+                let t = json["data"]
+                let user = EVUser.fromJson(data: t)
                 EVAppFactory.shareInstance.currentUser = user
                 EVController.mainGame.showController()
             }, onError: { (_) in

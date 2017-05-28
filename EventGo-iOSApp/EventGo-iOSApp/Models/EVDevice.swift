@@ -27,6 +27,7 @@ public class EVDevice {
         dictionary["device_token"] = self.deviceToken
         dictionary["model"] = self.model
         dictionary["os"] = self.iosVersion
+        dictionary["device_token"] = UserDefaults.standard.string(forKey: "device_token") ?? ""
         return dictionary
     }
     

@@ -65,8 +65,8 @@ public class EVUserServices: BaseService {
             sub.onNext(EVCheckUserEnumType.notLogin)
             return
         }
-        
-        let userCurrent = EVUser.fromJson(data: dataJson["data"])
+        let t = dataJson["data"]
+        let userCurrent = EVUser.fromJson(data: t)
         EVAppFactory.shareInstance.currentUser = userCurrent
         let result = userCurrent.image_url == "" || userCurrent.name == "" ?
             EVCheckUserEnumType.updatedInfo :

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import MBProgressHUD
+import EZLoadingActivity
 
 class EVViewController: UIViewController {
 
@@ -35,26 +36,44 @@ class EVViewController: UIViewController {
     }
     
     func showLoading() {
-        
-        
-        if let loader = UIApplication.shared.windows.first!.viewWithTag(9999) as? MBProgressHUD {
-            
-            loader.show(animated: true)
-        } else {
-            
-            let loader = MBProgressHUD.showAdded(to: UIApplication.shared.windows.first!, animated: true)
-            //            loader.contentColor = UIColor.blue
-            //            loader.label.font = UIFont.systemFont(ofSize: 14)
-            loader.tag = 9999
-            UIApplication.shared.windows.first!.bringSubview(toFront: loader)
+        dispatch_main_queue_safe {
+            EZLoadingActivity.Settings.ActivityWidth = 180
+            EZLoadingActivity.Settings.ActivityHeight = 80
+            EZLoadingActivity.Settings.FontName = "Roboto-Thin"
+            EZLoadingActivity.show("Đang tải", disableUI: false)
         }
-        
     }
     func hideLoading() {
-        (UIApplication.shared.windows.first!.viewWithTag(9999) as? MBProgressHUD)?.hide(animated: false)
-        
+        dispatch_main_queue_safe {
+            EZLoadingActivity.Settings.ActivityWidth = 180
+            EZLoadingActivity.Settings.ActivityHeight = 80
+            EZLoadingActivity.hide()
+        }
+    }
+    
+    func hideLoading(text: String) {
+        dispatch_main_queue_safe {
+            EZLoadingActivity.Settings.ActivityWidth = 180
+            EZLoadingActivity.Settings.ActivityHeight = 80
+            EZLoadingActivity.show(text, disableUI: false)
+        }
     }
 
+    func showLoading(text: String) {
+        dispatch_main_queue_safe {
+            EZLoadingActivity.Settings.ActivityWidth = 180
+            EZLoadingActivity.Settings.ActivityHeight = 80
+            EZLoadingActivity.show(text, disableUI: false)
+        }
+    }
+    
+    func hideSuccessLoading(success: Bool) {
+        dispatch_main_queue_safe {
+            EZLoadingActivity.Settings.ActivityWidth = 180
+            EZLoadingActivity.Settings.ActivityHeight = 80
+            EZLoadingActivity.hide(success, animated: true)
+        }
+    }
     
     deinit {
         log.debug("\(NSStringFromClass(self.classForCoder))")

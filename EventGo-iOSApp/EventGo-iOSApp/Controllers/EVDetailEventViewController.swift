@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import EZLoadingActivity
 
 class EVDetailEventViewController: EVViewController {
     
@@ -93,14 +94,13 @@ class EVDetailEventViewController: EVViewController {
        
       
         guard let event = event else {return}
-         MBProgressHUD.showHUDLoading()
+//         MBProgressHUD.showHUDLoading()
+        self.showLoading(text: "Đang tải ...")
         _ = EVClientUserService.joinEvent(event.event_id)
             .subscribe(onNext: { (json) in
-                dispatch_main_queue_safe {
-                    MBProgressHUD.hideHUDLoading()
-                }
-               
+             
                 if json["code"] == 200 {
+                    self.hideSuccessLoading(success: true)
                     dispatch_main_queue_safe {
                         let vc = EVController.tasks.getController() as! EVTasksViewController
                         let data = json["data"]
@@ -108,7 +108,7 @@ class EVDetailEventViewController: EVViewController {
                         self.present(vc, animated: true, completion: nil)
                     }
                 } else {
-                    
+                    self.hideSuccessLoading(success: false)
                     dispatch_main_queue_safe {
                         let error = json["error"].stringValue
                         let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: error)
@@ -119,8 +119,7 @@ class EVDetailEventViewController: EVViewController {
                     }
                 }
             }, onError: { (error) in
-                
-                print(error)
+               self.hideLoading()
             })
     }
 

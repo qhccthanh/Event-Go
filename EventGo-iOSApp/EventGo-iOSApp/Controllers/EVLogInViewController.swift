@@ -14,6 +14,7 @@ import SwiftyJSON
 import RxSwift
 import Pulsator
 import JDAnimationKit
+import EZLoadingActivity
 
 class EVLogInViewController: EVViewController {
 
@@ -67,9 +68,10 @@ class EVLogInViewController: EVViewController {
     
     @IBAction func loginFBAction(_ sender: Any) {
         
+       
         let loginFacebookSignal = EVAuthenticationManager.share().authenticateWithFacebook(in: self)
         loginFacebookSignal?.subscribeNext({ (response) in
-            
+           
             if let token = FBSDKAccessToken.current().tokenString{
                 var params = Dictionary<String, Any>()
                 params["provider_type"] = EVConstant.PROVIDER_FACEBOOK
@@ -78,7 +80,7 @@ class EVLogInViewController: EVViewController {
                 EVAppFactory.users.signIn(with: params)
             }
         }, error: { (error) in
-            
+         
         })
     }
     

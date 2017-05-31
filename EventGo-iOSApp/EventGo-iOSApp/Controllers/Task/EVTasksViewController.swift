@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import EZLoadingActivity
 
 class EVTasksViewController: EVViewController {
 
@@ -82,21 +83,27 @@ extension EVTasksViewController: UICollectionViewDelegate, UICollectionViewDataS
         let model = EVTaskModel(task: task)
         cell.bindingUI(with: model, infoLocation: task.task_info.location_info) { (sender) in
             
-           
-          
+                self.showLoading()
+            
                 _ = EVAppFactory.client.tasks
                     .joinTask(task, idEvent: self.userEvenId!)
                     .subscribe(onNext: { (result) in
                         
                         if case EVResponseMission.failure(let message) = result {
                             
-                            let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: message)
-                            let controller = EVPopOverController(customView: info, height: info.heightView )
-                            controller.showView(self, detailBlock: nil) {
-                                controller.closeVC()
+                            self.hideSuccessLoading(success: true)
+                            
+                            dispatch_main_queue_safe {
+                                let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: message)
+                                let controller = EVPopOverController(customView: info, height: info.heightView )
+                                controller.showView(self, detailBlock: nil) {
+                                    controller.closeVC()
+                                }
                             }
+                            
                         } else {
                             dispatch_main_queue_safe {
+                                self.hideSuccessLoading(success: false)
                                 let vc = EVController.completeTask.getController() as! EVCompleteTaskViewController
                                 vc.task = task
                                 vc.userEventId = self.userEvenId
@@ -105,9 +112,8 @@ extension EVTasksViewController: UICollectionViewDelegate, UICollectionViewDataS
                             
                         }
                     }, onError: { (error) in
-                        
+                        self.hideLoading()
                     })
-            
         }
         
         return cell

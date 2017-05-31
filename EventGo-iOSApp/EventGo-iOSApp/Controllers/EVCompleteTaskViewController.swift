@@ -93,7 +93,7 @@ class EVCompleteTaskViewController: EVViewController {
             return
         }
         
-        MBProgressHUD.showHUDLoading()
+        self.showLoading()
         _ = EVAppFactory.client
             .tasks
             .uploadImage(image: imageSeleted, supplierId: "58d8d17ddfcd0e00116cf0e6")
@@ -108,7 +108,7 @@ class EVCompleteTaskViewController: EVViewController {
                         .subscribe(onNext: { (response) in
                             dispatch_main_queue_safe {
                                 
-                                MBProgressHUD.hideHUDLoading()
+                                self.hideLoading()
                                 if case .failure(let message) = response {
                                     let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: message)
                                     let controller = EVPopOverController(customView: info, height: info.heightView )
@@ -129,7 +129,7 @@ class EVCompleteTaskViewController: EVViewController {
                         }, onError: { (error) in
                             
                             dispatch_main_queue_safe {
-                                MBProgressHUD.hideHUDLoading()
+                                self.hideLoading()
                                 let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: error.localizedDescription)
                                 let controller = EVPopOverController(customView: info, height: info.heightView )
                                 controller.showView(self, detailBlock: nil) {

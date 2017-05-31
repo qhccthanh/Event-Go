@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 private let reuseIdentifier = "Cell"
 
@@ -22,6 +23,9 @@ class EVListHappeningEventsCollectionViewController: UICollectionViewController 
         let spacePadding = itemsPerRow * 2
         let widthAvailable = self.view.bounds.width - spacePadding - 30
         widthItem = widthAvailable/itemsPerRow
+        
+        self.collectionView?.emptyDataSetDelegate = self
+        self.collectionView?.emptyDataSetSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,5 +95,14 @@ extension EVListHappeningEventsCollectionViewController: UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 2
+    }
+}
+
+extension EVListHappeningEventsCollectionViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text: String = "No events in here"
+        let attributes: [AnyHashable: Any] = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(18.0)), NSForegroundColorAttributeName: UIColor.darkGray.withAlphaComponent(0.6)]
+        return NSAttributedString(string: text, attributes: attributes as? [String : Any])
     }
 }

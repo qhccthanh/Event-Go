@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 private let reuseIdentifier = "cell"
 
@@ -27,7 +28,10 @@ class EVListEventsViewController: EVViewController, UICollectionViewDelegate, UI
 
         self.view.isOpaque = false
         self.view.backgroundColor = .clear
-
+        
+        // set delegate when no have data
+        self.collectionView.emptyDataSetSource = self
+        self.collectionView.emptyDataSetSource = self
         
         _ = EVAppFactory.client.events
             .loadUserEvents()
@@ -91,5 +95,13 @@ extension EVListEventsViewController: UICollectionViewDelegateFlowLayout {
    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1
+    }
+}
+
+extension EVListEventsViewController : DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text: String = "Bạn chưa tham gia sự kiện nào"
+        let attributes: [AnyHashable: Any] = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(18.0)), NSForegroundColorAttributeName: UIColor.darkGray.withAlphaComponent(0.6)]
+        return NSAttributedString(string: text, attributes: attributes as? [String : Any])
     }
 }

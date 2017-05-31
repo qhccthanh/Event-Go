@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class EVListUserEventsViewController: EVViewController {
     
@@ -20,7 +21,9 @@ class EVListUserEventsViewController: EVViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.getMyTasks()
+        // set when no events
+        self.collectionView.emptyDataSetSource = self
+        self.collectionView.emptyDataSetDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -167,5 +170,13 @@ class EVUserEventCell: UICollectionViewCell {
         if blockJoinTask != nil {
             blockJoinTask!(sender)
         }
+    }
+}
+
+extension EVListUserEventsViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text: String = "Bạn chưa tham gia nhiệm vụ nào"
+        let attributes: [AnyHashable: Any] = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(18.0)), NSForegroundColorAttributeName: UIColor.darkGray.withAlphaComponent(0.6)]
+        return NSAttributedString(string: text, attributes: attributes as? [String : Any])
     }
 }

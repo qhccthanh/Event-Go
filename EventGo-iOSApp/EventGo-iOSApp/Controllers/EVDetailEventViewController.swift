@@ -105,6 +105,7 @@ class EVDetailEventViewController: EVViewController {
                         let vc = EVController.tasks.getController() as! EVTasksViewController
                         let data = json["data"]
                         vc.idEvent = data["event_id"].stringValue
+                        vc.userEvenId = data["_id"].stringValue
                         self.present(vc, animated: true, completion: nil)
                     }
                 } else {

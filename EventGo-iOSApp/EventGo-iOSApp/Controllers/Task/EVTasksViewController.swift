@@ -78,7 +78,7 @@ extension EVTasksViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EVTaskCollectionViewCell
-        guard self.idEvent != nil || self.listTasks.count > 0 else {return cell}
+        guard self.idEvent != nil || self.listTasks.count > 0 || self.userEvenId != nil else {return cell}
         let task = listTasks[indexPath.row]
         let model = EVTaskModel(task: task)
         cell.bindingUI(with: model, infoLocation: task.task_info.location_info) { (sender) in

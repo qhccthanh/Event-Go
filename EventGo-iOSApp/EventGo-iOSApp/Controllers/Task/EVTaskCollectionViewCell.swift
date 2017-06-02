@@ -50,8 +50,6 @@ class EVTaskCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func onJoinTaskAction(_ sender: Any) {
-        if blockJoinTask != nil {
-            blockJoinTask!(sender)
-        }
+        blockJoinTask?(sender)
     }
 }

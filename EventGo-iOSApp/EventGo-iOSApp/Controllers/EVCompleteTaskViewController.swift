@@ -9,6 +9,7 @@
 import UIKit
 import SystemConfiguration
 import MBProgressHUD
+import RxSwift
 
 class EVCompleteTaskViewController: EVViewController {
 
@@ -64,32 +65,28 @@ class EVCompleteTaskViewController: EVViewController {
         }
     }
     
+    func showAlertCompleteTask(title: String = "Thông báo", subTitle: String = "", frame: CGRect = CGRect(x: 0,y: 0,width: 300,height: 200), type: EVPopOverAppearance = .info, icon: UIImage? = EVImage.ic_logo.icon() ) {
+        let info = EVPopOverView(frame: frame, type: type, icon: icon, title: title, content: subTitle)
+        let controller = EVPopOverController(customView: info, height: info.heightView )
+        controller.showView(self, detailBlock: nil) {
+            controller.closeVC()
+        }
+    }
+    
     @IBAction func completeAction(_ sender: Any) {
         
         guard let task = task, let userEventId = self.userEventId else {
-            let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: "Thông tin không hợp lệ, vui lòng thực hiện lại sau")
-            let controller = EVPopOverController(customView: info, height: info.heightView )
-            controller.showView(self, detailBlock: nil) {
-                controller.closeVC()
-            }
+            self.showAlertCompleteTask(subTitle: "Thông tin không hợp lệ, vui lòng thực hiện lại sau")
             return
         }
         
         guard let myLocation = myLocation else {
-            let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: "Vui lòng check in vị trí bạn đang thực hiện nhiệm vụ")
-            let controller = EVPopOverController(customView: info, height: info.heightView )
-            controller.showView(self, detailBlock: nil) {
-                controller.closeVC()
-            }
+            self.showAlertCompleteTask(subTitle: "Vui lòng check in vị trí bạn đang thực hiện nhiệm vụ")
             return
         }
         
         guard let imageSeleted = self.imageSeleted  else {
-            let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: "Vui lòng chụp ảnh để chúng tôi xác thực thông tin của bạn")
-            let controller = EVPopOverController(customView: info, height: info.heightView )
-            controller.showView(self, detailBlock: nil) {
-                controller.closeVC()
-            }
+            self.showAlertCompleteTask(subTitle: "Vui lòng chụp ảnh để chúng tôi xác thực thông tin của bạn")
             return
         }
         
@@ -97,63 +94,25 @@ class EVCompleteTaskViewController: EVViewController {
         _ = EVAppFactory.client
             .tasks
             .uploadImage(image: imageSeleted, supplierId: "58d8d17ddfcd0e00116cf0e6")
-            .subscribe(onNext: { (result) in
-                
-                dispatch_main_queue_safe {
-                    
-                    _ = EVAppFactory
-                        .client
-                        .tasks
-                        .completeTask(task, userEventId: userEventId, linkPost: "", imageURL: result, location: myLocation)
-                        .subscribe(onNext: { (response) in
-                            dispatch_main_queue_safe {
-                                
-                                self.hideLoading()
-                                if case .failure(let message) = response {
-                                    let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: message)
-                                    let controller = EVPopOverController(customView: info, height: info.heightView )
-                                    controller.showView(self, detailBlock: nil) {
-                                        controller.closeVC()
-                                    }
-                                    
-                                } else { // success
-                                    let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: "Bạn đã hoàn thành nhiệm vụ")
-                                    let controller = EVPopOverController(customView: info, height: info.heightView )
-                                    controller.showView(self, detailBlock: nil) {
-                                        controller.closeVC()
-                                        self.dismiss(animated: true, completion: nil)
-                                    }
-
-                                }
-                            }
-                        }, onError: { (error) in
-                            
-                            dispatch_main_queue_safe {
-                                self.hideLoading()
-                                let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: error.localizedDescription)
-                                let controller = EVPopOverController(customView: info, height: info.heightView )
-                                controller.showView(self, detailBlock: nil) {
-                                    controller.closeVC()
-                                }
-
-                            }
-                            
-                        })
-
+            .observeOn(MainScheduler.instance)
+            .flatMap({ (result) -> Observable<EVResponseMission> in
+                return EVAppFactory.client.tasks
+                    .completeTask(task, userEventId: userEventId, linkPost: "", imageURL: result, location: myLocation)
+            })
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { (response) in
+                self.hideLoading()
+                if case .failure(let message) = response {
+                    self.showAlertCompleteTask(subTitle: message)
+                } else { // success
+                    self.showAlertCompleteTask(subTitle: "Bạn đã hoàn thành nhiệm vụ")
                 }
-                
             }, onError: { (error) in
-                dispatch_main_queue_safe {
-                    MBProgressHUD.hideHUDLoading()
-                    let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông báo", content: error.localizedDescription)
-                    let controller = EVPopOverController(customView: info, height: info.heightView )
-                    controller.showView(self, detailBlock: nil) {
-                        controller.closeVC()
-                    }
-                }
+                self.hideLoading()
+                self.showAlertCompleteTask(subTitle: error.localizedDescription)
             })
         
-         }
+    }
     
 }
 extension EVCompleteTaskViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

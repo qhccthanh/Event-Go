@@ -80,7 +80,7 @@ class EVLogInViewController: EVViewController {
                 EVAppFactory.users.signIn(with: params)
             }
         }, error: { (error) in
-         
+            print(error)
         })
     }
     

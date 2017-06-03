@@ -10,6 +10,9 @@ import UIKit
 import SystemConfiguration
 import MBProgressHUD
 import RxSwift
+import FBSDKShareKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class EVCompleteTaskViewController: EVViewController {
 
@@ -114,6 +117,43 @@ class EVCompleteTaskViewController: EVViewController {
         
     }
     
+    
+    @IBAction func shareFBAction(_ sender: Any) {
+        
+        if FBSDKAccessToken.current() == nil {
+            showAlertCompleteTask(subTitle: "Bạn phải đăng nhập Facebook")
+        } else {
+            if FBSDKAccessToken.current().hasGranted("publish_actions") {
+                
+                if contentImageView.image != nil {
+                    let sharePhoto = FBSDKSharePhoto(image: imageSeleted, userGenerated: true)
+                    let content = FBSDKSharePhotoContent()
+                    content.photos = [sharePhoto!]
+                    FBSDKShareDialog.show(from: self, with: content, delegate: self)
+
+                }else {
+                    
+                }
+            } else {
+                requestPublishPermissions()
+            }
+
+        }
+    }
+    
+    func requestPublishPermissions(){
+        
+        let login: FBSDKLoginManager = FBSDKLoginManager()
+        login.logIn(withPublishPermissions: ["publish_actions"], from: self) { (result, error) in
+            if (error != nil) {
+                print(error!)
+            } else if (result?.isCancelled)! {
+                print("Canceled")
+            } else if (result?.grantedPermissions.contains("publish_actions"))! {
+                print("permissions granted")
+            }
+        }
+    }
 }
 extension EVCompleteTaskViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -176,5 +216,19 @@ extension EVCompleteTaskViewController: CLLocationManagerDelegate {
                 }
             })
         }
+    }
+}
+
+extension EVCompleteTaskViewController: FBSDKSharingDelegate {
+    func sharer(_ sharer: FBSDKSharing!, didCompleteWithResults results: [AnyHashable : Any]!) {
+        print(results)
+    }
+    
+    func sharer(_ sharer: FBSDKSharing!, didFailWithError error: Error!) {
+        print(error)
+    }
+    
+    func sharerDidCancel(_ sharer: FBSDKSharing!) {
+        print()
     }
 }

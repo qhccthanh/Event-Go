@@ -14,6 +14,7 @@ class EVTasksViewController: EVViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var colletionView: UICollectionView!
+    @IBOutlet weak var pageController: UIPageControl!
     var listTasks: Array<EVTask> = Array<EVTask>()
     var idEvent: String?
     var userId: String?
@@ -34,6 +35,7 @@ class EVTasksViewController: EVViewController {
             .getAllTask(idFEvent, userId: userID)
             .subscribe(onNext: { (tasks) in
                 self.listTasks = tasks
+                self.pageController.numberOfPages = self.listTasks.count
                 dispatch_main_queue_safe {
                     if self.listTasks.count > 0 {
                         self.mapView.isHidden = false
@@ -133,6 +135,7 @@ extension EVTasksViewController: UICollectionViewDelegate, UICollectionViewDataS
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let model = listTasks[indexPath.row]
+        self.pageController.currentPage = indexPath.row
         guard let infoLocation = model.task_info.location_info else {return}
         
         let camera = GMSCameraPosition.camera(withLatitude: infoLocation.coordinate.latitude, longitude: infoLocation.coordinate.longitude, zoom: 13.0)

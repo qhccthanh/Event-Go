@@ -7,25 +7,40 @@
 //
 
 import Foundation
+import EZLoadingActivity
 
 public struct EVAppFactoryUsers {
     
     public func signIn(with params: [String:Any]) {
+        dispatch_main_queue_safe {
+            EZLoadingActivity.Settings.ActivityWidth = 180
+            EZLoadingActivity.Settings.ActivityHeight = 80
+            EZLoadingActivity.Settings.FontName = "Roboto-Thin"
+            EZLoadingActivity.show("Waiting ...", disableUI: true)
+        }
+        
         _ = EVUserServices
             .signIn(with: params)
             .subscribe(onNext: { (json) in
                 
                 if json["code"] != 200 {
                     // show message
+                    EZLoadingActivity.hide(false, animated: true)
                     return
                 }
                 
                 let t = json["data"]
                 let user = EVUser.fromJson(data: t)
                 EVAppFactory.shareInstance.currentUser = user
+                dispatch_main_queue_safe {
+                    EZLoadingActivity.Settings.ActivityWidth = 180
+                    EZLoadingActivity.Settings.ActivityHeight = 80
+                    EZLoadingActivity.hide(true, animated: false)
+                }
                 EVController.mainGame.showController()
+              
             }, onError: { (_) in
-                // show message
+               
             })
     }
     

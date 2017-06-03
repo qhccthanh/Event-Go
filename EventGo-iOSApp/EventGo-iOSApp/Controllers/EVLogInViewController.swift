@@ -70,14 +70,16 @@ class EVLogInViewController: EVViewController {
         
        
         let loginFacebookSignal = EVAuthenticationManager.share().authenticateWithFacebook(in: self)
+       
         loginFacebookSignal?.subscribeNext({ (response) in
-           
+//            self.showLoading()
             if let token = FBSDKAccessToken.current().tokenString{
                 var params = Dictionary<String, Any>()
                 params["provider_type"] = EVConstant.PROVIDER_FACEBOOK
                 params["provider_access_token"] = token
                 
                 EVAppFactory.users.signIn(with: params)
+
             }
         }, error: { (error) in
             print(error)
@@ -88,7 +90,7 @@ class EVLogInViewController: EVViewController {
    
         let loginGoogleSignal = EVAuthenticationManager.share().authenticateWithGoogle(in: self)
         loginGoogleSignal?.subscribeNext({ (response) in
-            
+            self.showLoading()
             guard let userGoogle = response as? GIDGoogleUser else {return}
             var params = Dictionary<String, Any>()
             params["provider_type"] = EVConstant.PROVIDER_GOOGLE
@@ -103,6 +105,7 @@ class EVLogInViewController: EVViewController {
             }
             
             EVAppFactory.users.signIn(with: params)
+        
         }, error: { (error) in
         
         })

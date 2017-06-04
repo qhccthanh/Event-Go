@@ -109,6 +109,7 @@ class EVCompleteTaskViewController: EVViewController {
                     self.showAlertCompleteTask(subTitle: message)
                 } else { // success
                     self.showAlertCompleteTask(subTitle: "Bạn đã hoàn thành nhiệm vụ")
+                    self.dismiss(animated: true, completion: nil)
                 }
             }, onError: { (error) in
                 self.hideLoading()
@@ -123,23 +124,19 @@ class EVCompleteTaskViewController: EVViewController {
         if FBSDKAccessToken.current() == nil {
             showAlertCompleteTask(subTitle: "Bạn phải đăng nhập Facebook")
         } else {
-            if FBSDKAccessToken.current().hasGranted("publish_actions") {
-                
-                if contentImageView.image != nil {
+            
+                if imageSeleted != nil {
                     let sharePhoto = FBSDKSharePhoto(image: imageSeleted, userGenerated: true)
                     let content = FBSDKSharePhotoContent()
                     content.photos = [sharePhoto!]
                     FBSDKShareDialog.show(from: self, with: content, delegate: self)
 
                 }else {
-                    
+                    showAlertCompleteTask(subTitle: "Vui lòng chụp ảnh để chia sẻ")
                 }
-            } else {
-                requestPublishPermissions()
             }
-
-        }
     }
+    
     
     func requestPublishPermissions(){
         

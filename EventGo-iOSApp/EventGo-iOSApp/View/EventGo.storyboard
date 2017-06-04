@@ -181,7 +181,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.29803921568627451" green="0.68627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="DpD-zz-Ned" firstAttribute="height" secondItem="Mr9-3H-whf" secondAttribute="height" id="K1c-RI-OSb"/>
                             <constraint firstItem="DpD-zz-Ned" firstAttribute="leading" secondItem="Mr9-3H-whf" secondAttribute="leading" id="L3R-Gp-80y"/>
@@ -1927,7 +1927,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cer-wh-CZz">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="650"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="fOL-PG-O4h">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gift" translatesAutoresizingMaskIntoConstraints="NO" id="fOL-PG-O4h">
                                                 <rect key="frame" x="67" y="8" width="240" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="PSi-xe-d2g"/>
@@ -1956,7 +1956,7 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3S-PE-W4I">
                                                                 <rect key="frame" x="40" y="265" width="240" height="40"/>
-                                                                <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                                 <color key="textColor" red="0.1725741029" green="0.21834245320000001" blue="0.44677489999999997" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -2680,7 +2680,7 @@
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opening" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="el0-P5-UpE">
-                                                                                    <rect key="frame" x="85" y="33" width="48" height="18"/>
+                                                                                    <rect key="frame" x="84" y="33" width="48" height="18"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="18" id="lmR-yb-qY2"/>
                                                                                     </constraints>

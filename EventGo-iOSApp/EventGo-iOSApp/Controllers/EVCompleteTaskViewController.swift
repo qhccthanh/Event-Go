@@ -13,6 +13,8 @@ import RxSwift
 import FBSDKShareKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import SwiftyJSON
+import EZLoadingActivity
 
 class EVCompleteTaskViewController: EVViewController {
 
@@ -22,6 +24,7 @@ class EVCompleteTaskViewController: EVViewController {
     
     var task: EVTask?
     var userEventId: String?
+    var idPost: String?
     
     var imageSeleted: UIImage!
     override func viewDidLoad() {
@@ -93,6 +96,12 @@ class EVCompleteTaskViewController: EVViewController {
             return
         }
         
+        guard let idPost = self.idPost else {
+            self.showAlertCompleteTask(subTitle: "Bạn phải Chia sẻ Facebook dưới chế độ công khai nhiệm vụ này")
+            return
+
+        }
+        
         self.showLoading()
         _ = EVAppFactory.client
             .tasks
@@ -100,7 +109,7 @@ class EVCompleteTaskViewController: EVViewController {
             .observeOn(MainScheduler.instance)
             .flatMap({ (result) -> Observable<EVResponseMission> in
                 return EVAppFactory.client.tasks
-                    .completeTask(task, userEventId: userEventId, linkPost: "", imageURL: result, location: myLocation)
+                    .completeTask(task, userEventId: userEventId, linkPost: idPost, imageURL: result, location: myLocation)
             })
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (response) in
@@ -108,8 +117,13 @@ class EVCompleteTaskViewController: EVViewController {
                 if case .failure(let message) = response {
                     self.showAlertCompleteTask(subTitle: message)
                 } else { // success
-                    self.showAlertCompleteTask(subTitle: "Bạn đã hoàn thành nhiệm vụ")
-                    self.dismiss(animated: true, completion: nil)
+//                    self.showAlertCompleteTask(subTitle: "Bạn đã hoàn thành nhiệm vụ")
+                    let info = EVPopOverView(frame: CGRect(x: 0,y: 0,width: 300,height: 200), type: .info, icon: EVImage.ic_logo.icon(), title: "Thông Báo", content: "Bạn đã hoàn thành nhiệm vụ")
+                    let controller = EVPopOverController(customView: info, height: info.heightView )
+                    controller.showView(self, detailBlock: nil) {
+                        controller.closeVC()
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 }
             }, onError: { (error) in
                 self.hideLoading()
@@ -124,13 +138,21 @@ class EVCompleteTaskViewController: EVViewController {
         if FBSDKAccessToken.current() == nil {
             showAlertCompleteTask(subTitle: "Bạn phải đăng nhập Facebook")
         } else {
-            
-                if imageSeleted != nil {
+            if imageSeleted != nil {
+                
                     let sharePhoto = FBSDKSharePhoto(image: imageSeleted, userGenerated: true)
                     let content = FBSDKSharePhotoContent()
                     content.photos = [sharePhoto!]
-                    FBSDKShareDialog.show(from: self, with: content, delegate: self)
-
+//                    FBSDKShareDialog.show(from: self, with: content, delegate: self)
+                    
+                    
+                    let shareDialog = FBSDKShareDialog()
+                    shareDialog.mode = .browser
+                    shareDialog.shareContent = content
+                    shareDialog.delegate = self
+                    shareDialog.fromViewController = self
+                   
+                    shareDialog.show()
                 }else {
                     showAlertCompleteTask(subTitle: "Vui lòng chụp ảnh để chia sẻ")
                 }
@@ -219,6 +241,8 @@ extension EVCompleteTaskViewController: CLLocationManagerDelegate {
 extension EVCompleteTaskViewController: FBSDKSharingDelegate {
     func sharer(_ sharer: FBSDKSharing!, didCompleteWithResults results: [AnyHashable : Any]!) {
         print(results)
+        let data = JSON(results)
+        self.idPost = data["postId"].stringValue
     }
     
     func sharer(_ sharer: FBSDKSharing!, didFailWithError error: Error!) {

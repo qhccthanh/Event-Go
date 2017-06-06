@@ -72,6 +72,7 @@ extension EVListAwardsViewController: UICollectionViewDelegate, UICollectionView
         default:
             //4
             assert(false, "Unexpected element kind")
+            return UICollectionReusableView()
         }
     }
     

@@ -110,9 +110,9 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
     
      NSString *appVersion = [NSString stringWithFormat:@"%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
     
-    [requestParams setObjectCheckNil:appVersion forKey:@"appversion"];
-    [requestParams setObjectCheckNil:[EVNetworkManager sharedInstance].accesstoken forKey:@"access_token"];
-    [requestParams setObjectCheckNil:[EVNetworkManager sharedInstance].paymentUserId forKey:@"user_id"];
+    [requestParams setObject:appVersion forKey:@"appversion"];
+    [requestParams setObject:[EVNetworkManager sharedInstance].accesstoken forKey:@"access_token"];
+    [requestParams setObject:[EVNetworkManager sharedInstance].paymentUserId forKey:@"user_id"];
     
     return requestParams;
 }
@@ -307,7 +307,7 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
         return dataError;
     }
     
-    NSString *accesstoken = [responseData stringForKey:@"access_token"];
+    NSString *accesstoken = @"";
     if (accesstoken.length && ![accesstoken isEqualToString:self.accesstoken])
     {
         self.accesstoken = accesstoken;
@@ -316,7 +316,7 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
         }
     }
     
-    int errorCode = [responseData intForKey:@"returncode"];
+    int errorCode = 404;
     if (errorCode != EVENTGO_ERRORCODE_SUCCESSFUL) {
         NSError *returnError = [NSError errorFromDic:responseData];
         
@@ -433,7 +433,8 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
         NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (data) {
                 NSString *stringData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                NSDictionary *json = [stringData JSONValue];
+                
+                NSDictionary *json = [self JSONValue:stringData];
                 if ([json isKindOfClass:[NSDictionary class]]) {
                     [subscriber sendNext:json];
                     [subscriber sendCompleted];
@@ -445,6 +446,19 @@ static NSString *checkPath = @"/v001/tpe/getbalance";
         [task resume];
         return nil;
     }] replayLazily];
+}
+
+- (NSDictionary *)JSONValue:(NSString *)stringData {
+    if ([stringData length] == 0) {
+        return nil;
+    }
+    NSData *correctedData = [stringData dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+    id json = [NSJSONSerialization JSONObjectWithData:correctedData options:NSJSONReadingAllowFragments error:&error];
+    if (error) {
+        json = nil;
+    }
+    return json;
 }
 
 @end

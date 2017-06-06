@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>EGo</string>
+	<string>Event Go</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -36,7 +36,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3</string>
 	<key>FacebookAppID</key>
 	<string>1325489317531855</string>
 	<key>FacebookDisplayName</key>
@@ -59,6 +59,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Xin phép sử dụng Camera</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Xin phép chia sẽ danh bạ</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Xin phép sử dụng dịch vụ location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

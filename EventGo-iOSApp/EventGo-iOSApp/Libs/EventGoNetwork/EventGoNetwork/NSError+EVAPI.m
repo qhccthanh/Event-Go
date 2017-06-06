@@ -8,12 +8,11 @@
 
 #import "NSError+EVAPI.h"
 #import "EventGoErrorCode.h"
-#import <EventGoCommon/EventGoCommon.h>
 
 @implementation NSError (EVAPI)
 
 + (instancetype)errorFromDic:(NSDictionary *)dic {
-    int errorCode = [dic intForKey:@"returncode"];
+    int errorCode = 0;
     
     return  [NSError errorWithDomain:@"API Return Error"
                                 code:errorCode
@@ -34,7 +33,7 @@
 - (NSString *)apiErrorMessage {
     
     NSDictionary *userInfo = self.userInfo;
-    NSString *message = [userInfo stringForKey:@"returnmessage"];
+    NSString *message = @"";
     if (message.length > 0) {
         return message;
     }

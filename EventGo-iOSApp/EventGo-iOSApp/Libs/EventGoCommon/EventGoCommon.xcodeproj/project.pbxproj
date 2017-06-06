@@ -1078,11 +1078,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				COPY_HEADERS_RUN_UNIFDEF = YES;
 				DEVELOPMENT_TEAM = ZPV9U8ULVA;
 				HEADER_SEARCH_PATHS = (
 					"\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"",
-					"$(inherited)",
-					"$(inherited)/**",
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
 				);
@@ -1101,11 +1100,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				COPY_HEADERS_RUN_UNIFDEF = YES;
 				DEVELOPMENT_TEAM = ZPV9U8ULVA;
 				HEADER_SEARCH_PATHS = (
 					"\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"",
-					"$(inherited)",
-					"$(inherited)/**",
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
 				);

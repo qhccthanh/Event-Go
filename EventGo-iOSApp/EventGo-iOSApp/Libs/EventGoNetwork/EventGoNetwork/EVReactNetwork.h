@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <EventGoCommon/EventGoCommon.h>
+#import <ReactiveObjc/ReactiveObjc.h>
 
 typedef enum : NSInteger {
     EVReactNetworkMethod_GET,

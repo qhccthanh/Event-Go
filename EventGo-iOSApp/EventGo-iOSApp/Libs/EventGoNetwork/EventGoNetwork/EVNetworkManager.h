@@ -6,7 +6,7 @@
 //  Copyright © 2017 Quach Ha Chan Thanh. All rights reserved.
 //
 
-#import <EventGoCommon/EventGoCommon.h>
+#import <ReactiveObjc/ReactiveObjc.h>
 #import "EventGoErrorCode.h"
 #import "NSError+EVAPI.h"
 

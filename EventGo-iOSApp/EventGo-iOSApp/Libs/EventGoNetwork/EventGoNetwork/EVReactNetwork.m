@@ -7,7 +7,6 @@
 //
 
 #import "EVReactNetwork.h"
-#import <EventGoCommon/NSCollection+JSON.h>
 #import "AFNetworking.h"
 #import "NSError+EVAPI.h"
 

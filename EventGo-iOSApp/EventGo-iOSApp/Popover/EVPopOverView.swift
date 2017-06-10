@@ -43,6 +43,7 @@ class EVPopOverView: UIView {
         
         contentLabel.text = content
         let heightContentText = content.height(withConstrainedWidth: self.frame.width, font: UIFont.robotoRegular(withSize: 11))
+//        let heightContentText = content.height(withConstrainedWidth: self.frame.width, font: UIFont.systemFont(ofSize: 11))
         contentLabel.snp.makeConstraints({ (make) in
             make.leading.equalTo(0)
             make.width.equalTo(self.snp.width)
@@ -118,6 +119,7 @@ class EVPopOverView: UIView {
         titleLabel.text = title
         contentLabel.text = content
         let heightContentText = content.height(withConstrainedWidth: self.frame.width, font: UIFont.robotoRegular(withSize: 11))
+//        let heightContentText = content.height(withConstrainedWidth: self.frame.width, font: UIFont.systemFont(ofSize: 11))
         contentLabel.snp.makeConstraints({ (make) in
             make.leading.equalTo(0)
             make.width.equalTo(self.snp.width)
@@ -176,6 +178,7 @@ class EVPopOverView: UIView {
         titleLabel.text = title
         contentLabel.text = content
         let heightContentText = content.height(withConstrainedWidth: self.frame.width, font: UIFont.robotoRegular(withSize: 11))
+//        let heightContentText = content.height(withConstrainedWidth: self.frame.width, font: UIFont.systemFont(ofSize: 11))
         contentLabel.snp.makeConstraints({ (make) in
             make.leading.equalTo(0)
             make.width.equalTo(self.snp.width)

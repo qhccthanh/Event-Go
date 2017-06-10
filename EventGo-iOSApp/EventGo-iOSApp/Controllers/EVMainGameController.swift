@@ -32,6 +32,25 @@ class EVMainGameController: EVViewController {
         EVAppFactory.users.updateDeviceInfo()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let policy = UserDefaults.standard.value(forKey: "isRead") as? Bool
+        if policy == nil   {
+            self.showAlertCompleteTask(subTitle: "Bạn phải chấp nhận các chính sác")
+//            UserDefaults.standard.set(true, forKey: "isRead")
+//            return
+        }
+    }
+    
+    func showAlertCompleteTask(title: String = "Thông báo", subTitle: String = "", frame: CGRect = CGRect(x: 0,y: 0,width: 300,height: 200), type: EVPopOverAppearance = .info, icon: UIImage? = EVImage.ic_logo.icon() ) {
+        let info = EVPopOverView(frame: frame, type: type, icon: icon, title: title, content: subTitle)
+        let controller = EVPopOverController(customView: info, height: info.heightView )
+        controller.showView(self, detailBlock: nil) {
+            controller.closeVC()
+        }
+    }
+
+    
     func setupLocationUpdating() {
         
         EVLocationManager.share()

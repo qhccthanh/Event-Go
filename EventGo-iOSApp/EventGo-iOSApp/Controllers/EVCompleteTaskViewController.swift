@@ -80,11 +80,6 @@ class EVCompleteTaskViewController: EVViewController {
     }
     
     @IBAction func completeAction(_ sender: Any) {
-        guard let policy = UserDefaults.standard.value(forKey: "isRead") as? Bool else {
-            self.showAlertCompleteTask(subTitle: "Bạn phải chấp nhận luật lệ của chúng tôi")
-            UserDefaults.standard.set(true, forKey: "isRead")
-            return
-        }
         
         guard let task = task, let userEventId = self.userEventId else {
             self.showAlertCompleteTask(subTitle: "Thông tin không hợp lệ, vui lòng thực hiện lại sau")

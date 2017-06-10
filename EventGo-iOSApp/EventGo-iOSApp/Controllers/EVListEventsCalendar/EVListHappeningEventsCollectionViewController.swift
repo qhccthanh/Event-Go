@@ -26,6 +26,7 @@ class EVListHappeningEventsCollectionViewController: UICollectionViewController 
         
         self.collectionView?.emptyDataSetDelegate = self
         self.collectionView?.emptyDataSetSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {

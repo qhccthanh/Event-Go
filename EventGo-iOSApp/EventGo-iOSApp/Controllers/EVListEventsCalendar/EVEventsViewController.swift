@@ -28,7 +28,7 @@ class EVEventsViewController: EVViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         upcomingLabel.isHidden = true
-
+        
     }
 
     override func didReceiveMemoryWarning() {

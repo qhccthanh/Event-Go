@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		55F2CFC371258F545EE98BBF /* Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0BCB5DE24D9222EF211AD6 /* Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework */; };
+		7A56656D1EEC79E300E1E2B2 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A5665611EEC79E300E1E2B2 /* Roboto-Black.ttf */; };
+		7A56656E1EEC79E300E1E2B2 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A5665621EEC79E300E1E2B2 /* Roboto-BlackItalic.ttf */; };
+		7A56656F1EEC79E300E1E2B2 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A5665631EEC79E300E1E2B2 /* Roboto-Bold.ttf */; };
+		7A5665701EEC79E300E1E2B2 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A5665641EEC79E300E1E2B2 /* Roboto-BoldItalic.ttf */; };
+		7A5665711EEC79E300E1E2B2 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A5665651EEC79E300E1E2B2 /* Roboto-Italic.ttf */; };
+		7A5665721EEC79E300E1E2B2 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A5665661EEC79E300E1E2B2 /* Roboto-Light.ttf */; };
+		7A5665731EEC79E300E1E2B2 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A5665671EEC79E300E1E2B2 /* Roboto-LightItalic.ttf */; };
+		7A5665741EEC79E300E1E2B2 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A5665681EEC79E300E1E2B2 /* Roboto-Medium.ttf */; };
+		7A5665751EEC79E300E1E2B2 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A5665691EEC79E300E1E2B2 /* Roboto-MediumItalic.ttf */; };
+		7A5665761EEC79E300E1E2B2 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A56656A1EEC79E300E1E2B2 /* Roboto-Regular.ttf */; };
+		7A5665771EEC79E300E1E2B2 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A56656B1EEC79E300E1E2B2 /* Roboto-Thin.ttf */; };
+		7A5665781EEC79E300E1E2B2 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A56656C1EEC79E300E1E2B2 /* Roboto-ThinItalic.ttf */; };
 		C9473D78746962E2D90F4191 /* Pods_EventGo_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC63F4ADD9D479D0BBD61CF /* Pods_EventGo_iOSApp.framework */; };
 		D01B47DB1E8B43E7007D990C /* EventGo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01B47DA1E8B43E7007D990C /* EventGo.storyboard */; };
 		D02059EC1EB4FD52004EA7D3 /* EVListAwardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02059EA1EB4FD52004EA7D3 /* EVListAwardsCollectionViewCell.swift */; };
@@ -178,6 +190,18 @@
 		30D79559D6DA0A5159C6CCD0 /* Pods-EventGo-iOSApp-EventGo-iOSAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp-EventGo-iOSAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp-EventGo-iOSAppTests/Pods-EventGo-iOSApp-EventGo-iOSAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		6CC63F4ADD9D479D0BBD61CF /* Pods_EventGo_iOSApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventGo_iOSApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E25C8B0E62EC80BFED04877 /* Pods-EventGo-iOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp/Pods-EventGo-iOSApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7A5665611EEC79E300E1E2B2 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Black.ttf"; path = "Libs/EventGoCommon/EventGoCommon/Roboto-Black.ttf"; sourceTree = "<group>"; };
+		7A5665621EEC79E300E1E2B2 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BlackItalic.ttf"; path = "Libs/EventGoCommon/EventGoCommon/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		7A5665631EEC79E300E1E2B2 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "Libs/EventGoCommon/EventGoCommon/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		7A5665641EEC79E300E1E2B2 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BoldItalic.ttf"; path = "Libs/EventGoCommon/EventGoCommon/Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		7A5665651EEC79E300E1E2B2 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Italic.ttf"; path = "Libs/EventGoCommon/EventGoCommon/Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		7A5665661EEC79E300E1E2B2 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "Libs/EventGoCommon/EventGoCommon/Roboto-Light.ttf"; sourceTree = "<group>"; };
+		7A5665671EEC79E300E1E2B2 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-LightItalic.ttf"; path = "Libs/EventGoCommon/EventGoCommon/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		7A5665681EEC79E300E1E2B2 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "Libs/EventGoCommon/EventGoCommon/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		7A5665691EEC79E300E1E2B2 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-MediumItalic.ttf"; path = "Libs/EventGoCommon/EventGoCommon/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		7A56656A1EEC79E300E1E2B2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Libs/EventGoCommon/EventGoCommon/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		7A56656B1EEC79E300E1E2B2 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "Libs/EventGoCommon/EventGoCommon/Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		7A56656C1EEC79E300E1E2B2 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-ThinItalic.ttf"; path = "Libs/EventGoCommon/EventGoCommon/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		8B0BCB5DE24D9222EF211AD6 /* Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventGo_iOSApp_EventGo_iOSAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC9B2288DB560C0D3B72361 /* Pods-EventGo-iOSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventGo-iOSApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventGo-iOSApp/Pods-EventGo-iOSApp.release.xcconfig"; sourceTree = "<group>"; };
 		D01B47DA1E8B43E7007D990C /* EventGo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventGo.storyboard; sourceTree = "<group>"; };
@@ -366,6 +390,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7A5665791EEC79E900E1E2B2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7A5665611EEC79E300E1E2B2 /* Roboto-Black.ttf */,
+				7A5665621EEC79E300E1E2B2 /* Roboto-BlackItalic.ttf */,
+				7A5665631EEC79E300E1E2B2 /* Roboto-Bold.ttf */,
+				7A5665641EEC79E300E1E2B2 /* Roboto-BoldItalic.ttf */,
+				7A5665651EEC79E300E1E2B2 /* Roboto-Italic.ttf */,
+				7A5665661EEC79E300E1E2B2 /* Roboto-Light.ttf */,
+				7A5665671EEC79E300E1E2B2 /* Roboto-LightItalic.ttf */,
+				7A5665681EEC79E300E1E2B2 /* Roboto-Medium.ttf */,
+				7A5665691EEC79E300E1E2B2 /* Roboto-MediumItalic.ttf */,
+				7A56656A1EEC79E300E1E2B2 /* Roboto-Regular.ttf */,
+				7A56656B1EEC79E300E1E2B2 /* Roboto-Thin.ttf */,
+				7A56656C1EEC79E300E1E2B2 /* Roboto-ThinItalic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		D01B47D91E8B43D3007D990C /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +577,7 @@
 		F4AD8BBD1E7D3C7B0081F2F3 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				7A5665791EEC79E900E1E2B2 /* Fonts */,
 				F4E976F21EC04D3B006D46DA /* mapstogpx_Test.gpx */,
 				F4AB21221EB266BB0047CED0 /* Event_Go_App_Client.mobileprovision */,
 				F4E978C91E7E3F3E00DF2E89 /* GoogleService-Info.plist */,
@@ -867,12 +911,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A5665781EEC79E300E1E2B2 /* Roboto-ThinItalic.ttf in Resources */,
+				7A5665751EEC79E300E1E2B2 /* Roboto-MediumItalic.ttf in Resources */,
+				7A5665741EEC79E300E1E2B2 /* Roboto-Medium.ttf in Resources */,
 				F4AD8ADD1E7D3C310081F2F3 /* LaunchScreen.storyboard in Resources */,
 				F4E976F31EC04D3B006D46DA /* mapstogpx_Test.gpx in Resources */,
+				7A5665731EEC79E300E1E2B2 /* Roboto-LightItalic.ttf in Resources */,
 				F4E978CA1E7E3F3E00DF2E89 /* GoogleService-Info.plist in Resources */,
+				7A5665761EEC79E300E1E2B2 /* Roboto-Regular.ttf in Resources */,
 				F4AB21231EB266BB0047CED0 /* Event_Go_App_Client.mobileprovision in Resources */,
+				7A5665721EEC79E300E1E2B2 /* Roboto-Light.ttf in Resources */,
+				7A56656F1EEC79E300E1E2B2 /* Roboto-Bold.ttf in Resources */,
+				7A5665711EEC79E300E1E2B2 /* Roboto-Italic.ttf in Resources */,
 				F4AD8ADA1E7D3C310081F2F3 /* Assets.xcassets in Resources */,
+				7A5665701EEC79E300E1E2B2 /* Roboto-BoldItalic.ttf in Resources */,
+				7A56656D1EEC79E300E1E2B2 /* Roboto-Black.ttf in Resources */,
+				7A5665771EEC79E300E1E2B2 /* Roboto-Thin.ttf in Resources */,
 				F4E978EA1E7E3F8400DF2E89 /* FacebookSDKStrings.bundle in Resources */,
+				7A56656E1EEC79E300E1E2B2 /* Roboto-BlackItalic.ttf in Resources */,
 				D01B47DB1E8B43E7007D990C /* EventGo.storyboard in Resources */,
 				F4CAA6A91E82E9D20084FC51 /* EGItemStoreView.xib in Resources */,
 			);
@@ -1272,6 +1328,7 @@
 				SWIFT_INCLUDE_PATHS = "$(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventGo-iOSApp/EventGo-iOSApp-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1330,6 +1387,7 @@
 				SWIFT_INCLUDE_PATHS = "$(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventGo-iOSApp/EventGo-iOSApp-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

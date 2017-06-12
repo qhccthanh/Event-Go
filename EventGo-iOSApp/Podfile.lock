@@ -6,7 +6,9 @@ PODS:
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
+  - DZNEmptyDataSet (1.8.1)
   - ESPullToRefresh (2.6)
+  - EZLoadingActivity (1.01)
   - Firebase/AdMob (3.17.0):
     - Firebase/Core
     - Google-Mobile-Ads-SDK (= 7.19.1)
@@ -103,7 +105,9 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.1)
   - AnimatedTextInput (~> 0.4)
   - ChameleonFramework (~> 2.1)
+  - DZNEmptyDataSet
   - ESPullToRefresh (~> 2.6)
+  - EZLoadingActivity
   - Firebase/AdMob
   - Firebase/Core
   - Firebase/Crash
@@ -132,7 +136,9 @@ SPEC CHECKSUMS:
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   AnimatedTextInput: 0fde4c9c8d71dafc032b9b222531a788767536fb
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   ESPullToRefresh: 85f4990acf87f78c6a1466bbbee7a75d7de24db9
+  EZLoadingActivity: edd7e387e5197b116ce2cccb3fd747ababc2a510
   Firebase: 4b66b5b59c43edac745b87f0c87e42cdd0279c13
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
@@ -166,6 +172,6 @@ SPEC CHECKSUMS:
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: bd26c2b717fa40b151e3fb3bcbe9e8f34097d57e
+PODFILE CHECKSUM: 52b916c8fc60f384344bf1fa116b8d7dde3f6bf1
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

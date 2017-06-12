@@ -118,6 +118,7 @@ class EVPopOverView: UIView {
 
         titleLabel.text = title
         contentLabel.text = content
+        contentLabel.numberOfLines = 0
         let heightContentText = content.height(withConstrainedWidth: self.frame.width, font: UIFont.robotoRegular(withSize: 11))
 //        let heightContentText = content.height(withConstrainedWidth: self.frame.width, font: UIFont.systemFont(ofSize: 11))
         contentLabel.snp.makeConstraints({ (make) in

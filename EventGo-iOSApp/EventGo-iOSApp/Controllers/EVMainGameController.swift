@@ -36,13 +36,13 @@ class EVMainGameController: EVViewController {
         super.viewWillAppear(animated)
         let policy = UserDefaults.standard.value(forKey: "isRead") as? Bool
         if policy == nil   {
-            self.showAlertCompleteTask(subTitle: "Bạn phải chấp nhận các chính sác")
-//            UserDefaults.standard.set(true, forKey: "isRead")
+            self.showAlertCompleteTask()
+            UserDefaults.standard.set(true, forKey: "isRead")
 //            return
         }
     }
     
-    func showAlertCompleteTask(title: String = "Thông báo", subTitle: String = "", frame: CGRect = CGRect(x: 0,y: 0,width: 300,height: 200), type: EVPopOverAppearance = .info, icon: UIImage? = EVImage.ic_logo.icon() ) {
+    func showAlertCompleteTask(title: String = "Điều khoản", subTitle: String = "Ứng dụng EventGo chính sách: \r\n1. Phần thưởng và sự kiện được sự đảm bảo của EventGo và nhà tài trợ không phải là Apple.\r\n2. Việc trao phần thưởng sẽ do các nhà cung cấp quyết định.\r\n3. EventGo và nhà cung cấp sẽ chịu trách nhiệm bảo đảm thông tin người dùng.\r\n4. EventGo sẽ chịu trách nhiệm nếu phần thưởng có những vấn đề cần giải quyết.\r\n5. EventGo cũng như Apple sẽ không chịu trách nhiệm cho sự mất mát tài sản cá nhân khi tham gia sự kiện của người dùng bao gồm (Cướp giật, hư hỏng).\r\n6. EventGo sẽ mọi trách nhiệm về mặt pháp lý nếu xãy ra tranh chấp, kiện tụng\r\nMọi chi tiết liên hệ (+84) 1863210265\r\nEvent Go", frame: CGRect = CGRect(x: 0,y: 0,width: 330,height: 600), type: EVPopOverAppearance = .info, icon: UIImage? = EVImage.ic_logo.icon() ) {
         let info = EVPopOverView(frame: frame, type: type, icon: icon, title: title, content: subTitle)
         let controller = EVPopOverController(customView: info, height: info.heightView )
         controller.showView(self, detailBlock: nil) {

@@ -10,7 +10,7 @@ import SwiftyJSON
 
 open class BaseService {
     
-    public let baseURL = EVConstant.isDebug ? "http://localhost:3000/api/v1.0/" : "https://evgo.herokuapp.com/api/v1.0/"
+    public let baseURL = EVConstant.isDebug ? "http://localhost:3000/api/v1.0/" : "http://ego.tudienducviet.com/api/v1.0/"
     
     public var subUrl : String {
         get {
@@ -33,7 +33,7 @@ open class BaseService {
         
     }
     
-    static public let baseURL = EVConstant.isDebug ? "http://localhost:3000/api/v1.0/" : "https://evgo.herokuapp.com/api/v1.0/"
+    static public let baseURL = EVConstant.isDebug ? "http://localhost:3000/api/v1.0/" : "http://ego.tudienducviet.com/api/v1.0/"
     
     class public var subUrl : String {
         get {

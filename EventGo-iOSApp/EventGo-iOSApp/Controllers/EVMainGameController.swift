@@ -36,8 +36,8 @@ class EVMainGameController: EVViewController {
         super.viewWillAppear(animated)
         let policy = UserDefaults.standard.value(forKey: "isRead") as? Bool
         if policy == nil   {
-            self.showAlertCompleteTask(subTitle: "Bạn phải chấp nhận các chính sác")
-//            UserDefaults.standard.set(true, forKey: "isRead")
+            self.showAlertCompleteTask(subTitle: "Bạn phải chấp nhận các chính sách")
+            UserDefaults.standard.set(true, forKey: "isRead")
 //            return
         }
     }
@@ -85,7 +85,7 @@ class EVMainGameController: EVViewController {
             .subscribe(onNext: { (locations) in
                 for location in locations {
                     if let infoLocation = location.location_info {
-                        let temp = EVMarker(id: location.location_id , location: infoLocation.coordinate, title: location.name!, iconName: EVImage.ic_event.name())
+                        let temp = EVMarker(id: location.location_id , location: infoLocation.coordinate, title: location.name!, iconName: EVImage.ic_gift.name())
                         EVMakerManager.shareManager.addMarker(temp)
                         self.listMarker.append(temp)
                     }

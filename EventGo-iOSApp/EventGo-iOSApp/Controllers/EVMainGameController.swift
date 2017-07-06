@@ -85,7 +85,14 @@ class EVMainGameController: EVViewController {
             .subscribe(onNext: { (locations) in
                 for location in locations {
                     if let infoLocation = location.location_info {
-                        let temp = EVMarker(id: location.location_id , location: infoLocation.coordinate, title: location.name!, iconName: EVImage.ic_gift.name())
+                        var iconTemp = EVImage.ic_gift.name()
+                        if location.name!.lowercased().contains("circle"){
+                            iconTemp = EVImage.ic_circle.name()
+                        }
+                        if location.name!.lowercased().contains("mart"){
+                            iconTemp = EVImage.ic_bsmart.name()
+                        }
+                        let temp = EVMarker(id: location.location_id , location: infoLocation.coordinate, title: location.name!, iconName: iconTemp)
                         EVMakerManager.shareManager.addMarker(temp)
                         self.listMarker.append(temp)
                     }

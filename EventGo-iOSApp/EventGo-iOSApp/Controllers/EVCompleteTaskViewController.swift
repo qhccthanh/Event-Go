@@ -96,20 +96,20 @@ class EVCompleteTaskViewController: EVViewController {
             return
         }
         
-        guard let idPost = self.idPost else {
-            self.showAlertCompleteTask(subTitle: "Bạn phải Chia sẻ Facebook dưới chế độ công khai nhiệm vụ này")
-            return
-
-        }
+//        guard let idPost = self.idPost else {
+//            self.showAlertCompleteTask(subTitle: "Bạn phải Chia sẻ Facebook dưới chế độ công khai nhiệm vụ này")
+//            return
+//
+//        }
         
-        self.showLoading()
+        self.showLoading() // 
         _ = EVAppFactory.client
             .tasks
-            .uploadImage(image: imageSeleted, supplierId: "58d8d17ddfcd0e00116cf0e6")
+            .uploadImage(image: imageSeleted, supplierId: task.supplier_id)
             .observeOn(MainScheduler.instance)
             .flatMap({ (result) -> Observable<EVResponseMission> in
                 return EVAppFactory.client.tasks
-                    .completeTask(task, userEventId: userEventId, linkPost: idPost, imageURL: result, location: myLocation)
+                    .completeTask(task, userEventId: userEventId, linkPost: "", imageURL: result, location: myLocation)
             })
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (response) in

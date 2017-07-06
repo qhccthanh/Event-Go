@@ -65,7 +65,8 @@ enum EVImage: String {
     case ic_event = "ic_event"
     case ic_app_3d = "appIcon_3d"
     case ic_placeholder = "ic_placeholder"
-    
+    case ic_bsmart = "ic_bsmart"
+    case ic_circle = "ic_circle"
 }
 
 extension EVImage {

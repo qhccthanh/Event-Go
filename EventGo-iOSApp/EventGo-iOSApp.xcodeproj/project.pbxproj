@@ -26,8 +26,8 @@
 		D02059ED1EB4FD52004EA7D3 /* EVListAwardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02059EB1EB4FD52004EA7D3 /* EVListAwardsViewController.swift */; };
 		D02059EF1EB4FDAD004EA7D3 /* EVInfoAwardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02059EE1EB4FDAD004EA7D3 /* EVInfoAwardViewController.swift */; };
 		D06C16471ED9BE3C00BE2CB0 /* EVListUserEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C16461ED9BE3C00BE2CB0 /* EVListUserEventsViewController.swift */; };
-		D06E45701E92AFCD003462FC /* ReferenceProxy in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FABF6B1E8A634D0010BE41 /* libEventGoCommon.a */; };
-		D06E45711E92AFCD003462FC /* ReferenceProxy in Frameworks */ = {isa = PBXBuildFile; fileRef = D06E45671E92AF21003462FC /* libEventGoNetwork.a */; };
+		D06E45701E92AFCD003462FC /* libEventGoCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FABF6B1E8A634D0010BE41 /* libEventGoCommon.a */; };
+		D06E45711E92AFCD003462FC /* libEventGoNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D06E45671E92AF21003462FC /* libEventGoNetwork.a */; };
 		D08FCE7A1EC9523700393115 /* EVTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FCE791EC9523700393115 /* EVTasksViewController.swift */; };
 		D08FCE7C1EC9526800393115 /* EVTaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FCE7B1EC9526800393115 /* EVTaskCollectionViewCell.swift */; };
 		D097FD821EB840FE004535F2 /* EVEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D097FD811EB840FE004535F2 /* EVEventCollectionViewCell.swift */; };
@@ -333,8 +333,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F45683861EB26C7A007B2D61 /* ReactiveObjC.framework in Frameworks */,
-				D06E45701E92AFCD003462FC /* ReferenceProxy in Frameworks */,
-				D06E45711E92AFCD003462FC /* ReferenceProxy in Frameworks */,
+				D06E45701E92AFCD003462FC /* libEventGoCommon.a in Frameworks */,
+				D06E45711E92AFCD003462FC /* libEventGoNetwork.a in Frameworks */,
 				F4056A171E82460600BEC162 /* Photos.framework in Frameworks */,
 				F4056A151E8245FF00BEC162 /* AssetsLibrary.framework in Frameworks */,
 				F4E9786D1E7DB86100DF2E89 /* libc++.tbd in Frameworks */,
@@ -1281,7 +1281,12 @@
 					"${PODS_ROOT}/Headers/Public/Firebase",
 					"$(PROJECT_DIR)",
 				);
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited) $(PROJECT_DIR)/EventGo-iOSApp/Libs/FacebookSDK ${PODS_ROOT}/Headers/Public/Firebase $(PROJECT_DIR)";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EventGo-iOSApp/Libs/FacebookSDK",
+					"${PODS_ROOT}/Headers/Public/Firebase",
+					"$(PROJECT_DIR)",
+				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				HEADER_SEARCH_PATHS = (
 					"${PODS_ROOT}/Firebase/Core/Sources",
